@@ -1,0 +1,12 @@
+*.backup*
+*backup-*
+debug_*.py
+fix_*.py
+move_*.py
+restructure_*.py
+crop_*.py
+analyze_*.py
+gen_maps.py
+fullwidth_*.py
+html2img.js
+node_modules/
