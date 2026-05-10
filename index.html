@@ -1051,11 +1051,66 @@ body {
  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .hero h1 {
- font-size: clamp(39px, 5.6vw, 72px);
- line-height: 1.02;
- letter-spacing: -2.6px;
+ font-size: clamp(34px, 4.9vw, 62px);
+ line-height: 1.04;
+ letter-spacing: -2.2px;
 }
 .hero p { color: #c5d3d8; }
+.hero-value-grid {
+ order: 3;
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 12px;
+ width: min(100%, 640px);
+ margin: 6px 0 0;
+}
+.hero-value-card {
+ display: grid;
+ grid-template-columns: 28px minmax(0, 1fr);
+ align-items: center;
+ gap: 10px;
+ min-height: 68px;
+ padding: 14px 16px;
+ border-radius: 18px;
+ background: rgba(255,255,255,0.065);
+ border: 1px solid rgba(143,240,193,0.18);
+ box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 14px 34px rgba(0,0,0,0.14);
+ backdrop-filter: blur(14px);
+ text-align: left;
+}
+.hero-value-card:nth-child(even) {
+ border-color: rgba(255,184,77,0.26);
+ background: rgba(255,184,77,0.07);
+}
+.hero-value-icon {
+ width: 28px;
+ height: 28px;
+ border-radius: 50%;
+ display: grid;
+ place-items: center;
+ color: #07141c;
+ background: linear-gradient(135deg, #55e7a0, #b8ffdb);
+ font-size: 14px;
+ font-weight: 900;
+}
+.hero-value-card:nth-child(even) .hero-value-icon {
+ background: linear-gradient(135deg, #ffd166, #fff1a6);
+}
+.hero-value-card strong {
+ display: block;
+ color: #f7fbfc;
+ font-size: 14px;
+ line-height: 1.18;
+ font-weight: 900;
+}
+.hero-value-card span {
+ display: block;
+ margin-top: 3px;
+ color: #9fb4bd;
+ font-size: 11px;
+ line-height: 1.2;
+ font-weight: 650;
+}
 /* ============ Featured Category Cards (v2) ============ */
 .feat-cat-card.cat-airpods,
 .feat-cat-card.cat-airpods-pro,
@@ -1190,7 +1245,9 @@ body {
 @media (max-width: 768px) {
  .hero-company-card { padding: 18px 16px; }
  .hero-company-kicker { font-size: clamp(22px, 7vw, 34px); }
- .hero h1 { font-size: clamp(34px, 10vw, 48px) !important; letter-spacing: -1.7px; }
+ .hero h1 { font-size: clamp(30px, 8.8vw, 42px) !important; letter-spacing: -1.4px; }
+ .hero-value-grid { grid-template-columns: 1fr; gap: 9px; margin-left: auto; margin-right: auto; }
+ .hero-value-card { min-height: 58px; padding: 12px 14px; }
  .hero-company-metrics { grid-template-columns: repeat(3, 1fr); }
  .feat-cats { grid-template-columns: repeat(3, 1fr) !important; gap: 8px; }
  .feat-cat-card.cat-airpods,
@@ -1406,21 +1463,13 @@ body {
     </div>
    </div>
    <h1 class="reveal" data-delay="240" data-es="Tu socio de suministro profesional para <em>Electrónica B2B lista para revender</em>" data-en="Your professional supply partner for <em>B2B electronics ready for resale</em>">Tu socio de suministro profesional para <em>Electrónica B2B lista para revender</em></h1>
-   <p class="reveal" data-delay="360" data-es="Caminamos contigo para construir una cooperación estable, eficiente y rentable: productos listos para vender, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días." data-en="We work side by side with you to build stable, efficient, win-win cooperation: ready-to-sell products, OEM packaging, 3-stage QC, and DDP delivery in 5–7 days.">Caminamos contigo para construir una cooperación estable, eficiente y rentable: productos listos para vender, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días.</p>
-   <div class="hero-b2b-tags reveal" data-delay="480">
-    <span class="hero-b2b-tag">Factory Direct</span>
-    <span class="hero-b2b-tag">MOQ: 40</span>
-    <span class="hero-b2b-tag gold">OEM / ODM</span>
-    <span class="hero-b2b-tag">DDP Shipping</span>
-    <span class="hero-b2b-tag gold">CE · FCC · RoHS</span>
-   </div>
-   <div class="hero-btns reveal" data-delay="600">
-    <a href="#products" class="btn btn-light" data-es="Ver Catálogo B2B" data-en="View B2B Catalog">Ver Catálogo B2B</a>
-    <a href="https://wa.me/8613302451417" target="_blank" class="btn btn-wa">
-     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-     <span data-es="Solicitar Cotización" data-en="Request a Quote">Solicitar Cotización</span>
-    </a>
-    <a href="#" onclick="navigateToReviews(event)" class="btn btn-moss" data-es="Ver Opiniones de Clientes" data-en="View Client Reviews">Ver Opiniones de Clientes</a>
+   <div class="hero-value-grid reveal" data-delay="360" aria-label="B2B supply advantages">
+    <div class="hero-value-card"><div class="hero-value-icon">✓</div><div><strong>Direct factory pricing</strong><span>Clear margin for resale</span></div></div>
+    <div class="hero-value-card"><div class="hero-value-icon">✓</div><div><strong>OEM retail packaging</strong><span>Ready for your market</span></div></div>
+    <div class="hero-value-card"><div class="hero-value-icon">✓</div><div><strong>QC before shipment</strong><span>Checked before dispatch</span></div></div>
+    <div class="hero-value-card"><div class="hero-value-icon">✓</div><div><strong>DDP delivery support</strong><span>Import process simplified</span></div></div>
+    <div class="hero-value-card"><div class="hero-value-icon">✓</div><div><strong>MOQ from 40 pcs</strong><span>Start with lower risk</span></div></div>
+    <div class="hero-value-card"><div class="hero-value-icon">✓</div><div><strong>WhatsApp quote in minutes</strong><span>Fast response from our team</span></div></div>
    </div>
   </div>
   <div class="hero-visual reveal-scale " aria-label="Premium electronics hero visual" data-delay="200">
