@@ -69,6 +69,7 @@ img { max-width: 100%; display: block; }
 /* ============ Navbar ============ */
 body.page-product .nav { display: none; }
 body.page-product .product-page-header { padding-top: 24px; }
+body.page-product .footer { display: none; }
 
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(28,28,28,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-dark); padding: env(safe-area-inset-top, 0px) 32px 0; height: calc(64px + env(safe-area-inset-top, 0px)); display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-light); display: flex; align-items: center; gap: 10px; }
@@ -1569,37 +1570,6 @@ body {
  </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
-
-<footer class="footer">
- <div class="container">
-  <div class="footer-grid">
-   <div class="footer-brand">
-    <h3 style="font-size:20px;font-weight:700;margin-bottom:8px;color:var(--text-light)">HUANYIN</h3>
-    <p data-es="Electrónica de consumo premium para distribuidores globales." data-en="Premium consumer electronics for global distributors.">Electrónica de consumo premium para distribuidores globales.</p>
-    <div class="footer-contact-stack">
-     <div class="footer-contact-line"><b>WhatsApp</b><a href="https://wa.me/8613302451417" target="_blank" rel="noopener">+86 13302451417</a></div>
-     <div class="footer-contact-line"><b>Email</b><a href="mailto:taotao5470@gmail.com">taotao5470@gmail.com</a></div>
-     <div class="footer-contact-line"><b data-es="Dirección" data-en="Address">Dirección</b><span>No. 1006, Longteli Technology Building, Shenzhen, China</span></div>
-    </div>
-    <div class="footer-social-row">
-     <a class="footer-social-btn wa" href="https://wa.me/8613302451417" target="_blank" rel="noopener">WA</a>
-     <a class="footer-social-btn fb" href="https://www.facebook.com/profile.php?id=61552988214027" target="_blank" rel="noopener">FB</a>
-     <a class="footer-social-btn tk" href="https://www.tiktok.com/@mfzdunjsl449" target="_blank" rel="noopener">TK</a>
-     <a class="footer-social-btn mail" href="mailto:taotao5470@gmail.com">@</a>
-    </div>
-    <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=No.%201006%2C%20Longteli%20Technology%20Building%2C%20Shenzhen%2C%20China" target="_blank" rel="noopener">
-     <img src="images/map-shenzhen-huanyin.svg" alt="Shenzhen Huanyin Technology address map" loading="lazy">
-     <span class="footer-map-caption" data-es="Mapa de la oficina: Longteli Technology Building, Shenzhen" data-en="Office map: Longteli Technology Building, Shenzhen">Mapa de la oficina: Longteli Technology Building, Shenzhen</span>
-    </a>
-   </div><div><h4 data-es="Productos" data-en="Products">Productos</h4><a href="#">AirPods Serie</a><a href="#">Relojes</a><a href="#">Cámaras</a></div>
-   <div><h4 data-es="Empresa" data-en="Company">Empresa</h4><a href="#" onclick="navigateToSecondary(event, 'why-us')" data-es="Por Qu? Elegirnos / Rese?as" data-en="Why Us / Reviews">Por Qu? Elegirnos / Rese?as</a><a href="#" onclick="navigateToAbout(event)">Empresa / Certificaciones</a><a href="#" onclick="navigateToVerification(event)" data-es="Control de Calidad / Posventa" data-en="3-Level QC / After-Sales">Control de Calidad / Posventa</a><a href="#" onclick="navigateToAfterSales(event)" data-es="Consulta Posventa" data-en="After-Sales Lookup">Consulta Posventa</a></div>
-   <div><h4 data-es="Soporte" data-en="Support">Soporte</h4><a href="#" onclick="navigateToSecondary(event, 'contact')">Contacto</a><a href="https://wa.me/8613302451417">WhatsApp</a><a href="mailto:taotao5470@gmail.com">Email</a></div>
-  </div>
-  <div class="footer-bottom">© 2026 Shenzhen Huanyin Technology Co., Ltd.</div>
- </div>
-</footer>
-
 </div><!-- /#pageHome -->
 
 <!-- ============ PRODUCT DETAIL PAGE (独立详情页) ============ -->
@@ -1964,6 +1934,38 @@ body {
  </section>
 
 </div><!-- /#pageAfterSales -->
+
+<!-- ============ FOOTER ============ -->
+
+<footer class="footer">
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-brand">
+    <h3 style="font-size:20px;font-weight:700;margin-bottom:8px;color:var(--text-light)">HUANYIN</h3>
+    <p data-es="Electrónica de consumo premium para distribuidores globales." data-en="Premium consumer electronics for global distributors.">Electrónica de consumo premium para distribuidores globales.</p>
+    <div class="footer-contact-stack">
+     <div class="footer-contact-line"><b>WhatsApp</b><a href="https://wa.me/8613302451417" target="_blank" rel="noopener">+86 13302451417</a></div>
+     <div class="footer-contact-line"><b>Email</b><a href="mailto:taotao5470@gmail.com">taotao5470@gmail.com</a></div>
+     <div class="footer-contact-line"><b data-es="Dirección" data-en="Address">Dirección</b><span>No. 1006, Longteli Technology Building, Shenzhen, China</span></div>
+    </div>
+    <div class="footer-social-row">
+     <a class="footer-social-btn wa" href="https://wa.me/8613302451417" target="_blank" rel="noopener">WA</a>
+     <a class="footer-social-btn fb" href="https://www.facebook.com/profile.php?id=61552988214027" target="_blank" rel="noopener">FB</a>
+     <a class="footer-social-btn tk" href="https://www.tiktok.com/@mfzdunjsl449" target="_blank" rel="noopener">TK</a>
+     <a class="footer-social-btn mail" href="mailto:taotao5470@gmail.com">@</a>
+    </div>
+    <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=No.%201006%2C%20Longteli%20Technology%20Building%2C%20Shenzhen%2C%20China" target="_blank" rel="noopener">
+     <img src="images/map-shenzhen-huanyin.svg" alt="Shenzhen Huanyin Technology address map" loading="lazy">
+     <span class="footer-map-caption" data-es="Mapa de la oficina: Longteli Technology Building, Shenzhen" data-en="Office map: Longteli Technology Building, Shenzhen">Mapa de la oficina: Longteli Technology Building, Shenzhen</span>
+    </a>
+   </div><div><h4 data-es="Productos" data-en="Products">Productos</h4><a href="#">AirPods Serie</a><a href="#">Relojes</a><a href="#">Cámaras</a></div>
+   <div><h4 data-es="Empresa" data-en="Company">Empresa</h4><a href="#" onclick="navigateToSecondary(event, 'why-us')" data-es="Por Qu? Elegirnos / Rese?as" data-en="Why Us / Reviews">Por Qu? Elegirnos / Rese?as</a><a href="#" onclick="navigateToAbout(event)">Empresa / Certificaciones</a><a href="#" onclick="navigateToVerification(event)" data-es="Control de Calidad / Posventa" data-en="3-Level QC / After-Sales">Control de Calidad / Posventa</a><a href="#" onclick="navigateToAfterSales(event)" data-es="Consulta Posventa" data-en="After-Sales Lookup">Consulta Posventa</a></div>
+   <div><h4 data-es="Soporte" data-en="Support">Soporte</h4><a href="#" onclick="navigateToSecondary(event, 'contact')">Contacto</a><a href="https://wa.me/8613302451417">WhatsApp</a><a href="mailto:taotao5470@gmail.com">Email</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 Shenzhen Huanyin Technology Co., Ltd.</div>
+ </div>
+</footer>
+
 
 <!-- ============ FLOATING ELEMENTS ============ -->
 <a href="https://wa.me/8613302451417" target="_blank" class="floating-wa" title="WhatsApp">
