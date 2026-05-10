@@ -67,6 +67,9 @@ ul { list-style: none; }
 img { max-width: 100%; display: block; }
 
 /* ============ Navbar ============ */
+body.page-product .nav { display: none; }
+body.page-product .product-page-header { padding-top: 24px; }
+
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(28,28,28,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-dark); padding: env(safe-area-inset-top, 0px) 32px 0; height: calc(64px + env(safe-area-inset-top, 0px)); display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-light); display: flex; align-items: center; gap: 10px; }
 .nav-logo .logo-mark { width: 36px; height: 36px; border-radius: var(--radius-xs); object-fit: contain; }
@@ -2084,6 +2087,7 @@ let lastScrollY = 0;
 
 function showPage(page) {
  currentPage = page;
+ document.body.classList.toggle('page-product', page === 'product');
  document.getElementById('pageHome').classList.toggle('active', page === 'home');
  document.getElementById('pageProduct').classList.toggle('active', page === 'product');
  document.getElementById('pageAbout').classList.toggle('active', page === 'about');
