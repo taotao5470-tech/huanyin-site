@@ -987,8 +987,22 @@ body {
 }
 
 @media (max-width: 480px) {
- .logo-wordmark { display: none; }
- .nav-logo { padding-right: 5px; }
+ .nav-logo {
+  min-width: 168px;
+  padding: 5px 12px 5px 5px;
+ }
+ .logo-wordmark {
+  display: flex;
+ }
+ .logo-wordmark strong {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+ }
+ .logo-wordmark small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+ }
  .hero-company-metrics { grid-template-columns: repeat(3, 1fr); }
 }
 
@@ -1349,7 +1363,7 @@ body {
  <div class="nav-links" id="navLinks">
   <a href="#" onclick="navigateHome(event)" data-es="Inicio" data-en="Home">Inicio</a>
 	  <a href="#products" data-es="Productos" data-en="Products" onclick="document.getElementById('navLinks').classList.remove('open')">Productos</a>
-  <a href="#" onclick="navigateToSecondary(event, 'why-us')" data-es="Por Qu? Elegirnos / Rese?as" data-en="Why Us / Reviews">Por Qu? Elegirnos / Rese?as</a>
+  <a href="#" onclick="navigateToSecondary(event, 'why-us')" data-es="Por Qué Elegirnos / Reseñas" data-en="Why Us / Reviews">Por Qué Elegirnos / Reseñas</a>
 	  <a href="#" onclick="navigateToAbout(event)" data-es="Empresa / Certificaciones" data-en="Company / Certifications">Empresa / Certificaciones</a>
 		  <a href="#" onclick="navigateToVerification(event)" data-es="Control de Calidad / Posventa" data-en="3-Level QC / After-Sales">Control de Calidad / Posventa</a>
 		  <a href="#" onclick="navigateToAfterSales(event)" data-es="Consulta Posventa" data-en="After-Sales Lookup">Consulta Posventa</a>
@@ -1391,7 +1405,7 @@ body {
      <span><b>35+</b><em data-es="Soluciones + I+D" data-en="Solutions + R&D">Soluciones + I+D</em></span>
     </div>
    </div>
-   <h1 class="reveal" data-delay="240" data-es="Tu socio de suministro profesional para <em>vender online y offline</em>" data-en="Your professional supply partner for <em>online and offline sales</em>">Tu socio de suministro profesional para <em>vender online y offline</em></h1>
+   <h1 class="reveal" data-delay="240" data-es="Electrónica B2B lista para revender" data-en="B2B electronics ready for resale">Electrónica B2B lista para revender</h1>
    <p class="reveal" data-delay="360" data-es="Caminamos contigo para construir una cooperación estable, eficiente y rentable: productos listos para vender, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días." data-en="We work side by side with you to build stable, efficient, win-win cooperation: ready-to-sell products, OEM packaging, 3-stage QC, and DDP delivery in 5–7 days.">Caminamos contigo para construir una cooperación estable, eficiente y rentable: productos listos para vender, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días.</p>
    <div class="hero-b2b-tags reveal" data-delay="480">
     <span class="hero-b2b-tag">Factory Direct</span>
@@ -1959,7 +1973,7 @@ body {
      <span class="footer-map-caption" data-es="Mapa de la oficina: Longteli Technology Building, Shenzhen" data-en="Office map: Longteli Technology Building, Shenzhen">Mapa de la oficina: Longteli Technology Building, Shenzhen</span>
     </a>
    </div><div><h4 data-es="Productos" data-en="Products">Productos</h4><a href="#">AirPods Serie</a><a href="#">Relojes</a><a href="#">Cámaras</a></div>
-   <div><h4 data-es="Empresa" data-en="Company">Empresa</h4><a href="#" onclick="navigateToSecondary(event, 'why-us')" data-es="Por Qu? Elegirnos / Rese?as" data-en="Why Us / Reviews">Por Qu? Elegirnos / Rese?as</a><a href="#" onclick="navigateToAbout(event)">Empresa / Certificaciones</a><a href="#" onclick="navigateToVerification(event)" data-es="Control de Calidad / Posventa" data-en="3-Level QC / After-Sales">Control de Calidad / Posventa</a><a href="#" onclick="navigateToAfterSales(event)" data-es="Consulta Posventa" data-en="After-Sales Lookup">Consulta Posventa</a></div>
+   <div><h4 data-es="Empresa" data-en="Company">Empresa</h4><a href="#" onclick="navigateToSecondary(event, 'why-us')" data-es="Por Qué Elegirnos / Reseñas" data-en="Why Us / Reviews">Por Qué Elegirnos / Reseñas</a><a href="#" onclick="navigateToAbout(event)">Empresa / Certificaciones</a><a href="#" onclick="navigateToVerification(event)" data-es="Control de Calidad / Posventa" data-en="3-Level QC / After-Sales">Control de Calidad / Posventa</a><a href="#" onclick="navigateToAfterSales(event)" data-es="Consulta Posventa" data-en="After-Sales Lookup">Consulta Posventa</a></div>
    <div><h4 data-es="Soporte" data-en="Support">Soporte</h4><a href="#" onclick="navigateToSecondary(event, 'contact')">Contacto</a><a href="https://wa.me/8613302451417">WhatsApp</a><a href="mailto:taotao5470@gmail.com">Email</a></div>
   </div>
   <div class="footer-bottom">© 2026 Shenzhen Huanyin Technology Co., Ltd.</div>
