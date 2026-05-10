@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>HUANYIN — Premium Consumer Electronics</title>
 <meta name="description" content="Shenzhen Huanyin Technology Co., Ltd. — B2B electronics supplier. Factory-direct AirPods, smart watches, and consumer electronics with OEM/ODM, 3-stage QC, and DDP shipping worldwide.">
 
@@ -122,8 +125,8 @@ img { max-width: 100%; display: block; }
 .btn-copper { background: var(--accent-copper); color: #fff; }
 .btn-copper:hover { background: #b87e5a; transform: translateY(-2px); }
 .btn-sm { padding: 8px 18px; font-size: 13px; border-radius: 20px; }
-.btn-gray-green { background: #4a5a4a; color: #c0c8bb; border: 1px solid #5a6a5a; }
-.btn-gray-green:hover { background: #5a6e5a; color: #e0e4db; transform: translateY(-2px); }
+.btn-gray-green { background: rgba(37,211,102,0.14); color: #6ee89d; border: 1px solid rgba(37,211,102,0.42); }
+.btn-gray-green:hover { background: rgba(37,211,102,0.22); color: #a7f3c1; border-color: rgba(37,211,102,0.65); transform: translateY(-2px); }
 .btn-back { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 24px; background: var(--bg-secondary); color: var(--text-muted); font-size: 14px; font-weight: 500; cursor: pointer; transition: var(--transition); border: 1px solid var(--border-dark); margin-bottom: 32px; }
 .btn-back:hover { color: var(--accent-moss); border-color: var(--accent-moss); }
 .hero-scroll { margin-top: 60px; animation: bounce 2s infinite; color: var(--text-muted); font-size: 12px; }
@@ -2865,8 +2868,8 @@ function renderProductPage(productId, variantId) {
    </div>
 
    <div class="pd-actions">
-    <button class="btn btn-moss" onclick="addToCartWithQty('${p.id}', '${v.id}');" ${isOOS ? 'disabled style="opacity:0.4;pointer-events:none"' : ''} data-es="Agregar a Cotización" data-en="Add to Inquiry">Agregar a Cotización</button>
     <button class="btn btn-gray-green" onclick="toggleCart()" data-es="Calcular Envío" data-en="Calculate Shipping">Calcular Envío</button>
+    <button class="btn btn-moss" onclick="addToCartWithQty('${p.id}', '${v.id}');" ${isOOS ? 'disabled style="opacity:0.4;pointer-events:none"' : ''} data-es="Agregar a Cotización" data-en="Add to Inquiry">Agregar a Cotización</button>
    </div>
   </div>
  `;
@@ -2905,7 +2908,12 @@ function renderGallerySlide() {
   if (item.type === 'video') {
    var posterImg = items.find(function(i){return i.type==='image'});
    var posterSrc = posterImg ? posterImg.src : '';
-   slide.innerHTML = '<video src="'+encodeURI(item.src)+'" controls muted loop playsinline preload="metadata" poster="'+posterSrc+'"></video>';
+   slide.innerHTML = '<video src="'+encodeURI(item.src)+'" controls autoplay muted loop playsinline preload="auto" poster="'+posterSrc+'"></video>';
+   var video = slide.querySelector('video');
+   if (video) {
+    var playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(function(){});
+   }
   } else {
    slide.innerHTML = '<img src="'+item.src+'" loading="lazy" decoding="async" alt="">';
   }
