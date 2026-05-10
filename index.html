@@ -205,16 +205,17 @@ img { max-width: 100%; display: block; }
 .product-card { background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; transition: var(--transition); cursor: pointer; border: 1px solid var(--border-dark); display: flex; flex-direction: column; }
 .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(125,148,116,0.4); }
 .product-card.disabled { opacity: 0.45; pointer-events: none; cursor: not-allowed; }
-.product-img { aspect-ratio: 4 / 3; height: auto; min-height: 220px; background: radial-gradient(circle at 50% 34%, #2a2a2a 0%, #1a1a1a 48%, #111 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 22px; }
-.product-img::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), var(--product-img-src); background-size: cover; background-position: center; filter: blur(18px) saturate(0.9); transform: scale(1.08); opacity: 0.55; }
-.product-img .pi-placeholder { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; position: relative; z-index: 1; filter: drop-shadow(0 14px 20px rgba(0,0,0,0.12)); }
-.product-card[data-cat="airpods"] .product-img,
-.product-card[data-cat="airpods-pro"] .product-img { padding: 0; }
-.product-card[data-cat="airpods"] .product-img .pi-placeholder,
-.product-card[data-cat="airpods-pro"] .product-img .pi-placeholder { width: 100%; height: 100%; object-fit: cover; filter: none; }
-.product-card[data-pid="airpods-pro"] .product-img { padding: 0; }
-.product-card[data-pid="airpods-pro"] .product-img::before { opacity: 0.35; filter: blur(18px) saturate(0.9); }
-.product-card[data-pid="airpods-pro"] .product-img .pi-placeholder { width: 100%; height: 100%; object-fit: cover; object-position: center 44%; filter: none; }
+.product-img { aspect-ratio: 4 / 3; height: auto; min-height: 220px; background: radial-gradient(circle at 50% 34%, #2a2a2a 0%, #1a1a1a 48%, #111 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 0; }
+.product-img::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.34)), var(--product-img-src); background-size: cover; background-position: center; filter: blur(18px) saturate(0.9); transform: scale(1.08); opacity: 0.42; }
+.product-img .pi-placeholder { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; position: relative; z-index: 1; filter: none; }
+.product-card[data-pid="airpods-pro-2"] .product-img .pi-placeholder { object-position: center 48%; transform: scale(1.46); transform-origin: center; }
+.product-card[data-pid="airpods-pro-3"] .product-img .pi-placeholder { object-position: center 48%; }
+.product-card[data-pid="airpods-pro"] .product-img .pi-placeholder { object-position: center; }
+.product-card[data-cat="airpods-max"] .product-img .pi-placeholder { object-position: center 50%; }
+.product-card[data-cat="watches"] .product-img .pi-placeholder,
+.product-card[data-cat="cameras"] .product-img .pi-placeholder,
+.product-card[data-cat="sports"] .product-img .pi-placeholder,
+.product-card[data-cat="lifestyle"] .product-img .pi-placeholder { object-position: center; }
 .product-img .pi-icon { font-size: 64px; opacity: 0.25; transition: var(--transition); }
 .product-card:hover .product-img .pi-icon { transform: scale(1.08); opacity: 0.35; }
 .product-badge { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; flex-direction: column; z-index: 2; }
@@ -245,6 +246,9 @@ img { max-width: 100%; display: block; }
 .product-page-header { padding: 80px 32px 0; background: var(--bg-primary); }
 .product-page-header .container { max-width: 960px; }
 .product-detail { display: grid; grid-template-columns: 1fr 1fr; max-width: 960px; margin: 0 auto 40px; background: transparent; border: none; }
+.pd-gallery { position: relative; display: flex; align-items: center; justify-content: center; min-height: 360px; overflow: hidden; background: transparent; border: none; border-radius: 0; }
+.pd-gallery-slide { width: 100%; min-height: 360px; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.2s ease; padding: 0; }
+.pd-gallery-slide img, .pd-gallery-slide video { width: 100%; max-height: 460px; object-fit: contain; display: block; }
 .pd-img-area { background: #f5f5f5; padding: 16px; display: flex; align-items: center; justify-content: center; position: relative; min-height: 160px; }
 .pd-img-area img { max-width: 100%; max-height: 300px; object-fit: contain; display: block; }
 .pd-img-area .pd-placeholder { width: 100%; height: auto; max-height: none; object-fit: cover; }
@@ -474,6 +478,8 @@ img { max-width: 100%; display: block; }
  .process-step::after { display: none; }
  .footer-grid { grid-template-columns: repeat(2, 1fr); }
  .product-detail { grid-template-columns: 1fr; }
+ .pd-gallery { border-radius: 0; min-height: 320px; }
+ .pd-gallery-slide { min-height: 320px; }
  .pd-img-area { min-height: 200px; border-radius: var(--radius) var(--radius) 0 0; }
 }
 @media (max-width: 768px) {
@@ -487,7 +493,25 @@ img { max-width: 100%; display: block; }
  .nav-links .lang-toggle button { padding: 10px 24px; font-size: 14px; }
  .nav-wa span { display: none; }
  .hamburger { display: flex; }
- .products-grid { grid-template-columns: 1fr; }
+ .products-grid { grid-template-columns: 1fr; gap: 12px; }
+ .product-card { display: grid; grid-template-columns: 132px minmax(0, 1fr); min-height: 154px; border-radius: 10px; }
+ .product-card:hover { transform: none; }
+ .product-img { aspect-ratio: auto; width: 132px; height: 100%; min-height: 154px; padding: 0; align-self: stretch; }
+ .product-img::before { opacity: 0.34; filter: blur(14px) saturate(0.92); }
+ .product-img .pi-placeholder { height: 100%; object-fit: cover; }
+ .product-badge { top: 8px; left: 8px; gap: 4px; }
+ .badge { padding: 3px 7px; border-radius: 8px; font-size: 9px; letter-spacing: 0.3px; }
+ .stock-dot { top: 8px; right: 8px; padding: 4px 7px; border-radius: 8px; font-size: 9px; gap: 4px; }
+ .stock-dot::before { width: 6px; height: 6px; }
+ .product-info { min-width: 0; padding: 14px 14px 12px; }
+ .product-name { font-size: 15px; line-height: 1.25; margin-bottom: 4px; }
+ .product-spec { font-size: 11px; line-height: 1.35; margin-bottom: 8px; }
+ .variant-dots { gap: 4px; margin-bottom: 8px; }
+ .variant-dot { width: 7px; height: 7px; }
+ .product-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+ .product-price { font-size: 15px; line-height: 1.1; }
+ .product-moq { font-size: 10px; margin-top: 3px; }
+ .product-bottom .btn-sm { padding: 7px 14px; font-size: 12px; align-self: flex-start; }
  .feat-cats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
  .feat-cat-card { padding: 12px 8px; min-height: 60px; border-radius: var(--radius-sm); }
  .feat-cat-title { font-size: 13px; }
@@ -511,6 +535,9 @@ img { max-width: 100%; display: block; }
  .form-row { grid-template-columns: 1fr; }
  .product-page-header { padding: 72px 12px 0; }
  .product-detail { margin-bottom: 24px; }
+ .pd-gallery { min-height: 280px; border-radius: 0; }
+ .pd-gallery-slide { min-height: 280px; padding: 0; }
+ .pd-gallery-slide img, .pd-gallery-slide video { max-height: 360px; }
  .pd-img-area { min-height: 180px; padding: 16px 12px; }
  .pd-info { padding: 20px; }
  .about-stats { grid-template-columns: repeat(2, 1fr) !important; }
@@ -1757,7 +1784,7 @@ body {
      </div>
      <div style="position:relative">
       <button class="rec-scroll-btn rec-scroll-left" onclick="recScroll(-1)" style="position:absolute;left:-12px;top:50%;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:var(--bg-primary);color:var(--text-light);border:1px solid var(--border-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-      <div class="rec-carousel" id="recGallery" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:8px 4px 16px"></div>
+      <div class="rec-carousel" id="recGallery" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:8px 4px 16px;-webkit-overflow-scrolling:touch;touch-action:pan-x pinch-zoom;overscroll-behavior-x:contain"></div>
       <button class="rec-scroll-btn rec-scroll-right" onclick="recScroll(1)" style="position:absolute;right:-12px;top:50%;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:var(--bg-primary);color:var(--text-light);border:1px solid var(--border-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
      </div>
     </div>
@@ -2224,15 +2251,15 @@ const products = [
    { type: 'image', src: '1.jpg' }
   ],
   variants: [
-   { id: 'std', name: 'Standard', specs: { chip:'Jieri 6973D4', bt:'5.3', mode:'Single Mode', shell:'Donghai', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Apple Port 1h', features:'Basic single mode' }, prices: { small: 3.43, large: 3.11 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
-   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 4.49, large: 4.08 }, stock: 896 },
-   { id: 'anc', name: 'Global ANC', specs: { chip:'Tiger Airoha 1562F', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 5.38, large: 4.86 }, stock: 985 }
+   { id: 'std', name: 'Standard', specs: { chip:'Jieri 6973D4', bt:'5.3', mode:'Single Mode', shell:'Donghai', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Type-C 1h', features:'Basic single mode' }, prices: { small: 3.43, large: 3.11 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
+   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 4.49, large: 4.08 }, stock: 896 },
+   { id: 'anc', name: 'Global ANC', specs: { chip:'Tiger Airoha 1562F', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 5.38, large: 4.86 }, stock: 985 }
   ]
  },
  {
   id: 'airpods-pro-3',
   name: { es: 'AirPods Pro 3', en: 'AirPods Pro 3' },
-  tagline: { es: 'ANC + Monitor de Salud', en: 'ANC + Health Monitoring' },
+  tagline: { es: 'ANC + Monitor de Salud · Type-C', en: 'ANC + Health Monitoring · Type-C' },
   cat: 'airpods-pro', icon: '🎵', featured: true,
   img: 'pro3-main1.png', video: 'pro3.mp4',
   gallery: [
@@ -2247,8 +2274,8 @@ const products = [
    { type: 'image', src: 'pro3-6.jpg' }
   ],
   variants: [
-   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 6973D4', bt:'5.4', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 5.86, large: 6.10 }, stock: 500 },
-   { id: 'anc-plus', name: 'Global ANC (HR+Translate)', specs: { chip:'Tiger Airoha 1562F', bt:'5.4', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC + Heart Rate + Real-Time Translation' }, prices: { small: 9.10, large: 8.84 }, stock: 890 }
+   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 6973D4', bt:'5.4', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 5.86, large: 6.10 }, stock: 500 },
+   { id: 'anc-plus', name: 'Global ANC (HR+Translate)', specs: { chip:'Tiger Airoha 1562F', bt:'5.4', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC + Heart Rate + Real-Time Translation' }, prices: { small: 9.10, large: 8.84 }, stock: 890 }
   ]
  },
  {
@@ -2269,38 +2296,26 @@ const products = [
    { type: 'image', src: 'max-g8.jpg' }
   ],
   variants: [
-   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 20.25, large: 20.25 }, stock: 999 },
-   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 7003', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 28.12, large: 28.12 }, stock: 999 }
+   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 12.15, large: 12.15 }, stock: 999 },
+   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 7003', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 16.87, large: 16.87 }, stock: 999 }
   ]
  },
  {
   id: 'airpods-pro',
   name: { es: 'AirPods Pro (1ª Gen)', en: 'AirPods Pro (Gen 1)' },
-  tagline: { es: 'Modelo Clásico · ANC', en: 'Classic Model · ANC' },
+  tagline: { es: 'Modelo Clásico · ANC · Lightning', en: 'Classic Model · ANC · Lightning' },
   cat: 'airpods-pro', icon: '🎧', featured: false,
-  img: '主图1.png',
+  img: 'pro.png',
   variants: [
-   { id: 'std1', name: 'Standard 1', specs: { chip:'Jieri 6973', bt:'5.1', mode:'Single Mode', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Apple Port 1h', features:'Basic single mode' }, prices: { small: null, large: 1.75 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
-   { id: 'std2', name: 'Standard 2', specs: { chip:'Jieri 6973D2', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'4h', charge:'Apple Port 1.5h', features:'Basic' }, prices: { small: null, large: 2.82 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
-   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 4.27, large: 3.80 }, stock: 652 }
-  ]
- },
- {
-  id: 'airpods-1',
-  name: { es: 'AirPods (1ª Gen)', en: 'AirPods (Gen 1)' },
-  tagline: { es: 'Modelo Original · 3 Variantes', en: 'Original Model · 3 Variants' },
-  cat: 'airpods', icon: '🎵', featured: false,
-  img: 'MXP93.png',
-  variants: [
-   { id: 'std1', name: 'Standard 1', specs: { chip:'Zhongke Lanjun 5756', bt:'5.1', mode:'Single Mode', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Apple Port 1h', features:'Basic single mode' }, prices: { small: 1.79, large: 1.59 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
-   { id: 'std2', name: 'Standard 2', specs: { chip:'Jieri 6973D2', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'4h', charge:'Apple Port 1.5h', features:'Basic' }, prices: { small: 2.88, large: 2.58 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
-   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 3.28, large: 3.60 }, stock: 506 }
+   { id: 'std1', name: 'Standard 1', specs: { chip:'Jieri 6973', bt:'5.1', mode:'Single Mode', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Lightning 1h', features:'Basic single mode' }, prices: { small: null, large: 1.75 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
+   { id: 'std2', name: 'Standard 2', specs: { chip:'Jieri 6973D2', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'4h', charge:'Lightning 1.5h', features:'Basic' }, prices: { small: null, large: 2.82 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
+   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Lightning 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 4.27, large: 3.80 }, stock: 652 }
   ]
  },
  {
   id: 'airpods-4',
   name: { es: 'AirPods 4', en: 'AirPods 4' },
-  tagline: { es: 'Diseño Abierto', en: 'Open-Ear Design' },
+  tagline: { es: 'Diseño Abierto · Type-C', en: 'Open-Ear Design · Type-C' },
   cat: 'airpods', icon: '🎧', featured: false,
   img: 'pods4-g1.jpg', video: 'pods4.mp4',
   gallery: [
@@ -2318,9 +2333,21 @@ const products = [
    { type: 'image', src: 'pods4-a3887d675412ed8ec036b70a64a34847.jpg' }
   ],
   variants: [
-   { id: 'std', name: 'Standard', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Basic' }, prices: { small: 2.34, large: 2.11 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
-   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 3.59, large: 3.20 }, stock: 480 },
-   { id: 'anc', name: 'Global ANC', specs: { chip:'Tiger Airoha 1562F', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 4.73, large: 4.28 }, stock: 850 }
+   { id: 'std', name: 'Standard', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Type-C 1.5h', features:'Basic' }, prices: { small: 2.34, large: 2.11 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
+   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 3.59, large: 3.20 }, stock: 480 },
+   { id: 'anc', name: 'Global ANC', specs: { chip:'Tiger Airoha 1562F', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 4.73, large: 4.28 }, stock: 850 }
+  ]
+ },
+ {
+  id: 'airpods-1',
+  name: { es: 'AirPods 3', en: 'AirPods 3' },
+  tagline: { es: 'Lightning · 3 Variantes', en: 'Lightning · 3 Variants' },
+  cat: 'airpods', icon: '🎵', featured: false,
+  img: 'MXP93.png',
+  variants: [
+   { id: 'std1', name: 'Standard 1', specs: { chip:'Zhongke Lanjun 5756', bt:'5.1', mode:'Single Mode', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Lightning 1h', features:'Basic single mode' }, prices: { small: 1.79, large: 1.59 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
+   { id: 'std2', name: 'Standard 2', specs: { chip:'Jieri 6973D2', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'4h', charge:'Lightning 1.5h', features:'Basic' }, prices: { small: 2.88, large: 2.58 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
+   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Lightning 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 3.28, large: 3.60 }, stock: 506 }
   ]
  },
  {
@@ -2341,13 +2368,13 @@ const products = [
    { type: 'image', src: 'max-g8.jpg' }
   ],
   variants: [
-   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 20.25, large: 20.25 }, stock: 999 },
-   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 7003', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 28.12, large: 28.12 }, stock: 999 }
+   { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 12.15, large: 12.15 }, stock: 999 },
+   { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 7003', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 16.87, large: 16.87 }, stock: 999 }
   ]
  },
  { id: 'watch-s10', name: { es: 'Watch S10', en: 'Watch S10' }, tagline: { es: '2.01" · NFC · 23 Idiomas', en: '2.01" · NFC · 23 Languages' }, cat: 'watches', icon: '⌚', featured: false, img: 's10-main.png', gallery: [ { type: 'image', src: 's10-main.png' }, { type: 'image', src: 's10-gallery.png' } ],
   variants: [{ id: 'global', name: 'Global', specs: { app:'QXFIT', screen:'2.01"', features:'NFC Payment + Heart Rate + Compass + 23 Languages + IP65' }, prices: { small: 5, large: 5 }, stock: 999 }] },
- { id: 'watch-t2pro', name: { es: 'Watch T2 PRO', en: 'Watch T2 PRO' }, tagline: { es: '1.52" HD · Presión Arterial', en: '1.52" HD · Blood Pressure' }, cat: 'watches', icon: '⌚', featured: false, img: 't2pro-main.jpeg', gallery: [ { type: 'image', src: 't2pro-main.jpeg' }, { type: 'image', src: 't2pro-gallery.png' } ],
+ { id: 'watch-t2pro', name: { es: 'Watch T2 PRO', en: 'Watch T2 PRO' }, tagline: { es: '1.52" HD · Presión Arterial', en: '1.52" HD · Blood Pressure' }, cat: 'watches', icon: '⌚', featured: false, img: 't2pro-main.png', gallery: [ { type: 'image', src: 't2pro-main.png' }, { type: 'image', src: 't2pro-gallery.png' } ],
   variants: [{ id: 'global', name: 'Global', specs: { app:'Fitpro', screen:'1.52" HD', features:'Blood Pressure + Heart Rate + BT Calls + Music Control' }, prices: { small: 8, large: 8 }, stock: 999 }] },
  { id: 'watch-t900', name: { es: 'Watch T900 PRO MAX', en: 'Watch T900 PRO MAX' }, tagline: { es: '2.01" · SpO2 · IP65', en: '2.01" · SpO2 · IP65' }, cat: 'watches', icon: '⌚', featured: false, img: 't900-main.png', gallery: [ { type: 'image', src: 't900-main.png' }, { type: 'image', src: 't900-gallery.png' } ],
   variants: [{ id: 'global', name: 'Global', specs: { app:'Fitpro', screen:'2.01"', features:'Heart Rate + BP + SpO2 + IP65 + 23 Languages + BT Calls' }, prices: { small: 4, large: 4 }, stock: 999 }] },
@@ -2468,7 +2495,7 @@ function renderCartItems() {
    const price = (c.qty >= 120 && v.prices.large) ? v.prices.large : (v.prices.small || v.prices.large || 0);
    total += price * c.qty;
    return `<div class="cart-item">
-    <div class="cart-item-img">${p.icon}</div>
+    <div class="cart-item-img"><img src="${p.img || PLACEHOLDER_SVG}" alt="${p.name[currentLang]}" loading="lazy" decoding="async" onerror="this.replaceWith(document.createTextNode('${p.icon}'))"></div>
     <div class="cart-item-info">
      <div class="cart-item-name">${p.name[currentLang]}</div>
      <div class="cart-item-variant">${v.name}</div>
@@ -2713,7 +2740,7 @@ function renderProducts(filter) {
   const imgSrc = p.img || PLACEHOLDER_SVG;
   return `<div class="product-card${allOOS ? ' disabled' : ''}" data-pid="${p.id}" data-cat="${p.cat}" onclick="${allOOS ? '' : `navigateToProduct('${p.id}')`}">
    <div class="product-img" style="--product-img-src: url(&quot;${cssImageUrl(imgSrc)}&quot;)">
-    <img class="pi-placeholder" src="${imgSrc}" alt="${p.name[currentLang]}" onerror="this.src='${PLACEHOLDER_SVG}'">
+    <img class="pi-placeholder" src="${imgSrc}" alt="${p.name[currentLang]}" loading="lazy" decoding="async" onerror="this.src='${PLACEHOLDER_SVG}'">
     <div class="product-badge">
      ${p.id === 'airpods-pro-2' ? '<span class="badge badge-best">BESTSELLER</span>' : ''}
      ${p.id === 'airpods-pro-3' ? '<span class="badge badge-new">PREMIUM</span>' : ''}
@@ -2770,14 +2797,14 @@ function renderProductPage(productId, variantId) {
   : { es: 'Audio', en: 'Audio' };
 
  document.getElementById('productDetail').innerHTML = `
-  <div class="pd-gallery" id="pdGallery" style="position:relative;display:flex;align-items:center;justify-content:center;min-height:300px;overflow:hidden">
+  <div class="pd-gallery" id="pdGallery">
    ${p.gallery ? `
    <button class="pd-gallery-arrow pd-gallery-prev" onclick="galleryPrev()" style="position:absolute;left:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
    <button class="pd-gallery-arrow pd-gallery-next" onclick="galleryNext()" style="position:absolute;right:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-   <div id="pdGallerySlide" style="width:100%;display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity 0.2s ease"></div>
+   <div id="pdGallerySlide" class="pd-gallery-slide"></div>
    <div id="pdVideoHint" style="position:absolute;left:48px;top:50%;transform:translateY(-50%);z-index:2;display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;background:rgba(0,0,0,0.6);color:#8ff0c1;font-size:12px;font-weight:600;pointer-events:none;transition:opacity 0.3s ease;opacity:0;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg> <span data-es="Video" data-en="Video">Video</span></div>
    <div id="pdGalleryDots" style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2"></div>
-   ` : `<img class="pd-placeholder" src="${p.img || PLACEHOLDER_SVG}" alt="${p.name[currentLang]}" style="width:100%;max-height:420px;object-fit:contain">`}
+   ` : `<img class="pd-placeholder" src="${p.img || PLACEHOLDER_SVG}" alt="${p.name[currentLang]}" loading="lazy" decoding="async" style="width:100%;max-height:420px;object-fit:contain">`}
   </div>
   <div class="pd-info animate-in">
    <div class="pd-cat">${catName[currentLang]}</div>
@@ -2854,10 +2881,15 @@ function renderProductPage(productId, variantId) {
  });
  // init price display
  setTimeout(updatePriceDisplay, 50);
- if (p.gallery) { window._galleryIdx = 1; window._galleryItems = p.gallery; renderGallerySlide(); setTimeout(function(){ var s=document.getElementById('pdGallerySlide'); if(s)s.style.opacity='1'; }, 50); }
+ if (p.gallery) { window._galleryItems = p.gallery; window._galleryIdx = getInitialGalleryIndex(p.gallery); renderGallerySlide(); setTimeout(function(){ var s=document.getElementById('pdGallerySlide'); if(s)s.style.opacity='1'; }, 50); }
 }
 
 // ============ GALLERY NAVIGATION ============
+function getInitialGalleryIndex(items) {
+ var imageIdx = items.findIndex(function(i){return i.type === 'image'});
+ return imageIdx >= 0 ? imageIdx : 0;
+}
+
 function renderGallerySlide() {
  var items = window._galleryItems;
  var idx = window._galleryIdx;
@@ -2873,9 +2905,9 @@ function renderGallerySlide() {
   if (item.type === 'video') {
    var posterImg = items.find(function(i){return i.type==='image'});
    var posterSrc = posterImg ? posterImg.src : '';
-   slide.innerHTML = '<video src="'+encodeURI(item.src)+'" controls autoplay muted loop playsinline style="width:100%;max-height:460px;object-fit:contain" poster="'+posterSrc+'"></video>';
+   slide.innerHTML = '<video src="'+encodeURI(item.src)+'" controls muted loop playsinline preload="metadata" poster="'+posterSrc+'"></video>';
   } else {
-   slide.innerHTML = '<img src="'+item.src+'" style="width:100%;max-height:460px;object-fit:contain" alt="">';
+   slide.innerHTML = '<img src="'+item.src+'" loading="lazy" decoding="async" alt="">';
   }
   // Fade in
   requestAnimationFrame(function() { slide.style.opacity = '1'; });
@@ -3216,9 +3248,52 @@ function initRecGallery() {
  if (!g) return;
  g.innerHTML = images.map(function(src, i) {
   var w = i < 6 ? '260px' : '220px';
-  return '<div class="rec-card" onclick="openRecLightbox('+i+')" style="flex:0 0 '+w+';scroll-snap-align:start;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #e0dbd0;box-shadow:0 4px 16px rgba(0,0,0,0.06);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 12px 32px rgba(0,0,0,0.12)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'"><img src="'+src+'" loading="lazy" style="width:100%;height:300px;object-fit:cover;display:block" alt=""><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.5));padding:20px 12px 10px"><span style="color:#fff;font-size:12px;font-weight:600">'+currentLang.toUpperCase()+' '+(i+1)+'</span></div></div>';
+  return '<div class="rec-card" data-rec-idx="'+i+'" style="flex:0 0 '+w+';scroll-snap-align:start;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #e0dbd0;box-shadow:0 4px 16px rgba(0,0,0,0.06);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;position:relative;user-select:none;-webkit-user-select:none" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 12px 32px rgba(0,0,0,0.12)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'"><img src="'+src+'" loading="lazy" draggable="false" style="width:100%;height:300px;object-fit:cover;display:block;pointer-events:none" alt=""><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.5));padding:20px 12px 10px;pointer-events:none"><span style="color:#fff;font-size:12px;font-weight:600">'+currentLang.toUpperCase()+' '+(i+1)+'</span></div></div>';
  }).join('');
+ bindRecGalleryGestures(g);
 }
+
+function bindRecGalleryGestures(g) {
+ var startX = 0;
+ var startY = 0;
+ var startScroll = 0;
+ var dragging = false;
+ var moved = false;
+
+ g.addEventListener('pointerdown', function(e) {
+  startX = e.clientX;
+  startY = e.clientY;
+  startScroll = g.scrollLeft;
+  dragging = true;
+  moved = false;
+ });
+ g.addEventListener('pointermove', function(e) {
+  if (!dragging) return;
+  var dx = e.clientX - startX;
+  var dy = e.clientY - startY;
+  if (Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) {
+   moved = true;
+   g.scrollLeft = startScroll - dx;
+   e.preventDefault();
+  }
+ });
+ ['pointerup', 'pointercancel', 'pointerleave'].forEach(function(type) {
+  g.addEventListener(type, function() { dragging = false; });
+ });
+
+ g.querySelectorAll('.rec-card').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+   if (moved) {
+    e.preventDefault();
+    e.stopPropagation();
+    moved = false;
+    return;
+   }
+   openRecLightbox(parseInt(card.dataset.recIdx, 10));
+  });
+ });
+}
+
 function openRecLightbox(idx) {
  window._recIdx = idx;
  document.getElementById('recLightbox').style.display = 'flex';
@@ -3251,6 +3326,3 @@ document.addEventListener('keydown', function(e) {
 initRecGallery();
 
 </script>
-
-
-
