@@ -780,6 +780,7 @@ function wcAddToCart(id) {
   });
  }
  localStorage.setItem('huanyin_cart', JSON.stringify(cart));
+ updateCartWCUI();
  const btn = event.target.closest('.btn-cart');
  if (btn) {
   const orig = btn.innerHTML;
@@ -859,6 +860,7 @@ let cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
 function saveCartWC() { localStorage.setItem('huanyin_cart', JSON.stringify(cart)); updateCartWCUI(); }
 
 function updateCartWCUI() {
+ cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
  const count = cart.reduce((s, c) => s + (c.qty || 0), 0);
  const countEl = document.getElementById('wcCartCount');
  if (countEl) {
@@ -926,13 +928,6 @@ function updateQtyWC(index, delta) {
 }
 
 function removeFromCartWC(index) { cart.splice(index, 1); saveCartWC(); }
-
-// Override wcAddToCart to update UI
-const origWcAddToCart = wcAddToCart;
-wcAddToCart = function(id) {
- origWcAddToCart(id);
- setTimeout(function() { cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]'); updateCartWCUI(); }, 100);
-};
 
 // ============ CART PANEL ============
 function toggleCartWC() {
