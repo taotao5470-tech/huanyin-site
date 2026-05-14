@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.ico">
 <title>Mundial 2026 · Camisetas + Souvenirs · HUANYIN</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="description" content="219 productos del Mundial 2026 México-EE.UU.-Canadá: equipaciones de 32 selecciones, vintage, peluches, cajas misteriosas y llaveros. Pedido +200 pcs: 15% OFF (12-31 Mayo).">
 <meta property="og:title" content="Mundial 2026 Collection · HUANYIN Supply">
 <meta property="og:description" content="Equipaciones oficiales de las 32 selecciones, vintage, peluches y souvenirs. Promo: +200 pcs = 15% OFF.">
@@ -77,26 +78,69 @@ img { max-width: 100%; display: block;}
 .promo-bar-text strong { color: #FFEB3B; font-weight: 800; font-size: 15px;}
 
 /* ============ Hero (世界杯专题页头) ============ */
-.wc-hero { position: relative; padding: 60px 32px 50px; background: radial-gradient(circle at 85% 25%, rgba(255,215,0,0.18) 0%, transparent 40%), radial-gradient(circle at 15% 80%, rgba(206,17,38,0.14) 0%, transparent 45%), linear-gradient(135deg, #003d1f 0%, #006C35 50%, #035530 100%); overflow: hidden;}
-.wc-hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0, transparent 64px, rgba(255,255,255,0.025) 64px, rgba(255,255,255,0.025) 128px); pointer-events: none;}
-.wc-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: center;}
+/* ============ Hero Banner (足球场主视觉) ============ */
+.wc-hero { position: relative; overflow: hidden; background: radial-gradient(circle at 85% 25%, rgba(255,215,0,0.24) 0%, transparent 40%), radial-gradient(circle at 15% 80%, rgba(206,17,38,0.20) 0%, transparent 45%), radial-gradient(circle at 50% 50%, rgba(30,168,99,0.15) 0%, transparent 60%), linear-gradient(135deg, #003d1f 0%, #006C35 35%, #028842 55%, #035530 100%); box-shadow: 0 16px 60px rgba(0,108,53,0.45);}
+.wc-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.04) 0%, transparent 60%); pointer-events: none; z-index: 0;}
+/* 足球场草皮纹理 */
+.wc-hero .field-grass { position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: 0.92; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0 60px, transparent 60px 120px), repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0 70px, transparent 70px 140px);}
+/* 球场线条 */
+.wc-hero .field-markings { position: absolute; inset: 14px; pointer-events: none; z-index: 2; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 360' preserveAspectRatio='none'><g fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'><rect x='4' y='4' width='792' height='352'/><line x1='400' y1='4' x2='400' y2='356'/><circle cx='400' cy='180' r='50'/><circle cx='400' cy='180' r='2.5' fill='rgba(255,255,255,0.45)' stroke='none'/><path d='M4,4 Q14,4 14,14'/><path d='M796,4 Q786,4 786,14'/><path d='M4,356 Q14,356 14,346'/><path d='M796,356 Q786,356 786,346'/><rect x='4' y='110' width='80' height='140'/><rect x='4' y='150' width='28' height='60'/><path d='M84,150 a30,30 0 0 1 0,60'/><circle cx='66' cy='180' r='2' fill='rgba(255,255,255,0.45)' stroke='none'/><rect x='716' y='110' width='80' height='140'/><rect x='768' y='150' width='28' height='60'/><path d='M716,150 a30,30 0 0 0 0,60'/><circle cx='734' cy='180' r='2' fill='rgba(255,255,255,0.45)' stroke='none'/></g></svg>") center/100% 100% no-repeat;}
+/* 球门 */
+.wc-hero .goal-left, .wc-hero .goal-right { position: absolute; top: 50%; transform: translateY(-50%); width: 14px; height: 64px; z-index: 3; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.85) 0 1.5px, transparent 1.5px 4px), repeating-linear-gradient(90deg, rgba(255,255,255,0.85) 0 1.5px, transparent 1.5px 4px); border: 2px solid rgba(255,255,255,0.85);}
+.wc-hero .goal-left { left: 4px; border-right: none;}
+.wc-hero .goal-right { right: 4px; border-left: none;}
+/* 角旗 */
+.wc-hero .corner-flag { position: absolute; width: 14px; height: 22px; z-index: 3; pointer-events: none;}
+.wc-hero .corner-flag::before { content:''; position: absolute; bottom: 0; left: 6px; width: 1.5px; height: 22px; background: rgba(255,255,255,0.85);}
+.wc-hero .corner-flag::after { content:''; position: absolute; top: 0; left: 7.5px; width: 11px; height: 8px; background: var(--wc-red); clip-path: polygon(0 0, 100% 50%, 0 100%); animation: cornerWave 2.6s ease-in-out infinite;}
+.wc-hero .corner-flag.tl { top: 8px; left: 8px;}
+.wc-hero .corner-flag.tr { top: 8px; right: 8px;}
+.wc-hero .corner-flag.tr::after { transform: scaleX(-1); transform-origin: 0 50%; left: -2.5px; animation: cornerWaveR 2.6s ease-in-out infinite;}
+.wc-hero .corner-flag.bl { bottom: 8px; left: 8px;}
+.wc-hero .corner-flag.br { bottom: 8px; right: 8px;}
+.wc-hero .corner-flag.br::after { transform: scaleX(-1); transform-origin: 0 50%; left: -2.5px; animation: cornerWaveR 2.6s ease-in-out infinite;}
+@keyframes cornerWave { 0%,100%{transform:skewX(0deg)}50%{transform:skewX(8deg)}}
+@keyframes cornerWaveR { 0%,100%{transform:scaleX(-1) skewX(0deg)}50%{transform:scaleX(-1) skewX(8deg)}}
+/* 彩色纸屑 */
+.wc-confetti-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2;}
+.wc-confetti { position: absolute; top: -20px; width: 10px; height: 14px; opacity: 0; animation: wcConfettiFall linear infinite; will-change: transform, opacity;}
+.wc-confetti.c1{background:#FFD700}.wc-confetti.c2{background:#CE1126}.wc-confetti.c3{background:#fff}.wc-confetti.c4{background:#1ea863}.wc-confetti.c5{background:#FF8C00}.wc-confetti.c6{background:#002868}
+.wc-confetti.s-sm{width:6px;height:9px}.wc-confetti.s-lg{width:12px;height:16px}
+.wc-confetti.shape-tri{width:0;height:0;background:transparent!important;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:12px solid #FFD700}
+.wc-confetti.shape-tri.c2{border-bottom-color:#CE1126}.wc-confetti.shape-tri.c4{border-bottom-color:#1ea863}
+.wc-confetti.shape-circle{border-radius:50%;width:8px;height:8px}
+@keyframes wcConfettiFall{0%{transform:translate3d(0,-30px,0) rotate(0deg);opacity:0}8%{opacity:1}90%{opacity:1}100%{transform:translate3d(var(--drift,60px),460px,0) rotate(var(--spin,720deg));opacity:0}}
+/* 闪光 */
+.wc-sparkle{position:absolute;width:6px;height:6px;border-radius:50%;background:#FFD700;box-shadow:0 0 14px #FFD700,0 0 28px #FFD700;animation:wcSparkleFade 2.4s ease-in-out infinite;pointer-events:none;z-index:3}
+.wc-sparkle:nth-of-type(1){top:28%;left:32%;animation-delay:0s}
+.wc-sparkle:nth-of-type(2){top:65%;left:18%;animation-delay:0.6s}
+.wc-sparkle:nth-of-type(3){top:40%;right:22%;animation-delay:1.2s}
+.wc-sparkle:nth-of-type(4){top:75%;right:35%;animation-delay:1.8s}
+.wc-sparkle:nth-of-type(5){top:18%;left:60%;animation-delay:0.3s}
+@keyframes wcSparkleFade{0%,100%{opacity:0;transform:scale(0.3)}50%{opacity:1;transform:scale(1.2)}}
+/* 发光边框动画 */
+@keyframes wcBorderShine{0%,100%{opacity:0.7}50%{opacity:1}}
+@keyframes pulseDotWC{0%,100%{box-shadow:0 0 0 0 rgba(206,17,38,0.6)}50%{box-shadow:0 0 0 6px rgba(206,17,38,0)}}
+/* 内容布局 */
+.wc-hero-inner { position: relative; z-index: 4; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; padding: 52px 40px 44px;}
 .wc-hero-left .breadcrumb { display: flex; gap: 8px; font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 14px; letter-spacing: 1px;}
 .wc-hero-left .breadcrumb a { color: rgba(255,255,255,0.65);}
 .wc-hero-left .breadcrumb a:hover { color: var(--wc-gold);}
-.wc-hero-left .kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.42); color: var(--wc-gold); font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px;}
-.wc-hero-left .kicker .live-dot { width: 6px; height: 6px; background: var(--wc-red); border-radius: 50%; animation: pulseDot 1.5s infinite;}
-@keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 0 rgba(206,17,38,0.6);} 50% { box-shadow: 0 0 0 6px rgba(206,17,38,0);}}
-.wc-hero-left h1 { font-family: 'Bebas Neue', 'Noto Sans SC', sans-serif; font-size: 72px; font-weight: 800; line-height: 0.95; background: linear-gradient(135deg, #fff 0%, var(--wc-gold) 55%, #fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; margin-bottom: 12px;}
-.wc-hero-left .subtitle { font-size: 18px; color: #fff; font-weight: 500; margin-bottom: 14px;}
-.wc-hero-left .stats { display: flex; gap: 18px; margin-top: 18px; flex-wrap: wrap;}
-.wc-hero-left .stat { padding: 10px 16px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; min-width: 88px;}
+.wc-hero-left .kicker { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 20px; background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.42); color: var(--wc-gold); font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px;}
+.wc-hero-left .kicker .live-dot { width: 6px; height: 6px; background: var(--wc-red); border-radius: 50%; animation: pulseDotWC 1.5s infinite;}
+.wc-hero-left h1 { font-family: 'Bebas Neue', 'Noto Sans SC', sans-serif; font-size: 78px; font-weight: 800; line-height: 0.95; background: linear-gradient(135deg, #fff 0%, var(--wc-gold) 55%, #fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; margin-bottom: 10px;}
+.wc-hero-left .subtitle { font-size: 20px; color: #fff; font-weight: 600; margin-bottom: 14px;}
+.wc-hero-left .stats { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;}
+.wc-hero-left .stat { padding: 10px 16px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; min-width: 80px;}
 .wc-hero-left .stat strong { display: block; color: var(--wc-gold); font-size: 22px; font-weight: 800; line-height: 1;}
 .wc-hero-left .stat span { display: block; font-size: 10px; color: rgba(255,255,255,0.65); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;}
+/* 右侧：倒计时 + 国旗 */
 .wc-hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 16px;}
-.wc-countdown { display: flex; gap: 8px; padding: 16px 18px; background: rgba(0,0,0,0.5); border-radius: 16px; border: 1px solid rgba(255,215,0,0.32);}
-.cd-unit { text-align: center; min-width: 54px;}
-.cd-unit .num { display: block; font-size: 28px; font-weight: 800; color: var(--wc-gold); line-height: 1; font-variant-numeric: tabular-nums;}
-.cd-unit .lbl { display: block; font-size: 9px; color: rgba(255,255,255,0.65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px;}
+.wc-countdown { display: flex; gap: 10px; padding: 18px 20px; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); border-radius: 16px; border: 1px solid rgba(255,215,0,0.32);}
+.cd-unit { text-align: center; min-width: 56px;}
+.cd-unit .num { display: block; font-size: 32px; font-weight: 800; color: var(--wc-gold); line-height: 1; font-variant-numeric: tabular-nums;}
+.cd-unit .lbl { display: block; font-size: 10px; color: rgba(255,255,255,0.65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 5px;}
+.cd-sep { color: rgba(255,215,0,0.45); font-size: 22px; font-weight: 700; align-self: center;}
 .cd-sep { color: rgba(255,215,0,0.45); font-size: 22px; align-self: center;}
 .host-flags { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;}
 .host-flags .host { display: flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 12px; background: rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.18); font-size: 10px; color: #fff; font-weight: 700; letter-spacing: 1px;}
@@ -300,11 +344,7 @@ img { max-width: 100%; display: block;}
  .mundial-floater { right: 12px; bottom: 12px; width: 256px;}
 }
 
-/* === cart mobile === */
-.cart-panel { width: 100vw; }
-.cart-addr-panel { position: fixed; top: auto; bottom: 0; right: 0; left: 0; width: 100vw; max-height: 70vh; overflow-y: auto; border-radius: 14px 14px 0 0; transform: translateY(100%); }
-.cart-addr-panel.open { transform: translateY(0); }
-.addr-send-btn { display: flex; }
+
 
 /* ============ Floating Cart ============ */
 .floating-cart { position: fixed; bottom: 92px; right: 28px; z-index: 999; border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; font-size: 24px; background: var(--bg-secondary); color: var(--text-light); border: 1px solid var(--border-dark); box-shadow: 0 4px 20px rgba(0,0,0,0.4); cursor: pointer; transition: var(--transition); }
@@ -342,10 +382,10 @@ img { max-width: 100%; display: block;}
 .cart-continue { width: 100%; padding: 10px; margin-top: 8px; background: transparent; color: var(--text-muted); font-size: 13px; cursor: pointer; border: none; }
 
 /* ============ Address Panel ============ */
-.cart-addr-panel { position: fixed; top: 80px; right: 400px; width: 280px; background: #1e221e; border: 1px solid rgba(125,148,116,0.35); border-radius: 14px 0 0 14px; z-index: 2001; transform: translateX(16px); opacity: 0; pointer-events: none; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -4px 8px 40px rgba(0,0,0,0.5); }
+.cart-addr-panel { position: fixed; top: 0; right: 400px; width: 300px; height: 100vh; overflow-y: auto; background: #1e221e; border: 1px solid rgba(125,148,116,0.35); border-right: none; border-radius: 14px 0 0 14px; z-index: 2001; transform: translateX(16px); opacity: 0; pointer-events: none; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -4px 8px 40px rgba(0,0,0,0.5); display: flex; flex-direction: column; }
 .cart-addr-panel.open { transform: translateX(0); opacity: 1; pointer-events: auto; }
 .cart-addr-panel h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-moss); margin: 0; padding: 14px 16px 10px; border-bottom: 1px solid rgba(125,148,116,0.15); }
-.cart-addr-inner { padding: 12px 16px 14px; }
+.cart-addr-inner { padding: 12px 16px 14px; flex: 1; }
 .cart-addr-inner .addr-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
 .cart-addr-inner .addr-row.single { grid-template-columns: 1fr; }
 .cart-addr-input { width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-dark); background: var(--bg-secondary); color: var(--text-light); font-size: 12px; font-family: inherit; transition: var(--transition); }
@@ -357,6 +397,30 @@ img { max-width: 100%; display: block;}
 .cart-addr-warn { color: var(--accent-copper); font-size: 10px; margin-top: 4px; text-align: center; display: none; }
 .addr-send-btn { display: none; width: 100%; padding: 14px; border-radius: 28px; background: var(--whatsapp); color: #fff; font-size: 15px; font-weight: 600; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; transition: var(--transition); margin-top: 12px; }
 .addr-send-btn:hover { background: var(--whatsapp-dark); }
+
+/* === cart mobile === */
+@media (max-width: 600px) {
+ .cart-panel { width: 100vw; }
+ .cart-addr-panel {
+  position: fixed; top: auto; bottom: 0; right: 0; left: 0;
+  width: 100vw; height: auto; max-height: 54vh;
+  overflow-y: auto; border-radius: 18px 18px 0 0;
+  transform: translateY(100%); border-right: none; border-top: 1px solid rgba(125,148,116,0.4);
+  z-index: 2100; box-shadow: 0 -8px 40px rgba(0,0,0,0.6);
+ }
+ .cart-addr-panel.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+ .addr-mobile-pill { display: block !important; }
+ .cart-addr-panel h4 { padding: 8px 16px 8px; font-size: 10px; }
+ .cart-addr-inner { padding: 6px 12px 12px; }
+ .cart-addr-inner .addr-row { grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px; }
+ .cart-addr-inner .addr-row.single { grid-template-columns: 1fr; }
+ .cart-addr-input, .cart-addr-select { padding: 7px 9px; font-size: 12px; }
+ .cart-wa-desktop { display: none !important; }
+ .cart-wa-mobile { display: flex !important; }
+ .addr-send-btn { display: flex; padding: 12px; font-size: 14px; margin-top: 8px; }
+ .cart-footer { padding: 12px 16px; }
+ .cart-continue { padding: 8px; font-size: 12px; margin-top: 0; }
+}
 </style>
 </head>
 <body>
@@ -389,12 +453,22 @@ img { max-width: 100%; display: block;}
 <!-- Page: List (Level 2) -->
 <div class="page-section active" id="pageList">
  <section class="wc-hero">
+  <div class="field-grass"></div>
+  <div class="field-markings"></div>
+  <div class="goal-left"></div>
+  <div class="goal-right"></div>
+  <div class="corner-flag tl"></div>
+  <div class="corner-flag tr"></div>
+  <div class="corner-flag bl"></div>
+  <div class="corner-flag br"></div>
+  <div class="wc-confetti-layer" id="wcHeroConfetti"></div>
+  <span class="wc-sparkle"></span><span class="wc-sparkle"></span><span class="wc-sparkle"></span><span class="wc-sparkle"></span><span class="wc-sparkle"></span>
   <div class="wc-hero-inner">
    <div class="wc-hero-left">
     <nav class="breadcrumb"><a href="/index.html">Inicio</a> <span>›</span> <span style="color:var(--wc-gold)">Mundial 2026</span></nav>
     <span class="kicker"><span class="live-dot"></span>NUEVA COLECCIÓN · 2026</span>
     <h1>MUNDIAL<br>2026</h1>
-    <div class="subtitle" data-es="Camisetas · Coleccionables · Souvenirs" data-en="Jerseys · Collectibles · Souvenirs">Camisetas · Coleccionables · Souvenirs</div>
+    <div class="subtitle" data-es="Camisetas · Coleccionables · Souvenirs Oficiales" data-en="Jerseys · Collectibles · Official Souvenirs">Camisetas · Coleccionables · Souvenirs Oficiales</div>
     <div class="stats">
      <div class="stat"><strong id="statTotal">269</strong><span>Productos</span></div>
      <div class="stat"><strong>32</strong><span>Selecciones</span></div>
@@ -486,7 +560,7 @@ const REGION_LABELS = {
 
 const products = window.WORLDCUP_PRODUCTS || [];
 let currentLang = 'es';
-let currentCat = 'all';
+let currentCat = 'jersey';
 let currentSubfilter = '';
 let currentSubfilter2 = '';
 let currentSearch = '';
@@ -707,8 +781,7 @@ function renderDetail(id, variantIdx) {
    <div class="wc-price-block" id="priceBlock"></div>
    <div class="detail-cta-row">
     <button class="btn btn-cart" onclick="wcAddToCart('${p.id}')">🛒 ${t.addcart}</button>
-    <button class="btn btn-ship" onclick="wcCalcShipping('${p.id}')">🚚 ${t.calcship}</button>
-    <a href="https://wa.me/8613302451417?text=${encodeURIComponent('Hola! Me interesa: '+name+' (SKU: '+p.id+')')}" target="_blank" class="btn btn-wa-detail">💬 WhatsApp</a>
+    <button class="btn btn-ship" onclick="wcAddToCart('${p.id}'); toggleCartWC()">🚚 ${currentLang==='es'?'Calcular envío':'Estimate shipping'}</button>
    </div>
    <div class="detail-desc"><h3>${t.desc}</h3><p>${t.descBody}</p></div>
   </div>`;
@@ -753,41 +826,45 @@ function recalc() {
 }
 
 function wcAddToCart(id) {
- const p = products.find(x=>x.id===id);
- const qtyInp = document.getElementById('qtyInput');
- const sizeEl = document.querySelector('#sizeOpts .size-opt.active');
- const qty = parseInt(qtyInp.value)||50;
- const size = sizeEl ? sizeEl.textContent : '—';
- // Get current variant info
- const hasVariants = Array.isArray(p.variants) && p.variants.length > 1;
- const currentVariant = hasVariants ? p.variants[currentVariantIdx] : null;
- const variantLabel = currentVariant ? (currentLang==='es'?currentVariant.label:(currentVariant.label_en||currentVariant.label)) : '';
- const variantImg = (hasVariants && currentVariant?.images?.length) ? currentVariant.images[0] : (p.images||[])[0]||'';
- let cart = [];
- try { cart = JSON.parse(localStorage.getItem('huanyin_cart')||'[]'); } catch(e){}
- const existing = cart.find(c => c.productId===id && (c.variantLabel||'')===variantLabel && (c.size||'—')===size);
+ var c = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
+ var p = products.find(function(x){return x.id===id;});
+ if (!p) return;
+ var qtyInp = document.getElementById('qtyInput');
+ var sizeEl = document.querySelector('#sizeOpts .size-opt.active');
+ var qty = parseInt(qtyInp.value) || 50;
+ var size = sizeEl ? sizeEl.textContent : '—';
+ var hasVariants = Array.isArray(p.variants) && p.variants.length > 1;
+ var cv = hasVariants ? p.variants[currentVariantIdx] : null;
+ var vLabel = cv ? (currentLang === 'es' ? cv.label : (cv.label_en || cv.label)) : '';
+ var vImg = (hasVariants && cv && cv.images && cv.images.length) ? cv.images[0] : ((p.images && p.images.length) ? p.images[0] : '');
+ var existing = null;
+ for (var i = 0; i < c.length; i++) {
+  if (c[i].productId === id && (c[i].variantLabel || '') === vLabel && (c[i].size || '—') === size) {
+   existing = c[i]; break;
+  }
+ }
  if (existing) { existing.qty += qty; }
  else {
-  cart.push({
-   productId: id, variantId: currentVariant?.id || 'home',
-   variantLabel: variantLabel,
-   qty, packaging: 'standard', size,
+  c.push({
+   productId: id, variantId: (cv && cv.id) || 'home', variantLabel: vLabel,
+   qty: qty, packaging: 'standard', size: size,
    isWorldCup: true,
    name: p.name_es, name_en: p.name_en,
-   team: p.team, season: p.season,
-   img: variantImg,
-   priceUsd: p.price.usd_small, priceMxn: p.price.mxn_small,
+   team: p.team, season: p.season, img: vImg,
+   priceUsd: p.price.usd_small, priceMxn: p.price.mxn_small
   });
  }
- localStorage.setItem('huanyin_cart', JSON.stringify(cart));
+ localStorage.setItem('huanyin_cart', JSON.stringify(c));
  updateCartWCUI();
- const btn = event.target.closest('.btn-cart');
- if (btn) {
-  const orig = btn.innerHTML;
-  btn.innerHTML = currentLang==='es'?'✓ Agregado!':'✓ Added!';
-  btn.style.background = '#5a9e6f';
-  setTimeout(()=>{ btn.innerHTML = orig; btn.style.background=''; }, 1500);
- }
+ try {
+  var btn = event.target.closest('.btn-cart');
+  if (btn) {
+   var orig = btn.innerHTML;
+   btn.innerHTML = currentLang === 'es' ? '✓ Agregado!' : '✓ Added!';
+   btn.style.background = '#5a9e6f';
+   setTimeout(function(){ btn.innerHTML = orig; btn.style.background = ''; }, 1500);
+  }
+ } catch(e) {}
 }
 
 function wcCalcShipping(id) {
@@ -830,9 +907,10 @@ function wcCalcShipping(id) {
 
 function goBack(e) {
  if (e) e.preventDefault();
- window.location.hash = '';
+ history.pushState(null, '', window.location.pathname + window.location.search);
  document.getElementById('pageDetail').classList.remove('active');
  document.getElementById('pageList').classList.add('active');
+ render();
 }
 
 function handleRoute() {
@@ -852,92 +930,128 @@ document.querySelectorAll('.lang-toggle button').forEach(b => b.onclick = ()=>{
 });
 
 document.getElementById('statTotal').textContent = products.length;
-render(); handleRoute();
+// 初始化：先渲染商品列表，再根据 hash 决定是否显示详情
+render();
+(function() {
+ const h = window.location.hash;
+ const m = h.match(/^#product\/(.+)$/);
+ if (m) {
+  try { renderDetail(decodeURIComponent(m[1])); } catch(e) { renderDetail(m[1]); }
+ } else {
+  document.getElementById('pageDetail').classList.remove('active');
+  document.getElementById('pageList').classList.add('active');
+ }
+})();
 
 // ============ SHARED CART ============
-let cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
+function saveCartWC(c) { localStorage.setItem('huanyin_cart', JSON.stringify(c || getCart())); updateCartWCUI(); }
 
-function saveCartWC() { localStorage.setItem('huanyin_cart', JSON.stringify(cart)); updateCartWCUI(); }
-
+function getCart() { return JSON.parse(localStorage.getItem('huanyin_cart') || '[]'); }
 function updateCartWCUI() {
- cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
- const count = cart.reduce((s, c) => s + (c.qty || 0), 0);
- const countEl = document.getElementById('wcCartCount');
- if (countEl) {
-  countEl.textContent = count;
-  countEl.style.display = count > 0 ? 'flex' : 'none';
- }
- renderCartItemsWC();
+ var c = getCart();
+ var count = 0;
+ for (var i = 0; i < c.length; i++) { count += c[i].qty || 0; }
+ var countEl = document.getElementById('wcCartCount');
+ if (countEl) { countEl.textContent = count; countEl.style.display = count > 0 ? 'flex' : 'none'; }
+ renderCartItemsWC(c);
 }
 
-function renderCartItemsWC() {
- const container = document.getElementById('wcCartItems');
- const footer = document.getElementById('wcCartFooter');
+function renderCartItemsWC(c) {
+ c = c || getCart();
+ var container = document.getElementById('wcCartItems');
+ var footer = document.getElementById('wcCartFooter');
  if (!container || !footer) return;
- if (cart.length === 0) {
+ if (c.length === 0) {
   container.innerHTML = '<div class="cart-empty">' + (currentLang === 'es' ? 'Tu cotización está vacía. Agrega productos desde el catálogo.' : 'Your inquiry is empty. Add products from our catalog.') + '</div>';
   footer.style.display = 'none';
   return;
  }
- let totalMxn = 0, totalUsd = 0;
- container.innerHTML = cart.map((c, i) => {
-  const qty = c.qty || 1;
-  let name, img, priceMxn, priceUsd, variantLabel;
-  if (c.isWorldCup) {
-   name = currentLang === 'es' ? (c.name || 'Producto') : (c.name_en || 'Product');
-   img = c.img || '';
-   priceMxn = c.priceMxn || 0;
-   priceUsd = c.priceUsd || 0;
-   variantLabel = c.variantLabel || (c.size && c.size !== '—' ? c.size : (c.team || ''));
+ var totalMxn = 0, totalUsd = 0;
+ var html = '';
+ for (var i = 0; i < c.length; i++) {
+  var item = c[i];
+  var qty = item.qty || 1;
+  var name, img, priceMxn, priceUsd, vLabel, unitLabel;
+  if (item.isWorldCup) {
+   name = currentLang === 'es' ? (item.name || 'Producto') : (item.name_en || item.name || 'Product');
+   img = item.img || '';
+   priceMxn = item.priceMxn || 0;
+   priceUsd = item.priceUsd || 0;
+   var parts = [];
+   if (item.team) parts.push(item.team);
+   if (item.variantLabel) parts.push(item.variantLabel);
+   if (item.size && item.size !== '—') parts.push(item.size);
+   vLabel = parts.join(' · ');
   } else {
-   name = c.productId || 'Producto';
-   img = c.img || '';
-   priceMxn = c.priceMxn || 0;
-   priceUsd = c.priceUsd || 0;
-   variantLabel = c.variantId || '';
+   name = item.productId || 'Producto';
+   img = item.img || '';
+   priceMxn = item.priceMxn || 0;
+   priceUsd = item.priceUsd || 0;
+   vLabel = item.variantId || '';
   }
   totalMxn += priceMxn * qty;
   totalUsd += priceUsd * qty;
-  const displayPrice = currentLang === 'es' ? '$' + (priceMxn * qty) + ' MXN' : '$' + (priceUsd * qty).toFixed(2) + ' USD';
-  const imgHtml = img ? '<img src="' + img + '" alt="" onerror="this.parentNode.innerHTML=\x27⚽\x27">' : '⚽';
-  return '<div class="cart-item">' +
+  var unitPriceMxn = priceMxn / (qty || 1);
+  var unitPriceUsd = priceUsd / (qty || 1);
+  var displayUnitPrice = currentLang === 'es' ? '$' + unitPriceMxn.toFixed(0) + ' MXN/u' : '$' + unitPriceUsd.toFixed(2) + ' USD/u';
+  var displayTotal = currentLang === 'es' ? '$' + priceMxn + ' MXN' : '$' + priceUsd.toFixed(2) + ' USD';
+  var imgHtml = img ? '<img src="' + img + '" alt="' + name + '" onerror="this.parentNode.innerHTML=\'⚽\'">' : '<span style="font-size:28px">⚽</span>';
+  html += '<div class="cart-item">' +
    '<div class="cart-item-img">' + imgHtml + '</div>' +
    '<div class="cart-item-info">' +
     '<div class="cart-item-name">' + name + '</div>' +
-    '<div class="cart-item-variant">' + variantLabel + '</div>' +
-    '<div class="cart-item-price">' + displayPrice + '</div>' +
+    (vLabel ? '<div class="cart-item-variant">' + vLabel + '</div>' : '') +
+    '<div class="cart-item-price">' + displayTotal + '</div>' +
     '<div class="cart-item-qty">' +
-     '<button onclick="updateQtyWC(' + i + ', -1)">−</button>' +
+     '<button onclick="updateQtyWC(' + i + ',-1)">−</button>' +
      '<span>' + qty + '</span>' +
-     '<button onclick="updateQtyWC(' + i + ', 1)">+</button>' +
+     '<button onclick="updateQtyWC(' + i + ',1)">+</button>' +
     '</div>' +
    '</div>' +
-   '<button class="cart-item-remove" onclick="removeFromCartWC(' + i + ')">✕</button>' +
+   '<button class="cart-item-remove" onclick="removeFromCartWC(' + i + ')" title="Eliminar">✕</button>' +
   '</div>';
- }).join('');
- const totalDisplay = currentLang === 'es' ? '$' + totalMxn + ' MXN' : '$' + totalUsd.toFixed(2) + ' USD';
- const totalAlt = currentLang === 'es' ? '≈ $' + totalUsd.toFixed(2) + ' USD' : '≈ $' + totalMxn + ' MXN';
- document.getElementById('wcCartTotal').innerHTML = totalDisplay + '<br><small style="font-size:11px;opacity:0.6;font-weight:600">' + totalAlt + '</small>';
+ }
+ container.innerHTML = html;
+ var totalDisp = currentLang === 'es' ? '$' + totalMxn + ' MXN' : '$' + totalUsd.toFixed(2) + ' USD';
+ var totalAlt = currentLang === 'es' ? '≈ $' + totalUsd.toFixed(2) + ' USD' : '≈ $' + totalMxn + ' MXN';
+ document.getElementById('wcCartTotal').innerHTML = totalDisp + '<br><small style="font-size:11px;opacity:0.6;font-weight:600">' + totalAlt + '</small>';
  footer.style.display = 'block';
 }
 
 function updateQtyWC(index, delta) {
- cart[index].qty = (cart[index].qty || 1) + delta;
- if (cart[index].qty < 1) cart[index].qty = 1;
- saveCartWC();
+ var c = getCart();
+ if (!c[index]) return;
+ c[index].qty = (c[index].qty || 1) + delta;
+ if (c[index].qty < 1) c[index].qty = 1;
+ saveCartWC(c);
 }
 
-function removeFromCartWC(index) { cart.splice(index, 1); saveCartWC(); }
+function removeFromCartWC(index) { var c = getCart(); c.splice(index, 1); saveCartWC(c); }
 
 // ============ CART PANEL ============
+var isMobile = function() { return window.innerWidth <= 600; };
+
 function toggleCartWC() {
- const panelOpen = document.getElementById('wcCartPanel').classList.toggle('open');
- document.getElementById('wcCartOverlay').classList.toggle('open');
- if (panelOpen && cart.length > 0) {
-  document.getElementById('wcCartAddrPanel').classList.add('open');
- } else {
-  document.getElementById('wcCartAddrPanel').classList.remove('open');
+ var c = getCart();
+ var panel = document.getElementById('wcCartPanel');
+ var addrPanel = document.getElementById('wcCartAddrPanel');
+ var overlay = document.getElementById('wcCartOverlay');
+ var panelOpen = panel.classList.toggle('open');
+ overlay.classList.toggle('open', panelOpen);
+ if (!panelOpen) {
+  // 关闭购物车时同步关闭地址面板
+  addrPanel.classList.remove('open');
+ } else if (!isMobile() && c.length > 0) {
+  // PC端：有商品时自动展开地址面板
+  setTimeout(function() { addrPanel.classList.add('open'); }, 50);
  }
+ // 防止背景滚动
+ document.body.style.overflow = panelOpen ? 'hidden' : '';
+}
+
+function toggleAddrPanelWC() {
+ var addrPanel = document.getElementById('wcCartAddrPanel');
+ addrPanel.classList.toggle('open');
 }
 
 // ============ CART ADDRESS ============
@@ -1003,7 +1117,7 @@ function sendCartToWhatsAppWC() {
   ? '¡Hola! Solicito una cotización:\n\n📦 Productos:\n'
   : 'Hello, I would like to request a quotation:\n\n📦 Products:\n';
  let totalMxn = 0, totalUsd = 0;
- cart.forEach(function(c) {
+ getCart().forEach(function(c) {
   const qty = c.qty || 1;
   let name, priceMxn, priceUsd;
   if (c.isWorldCup) {
@@ -1025,12 +1139,36 @@ function sendCartToWhatsAppWC() {
  msg += '\n' + (currentLang === 'es' ? '🚚 Datos de envío:' : '🚚 Shipping info:') + '\n';
  msg += (currentLang === 'es' ? 'País: ' + cartAddress.country + '\nEstado: ' + cartAddress.state + '\nCiudad: ' + cartAddress.city + '\nC.P.: ' + cartAddress.zip + '\n' : 'Country: ' + cartAddress.country + '\nState: ' + cartAddress.state + '\nCity: ' + cartAddress.city + '\nZip: ' + cartAddress.zip + '\n');
  if (cartAddress.fullAddress) msg += (currentLang === 'es' ? 'Dirección: ' + cartAddress.fullAddress + '\n' : 'Address: ' + cartAddress.fullAddress + '\n');
- if (cartAddress.contactName) msg += (currentLang === 'es' ? 'Contacto: ' + cartAddress.contactName + '\n' : 'Contact: ' + cartAddress.contactName + '\n');
+ if (cartAddress.contactName) {
+  msg += (currentLang === 'es' ? 'Contacto: ' + cartAddress.contactName + '\n' : 'Contact: ' + cartAddress.contactName + '\n');
+ }
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
  window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
 }
 
 updateCartWCUI();
+
+// ── Hero 彩色纸屑 ──
+(function() {
+ var layer = document.getElementById('wcHeroConfetti');
+ if (!layer) return;
+ var colors = ['c1','c2','c3','c4','c5','c6'];
+ var shapes = ['','','','shape-tri','shape-tri','shape-circle'];
+ var sizes = ['','','s-sm','s-sm','s-lg'];
+ for (var i = 0; i < 60; i++) {
+  var el = document.createElement('div');
+  var color = colors[Math.floor(Math.random()*colors.length)];
+  var shape = shapes[Math.floor(Math.random()*shapes.length)];
+  var size  = sizes[Math.floor(Math.random()*sizes.length)];
+  el.className = 'wc-confetti ' + color + ' ' + shape + ' ' + size;
+  var dur   = (2.5 + Math.random()*5).toFixed(1);
+  var delay = (Math.random()*6).toFixed(2);
+  var drift = (Math.random()*160 - 80).toFixed(0);
+  var spin  = (Math.random()>0.5?'':'-') + (360+Math.random()*1080).toFixed(0);
+  el.style.cssText = 'left:'+( Math.random()*105-2).toFixed(1)+'%;top:-'+( 10+Math.random()*30).toFixed(0)+'px;animation-duration:'+dur+'s;animation-delay:'+delay+'s;--drift:'+drift+'px;--spin:'+spin+'deg';
+  layer.appendChild(el);
+ }
+})();
 </script>
 
 <!-- ============ CART HTML ============ -->
@@ -1048,17 +1186,27 @@ updateCartWCUI();
  <div class="cart-items" id="wcCartItems"></div>
  <div class="cart-footer" id="wcCartFooter" style="display:none">
   <div class="cart-total"><span data-es="Total productos:" data-en="Total items:">Total productos:</span> <strong id="wcCartTotal">0</strong></div>
-  <button class="cart-wa-btn" onclick="sendCartToWhatsAppWC()">
+  <!-- PC端：直接发送 WhatsApp -->
+  <button class="cart-wa-btn cart-wa-desktop" onclick="sendCartToWhatsAppWC()">
    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
    <span data-es="Enviar por WhatsApp" data-en="Send via WhatsApp">Enviar por WhatsApp</span>
+  </button>
+  <!-- 手机端：点击弹出地址面板 -->
+  <button class="cart-wa-btn cart-wa-mobile" onclick="toggleAddrPanelWC()" style="display:none;background:var(--accent-moss);">
+   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+   <span data-es="Completar dirección" data-en="Complete address">Completar dirección</span>
   </button>
   <button class="cart-continue" onclick="toggleCartWC()" data-es="Seguir Explorando" data-en="Keep Browsing">Seguir Explorando</button>
  </div>
 </div>
 
 <div class="cart-addr-panel" id="wcCartAddrPanel">
+ <div class="addr-mobile-pill" style="display:none;width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,0.15);margin:10px auto 4px;"></div>
  <h4 data-es="Dirección de Envío" data-en="Shipping Address">Dirección de Envío</h4>
  <div class="cart-addr-inner">
+  <div class="addr-row single">
+   <input class="cart-addr-input" id="wcAddrName" type="text" oninput="syncAddressWC()" data-es-placeholder="Nombre de Contacto" data-en-placeholder="Contact Name" placeholder="Nombre de Contacto">
+  </div>
   <div class="addr-row">
    <select class="cart-addr-select" id="wcAddrCountry" onchange="onCountryChangeWC()">
     <option value="" data-es="— País *" data-en="— Country *">— País *</option>
@@ -1079,9 +1227,6 @@ updateCartWCUI();
   <div class="addr-row single">
    <input class="cart-addr-input" id="wcAddrFull" type="text" oninput="syncAddressWC()" data-es-placeholder="Dirección Completa" data-en-placeholder="Full Address" placeholder="Dirección Completa">
   </div>
-  <div class="addr-row single">
-   <input class="cart-addr-input" id="wcAddrName" type="text" oninput="syncAddressWC()" data-es-placeholder="Nombre de Contacto" data-en-placeholder="Contact Name" placeholder="Nombre de Contacto">
-  </div>
   <div class="cart-addr-warn" id="wcAddrWarn" data-es="Por favor complete País, Estado, Ciudad y Código Postal." data-en="Please fill in Country, State, City and Postal Code.">Por favor complete País, Estado, Ciudad y Código Postal.</div>
   <button class="addr-send-btn" onclick="sendCartToWhatsAppWC()">
    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
@@ -1090,4 +1235,4 @@ updateCartWCUI();
  </div>
 </div>
 </body>
-</html>
+</html>                                                                                                                                 
