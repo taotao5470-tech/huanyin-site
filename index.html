@@ -1383,12 +1383,37 @@ body {
 .wc-promo-close:hover { background: rgba(0,0,0,0.55); color: #fff;}
 .wc-hero-banner-wrap { position: relative; padding: 32px 32px 20px; background: linear-gradient(180deg, rgba(0,108,53,0.06) 0%, transparent 100%);}
 .wc-hero-banner { position: relative; max-width: 1280px; margin: 0 auto; display: block; min-height: 380px; border-radius: 20px; cursor: pointer; overflow: hidden; background: radial-gradient(circle at 85% 25%, rgba(255,215,0,0.24) 0%, transparent 40%), radial-gradient(circle at 15% 80%, rgba(206,17,38,0.20) 0%, transparent 45%), radial-gradient(circle at 50% 50%, rgba(30,168,99,0.15) 0%, transparent 60%), linear-gradient(135deg, #003d1f 0%, #006C35 35%, #028842 55%, #035530 100%); border: 2px solid transparent; background-clip: padding-box; transition: 0.25s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 16px 60px rgba(0,108,53,0.45), 0 6px 18px rgba(255,215,0,0.22);}
-.wc-hero-banner::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0, transparent 64px, rgba(255,255,255,0.022) 64px, rgba(255,255,255,0.022) 128px), radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.06) 0%, transparent 60%); pointer-events: none;}
+.wc-hero-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.04) 0%, transparent 60%); pointer-events: none; z-index: 0;}
+
+/* === 足球场 (绿茵图) === */
+.wc-hero-banner .field-grass { position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: 0.92;
+ background: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0 60px, transparent 60px 120px),
+  repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0 70px, transparent 70px 140px); }
+.wc-hero-banner .field-markings { position: absolute; inset: 14px 14px 14px 14px; pointer-events: none; z-index: 2;
+ background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 360' preserveAspectRatio='none'><g fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'><rect x='4' y='4' width='792' height='352'/><line x1='400' y1='4' x2='400' y2='356'/><circle cx='400' cy='180' r='50'/><circle cx='400' cy='180' r='2.5' fill='rgba(255,255,255,0.45)' stroke='none'/><path d='M4,4 Q14,4 14,14'/><path d='M796,4 Q786,4 786,14'/><path d='M4,356 Q14,356 14,346'/><path d='M796,356 Q786,356 786,346'/><rect x='4' y='110' width='80' height='140'/><rect x='4' y='150' width='28' height='60'/><path d='M84,150 a30,30 0 0 1 0,60' /><circle cx='66' cy='180' r='2' fill='rgba(255,255,255,0.45)' stroke='none'/><rect x='716' y='110' width='80' height='140'/><rect x='768' y='150' width='28' height='60'/><path d='M716,150 a30,30 0 0 0 0,60' /><circle cx='734' cy='180' r='2' fill='rgba(255,255,255,0.45)' stroke='none'/></g></svg>") center/100% 100% no-repeat; }
+.wc-hero-banner .goal-left, .wc-hero-banner .goal-right { position: absolute; top: 50%; transform: translateY(-50%); width: 14px; height: 64px; z-index: 3; pointer-events: none;
+ background: repeating-linear-gradient(0deg, rgba(255,255,255,0.85) 0 1.5px, transparent 1.5px 4px),
+  repeating-linear-gradient(90deg, rgba(255,255,255,0.85) 0 1.5px, transparent 1.5px 4px);
+ border: 2px solid rgba(255,255,255,0.85); }
+.wc-hero-banner .goal-left { left: 4px; border-right: none; }
+.wc-hero-banner .goal-right { right: 4px; border-left: none; }
+.wc-hero-banner .corner-flag { position: absolute; width: 14px; height: 22px; z-index: 3; pointer-events: none; }
+.wc-hero-banner .corner-flag::before { content:''; position: absolute; bottom: 0; left: 6px; width: 1.5px; height: 22px; background: rgba(255,255,255,0.85);}
+.wc-hero-banner .corner-flag::after { content:''; position: absolute; top: 0; left: 7.5px; width: 11px; height: 8px; background: var(--wc-red); clip-path: polygon(0 0, 100% 50%, 0 100%); animation: cornerWave 2.6s ease-in-out infinite;}
+.wc-hero-banner .corner-flag.tl { top: 8px; left: 8px;}
+.wc-hero-banner .corner-flag.tr { top: 8px; right: 8px;}
+.wc-hero-banner .corner-flag.tr::after { transform: scaleX(-1); transform-origin: 0 50%; left: -2.5px;}
+.wc-hero-banner .corner-flag.bl { bottom: 8px; left: 8px;}
+.wc-hero-banner .corner-flag.br { bottom: 8px; right: 8px;}
+.wc-hero-banner .corner-flag.br::after { transform: scaleX(-1); transform-origin: 0 50%; left: -2.5px;}
+@keyframes cornerWave { 0%,100% { transform: skewX(0deg);} 50% { transform: skewX(8deg);}}
+.wc-hero-banner .corner-flag.tr::after { animation: cornerWaveR 2.6s ease-in-out infinite;}
+.wc-hero-banner .corner-flag.br::after { animation: cornerWaveR 2.6s ease-in-out infinite;}
+@keyframes cornerWaveR { 0%,100% { transform: scaleX(-1) skewX(0deg);} 50% { transform: scaleX(-1) skewX(8deg);}}
+
 .wc-hero-banner::after { content: ''; position: absolute; inset: -2px; border-radius: 20px; padding: 2px; background: linear-gradient(135deg, #FFD700 0%, #CE1126 50%, #FFD700 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; animation: wcBorderShine 4s linear infinite;}
 @keyframes wcBorderShine { 0%,100% { background: linear-gradient(135deg, #FFD700 0%, #CE1126 50%, #FFD700 100%);} 50% { background: linear-gradient(315deg, #FFD700 0%, #CE1126 50%, #FFD700 100%);}}
 .wc-hero-banner:hover { transform: translateY(-4px); box-shadow: 0 24px 80px rgba(0,108,53,0.6), 0 10px 30px rgba(255,215,0,0.4);}
-.wc-flagstrip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #006847 0%, #006847 33%, #fff 33%, #fff 66%, #002868 66%, #002868 100%); opacity: 0.95; z-index: 5;}
-.wc-flagstrip::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 33.33%; transform: translateX(-50%); background: linear-gradient(90deg, #fff 0%, #fff 38%, #d52b1e 38%, #d52b1e 62%, #fff 62%, #fff 100%);}
 .wc-confetti-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2;}
 .wc-confetti { position: absolute; top: -20px; width: 10px; height: 14px; opacity: 0; animation: wcConfettiFall linear infinite; will-change: transform, opacity;}
 .wc-confetti.c1 { background: #FFD700;} .wc-confetti.c2 { background: #CE1126;} .wc-confetti.c3 { background: #fff;} .wc-confetti.c4 { background: #1ea863;} .wc-confetti.c5 { background: #FF8C00;} .wc-confetti.c6 { background: #002868;}
@@ -1553,7 +1578,14 @@ src="https://www.facebook.com/tr?id=1673468267117934&ev=PageView&noscript=1"
 <!-- ============ ★ WORLD CUP HERO BANNER ============ -->
 <div class="wc-hero-banner-wrap">
  <a href="/worldcup.html" class="wc-hero-banner">
-  <div class="wc-flagstrip"></div>
+  <div class="field-grass"></div>
+  <div class="field-markings"></div>
+  <div class="goal-left"></div>
+  <div class="goal-right"></div>
+  <div class="corner-flag tl"></div>
+  <div class="corner-flag tr"></div>
+  <div class="corner-flag bl"></div>
+  <div class="corner-flag br"></div>
   <div class="wc-confetti-layer" id="wcConfetti"></div>
   <div class="wc-trophy"></div>
   <span class="wc-sparkle"></span><span class="wc-sparkle"></span><span class="wc-sparkle"></span><span class="wc-sparkle"></span><span class="wc-sparkle"></span>
