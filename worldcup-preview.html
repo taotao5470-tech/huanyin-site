@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>预览 V2 · 世界杯入口设计稿 · HUANYIN</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+ --bg-primary: #1c1c1c;
+ --bg-secondary: #232323;
+ --accent-moss: #2d7dd2;
+ --accent-copper: #e8a835;
+ --text-light: #e8e4dd;
+ --text-muted: #8a8a8a;
+ --whatsapp: #25D366;
+ --border-dark: #3a3a3a;
+ --radius: 12px;
+ --wc-green: #006C35;
+ --wc-green-deep: #003d1f;
+ --wc-green-light: #1ea863;
+ --wc-gold: #FFD700;
+ --wc-gold-dark: #c8a000;
+ --wc-red: #CE1126;
+ --wc-red-bright: #e62a3d;
+ --wc-mx: #006847;
+ --wc-us: #002868;
+ --wc-ca: #d52b1e;
+ --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-light); padding-bottom: 100px; overflow-x: hidden; }
+
+.notice { background: #2a2a2a; border-left: 4px solid var(--accent-copper); padding: 14px 24px; margin: 0 0 0; }
+.notice h1 { font-size: 13px; color: var(--accent-copper); margin-bottom: 6px; letter-spacing: 1px; }
+.notice p { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+/* ============ NAV ============ */
+.nav { position: sticky; top: 0; z-index: 200; background: rgba(28,28,28,0.94); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-dark); padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px; color: var(--text-light); }
+.nav-logo .mark { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--accent-moss), var(--accent-copper)); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.nav-logo .word { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-logo .word strong { font-size: 14px; letter-spacing: 1px; }
+.nav-logo .word small { font-size: 9px; color: var(--text-muted); letter-spacing: 1px; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-size: 13px; color: var(--text-muted); font-weight: 500; transition: var(--transition); position: relative; }
+.nav-links a:hover { color: var(--text-light); }
+
+.nav-mundial {
+ position: relative; padding: 8px 18px 8px 14px !important; border-radius: 22px;
+ background: linear-gradient(135deg, var(--wc-green) 0%, var(--wc-green-light) 50%, var(--wc-gold-dark) 100%);
+ color: #fff !important; font-weight: 700 !important; font-size: 13px !important;
+ display: flex !important; align-items: center; gap: 7px;
+ box-shadow: 0 2px 14px rgba(255,215,0,0.28), inset 0 1px 0 rgba(255,255,255,0.2);
+ overflow: hidden; animation: navMundialPulse 2.8s ease-in-out infinite;
+}
+.nav-mundial::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%); transform: translateX(-100%); animation: navMundialShine 3.4s ease-in-out infinite; }
+.nav-mundial:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(255,215,0,0.45); color: #fff !important; }
+.nav-mundial .ball { font-size: 16px; animation: ballRoll 4s linear infinite; display: inline-block; }
+.nav-mundial .badge-dot { position: absolute; top: 4px; right: 4px; width: 8px; height: 8px; border-radius: 50%; background: var(--wc-red); border: 1.5px solid #fff; box-shadow: 0 0 0 2px var(--wc-red); animation: pulseDot 1.5s infinite; }
+@keyframes navMundialPulse { 0%,100% { box-shadow: 0 2px 14px rgba(255,215,0,0.28), inset 0 1px 0 rgba(255,255,255,0.2);} 50% { box-shadow: 0 4px 24px rgba(255,215,0,0.55), inset 0 1px 0 rgba(255,255,255,0.3);} }
+@keyframes navMundialShine { 0%,60% { transform: translateX(-100%);} 80%,100% { transform: translateX(120%);} }
+@keyframes ballRoll { from { transform: rotate(0);} to { transform: rotate(360deg);} }
+@keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 0 rgba(206,17,38,0.6);} 50% { box-shadow: 0 0 0 6px rgba(206,17,38,0);} }
+
+.nav-wa { padding: 8px 16px; border-radius: 20px; background: var(--whatsapp); color: #fff; font-size: 13px; font-weight: 600; }
+
+/* ============ ★ 首屏大横幅 (移到 hero 前) ============ */
+.mundial-hero-wrap {
+ position: relative;
+ padding: 32px 32px 20px;
+ background: linear-gradient(180deg, rgba(0,108,53,0.06) 0%, transparent 100%);
+}
+
+.mundial-banner {
+ position: relative;
+ max-width: 1280px; margin: 0 auto;
+ min-height: 380px;
+ border-radius: 20px;
+ cursor: pointer;
+ overflow: hidden;
+ background:
+  radial-gradient(circle at 85% 25%, rgba(255,215,0,0.24) 0%, transparent 40%),
+  radial-gradient(circle at 15% 80%, rgba(206,17,38,0.20) 0%, transparent 45%),
+  radial-gradient(circle at 50% 50%, rgba(30,168,99,0.15) 0%, transparent 60%),
+  linear-gradient(135deg, #003d1f 0%, #006C35 35%, #028842 55%, #035530 100%);
+ border: 2px solid transparent;
+ background-clip: padding-box;
+ transition: var(--transition);
+ box-shadow: 0 16px 60px rgba(0,108,53,0.45), 0 6px 18px rgba(255,215,0,0.22);
+}
+.mundial-banner::before {
+ content: ''; position: absolute; inset: 0;
+ background:
+  repeating-linear-gradient(90deg, transparent 0, transparent 64px, rgba(255,255,255,0.022) 64px, rgba(255,255,255,0.022) 128px),
+  radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.06) 0%, transparent 60%);
+ pointer-events: none;
+}
+.mundial-banner::after {
+ content: ''; position: absolute; inset: -2px; border-radius: 20px; padding: 2px;
+ background: linear-gradient(135deg, var(--wc-gold) 0%, var(--wc-red) 50%, var(--wc-gold) 100%);
+ -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+ -webkit-mask-composite: xor; mask-composite: exclude;
+ pointer-events: none; animation: borderShine 4s linear infinite;
+}
+@keyframes borderShine { 0%,100% { background: linear-gradient(135deg, var(--wc-gold) 0%, var(--wc-red) 50%, var(--wc-gold) 100%);} 50% { background: linear-gradient(315deg, var(--wc-gold) 0%, var(--wc-red) 50%, var(--wc-gold) 100%);} }
+.mundial-banner:hover { transform: translateY(-4px); box-shadow: 0 24px 80px rgba(0,108,53,0.6), 0 10px 30px rgba(255,215,0,0.4); }
+
+.mundial-flagstrip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--wc-mx) 0%, var(--wc-mx) 33%, #fff 33%, #fff 66%, var(--wc-us) 66%, var(--wc-us) 100%); opacity: 0.95; z-index: 5; }
+.mundial-flagstrip::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 33.33%; transform: translateX(-50%); background: linear-gradient(90deg, #fff 0%, #fff 38%, var(--wc-ca) 38%, var(--wc-ca) 62%, #fff 62%, #fff 100%); }
+
+/* === 飘落彩带 confetti === */
+.confetti-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+.confetti {
+ position: absolute; top: -20px; width: 10px; height: 14px;
+ opacity: 0; animation: confettiFall linear infinite;
+ will-change: transform, opacity;
+}
+.confetti.c1 { background: var(--wc-gold); }
+.confetti.c2 { background: var(--wc-red); }
+.confetti.c3 { background: #fff; }
+.confetti.c4 { background: var(--wc-green-light); }
+.confetti.c5 { background: #FF8C00; }
+.confetti.c6 { background: var(--wc-us); }
+.confetti.s-sm { width: 6px; height: 9px; }
+.confetti.s-lg { width: 12px; height: 16px; }
+.confetti.shape-tri { width: 0; height: 0; background: transparent !important; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 12px solid var(--wc-gold); }
+.confetti.shape-tri.c2 { border-bottom-color: var(--wc-red); }
+.confetti.shape-tri.c4 { border-bottom-color: var(--wc-green-light); }
+.confetti.shape-circle { border-radius: 50%; width: 8px; height: 8px; }
+@keyframes confettiFall {
+ 0% { transform: translate3d(0,-30px,0) rotate(0deg); opacity: 0; }
+ 8% { opacity: 1; }
+ 90% { opacity: 1; }
+ 100% { transform: translate3d(var(--drift, 60px), 420px, 0) rotate(var(--spin, 720deg)); opacity: 0; }
+}
+
+/* 装饰：奖杯 */
+.mundial-trophy {
+ position: absolute; right: -50px; top: 50%; transform: translateY(-50%);
+ width: 380px; height: 380px; opacity: 0.09; pointer-events: none; z-index: 1;
+ background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23FFD700'><path d='M50 5 L65 22 Q75 25 78 35 Q78 50 65 60 L60 65 L60 80 L70 85 L70 92 L30 92 L30 85 L40 80 L40 65 L35 60 Q22 50 22 35 Q25 25 35 22 Z'/></svg>");
+ background-size: contain; background-repeat: no-repeat;
+ animation: trophyFloat 6s ease-in-out infinite;
+}
+@keyframes trophyFloat { 0%,100% { transform: translateY(-50%) rotate(-2deg);} 50% { transform: translateY(-53%) rotate(2deg);} }
+
+.sparkle { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--wc-gold); box-shadow: 0 0 14px var(--wc-gold), 0 0 28px var(--wc-gold); animation: sparkleFade 2.4s ease-in-out infinite; pointer-events: none; z-index: 3; }
+.sparkle:nth-of-type(1) { top: 28%; left: 32%; animation-delay: 0s;}
+.sparkle:nth-of-type(2) { top: 65%; left: 18%; animation-delay: 0.6s;}
+.sparkle:nth-of-type(3) { top: 40%; right: 22%; animation-delay: 1.2s;}
+.sparkle:nth-of-type(4) { top: 75%; right: 35%; animation-delay: 1.8s;}
+.sparkle:nth-of-type(5) { top: 18%; left: 60%; animation-delay: 0.3s;}
+@keyframes sparkleFade { 0%,100% { opacity: 0; transform: scale(0.3);} 50% { opacity: 1; transform: scale(1.2);} }
+
+/* === 主页通栏 · 红色促销横幅 (横在 nav 下方) === */
+.promo-bar {
+ position: relative; width: 100%; z-index: 50;
+ background: linear-gradient(90deg, #8a0d1c 0%, var(--wc-red-bright) 18%, var(--wc-red) 50%, var(--wc-red-bright) 82%, #8a0d1c 100%);
+ border-top: 1px solid rgba(255,215,0,0.45);
+ border-bottom: 1px solid rgba(255,215,0,0.45);
+ overflow: hidden;
+}
+.promo-bar::before {
+ content: ''; position: absolute; inset: 0;
+ background:
+  repeating-linear-gradient(45deg, transparent 0 14px, rgba(255,255,255,0.04) 14px 16px),
+  radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.18) 0%, transparent 60%);
+ pointer-events: none;
+}
+.promo-bar::after {
+ content: ''; position: absolute; inset: 0;
+ background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.18) 50%, transparent 65%);
+ transform: translateX(-100%);
+ animation: promoBarShine 5s ease-in-out infinite;
+ pointer-events: none;
+}
+@keyframes promoBarShine { 0%,70% { transform: translateX(-100%);} 92%,100% { transform: translateX(120%);} }
+
+.promo-bar-inner {
+ position: relative; z-index: 2;
+ max-width: 1280px; margin: 0 auto;
+ height: 44px; padding: 0 24px;
+ display: flex; align-items: center; justify-content: center; gap: 22px;
+}
+.promo-bar-flash { font-size: 16px; line-height: 1; animation: promoFlash 1.1s ease-in-out infinite; flex-shrink: 0;}
+@keyframes promoFlash { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(1.18);}}
+.promo-bar-tag {
+ padding: 4px 11px; border-radius: 4px;
+ background: rgba(0,0,0,0.32); border: 1px solid rgba(255,215,0,0.55);
+ color: var(--wc-gold); font-size: 10px; font-weight: 800; letter-spacing: 1.8px;
+ white-space: nowrap;
+}
+.promo-bar-text { color: #fff; font-size: 13.5px; font-weight: 600; letter-spacing: 0.3px; white-space: nowrap;}
+.promo-bar-text .dot-sep { color: rgba(255,255,255,0.4); margin: 0 10px; font-weight: 400;}
+.promo-bar-text strong { color: #FFEB3B; font-weight: 800; font-size: 15px; padding: 0 2px;}
+.promo-bar-cta {
+ display: inline-flex; align-items: center; gap: 5px;
+ padding: 5px 14px; border-radius: 14px;
+ background: rgba(255,215,0,0.95); color: #6e0a0a; font-size: 11px; font-weight: 800;
+ letter-spacing: 0.5px; transition: var(--transition); white-space: nowrap;
+}
+.promo-bar-cta:hover { background: #fff; transform: translateX(2px); }
+.promo-bar-close {
+ position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+ width: 22px; height: 22px; border-radius: 50%;
+ background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.2);
+ color: rgba(255,255,255,0.75); font-size: 13px;
+ display: flex; align-items: center; justify-content: center; cursor: pointer;
+ transition: var(--transition); z-index: 3;
+}
+.promo-bar-close:hover { background: rgba(0,0,0,0.55); color: #fff;}
+
+/* 内容布局 */
+.mundial-content {
+ position: relative; z-index: 4;
+ display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center;
+ padding: 60px 60px 48px;
+}
+.mundial-text-side .kicker {
+ display: inline-flex; align-items: center; gap: 8px;
+ padding: 7px 16px; border-radius: 20px;
+ background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.42);
+ color: var(--wc-gold); font-size: 11px; font-weight: 700; letter-spacing: 2px;
+ margin-bottom: 18px;
+}
+.mundial-text-side .kicker .live-dot { width: 6px; height: 6px; background: var(--wc-red); border-radius: 50%; animation: pulseDot 1.5s infinite; }
+.mundial-text-side h2 {
+ font-family: 'Bebas Neue', 'Noto Sans SC', sans-serif;
+ font-size: 78px; font-weight: 800; line-height: 0.95;
+ background: linear-gradient(135deg, #fff 0%, var(--wc-gold) 55%, #fff 100%);
+ -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+ letter-spacing: 1px; margin-bottom: 10px;
+}
+.mundial-text-side .subtitle { font-size: 20px; color: #fff; font-weight: 600; margin-bottom: 14px;}
+.mundial-text-side .desc { font-size: 14px; color: rgba(255,255,255,0.82); margin-bottom: 22px; line-height: 1.55; max-width: 480px;}
+
+.mundial-host-flags { display: flex; gap: 12px; flex-wrap: wrap; }
+.mundial-host-flags .host { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 14px; background: rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.18); font-size: 11px; color: #fff; font-weight: 700; letter-spacing: 1px;}
+.mundial-host-flags .host .flag { width: 18px; height: 12px; border-radius: 2px; display: inline-block; overflow: hidden; }
+.flag-mx { background: linear-gradient(90deg, #006847 33%, #fff 33%, #fff 66%, #ce1126 66%); }
+.flag-us { background: repeating-linear-gradient(180deg, #b22234 0 2px, #fff 2px 4px); position: relative; }
+.flag-us::after { content: ''; position: absolute; top:0; left:0; width: 45%; height: 55%; background: var(--wc-us); }
+.flag-ca { background: linear-gradient(90deg, #d52b1e 25%, #fff 25%, #fff 75%, #d52b1e 75%); }
+
+.mundial-right-side { display: flex; flex-direction: column; align-items: flex-end; gap: 18px; }
+.mundial-countdown { display: flex; gap: 10px; padding: 18px 20px; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); border-radius: 16px; border: 1px solid rgba(255,215,0,0.32);}
+.cd-unit { text-align: center; min-width: 60px;}
+.cd-unit .num { display: block; font-size: 32px; font-weight: 800; color: var(--wc-gold); line-height: 1; font-variant-numeric: tabular-nums;}
+.cd-unit .lbl { display: block; font-size: 10px; color: rgba(255,255,255,0.65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 5px;}
+.cd-sep { color: rgba(255,215,0,0.45); font-size: 22px; font-weight: 700; align-self: center;}
+
+.mundial-cta {
+ display: inline-flex; align-items: center; gap: 10px;
+ padding: 18px 36px; background: linear-gradient(135deg, var(--wc-gold) 0%, #ffb800 100%);
+ color: #1a1a00; font-weight: 800; font-size: 17px; border-radius: 32px;
+ box-shadow: 0 10px 28px rgba(255,215,0,0.45), inset 0 1px 0 rgba(255,255,255,0.55);
+ transition: var(--transition); letter-spacing: 0.3px;
+}
+.mundial-cta:hover { transform: scale(1.05); box-shadow: 0 14px 40px rgba(255,215,0,0.65); }
+.mundial-cta .arrow { font-size: 22px; transition: transform 0.3s; }
+.mundial-banner:hover .mundial-cta .arrow { transform: translateX(5px); }
+
+/* ============ 占位 Hero (在大横幅下方) ============ */
+.hero-placeholder { max-width: 1200px; margin: 20px auto 28px; padding: 28px 32px; background: linear-gradient(145deg, rgba(20,32,44,0.96), rgba(12,20,30,0.98)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.hero-placeholder h1 { font-size: 22px; color: #fff5c7; font-weight: 500; line-height: 1.3; }
+.hero-placeholder p { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+.hero-placeholder .tag { padding: 7px 14px; border-radius: 14px; background: rgba(45,125,210,0.18); color: var(--accent-moss); font-size: 11px; font-weight: 700; letter-spacing: 1px; white-space: nowrap;}
+
+/* ============ 主容器 ============ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.section { padding: 32px 0; }
+.section-label { font-size: 11px; letter-spacing: 2px; color: var(--accent-moss); font-weight: 700; margin-bottom: 8px; }
+.section-title { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 12px; letter-spacing: -0.5px; }
+.section-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
+
+/* 三大类卡 */
+.feat-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.feat-cat-card { position: relative; min-height: 230px; padding: 24px; border-radius: var(--radius); cursor: pointer; background: linear-gradient(145deg, rgba(20,32,44,0.96), rgba(12,20,30,0.98)); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: flex-end; transition: var(--transition); }
+.feat-cat-card:hover { transform: translateY(-4px); border-color: rgba(47,208,139,0.42); }
+.feat-cat-card .icon-bg { position: absolute; top: 20px; right: 20px; font-size: 80px; opacity: 0.08; }
+.feat-cat-title { padding: 12px 14px; border-radius: 16px; background: rgba(4, 11, 17, 0.55); border: 1px solid rgba(255,255,255,0.12); font-size: 22px; font-weight: 700; color: var(--text-light); width: 100%;}
+
+/* ============ ★ 右下角浮动窗 (带红色促销飘带) ============ */
+.mundial-floater {
+ position: fixed; right: 22px; bottom: 22px; z-index: 999;
+ width: 290px;
+ background: linear-gradient(160deg, rgba(20,40,28,0.97), rgba(8,18,12,0.99));
+ border-radius: 16px;
+ padding: 16px 18px 14px 58px;
+ box-shadow: 0 18px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,215,0,0.28), 0 0 32px rgba(0,108,53,0.45);
+ backdrop-filter: blur(14px);
+ cursor: pointer;
+ animation: floaterEnter 0.7s 0.4s cubic-bezier(0.3,1.3,0.5,1) backwards, floaterBob 3.5s ease-in-out 1.1s infinite;
+ transition: var(--transition);
+}
+.mundial-floater:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 22px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,215,0,0.6), 0 0 44px rgba(0,108,53,0.65); }
+@keyframes floaterEnter { from { transform: translateY(140px) scale(0.85); opacity: 0;} to { transform: translateY(0) scale(1); opacity: 1;} }
+@keyframes floaterBob { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-3px);} }
+
+.mundial-floater .ball-spin {
+ position: absolute; left: 12px; top: 14px;
+ width: 36px; height: 36px;
+ background: #fff;
+ border-radius: 50%;
+ box-shadow: 0 0 0 2px rgba(255,215,0,0.55), 0 4px 12px rgba(0,0,0,0.5);
+ animation: ballRoll 3s linear infinite;
+ display: flex; align-items: center; justify-content: center; font-size: 26px;
+}
+.mundial-floater .close-x { position: absolute; top: 6px; right: 8px; width: 22px; height: 22px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; color: rgba(255,255,255,0.7); font-size: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); }
+.mundial-floater .close-x:hover { background: var(--wc-red); color: #fff; }
+
+.mundial-floater .ft-kicker { font-size: 9px; color: var(--wc-gold); letter-spacing: 1.5px; font-weight: 700; margin-bottom: 2px;}
+.mundial-floater .ft-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.25;}
+.mundial-floater .ft-mini { display: flex; gap: 6px; align-items: baseline; font-size: 10px; color: rgba(255,255,255,0.72);}
+.mundial-floater .ft-mini strong { color: var(--wc-gold); font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums;}
+.mundial-floater .ft-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 11px; color: var(--wc-gold); font-weight: 700; }
+
+/* ★ 浮动窗顶部小标签 (折扣 tag) */
+.ft-promo-tag {
+ position: absolute; top: -10px; left: 14px; z-index: 2;
+ display: inline-flex; align-items: center; gap: 4px;
+ padding: 3px 10px 3px 8px; border-radius: 4px;
+ background: linear-gradient(135deg, var(--wc-red-bright) 0%, var(--wc-red) 100%);
+ color: #fff; font-size: 9.5px; font-weight: 800; letter-spacing: 0.8px;
+ box-shadow: 0 3px 10px rgba(206,17,38,0.55), inset 0 1px 0 rgba(255,255,255,0.25);
+ border: 1px solid rgba(255,215,0,0.5);
+ white-space: nowrap;
+ animation: ftTagPulse 2.2s ease-in-out infinite;
+}
+.ft-promo-tag::after {
+ content: ''; position: absolute; bottom: -4px; left: 8px; width: 6px; height: 4px;
+ background: #7a0a16; clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.ft-promo-tag .ft-spark { font-size: 11px; line-height: 1; }
+.ft-promo-tag strong { color: #FFEB3B; font-weight: 800; }
+@keyframes ftTagPulse { 0%,100% { box-shadow: 0 3px 10px rgba(206,17,38,0.55), inset 0 1px 0 rgba(255,255,255,0.25);} 50% { box-shadow: 0 5px 16px rgba(206,17,38,0.8), inset 0 1px 0 rgba(255,255,255,0.4);} }
+
+@media (max-width: 900px) {
+ .mundial-content { grid-template-columns: 1fr; padding: 40px 28px;}
+ .mundial-right-side { align-items: flex-start; }
+ .mundial-text-side h2 { font-size: 56px;}
+ .mundial-text-side .subtitle { font-size: 16px;}
+ .mundial-trophy { width: 240px; height: 240px; right: -80px; opacity: 0.06;}
+ .mundial-banner { min-height: 460px;}
+}
+@media (max-width: 600px) {
+ .feat-cats { grid-template-columns: 1fr;}
+ .feat-cat-card { min-height: 120px;}
+ .mundial-floater { right: 12px; bottom: 20px; width: 256px; padding: 12px 14px 12px 50px;}
+ .mundial-floater .ball-spin { width: 30px; height: 30px; font-size: 22px; }
+ .nav-mundial span:nth-child(2) { display: none;}
+ .nav-links { gap: 14px;}
+ .promo-bar-inner { gap: 12px; padding: 0 14px;}
+ .promo-bar-tag { display: none;}
+ .promo-bar-text { font-size: 11.5px;}
+ .promo-bar-text .dot-sep { margin: 0 6px;}
+ .promo-bar-close { right: 8px;}
+ .mundial-hero-wrap { padding: 16px 12px;}
+}
+</style>
+</head>
+<body>
+
+<div class="notice">
+ <h1>★ 设计稿 V3 · 折扣呈现方式重做</h1>
+ <p>① 主页通栏红色促销横幅 — 横在 nav 下方，高度 44px，左右金色装饰 + 中间文案 + 右侧 mini CTA，整体精致不喧宾夺主<br>② 浮动窗折扣标签移到顶部 — 改成 24px 小标签 (HOT 风格)，醒目但不占主体空间<br>③ 大横幅左上角原斜飘带已移除（折扣信息已转移到主页通栏横幅）</p>
+</div>
+
+<nav class="nav">
+ <a href="#" class="nav-logo">
+  <span class="mark">H</span>
+  <span class="word"><strong>HUANYIN</strong><small>Supply Chain</small></span>
+ </a>
+ <div class="nav-links">
+  <a href="#">Inicio</a>
+  <a href="#" class="nav-mundial" title="Mundial 2026"><span class="ball">⚽</span><span>Mundial 2026</span><span class="badge-dot"></span></a>
+  <a href="#">Productos</a>
+  <a href="#">Empresa</a>
+  <a href="#">Reseñas</a>
+ </div>
+ <a href="#" class="nav-wa">WhatsApp</a>
+</nav>
+
+<!-- ★★★ 主页通栏促销横幅 (横在 nav 下方) ★★★ -->
+<div class="promo-bar" id="promoBar">
+ <div class="promo-bar-inner">
+  <span class="promo-bar-flash">⚡</span>
+  <span class="promo-bar-tag">PROMO MAYO</span>
+  <span class="promo-bar-text">
+   12 - 31 Mayo
+   <span class="dot-sep">·</span>
+   Pedido de <strong>+200 pcs</strong>
+   <span class="dot-sep">·</span>
+   <strong>15% OFF</strong> en Mundial 2026
+  </span>
+  <a href="worldcup.html" class="promo-bar-cta">Aprovechar →</a>
+ </div>
+ <button class="promo-bar-close" onclick="document.getElementById('promoBar').style.display='none'" aria-label="cerrar">×</button>
+</div>
+
+<!-- ★★★ 首屏大横幅 (移到 hero 前) ★★★ -->
+<div class="mundial-hero-wrap">
+ <a href="worldcup.html" class="mundial-banner">
+  <div class="mundial-flagstrip"></div>
+  <div class="confetti-layer" id="confettiLayer"></div>
+  <div class="mundial-trophy"></div>
+  <span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span>
+
+  <div class="mundial-content">
+   <div class="mundial-text-side">
+    <span class="kicker"><span class="live-dot"></span>NUEVA COLECCIÓN · 2026</span>
+    <h2>MUNDIAL<br>2026</h2>
+    <div class="subtitle">Camisetas · Coleccionables · Souvenirs</div>
+    <div class="desc">219 productos del Mundial México-EE.UU.-Canadá: equipaciones de 32 selecciones, vintage, peluches de las mascotas, cajas misteriosas y llaveros.</div>
+    <div class="mundial-host-flags">
+     <span class="host"><span class="flag flag-mx"></span>MÉXICO</span>
+     <span class="host"><span class="flag flag-us"></span>USA</span>
+     <span class="host"><span class="flag flag-ca"></span>CANADA</span>
+    </div>
+   </div>
+   <div class="mundial-right-side">
+    <div class="mundial-countdown" id="bannerCountdown">
+     <div class="cd-unit"><span class="num" id="cd-d">--</span><span class="lbl">Días</span></div>
+     <span class="cd-sep">:</span>
+     <div class="cd-unit"><span class="num" id="cd-h">--</span><span class="lbl">Hrs</span></div>
+     <span class="cd-sep">:</span>
+     <div class="cd-unit"><span class="num" id="cd-m">--</span><span class="lbl">Min</span></div>
+    </div>
+    <div class="mundial-cta"><span>Ver Catálogo Completo</span><span class="arrow">→</span></div>
+   </div>
+  </div>
+ </a>
+</div>
+
+<!-- 原 Hero 区 (占位) -->
+<div class="hero-placeholder">
+ <div>
+  <h1>Tu socio de suministro profesional para vender online y offline</h1>
+  <p>(原 Hero 区保持现状 — 此处仅占位说明)</p>
+ </div>
+ <span class="tag">B2B · Factory Direct</span>
+</div>
+
+<section class="section">
+ <div class="container">
+  <div class="section-label">CATÁLOGO</div>
+  <h2 class="section-title">Productos Destacados</h2>
+  <p class="section-subtitle">Electrónica premium seleccionada para distribuidores.</p>
+  <div class="feat-cats">
+   <div class="feat-cat-card"><span class="icon-bg">🎧</span><div class="feat-cat-title">AirPods</div></div>
+   <div class="feat-cat-card"><span class="icon-bg">🎧</span><div class="feat-cat-title">AirPods Pro</div></div>
+   <div class="feat-cat-card"><span class="icon-bg">🎙️</span><div class="feat-cat-title">AirPods Max</div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ★★★ 右下角浮动窗 + 顶部小折扣标签 ★★★ -->
+<div class="mundial-floater" id="mundialFloater" onclick="if(!event.target.closest('.close-x'))window.location='worldcup.html'">
+ <div class="ft-promo-tag">
+  <span class="ft-spark">⚡</span>
+  <span>+200 PCS · <strong>15% OFF</strong></span>
+ </div>
+ <div class="ball-spin">⚽</div>
+ <button class="close-x" onclick="event.stopPropagation();document.getElementById('mundialFloater').style.display='none'" aria-label="cerrar">×</button>
+ <div class="ft-kicker">⚽ MUNDIAL 2026</div>
+ <div class="ft-title">Nueva colección disponible</div>
+ <div class="ft-mini">Comienza en <strong id="ft-days">--</strong> días</div>
+ <div class="ft-cta">Explorar ahora →</div>
+</div>
+
+<script>
+function tick() {
+ const target = new Date('2026-06-11T17:00:00-06:00').getTime();
+ const diff = Math.max(0, target - new Date().getTime());
+ const d = Math.floor(diff / 86400000);
+ const h = Math.floor((diff % 86400000) / 3600000);
+ const m = Math.floor((diff % 3600000) / 60000);
+ document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+ document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+ document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+ document.getElementById('ft-days').textContent = d;
+}
+tick(); setInterval(tick, 30000);
+
+(function spawnConfetti(){
+ const layer = document.getElementById('confettiLayer');
+ const colors = ['c1','c2','c3','c4','c5','c6'];
+ const sizes = ['s-sm','','s-lg'];
+ const shapes = ['','shape-tri','shape-circle','',''];
+ const COUNT = 32;
+ for (let i = 0; i < COUNT; i++) {
+  const el = document.createElement('div');
+  const c = colors[Math.floor(Math.random()*colors.length)];
+  const s = sizes[Math.floor(Math.random()*sizes.length)];
+  const sh = shapes[Math.floor(Math.random()*shapes.length)];
+  el.className = 'confetti ' + c + (s ? ' ' + s : '') + (sh ? ' ' + sh : '');
+  const left = Math.random() * 100;
+  const dur = 4 + Math.random() * 5;
+  const delay = -Math.random() * 8;
+  const drift = (Math.random() - 0.5) * 200 + 'px';
+  const spin = (Math.random() * 1440 + 360) + 'deg';
+  el.style.left = left + '%';
+  el.style.animationDuration = dur + 's';
+  el.style.animationDelay = delay + 's';
+  el.style.setProperty('--drift', drift);
+  el.style.setProperty('--spin', spin);
+  layer.appendChild(el);
+ }
+})();
+</script>
+
+</body>
+</html>

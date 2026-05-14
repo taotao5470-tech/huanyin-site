@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico">
+<title>Mundial 2026 · Camisetas + Souvenirs · HUANYIN</title>
+<meta name="description" content="219 productos del Mundial 2026 México-EE.UU.-Canadá: equipaciones de 32 selecciones, vintage, peluches, cajas misteriosas y llaveros. Pedido +200 pcs: 15% OFF (12-31 Mayo).">
+<meta property="og:title" content="Mundial 2026 Collection · HUANYIN Supply">
+<meta property="og:description" content="Equipaciones oficiales de las 32 selecciones, vintage, peluches y souvenirs. Promo: +200 pcs = 15% OFF.">
+<meta property="og:image" content="https://huanyinvox.top/huanyin-site-card.png?v=2">
+<style>
+:root {
+ --bg-primary: #1c1c1c;
+ --bg-secondary: #232323;
+ --bg-card: #ffffff;
+ --bg-dark-card: #2a2a2a;
+ --accent-moss: #2d7dd2;
+ --accent-copper: #e8a835;
+ --text-light: #e8e4dd;
+ --text-muted: #8a8a8a;
+ --whatsapp: #25D366;
+ --whatsapp-dark: #1da851;
+ --border-dark: #3a3a3a;
+ --radius: 12px;
+ --radius-sm: 8px;
+ --wc-green: #006C35;
+ --wc-green-deep: #003d1f;
+ --wc-green-light: #1ea863;
+ --wc-gold: #FFD700;
+ --wc-gold-dark: #c8a000;
+ --wc-red: #CE1126;
+ --wc-red-bright: #e62a3d;
+ --wc-mx: #006847;
+ --wc-us: #002868;
+ --wc-ca: #d52b1e;
+ --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-light); line-height: 1.6; overflow-x: hidden;}
+a { text-decoration: none; color: inherit;}
+button { cursor: pointer; border: none; font-family: inherit;}
+img { max-width: 100%; display: block;}
+
+/* ============ NAV (复用主站风格) ============ */
+.nav { position: sticky; top: 0; z-index: 200; background: rgba(28,28,28,0.94); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-dark); padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between;}
+.nav-logo { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px; color: var(--text-light);}
+.nav-logo .mark { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--accent-moss), var(--accent-copper)); display: flex; align-items: center; justify-content: center; font-size: 18px; color:#fff;}
+.nav-logo .word { display: flex; flex-direction: column; line-height: 1.1;}
+.nav-logo .word strong { font-size: 14px; letter-spacing: 1px;}
+.nav-logo .word small { font-size: 9px; color: var(--text-muted); letter-spacing: 1px;}
+.nav-links { display: flex; gap: 24px; align-items: center;}
+.nav-links a { font-size: 13px; color: var(--text-muted); font-weight: 500; transition: var(--transition); position: relative;}
+.nav-links a:hover, .nav-links a.active { color: var(--text-light);}
+.nav-mundial { position: relative; padding: 8px 18px 8px 14px !important; border-radius: 22px; background: linear-gradient(135deg, var(--wc-green) 0%, var(--wc-green-light) 50%, var(--wc-gold-dark) 100%); color: #fff !important; font-weight: 700 !important; font-size: 13px !important; display: flex !important; align-items: center; gap: 7px; box-shadow: 0 2px 14px rgba(255,215,0,0.28), inset 0 1px 0 rgba(255,255,255,0.2);}
+.nav-mundial:hover { color: #fff !important;}
+.nav-mundial .ball { font-size: 16px; animation: ballRoll 4s linear infinite; display: inline-block;}
+@keyframes ballRoll { from { transform: rotate(0);} to { transform: rotate(360deg);}}
+.lang-toggle { display: flex; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-dark);}
+.lang-toggle button { padding: 5px 12px; font-size: 12px; font-weight: 600; background: transparent; color: var(--text-muted); transition: var(--transition);}
+.lang-toggle button.active { background: var(--accent-moss); color: #fff;}
+.nav-wa { padding: 8px 16px; border-radius: 20px; background: var(--whatsapp); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px;}
+.nav-wa:hover { background: var(--whatsapp-dark);}
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 4px;}
+.hamburger span { width: 22px; height: 2px; background: var(--text-light);}
+
+/* ============ Promo Bar ============ */
+.promo-bar { position: relative; width: 100%; z-index: 50; background: linear-gradient(90deg, #8a0d1c 0%, var(--wc-red-bright) 18%, var(--wc-red) 50%, var(--wc-red-bright) 82%, #8a0d1c 100%); border-top: 1px solid rgba(255,215,0,0.45); border-bottom: 1px solid rgba(255,215,0,0.45); overflow: hidden;}
+.promo-bar-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; height: 44px; padding: 0 24px; display: flex; align-items: center; justify-content: center; gap: 22px;}
+.promo-bar-flash { font-size: 16px; line-height: 1; animation: promoFlash 1.1s ease-in-out infinite;}
+@keyframes promoFlash { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(1.18);}}
+.promo-bar-tag { padding: 4px 11px; border-radius: 4px; background: rgba(0,0,0,0.32); border: 1px solid rgba(255,215,0,0.55); color: var(--wc-gold); font-size: 10px; font-weight: 800; letter-spacing: 1.8px; white-space: nowrap;}
+.promo-bar-text { color: #fff; font-size: 13.5px; font-weight: 600; letter-spacing: 0.3px; white-space: nowrap;}
+.promo-bar-text .dot-sep { color: rgba(255,255,255,0.4); margin: 0 10px;}
+.promo-bar-text strong { color: #FFEB3B; font-weight: 800; font-size: 15px;}
+
+/* ============ Hero (世界杯专题页头) ============ */
+.wc-hero { position: relative; padding: 60px 32px 50px; background: radial-gradient(circle at 85% 25%, rgba(255,215,0,0.18) 0%, transparent 40%), radial-gradient(circle at 15% 80%, rgba(206,17,38,0.14) 0%, transparent 45%), linear-gradient(135deg, #003d1f 0%, #006C35 50%, #035530 100%); overflow: hidden;}
+.wc-hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0, transparent 64px, rgba(255,255,255,0.025) 64px, rgba(255,255,255,0.025) 128px); pointer-events: none;}
+.wc-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: center;}
+.wc-hero-left .breadcrumb { display: flex; gap: 8px; font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 14px; letter-spacing: 1px;}
+.wc-hero-left .breadcrumb a { color: rgba(255,255,255,0.65);}
+.wc-hero-left .breadcrumb a:hover { color: var(--wc-gold);}
+.wc-hero-left .kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.42); color: var(--wc-gold); font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px;}
+.wc-hero-left .kicker .live-dot { width: 6px; height: 6px; background: var(--wc-red); border-radius: 50%; animation: pulseDot 1.5s infinite;}
+@keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 0 rgba(206,17,38,0.6);} 50% { box-shadow: 0 0 0 6px rgba(206,17,38,0);}}
+.wc-hero-left h1 { font-family: 'Bebas Neue', 'Noto Sans SC', sans-serif; font-size: 72px; font-weight: 800; line-height: 0.95; background: linear-gradient(135deg, #fff 0%, var(--wc-gold) 55%, #fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; margin-bottom: 12px;}
+.wc-hero-left .subtitle { font-size: 18px; color: #fff; font-weight: 500; margin-bottom: 14px;}
+.wc-hero-left .stats { display: flex; gap: 18px; margin-top: 18px; flex-wrap: wrap;}
+.wc-hero-left .stat { padding: 10px 16px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; min-width: 88px;}
+.wc-hero-left .stat strong { display: block; color: var(--wc-gold); font-size: 22px; font-weight: 800; line-height: 1;}
+.wc-hero-left .stat span { display: block; font-size: 10px; color: rgba(255,255,255,0.65); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;}
+.wc-hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 16px;}
+.wc-countdown { display: flex; gap: 8px; padding: 16px 18px; background: rgba(0,0,0,0.5); border-radius: 16px; border: 1px solid rgba(255,215,0,0.32);}
+.cd-unit { text-align: center; min-width: 54px;}
+.cd-unit .num { display: block; font-size: 28px; font-weight: 800; color: var(--wc-gold); line-height: 1; font-variant-numeric: tabular-nums;}
+.cd-unit .lbl { display: block; font-size: 9px; color: rgba(255,255,255,0.65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px;}
+.cd-sep { color: rgba(255,215,0,0.45); font-size: 22px; align-self: center;}
+.host-flags { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;}
+.host-flags .host { display: flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 12px; background: rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.18); font-size: 10px; color: #fff; font-weight: 700; letter-spacing: 1px;}
+.host-flags .flag { width: 16px; height: 11px; border-radius: 2px; display: inline-block;}
+.flag-mx { background: linear-gradient(90deg, #006847 33%, #fff 33%, #fff 66%, #ce1126 66%);}
+.flag-us { background: repeating-linear-gradient(180deg, #b22234 0 2px, #fff 2px 4px); position: relative;}
+.flag-us::after { content: ''; position: absolute; top:0; left:0; width: 45%; height: 55%; background: var(--wc-us);}
+.flag-ca { background: linear-gradient(90deg, #d52b1e 25%, #fff 25%, #fff 75%, #d52b1e 75%);}
+
+/* ============ Category Tabs ============ */
+.wc-tabs-bar { background: var(--bg-secondary); border-bottom: 1px solid var(--border-dark); padding: 0 32px; position: sticky; top: 64px; z-index: 90;}
+.wc-tabs-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 6px; overflow-x: auto; padding: 12px 0; scrollbar-width: none;}
+.wc-tabs-inner::-webkit-scrollbar { display: none;}
+.wc-tab { padding: 8px 16px; border-radius: 22px; background: rgba(255,255,255,0.04); color: var(--text-muted); border: 1px solid transparent; font-size: 13px; font-weight: 600; white-space: nowrap; transition: var(--transition); display: inline-flex; align-items: center; gap: 6px;}
+.wc-tab:hover { color: var(--text-light); background: rgba(255,255,255,0.08);}
+.wc-tab.active { background: var(--wc-green); color: #fff; border-color: var(--wc-green-light); box-shadow: 0 0 14px rgba(0,108,53,0.5);}
+.wc-tab .count { background: rgba(0,0,0,0.25); padding: 1px 8px; border-radius: 10px; font-size: 10px; font-weight: 700;}
+.wc-tab.active .count { background: rgba(255,255,255,0.22);}
+
+/* Sub filters */
+.wc-subfilters { max-width: 1200px; margin: 16px auto 0; padding: 0 32px; display: flex; flex-wrap: wrap; gap: 6px;}
+.wc-subfilter { padding: 5px 12px; border-radius: 14px; background: transparent; color: var(--text-muted); border: 1px solid var(--border-dark); font-size: 11px; font-weight: 500; cursor: pointer; transition: var(--transition);}
+.wc-subfilter-sm { font-size: 10px; padding: 4px 10px; opacity: 0.85;}
+.wc-subfilter-sep { color: var(--border-dark); font-size: 14px; padding: 0 2px; align-self: center;}
+/* === 详情页变体切换器 (盲盒等) === */
+.variant-selector { margin-bottom: 18px;}
+.variant-list { display: flex; gap: 8px; flex-wrap: wrap;}
+.variant-card { padding: 8px 14px; border-radius: 10px; background: var(--bg-secondary); border: 1.5px solid var(--border-dark); color: var(--text-light); font-size: 12px; font-weight: 600; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 6px;}
+.variant-card:hover { border-color: var(--accent-moss); color: var(--text-light);}
+.variant-card.active { background: var(--wc-green); color: #fff; border-color: var(--wc-gold); box-shadow: 0 0 16px rgba(255,215,0,0.4);}
+.variant-card .variant-icon { font-size: 14px;}
+.wc-subfilter:hover { color: var(--text-light); border-color: var(--accent-moss);}
+.wc-subfilter.active { background: var(--accent-moss); color: #fff; border-color: var(--accent-moss);}
+
+/* ============ 主区 ============ */
+.wc-main { max-width: 1200px; margin: 0 auto; padding: 32px;}
+.wc-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;}
+.wc-result-count { font-size: 14px; color: var(--text-muted);}
+.wc-result-count strong { color: var(--wc-gold); font-size: 18px; font-weight: 800;}
+.wc-search { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border-dark); border-radius: 22px; min-width: 240px;}
+.wc-search input { background: transparent; border: none; color: var(--text-light); font-size: 13px; outline: none; width: 100%; font-family: inherit;}
+.wc-search input::placeholder { color: var(--text-muted);}
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px;}
+.product-card { background: linear-gradient(145deg, rgba(20,32,44,0.96), rgba(12,20,30,0.98)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); overflow: hidden; cursor: pointer; transition: var(--transition); display: flex; flex-direction: column;}
+.product-card:hover { transform: translateY(-4px); border-color: rgba(47,208,139,0.42); box-shadow: 0 12px 36px rgba(0,0,0,0.4);}
+.product-img { position: relative; aspect-ratio: 1/1; background: var(--bg-dark-card); overflow: hidden;}
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;}
+.product-card:hover .product-img img { transform: scale(1.06);}
+.product-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.25); font-size: 32px; background: linear-gradient(135deg, rgba(0,108,53,0.3), rgba(206,17,38,0.2));}
+.product-img-placeholder .ph-text { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: 1px;}
+.product-vintage-badge { position: absolute; top: 8px; left: 8px; background: linear-gradient(135deg, var(--wc-gold), #c8a000); color: #1a1a00; font-size: 9px; font-weight: 800; padding: 3px 7px; border-radius: 4px; letter-spacing: 1px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);}
+.product-promo-badge { position: absolute; top: 8px; right: 8px; background: linear-gradient(135deg, var(--wc-red-bright), var(--wc-red)); color: #fff; font-size: 9px; font-weight: 800; padding: 3px 7px; border-radius: 4px; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(206,17,38,0.5);}
+.product-info { padding: 12px 14px 14px;}
+.product-team { font-size: 10px; color: var(--accent-copper); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;}
+.product-name { font-size: 13px; font-weight: 600; color: var(--text-light); line-height: 1.35; margin-bottom: 6px; min-height: 35px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.product-price-row { display: flex; align-items: baseline; gap: 8px; margin-top: 6px;}
+.product-price { color: var(--wc-gold); font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums;}
+.product-price .currency { font-size: 11px; font-weight: 600; opacity: 0.7;}
+.product-moq { font-size: 10px; color: var(--text-muted);}
+
+/* ============ 产品详情 (Level 3) ============ */
+.page-section { display: none;}
+.page-section.active { display: block;}
+
+.detail-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 13px; padding: 8px 14px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-dark); margin-bottom: 24px; transition: var(--transition);}
+.detail-back:hover { color: var(--text-light); border-color: var(--accent-moss);}
+.detail-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px;}
+.detail-gallery { position: relative;}
+.detail-main-img { width: 100%; aspect-ratio: 1/1; border-radius: var(--radius); overflow: hidden; background: var(--bg-dark-card); margin-bottom: 12px;}
+.detail-main-img img { width: 100%; height: 100%; object-fit: cover;}
+.detail-thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px;}
+.detail-thumb { aspect-ratio: 1/1; border-radius: 6px; overflow: hidden; background: var(--bg-dark-card); cursor: pointer; border: 2px solid transparent; transition: var(--transition);}
+.detail-thumb.active { border-color: var(--wc-gold);}
+.detail-thumb img { width: 100%; height: 100%; object-fit: cover;}
+
+.detail-info h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.2;}
+.detail-team-tag { display: inline-block; padding: 4px 12px; border-radius: 12px; background: rgba(0,108,53,0.25); color: var(--wc-green-light); font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px;}
+.detail-meta { display: flex; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--border-dark);}
+.detail-meta .item { font-size: 12px;}
+.detail-meta .item .lbl { color: var(--text-muted); display: block; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; font-size: 10px;}
+.detail-meta .item .val { color: var(--text-light); font-weight: 600;}
+
+.detail-price-block { background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(0,108,53,0.05)); border: 1px solid rgba(255,215,0,0.2); border-radius: var(--radius); padding: 18px; margin-bottom: 20px;}
+.price-tier { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06);}
+.price-tier:last-child { border-bottom: none;}
+.price-tier .tier-label { font-size: 12px; color: var(--text-muted);}
+.price-tier .tier-price { font-size: 22px; color: var(--wc-gold); font-weight: 800; font-variant-numeric: tabular-nums;}
+.price-tier .tier-price .currency { font-size: 13px; opacity: 0.7;}
+.price-promo-note { margin-top: 10px; padding: 8px 12px; background: rgba(206,17,38,0.15); border: 1px dashed rgba(206,17,38,0.4); border-radius: 6px; font-size: 11px; color: #ff9090; font-weight: 600;}
+
+.detail-sizes { margin-bottom: 24px;}
+.detail-sizes h3 { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;}
+.size-options { display: flex; gap: 8px; flex-wrap: wrap;}
+.size-opt { padding: 8px 16px; border-radius: 8px; background: var(--bg-secondary); border: 1px solid var(--border-dark); color: var(--text-light); font-size: 13px; font-weight: 600; cursor: pointer; transition: var(--transition);}
+.size-opt:hover { border-color: var(--accent-moss);}
+.size-opt.active { background: var(--wc-green); color: #fff; border-color: var(--wc-green-light); box-shadow: 0 0 12px rgba(0,108,53,0.5);}
+
+/* === 块级元素 (尺码/数量/价格各一块) === */
+.wc-block { margin-bottom: 18px;}
+.wc-block-label { display: block; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700;}
+
+/* === 数量器 === */
+.qty-row { display: flex; align-items: stretch; gap: 6px; max-width: 320px;}
+.qty-btn { flex: 0 0 auto; width: 50px; padding: 0; background: var(--bg-secondary); border: 1px solid var(--border-dark); color: var(--wc-gold); font-size: 13px; font-weight: 800; border-radius: 8px; cursor: pointer; transition: var(--transition); letter-spacing: 0.5px;}
+.qty-btn:hover { background: var(--wc-green); color: #fff; border-color: var(--wc-green-light);}
+.qty-btn-tiny { flex: 0 0 auto; width: 32px; padding: 0; background: rgba(255,255,255,0.04); border: 1px solid var(--border-dark); color: var(--text-muted); font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer; transition: var(--transition);}
+.qty-btn-tiny:hover { background: rgba(255,215,0,0.12); color: var(--wc-gold); border-color: var(--wc-gold);}
+#qtyInput { flex: 1; min-width: 0; height: 40px; background: var(--bg-secondary); border: 1px solid var(--border-dark); color: var(--text-light); font-size: 18px; font-weight: 700; text-align: center; border-radius: 8px; font-variant-numeric: tabular-nums; font-family: inherit; outline: none; transition: var(--transition);}
+#qtyInput:focus { border-color: var(--wc-gold); box-shadow: 0 0 0 2px rgba(255,215,0,0.2);}
+#qtyInput::-webkit-outer-spin-button, #qtyInput::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0;}
+.qty-hint { font-size: 11px; color: var(--text-muted); margin-top: 6px;}
+
+/* === 价格计算块 === */
+.wc-price-block { background: linear-gradient(135deg, rgba(255,215,0,0.04), rgba(0,108,53,0.04)); border: 1px solid rgba(255,215,0,0.18); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 20px;}
+.pb-row { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);}
+.pb-row:last-child { border-bottom: none;}
+.pb-row.pb-total { padding-top: 10px;}
+.pb-lbl { font-size: 12px; color: var(--text-muted);}
+.pb-val { font-size: 16px; color: var(--text-light); font-weight: 700; font-variant-numeric: tabular-nums; text-align: right;}
+.pb-val.pb-big { font-size: 26px; color: var(--wc-gold); font-weight: 800;}
+.promo-applied { display: inline-block; margin-left: 6px; padding: 2px 7px; border-radius: 3px; background: var(--wc-red); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 0.5px;}
+
+/* === CTA 按钮组 === */
+.btn-cart { background: linear-gradient(135deg, #FFD700, #ffb800); color: #1a1a00; font-weight: 800;}
+.btn-cart:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,215,0,0.4);}
+.btn-ship { background: rgba(255,255,255,0.06); color: var(--text-light); border: 1px solid var(--border-dark);}
+.btn-ship:hover { border-color: var(--accent-moss); color: var(--accent-moss);}
+.btn-wa-detail { background: #25D366; color: #fff;}
+.btn-wa-detail:hover { background: #1da851;}
+
+/* === 运费 Modal === */
+.wc-modal { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 20px; animation: modalFade 0.2s ease;}
+@keyframes modalFade { from { opacity: 0;} to { opacity: 1;}}
+.wc-modal-card { position: relative; width: 100%; max-width: 460px; background: linear-gradient(160deg, #1f2a25, #11161a); border: 1px solid rgba(255,215,0,0.3); border-radius: 16px; padding: 24px 22px; box-shadow: 0 24px 60px rgba(0,0,0,0.6);}
+.wc-modal-card h3 { font-size: 18px; font-weight: 700; color: var(--wc-gold); margin-bottom: 16px;}
+.wc-modal-close { position: absolute; top: 12px; right: 12px; width: 26px; height: 26px; background: rgba(255,255,255,0.08); border: 1px solid var(--border-dark); border-radius: 50%; color: var(--text-muted); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;}
+.wc-modal-close:hover { background: var(--wc-red); color: #fff;}
+.ship-rows { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px 16px; margin-bottom: 12px;}
+.ship-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; font-size: 13px; color: var(--text-light); border-bottom: 1px solid rgba(255,255,255,0.05);}
+.ship-row:last-child { border-bottom: none;}
+.ship-row strong { font-size: 16px; color: var(--wc-gold); font-weight: 800; font-variant-numeric: tabular-nums;}
+.ship-row.ship-total strong { font-size: 22px;}
+.ship-note { font-size: 11px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; padding: 8px 10px; background: rgba(255,215,0,0.05); border-left: 2px solid rgba(255,215,0,0.4); border-radius: 4px;}
+.ship-actions { display: flex; gap: 8px; flex-direction: column;}
+.ship-actions .btn { width: 100%; justify-content: center;}
+
+.detail-cta-row { display: flex; gap: 12px; flex-wrap: wrap;}
+.btn { padding: 13px 24px; border-radius: 24px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); white-space: nowrap;}
+.btn-wa { background: var(--whatsapp); color: #fff;}
+.btn-wa:hover { background: var(--whatsapp-dark); transform: translateY(-2px);}
+.btn-gold { background: linear-gradient(135deg, var(--wc-gold), #ffb800); color: #1a1a00;}
+.btn-gold:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(255,215,0,0.4);}
+.btn-outline { background: transparent; color: var(--text-light); border: 1px solid var(--border-dark);}
+.btn-outline:hover { border-color: var(--accent-moss); color: var(--accent-moss);}
+
+.detail-desc { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border-dark);}
+.detail-desc h3 { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;}
+.detail-desc p { font-size: 14px; color: var(--text-light); line-height: 1.7;}
+
+/* ============ Floater (复用) ============ */
+.mundial-floater { position: fixed; right: 22px; bottom: 22px; z-index: 999; width: 290px; background: linear-gradient(160deg, rgba(20,40,28,0.97), rgba(8,18,12,0.99)); border-radius: 16px; padding: 16px 18px 14px 58px; box-shadow: 0 18px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,215,0,0.28), 0 0 32px rgba(0,108,53,0.45); backdrop-filter: blur(14px); cursor: pointer; transition: var(--transition);}
+.mundial-floater:hover { transform: translateY(-4px) scale(1.02);}
+.mundial-floater .ball-spin { position: absolute; left: 12px; top: 14px; width: 36px; height: 36px; background: #fff; border-radius: 50%; box-shadow: 0 0 0 2px rgba(255,215,0,0.55), 0 4px 12px rgba(0,0,0,0.5); animation: ballRoll 3s linear infinite; display: flex; align-items: center; justify-content: center; font-size: 26px;}
+.mundial-floater .close-x { position: absolute; top: 6px; right: 8px; width: 22px; height: 22px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; color: rgba(255,255,255,0.7); font-size: 14px; display: flex; align-items: center; justify-content: center;}
+.mundial-floater .ft-promo-tag { position: absolute; top: -10px; left: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px 3px 8px; border-radius: 4px; background: linear-gradient(135deg, var(--wc-red-bright), var(--wc-red)); color: #fff; font-size: 9.5px; font-weight: 800; letter-spacing: 0.8px; box-shadow: 0 3px 10px rgba(206,17,38,0.55); border: 1px solid rgba(255,215,0,0.5); white-space: nowrap;}
+.mundial-floater .ft-promo-tag strong { color: #FFEB3B;}
+.mundial-floater .ft-kicker { font-size: 9px; color: var(--wc-gold); letter-spacing: 1.5px; font-weight: 700; margin-bottom: 2px;}
+.mundial-floater .ft-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 5px;}
+.mundial-floater .ft-mini { font-size: 10px; color: rgba(255,255,255,0.72);}
+.mundial-floater .ft-mini strong { color: var(--wc-gold); font-size: 16px; font-weight: 800;}
+.mundial-floater .ft-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 11px; color: var(--wc-gold); font-weight: 700;}
+
+/* ============ Footer ============ */
+.wc-footer { background: var(--bg-secondary); border-top: 1px solid var(--border-dark); padding: 32px; text-align: center; margin-top: 60px;}
+.wc-footer p { font-size: 12px; color: var(--text-muted); line-height: 1.7;}
+.wc-footer a { color: var(--accent-moss);}
+
+/* Empty state */
+.empty-state { padding: 80px 32px; text-align: center;}
+.empty-state .icon { font-size: 64px; opacity: 0.3; margin-bottom: 12px;}
+.empty-state h3 { font-size: 18px; color: var(--text-light); margin-bottom: 6px;}
+.empty-state p { font-size: 13px; color: var(--text-muted);}
+
+@media (max-width: 768px) {
+ .nav { padding: 0 14px;}
+ .nav-links { gap: 14px;}
+ .nav-mundial span:nth-child(2) { display: none;}
+ .promo-bar-tag { display: none;}
+ .promo-bar-text { font-size: 11.5px;}
+ .promo-bar-text .dot-sep { margin: 0 6px;}
+ .wc-hero { padding: 32px 20px 28px;}
+ .wc-hero-inner { grid-template-columns: 1fr; gap: 24px;}
+ .wc-hero-right { align-items: flex-start;}
+ .wc-hero-left h1 { font-size: 52px;}
+ .wc-tabs-bar { padding: 0 12px;}
+ .wc-subfilters { padding: 0 16px;}
+ .wc-main { padding: 24px 16px;}
+ .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px;}
+ .detail-grid { grid-template-columns: 1fr; gap: 18px;}
+ .mundial-floater { right: 12px; bottom: 12px; width: 256px;}
+}
+
+/* === cart mobile === */
+.cart-panel { width: 100vw; }
+.cart-addr-panel { position: fixed; top: auto; bottom: 0; right: 0; left: 0; width: 100vw; max-height: 70vh; overflow-y: auto; border-radius: 14px 14px 0 0; transform: translateY(100%); }
+.cart-addr-panel.open { transform: translateY(0); }
+.addr-send-btn { display: flex; }
+
+/* ============ Floating Cart ============ */
+.floating-cart { position: fixed; bottom: 92px; right: 28px; z-index: 999; border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; font-size: 24px; background: var(--bg-secondary); color: var(--text-light); border: 1px solid var(--border-dark); box-shadow: 0 4px 20px rgba(0,0,0,0.4); cursor: pointer; transition: var(--transition); }
+.floating-cart:hover { transform: scale(1.08); }
+.floating-cart .cart-count { position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent-copper); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+/* ============ Cart Panel ============ */
+.cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+.cart-panel { position: fixed; top: 0; right: 0; width: 400px; max-width: 100vw; height: 100vh; background: var(--bg-primary); z-index: 2001; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); border-left: 1px solid var(--border-dark); }
+.cart-panel.open { transform: translateX(0); }
+.cart-header { padding: 16px 20px; border-bottom: 1px solid var(--border-dark); display: flex; justify-content: space-between; align-items: center; }
+.cart-header h3 { font-size: 16px; font-weight: 600; }
+.cart-close { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-secondary); color: var(--text-muted); font-size: 16px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; }
+.cart-items { flex: 1; overflow-y: auto; padding: 12px 16px; scrollbar-width: none; }
+.cart-items::-webkit-scrollbar { display: none; }
+.cart-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border-dark); align-items: center; }
+.cart-item-img { width: 56px; height: 56px; border-radius: 6px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; overflow: hidden; }
+.cart-item-img img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-size: 14px; font-weight: 600; }
+.cart-item-variant { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.cart-item-price { font-size: 13px; font-weight: 600; color: var(--wc-gold); }
+.cart-item-qty { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.cart-item-qty button { width: 26px; height: 26px; border-radius: 50%; background: var(--bg-secondary); color: var(--text-light); font-size: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: var(--transition); }
+.cart-item-qty button:hover { background: var(--accent-moss); }
+.cart-item-qty span { font-size: 14px; font-weight: 600; min-width: 24px; text-align: center; }
+.cart-item-remove { color: var(--wc-red); font-size: 18px; cursor: pointer; background: none; border: none; padding: 0 4px; flex-shrink: 0; }
+.cart-empty { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 14px; }
+.cart-footer { padding: 20px 24px; border-top: 1px solid var(--border-dark); }
+.cart-total { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 14px; }
+.cart-total strong { font-size: 18px; color: var(--wc-gold); }
+.cart-wa-btn { width: 100%; padding: 14px; border-radius: 28px; background: var(--whatsapp); color: #fff; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; transition: var(--transition); }
+.cart-wa-btn:hover { background: var(--whatsapp-dark); }
+.cart-continue { width: 100%; padding: 10px; margin-top: 8px; background: transparent; color: var(--text-muted); font-size: 13px; cursor: pointer; border: none; }
+
+/* ============ Address Panel ============ */
+.cart-addr-panel { position: fixed; top: 80px; right: 400px; width: 280px; background: #1e221e; border: 1px solid rgba(125,148,116,0.35); border-radius: 14px 0 0 14px; z-index: 2001; transform: translateX(16px); opacity: 0; pointer-events: none; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -4px 8px 40px rgba(0,0,0,0.5); }
+.cart-addr-panel.open { transform: translateX(0); opacity: 1; pointer-events: auto; }
+.cart-addr-panel h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-moss); margin: 0; padding: 14px 16px 10px; border-bottom: 1px solid rgba(125,148,116,0.15); }
+.cart-addr-inner { padding: 12px 16px 14px; }
+.cart-addr-inner .addr-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.cart-addr-inner .addr-row.single { grid-template-columns: 1fr; }
+.cart-addr-input { width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-dark); background: var(--bg-secondary); color: var(--text-light); font-size: 12px; font-family: inherit; transition: var(--transition); }
+.cart-addr-input:focus { outline: none; border-color: var(--accent-moss); }
+.cart-addr-input::placeholder { color: #555; }
+.cart-addr-select { width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-dark); background: var(--bg-secondary); color: var(--text-light); font-size: 12px; font-family: inherit; cursor: pointer; transition: var(--transition); }
+.cart-addr-select:focus { outline: none; border-color: var(--accent-moss); }
+.cart-addr-select option { background: var(--bg-secondary); color: var(--text-light); }
+.cart-addr-warn { color: var(--accent-copper); font-size: 10px; margin-top: 4px; text-align: center; display: none; }
+.addr-send-btn { display: none; width: 100%; padding: 14px; border-radius: 28px; background: var(--whatsapp); color: #fff; font-size: 15px; font-weight: 600; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; transition: var(--transition); margin-top: 12px; }
+.addr-send-btn:hover { background: var(--whatsapp-dark); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+ <a href="/index.html" class="nav-logo">
+  <span class="mark">H</span>
+  <span class="word"><strong>HUANYIN</strong><small>Supply Chain</small></span>
+ </a>
+ <div class="nav-links" id="navLinks">
+  <a href="/index.html">Inicio</a>
+  <a href="/worldcup.html" class="nav-mundial active" title="Mundial 2026"><span class="ball">⚽</span><span>Mundial 2026</span></a>
+  <a href="/index.html#products">Productos</a>
+  <a href="/index.html#about-us">Empresa</a>
+  <div class="lang-toggle"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button></div>
+ </div>
+ <a href="https://wa.me/8613302451417" target="_blank" class="nav-wa">WhatsApp</a>
+</nav>
+
+<!-- Promo Bar -->
+<div class="promo-bar" id="promoBar">
+ <div class="promo-bar-inner">
+  <span class="promo-bar-flash">⚡</span>
+  <span class="promo-bar-tag">PROMO MAYO</span>
+  <span class="promo-bar-text" data-es="12 - 31 Mayo · Pedido de +200 pcs · 15% OFF en Mundial 2026" data-en="May 12-31 · Order +200 pcs · 15% OFF on Mundial 2026">12 - 31 Mayo · Pedido de <strong>+200 pcs</strong> · <strong>15% OFF</strong> en Mundial 2026</span>
+ </div>
+</div>
+
+<!-- Page: List (Level 2) -->
+<div class="page-section active" id="pageList">
+ <section class="wc-hero">
+  <div class="wc-hero-inner">
+   <div class="wc-hero-left">
+    <nav class="breadcrumb"><a href="/index.html">Inicio</a> <span>›</span> <span style="color:var(--wc-gold)">Mundial 2026</span></nav>
+    <span class="kicker"><span class="live-dot"></span>NUEVA COLECCIÓN · 2026</span>
+    <h1>MUNDIAL<br>2026</h1>
+    <div class="subtitle" data-es="Camisetas · Coleccionables · Souvenirs" data-en="Jerseys · Collectibles · Souvenirs">Camisetas · Coleccionables · Souvenirs</div>
+    <div class="stats">
+     <div class="stat"><strong id="statTotal">269</strong><span>Productos</span></div>
+     <div class="stat"><strong>32</strong><span>Selecciones</span></div>
+     <div class="stat"><strong>50</strong><span>MOQ</span></div>
+     <div class="stat"><strong>15%</strong><span>+200pcs</span></div>
+    </div>
+   </div>
+   <div class="wc-hero-right">
+    <div class="wc-countdown">
+     <div class="cd-unit"><span class="num" id="cd-d">--</span><span class="lbl">Días</span></div><span class="cd-sep">:</span>
+     <div class="cd-unit"><span class="num" id="cd-h">--</span><span class="lbl">Hrs</span></div><span class="cd-sep">:</span>
+     <div class="cd-unit"><span class="num" id="cd-m">--</span><span class="lbl">Min</span></div>
+    </div>
+    <div class="host-flags">
+     <span class="host"><span class="flag flag-mx"></span>MÉXICO</span>
+     <span class="host"><span class="flag flag-us"></span>USA</span>
+     <span class="host"><span class="flag flag-ca"></span>CANADA</span>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Tabs -->
+ <div class="wc-tabs-bar">
+  <div class="wc-tabs-inner" id="wcTabs"></div>
+ </div>
+ <div class="wc-subfilters" id="wcSubfilters"></div>
+
+ <!-- Main -->
+ <main class="wc-main">
+  <div class="wc-toolbar">
+   <div class="wc-result-count">Mostrando <strong id="resultCount">--</strong> productos</div>
+   <div class="wc-search">
+    <span style="color:var(--text-muted)">🔍</span>
+    <input type="text" id="searchInput" placeholder="Buscar por equipo, año, modelo...">
+   </div>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+ </main>
+</div>
+
+<!-- Page: Detail (Level 3) -->
+<div class="page-section" id="pageDetail">
+ <main class="wc-main">
+  <a href="#" class="detail-back" onclick="goBack(event)">← <span data-es="Volver al catálogo" data-en="Back to catalog">Volver al catálogo</span></a>
+  <div class="detail-grid" id="detailGrid"></div>
+ </main>
+</div>
+
+<footer class="wc-footer">
+ <p>© 2026 Shenzhen Huanyin Technology Co., Ltd. · Mundial 2026 Collection<br>
+ <a href="/index.html">Volver al sitio principal</a> · <a href="https://wa.me/8613302451417">WhatsApp B2B</a></p>
+</footer>
+
+<!-- Floater -->
+<div class="mundial-floater" id="mundialFloater" onclick="if(!event.target.closest('.close-x'))document.getElementById('pageList').scrollIntoView({behavior:'smooth'})">
+ <div class="ft-promo-tag">⚡ +200 PCS · <strong>15% OFF</strong></div>
+ <div class="ball-spin">⚽</div>
+ <button class="close-x" onclick="event.stopPropagation();document.getElementById('mundialFloater').style.display='none'">×</button>
+ <div class="ft-kicker">⚽ MUNDIAL 2026</div>
+ <div class="ft-title">Catálogo activo</div>
+ <div class="ft-mini">Comienza en <strong id="ft-days">--</strong> días</div>
+ <div class="ft-cta">Ver productos →</div>
+</div>
+
+<script src="worldcup-products.js"></script>
+<script>
+const CATEGORIES = [
+ {key:'all', es:'Todo', en:'All', icon:'🌐'},
+ {key:'jersey', es:'Camisetas', en:'Jerseys', icon:'👕'},
+ {key:'figure', es:'Figuras', en:'Figures', icon:'🧑'},
+ {key:'plush', es:'Peluches', en:'Plush', icon:'🐆'},
+ {key:'blindbox', es:'Cajas Misteriosas', en:'Mystery Box', icon:'🎁'},
+ {key:'keychain', es:'Llaveros', en:'Keychains', icon:'🔑'},
+ {key:'toy', es:'Juguetes', en:'Toys', icon:'🎲'},
+];
+const JERSEY_SUBTYPE_LABELS = {
+ national: {es:'Selecciones', en:'National Teams'},
+ club: {es:'Clubes', en:'Clubs'},
+ vintage: {es:'Vintage / Histórico', en:'Vintage'},
+};
+const REGION_LABELS = {
+ americas: {es:'Américas', en:'Americas'},
+ europe: {es:'Europa', en:'Europe'},
+ africa_asia: {es:'África / Asia', en:'Africa / Asia'},
+ club: {es:'Clubes', en:'Clubs'},
+ merch: {es:'Souvenirs', en:'Souvenirs'},
+};
+
+const products = window.WORLDCUP_PRODUCTS || [];
+let currentLang = 'es';
+let currentCat = 'all';
+let currentSubfilter = '';
+let currentSubfilter2 = '';
+let currentSearch = '';
+
+// === 双币种价格显示 ===
+// ES (墨西哥市场) 主显 MXN, EN (国际) 主显 USD
+function fmtPrice(price, tier) {
+ if (currentLang === 'es') {
+  return '<span style="font-variant-numeric:tabular-nums">$' + (price['mxn_'+tier] || 0) + ' <span style="font-size:0.6em;opacity:0.7">MXN</span></span>';
+ }
+ return '<span style="font-variant-numeric:tabular-nums">$' + (price['usd_'+tier] || 0).toFixed(2) + ' <span style="font-size:0.6em;opacity:0.7">USD</span></span>';
+}
+function fmtPriceAlt(price, tier) {
+ // 副币种显示 (在主币种下方做参考)
+ if (currentLang === 'es') {
+  return '≈ $' + (price['usd_'+tier] || 0).toFixed(2) + ' USD';
+ }
+ return '≈ $' + (price['mxn_'+tier] || 0) + ' MXN';
+}
+
+function tick() {
+ const t = new Date('2026-06-11T17:00:00-06:00').getTime();
+ const diff = Math.max(0, t - new Date().getTime());
+ const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000), m = Math.floor((diff%3600000)/60000);
+ const setEl = (id, v) => { const e=document.getElementById(id); if(e) e.textContent = String(v).padStart(2,'0'); };
+ setEl('cd-d',d); setEl('cd-h',h); setEl('cd-m',m);
+ const ft = document.getElementById('ft-days'); if(ft) ft.textContent = d;
+}
+tick(); setInterval(tick, 30000);
+
+function renderTabs() {
+ const counts = {all: products.length};
+ products.forEach(p => { counts[p.category] = (counts[p.category]||0)+1; });
+ const tabs = document.getElementById('wcTabs');
+ tabs.innerHTML = CATEGORIES.filter(c=>c.key==='all'||counts[c.key]).map(c =>
+  `<button class="wc-tab ${c.key===currentCat?'active':''}" data-cat="${c.key}">
+   <span>${c.icon}</span><span>${c[currentLang]}</span>
+   <span class="count">${counts[c.key]||0}</span>
+  </button>`
+ ).join('');
+ tabs.querySelectorAll('.wc-tab').forEach(b => b.onclick = ()=>{ currentCat=b.dataset.cat; currentSubfilter=''; render();});
+}
+
+function renderSubfilters() {
+ const wrap = document.getElementById('wcSubfilters');
+ if (currentCat === 'jersey') {
+  // 第一级子筛选: 球衣 sub_type (national/club/vintage)
+  const filtered = products.filter(p => p.category==='jersey');
+  const subtypes = ['national','club','vintage'];
+  const counts = {};
+  subtypes.forEach(st => counts[st] = filtered.filter(p=>p.sub_type===st).length);
+  let html = '<button class="wc-subfilter '+(!currentSubfilter?'active':'')+'" data-sub="">'+
+   (currentLang==='es'?'Todos':'All')+' ('+filtered.length+')</button>';
+  html += subtypes.map(st =>
+   `<button class="wc-subfilter ${currentSubfilter===st?'active':''}" data-sub="${st}">${JERSEY_SUBTYPE_LABELS[st][currentLang]} (${counts[st]})</button>`
+  ).join('');
+  // 国家队进一步按区域分
+  if (currentSubfilter === 'national') {
+   const nat = filtered.filter(p=>p.sub_type==='national');
+   const regions = [...new Set(nat.map(p=>p.region))].sort();
+   html += '<span class="wc-subfilter-sep">·</span>';
+   html += regions.map(r =>
+    `<button class="wc-subfilter wc-subfilter-sm ${currentSubfilter2===r?'active':''}" data-sub2="${r}">${REGION_LABELS[r]?REGION_LABELS[r][currentLang]:r}</button>`
+   ).join('');
+   html += `<button class="wc-subfilter wc-subfilter-sm ${!currentSubfilter2?'active':''}" data-sub2="">${currentLang==='es'?'Todas regiones':'All regions'}</button>`;
+  } else if (currentSubfilter === 'vintage') {
+   const vint = filtered.filter(p=>p.sub_type==='vintage');
+   const teams = [...new Set(vint.map(p=>p.team))].sort();
+   html += '<span class="wc-subfilter-sep">·</span>';
+   html += `<button class="wc-subfilter wc-subfilter-sm ${!currentSubfilter2?'active':''}" data-sub2="">${currentLang==='es'?'Todos equipos':'All teams'}</button>`;
+   html += teams.map(t =>
+    `<button class="wc-subfilter wc-subfilter-sm ${currentSubfilter2===t?'active':''}" data-sub2="${t}">${t}</button>`
+   ).join('');
+  }
+  wrap.innerHTML = html;
+ } else { wrap.innerHTML = '';}
+ wrap.querySelectorAll('.wc-subfilter').forEach(b => b.onclick = ()=>{
+  if (b.dataset.sub !== undefined) { currentSubfilter=b.dataset.sub; currentSubfilter2=''; }
+  else if (b.dataset.sub2 !== undefined) { currentSubfilter2=b.dataset.sub2; }
+  render();
+ });
+}
+
+function teamFlag(team) {
+ const map = { 'México':'🇲🇽','Brasil':'🇧🇷','Argentina':'🇦🇷','España':'🇪🇸','Portugal':'🇵🇹','Alemania':'🇩🇪','Francia':'🇫🇷','Italia':'🇮🇹','Inglaterra':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Países Bajos':'🇳🇱','Bélgica':'🇧🇪','Croacia':'🇭🇷','Estados Unidos':'🇺🇸','Canadá':'🇨🇦','Japón':'🇯🇵','Corea':'🇰🇷','Arabia Saudita':'🇸🇦','Marruecos':'🇲🇦','Colombia':'🇨🇴','Uruguay':'🇺🇾','Senegal':'🇸🇳','Camerún':'🇨🇲','Nigeria':'🇳🇬','Argelia':'🇩🇿' };
+ return map[team] || '⚽';
+}
+
+function renderProducts() {
+ let list = products.slice();
+ if (currentCat !== 'all') list = list.filter(p => p.category === currentCat);
+ // 球衣分类: sub_type (national/club/vintage)
+ if (currentCat === 'jersey' && currentSubfilter) {
+  list = list.filter(p => p.sub_type === currentSubfilter);
+ }
+ // 国家队进一步按区域 / vintage 按球队
+ if (currentCat === 'jersey' && currentSubfilter2) {
+  if (currentSubfilter === 'national') list = list.filter(p => p.region === currentSubfilter2);
+  else if (currentSubfilter === 'vintage') list = list.filter(p => p.team === currentSubfilter2);
+ }
+ if (currentSearch) {
+  const q = currentSearch.toLowerCase();
+  list = list.filter(p => (p.name_es+' '+p.name_zh+' '+p.team+' '+p.season).toLowerCase().includes(q));
+ }
+ document.getElementById('resultCount').textContent = list.length;
+ const grid = document.getElementById('productsGrid');
+ if (list.length === 0) {
+  grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="icon">⚽</div><h3>Sin resultados</h3><p>Prueba con otro filtro</p></div>';
+  return;
+ }
+ grid.innerHTML = list.map(p => {
+  const img = p.images && p.images.length ? `<img src="${p.images[0]}" alt="${p.name_es}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=&quot;product-img-placeholder&quot;><div>${teamFlag(p.team)}</div><div class=&quot;ph-text&quot;>${p.team}</div></div>'">` :
+   `<div class="product-img-placeholder"><div>${teamFlag(p.team)}</div><div class="ph-text">${p.team}</div></div>`;
+  const vintageBadge = p.is_vintage ? `<div class="product-vintage-badge">VINTAGE · ${p.season}</div>` : '';
+  const promoBadge = '<div class="product-promo-badge">-15%</div>';
+  return `<a class="product-card" href="#product/${p.id}" data-id="${p.id}">
+   <div class="product-img">${img}${vintageBadge}${promoBadge}</div>
+   <div class="product-info">
+    <div class="product-team">${p.team}</div>
+    <div class="product-name">${p[currentLang==='es'?'name_es':'name_en']}</div>
+    <div class="product-price-row">
+     <span class="product-price">${fmtPrice(p.price, 'small')}</span>
+     <span class="product-moq">MOQ ${p.price.moq}</span>
+    </div>
+   </div>
+  </a>`;
+ }).join('');
+}
+
+function render() { renderTabs(); renderSubfilters(); renderProducts(); }
+
+// === 详情页 (Level 3) ===
+function unitPrice(p, qty) {
+ const tier = qty >= 500 ? 'large' : 'small';
+ return { tier, mxn: p.price['mxn_'+tier], usd: p.price['usd_'+tier] };
+}
+function calcSubtotal(p, qty) {
+ const u = unitPrice(p, qty);
+ const promo = qty >= 200;
+ const factor = promo ? 0.85 : 1;
+ return {
+  mxn: Math.round(u.mxn * qty * factor),
+  usd: +(u.usd * qty * factor).toFixed(2),
+  promo, unitMxn: u.mxn, unitUsd: u.usd,
+ };
+}
+
+let currentVariantIdx = 0;
+
+function renderDetail(id, variantIdx) {
+ const p = products.find(x => x.id === id);
+ if (!p) { window.location.hash = ''; return; }
+ document.getElementById('pageList').classList.remove('active');
+ document.getElementById('pageDetail').classList.add('active');
+ currentVariantIdx = (variantIdx !== undefined) ? variantIdx : 0;
+ const name = p[currentLang==='es'?'name_es':'name_en'];
+ // 是否有变体 (盲盒)
+ const hasVariants = Array.isArray(p.variants) && p.variants.length > 1;
+ // 当前显示的图片来源: 变体图 优先, 否则 SPU 主图集
+ const imgs = hasVariants ? (p.variants[currentVariantIdx].images || p.images) : (p.images || []);
+ const mainImg = imgs.length ?
+  `<img id="mainImg" src="${imgs[0]}" alt="${name}" onerror="this.parentNode.innerHTML='<div class=&quot;product-img-placeholder&quot;><div style=&quot;font-size:80px&quot;>${teamFlag(p.team)}</div><div class=&quot;ph-text&quot;>${p.team}</div></div>'">` :
+  `<div class="product-img-placeholder"><div style="font-size:96px">${teamFlag(p.team)}</div><div class="ph-text">${p.team}</div></div>`;
+ const thumbs = imgs.map((img,i) =>
+  `<div class="detail-thumb ${i===0?'active':''}" onclick="document.getElementById('mainImg').src='${img}';this.parentNode.querySelectorAll('.detail-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active')"><img src="${img}" alt=""></div>`
+ ).join('');
+ const t = currentLang==='es' ? {
+  size:'Talla', qty:'Cantidad (pcs)', addcart:'Agregar al carrito',
+  calcship:'Calcular envío', moq:'MOQ', desc:'Descripción', version:'Versión',
+  descBody:p.category==='jersey' ? `Equipación oficial inspirada en la temporada ${p.season}. Poliéster premium dry-fit. Envío DDP 5-7 días desde Shenzhen. MOQ ${p.price.moq} pcs.` : `Producto oficial Mundial 2026. Envío DDP 5-7 días desde Shenzhen. MOQ ${p.price.moq} pcs.`,
+ } : {
+  size:'Size', qty:'Quantity (pcs)', addcart:'Add to cart',
+  calcship:'Estimate shipping', moq:'MOQ', desc:'Description', version:'Version',
+  descBody:p.category==='jersey' ? `Official-style jersey inspired by ${p.season} season. Premium dry-fit polyester. DDP shipping 5-7 days from Shenzhen. MOQ ${p.price.moq} pcs.` : `Official World Cup 2026 product. DDP shipping 5-7 days from Shenzhen. MOQ ${p.price.moq} pcs.`,
+ };
+ const initialQty = Math.max(50, p.price.moq);
+ // 球衣才有尺码
+ const showSizes = p.category === 'jersey' && p.sizes && p.sizes[0]!=='—';
+ // 变体切换器 (盲盒等)
+ const variantsHtml = hasVariants ? `
+   <div class="wc-block variant-selector">
+    <label class="wc-block-label">${t.version}</label>
+    <div class="variant-list" id="variantList">
+     ${p.variants.map((v,i)=>`<button class="variant-card ${i===currentVariantIdx?'active':''}" onclick="switchVariant('${p.id}', ${i})"><span class="variant-icon">${p.category==='jersey'?'👕':'🎁'}</span><span>${currentLang==='es'?v.label:(v.label_en||v.label)}</span></button>`).join('')}
+    </div>
+   </div>` : '';
+ document.getElementById('detailGrid').innerHTML = `
+  <div class="detail-gallery">
+   <div class="detail-main-img">${mainImg}</div>
+   ${thumbs ? '<div class="detail-thumbs">'+thumbs+'</div>' : ''}
+  </div>
+  <div class="detail-info">
+   ${p.team && p.team !== '—' ? `<span class="detail-team-tag">${p.team}</span>` : ''}
+   <h1>${name}</h1>
+   <div class="detail-meta">
+    ${p.season ? `<div class="item"><span class="lbl">Temporada</span><span class="val">${p.season}</span></div>` : ''}
+    ${p.variant && p.variant !== '标准' ? `<div class="item"><span class="lbl">Tipo</span><span class="val">${p.variant}</span></div>` : ''}
+   </div>
+   ${variantsHtml}
+   ${showSizes ? `
+   <div class="wc-block">
+    <label class="wc-block-label">${t.size}</label>
+    <div class="size-options" id="sizeOpts">
+     ${p.sizes.map((s,i)=>`<span class="size-opt ${i===2?'active':''}" onclick="document.querySelectorAll('#sizeOpts .size-opt').forEach(x=>x.classList.remove('active'));this.classList.add('active')">${s}</span>`).join('')}
+    </div>
+   </div>` : ''}
+   <div class="wc-block">
+    <label class="wc-block-label">${t.qty}</label>
+    <div class="qty-row">
+     <button class="qty-btn" onclick="qtyChange(-10)">−10</button>
+     <button class="qty-btn-tiny" onclick="qtyChange(-1)">−1</button>
+     <input type="number" id="qtyInput" value="${initialQty}" min="1" step="1" onchange="recalc()" oninput="recalc()">
+     <button class="qty-btn-tiny" onclick="qtyChange(1)">+1</button>
+     <button class="qty-btn" onclick="qtyChange(10)">+10</button>
+    </div>
+    <div class="qty-hint">${t.moq}: ${p.price.moq} pcs · +200 = -15% · +500 = volume price</div>
+   </div>
+   <div class="wc-price-block" id="priceBlock"></div>
+   <div class="detail-cta-row">
+    <button class="btn btn-cart" onclick="wcAddToCart('${p.id}')">🛒 ${t.addcart}</button>
+    <button class="btn btn-ship" onclick="wcCalcShipping('${p.id}')">🚚 ${t.calcship}</button>
+    <a href="https://wa.me/8613302451417?text=${encodeURIComponent('Hola! Me interesa: '+name+' (SKU: '+p.id+')')}" target="_blank" class="btn btn-wa-detail">💬 WhatsApp</a>
+   </div>
+   <div class="detail-desc"><h3>${t.desc}</h3><p>${t.descBody}</p></div>
+  </div>`;
+ recalc();
+ window.scrollTo(0,0);
+}
+
+function switchVariant(pid, idx) {
+ renderDetail(pid, idx);
+}
+
+function qtyChange(delta) {
+ const inp = document.getElementById('qtyInput');
+ if (!inp) return;
+ let v = parseInt(inp.value)||0;
+ v = Math.max(1, v + delta);
+ inp.value = v;
+ recalc();
+}
+
+function recalc() {
+ const inp = document.getElementById('qtyInput');
+ const m = window.location.hash.match(/^#product\/(.+)$/);
+ if (!inp || !m) return;
+ let pid;
+ try { pid = decodeURIComponent(m[1]); } catch(e) { pid = m[1]; }
+ const p = products.find(x=>x.id===pid);
+ if (!p) return;
+ const qty = parseInt(inp.value) || 1;
+ const sub = calcSubtotal(p, qty);
+ const u = unitPrice(p, qty);
+ const main = currentLang==='es' ? `$${sub.mxn} MXN` : `$${sub.usd} USD`;
+ const alt = currentLang==='es' ? `≈ $${sub.usd} USD` : `≈ $${sub.mxn} MXN`;
+ const unitMain = currentLang==='es' ? `$${u.mxn} MXN` : `$${u.usd.toFixed(2)} USD`;
+ const promoBadge = sub.promo ? `<span class="promo-applied">-15% aplicado</span>` : '';
+ const tierLabel = u.tier === 'large' ? 'volumen (+500 pcs)' : 'precio base';
+ const t = currentLang==='es' ? {unit:'Precio unitario',subtotal:'Subtotal'} : {unit:'Unit price',subtotal:'Subtotal'};
+ document.getElementById('priceBlock').innerHTML = `
+  <div class="pb-row"><span class="pb-lbl">${t.unit} <small style="opacity:0.6">${tierLabel}</small></span><span class="pb-val">${unitMain}</span></div>
+  <div class="pb-row pb-total"><span class="pb-lbl">${t.subtotal} ${promoBadge}</span><span class="pb-val pb-big">${main}<small style="display:block;font-size:11px;opacity:0.6;font-weight:600">${alt}</small></span></div>
+ `;
+}
+
+function wcAddToCart(id) {
+ const p = products.find(x=>x.id===id);
+ const qtyInp = document.getElementById('qtyInput');
+ const sizeEl = document.querySelector('#sizeOpts .size-opt.active');
+ const qty = parseInt(qtyInp.value)||50;
+ const size = sizeEl ? sizeEl.textContent : '—';
+ // Get current variant info
+ const hasVariants = Array.isArray(p.variants) && p.variants.length > 1;
+ const currentVariant = hasVariants ? p.variants[currentVariantIdx] : null;
+ const variantLabel = currentVariant ? (currentLang==='es'?currentVariant.label:(currentVariant.label_en||currentVariant.label)) : '';
+ const variantImg = (hasVariants && currentVariant?.images?.length) ? currentVariant.images[0] : (p.images||[])[0]||'';
+ let cart = [];
+ try { cart = JSON.parse(localStorage.getItem('huanyin_cart')||'[]'); } catch(e){}
+ const existing = cart.find(c => c.productId===id && (c.variantLabel||'')===variantLabel && (c.size||'—')===size);
+ if (existing) { existing.qty += qty; }
+ else {
+  cart.push({
+   productId: id, variantId: currentVariant?.id || 'home',
+   variantLabel: variantLabel,
+   qty, packaging: 'standard', size,
+   isWorldCup: true,
+   name: p.name_es, name_en: p.name_en,
+   team: p.team, season: p.season,
+   img: variantImg,
+   priceUsd: p.price.usd_small, priceMxn: p.price.mxn_small,
+  });
+ }
+ localStorage.setItem('huanyin_cart', JSON.stringify(cart));
+ const btn = event.target.closest('.btn-cart');
+ if (btn) {
+  const orig = btn.innerHTML;
+  btn.innerHTML = currentLang==='es'?'✓ Agregado!':'✓ Added!';
+  btn.style.background = '#5a9e6f';
+  setTimeout(()=>{ btn.innerHTML = orig; btn.style.background=''; }, 1500);
+ }
+}
+
+function wcCalcShipping(id) {
+ const p = products.find(x=>x.id===id);
+ const qty = parseInt(document.getElementById('qtyInput').value)||50;
+ const ratePerPc = p.category.startsWith('jersey') ? 1.50 :
+                   p.category==='blindbox' ? 2.20 :
+                   (p.category==='figure'||p.category==='plush') ? 1.80 : 0.80;
+ const totalUsd = +(ratePerPc * qty).toFixed(2);
+ const totalMxn = Math.round(totalUsd * 17.5);
+ const t = currentLang==='es' ? {
+  title:'Estimación de envío (DDP a México)', qty:'Cantidad', perPc:'Por pieza',
+  total:'Total', note:'⚠ Esto es solo una estimación. El precio final depende del peso real, destino exacto y temporada.',
+  close:'Cerrar', wa:'Pedir cotización por WhatsApp',
+ } : {
+  title:'Shipping estimate (DDP to Mexico)', qty:'Quantity', perPc:'Per piece',
+  total:'Total', note:'⚠ This is only an estimate. Final price depends on actual weight, destination and season.',
+  close:'Close', wa:'Request quote via WhatsApp',
+ };
+ const waUrl = `https://wa.me/8613302451417?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
+ const modal = document.createElement('div');
+ modal.className = 'wc-modal';
+ modal.innerHTML = `
+  <div class="wc-modal-card">
+   <button class="wc-modal-close" onclick="this.closest('.wc-modal').remove()">×</button>
+   <h3>${t.title}</h3>
+   <div class="ship-rows">
+    <div class="ship-row"><span>${t.qty}</span><strong>${qty} pcs</strong></div>
+    <div class="ship-row"><span>${t.perPc}</span><strong>$${ratePerPc.toFixed(2)} USD</strong></div>
+    <div class="ship-row ship-total"><span>${t.total}</span><strong>$${totalUsd} USD<br><small style="font-weight:500;opacity:0.7">≈ $${totalMxn} MXN</small></strong></div>
+   </div>
+   <p class="ship-note">${t.note}</p>
+   <div class="ship-actions">
+    <a href="${waUrl}" target="_blank" class="btn btn-wa-detail">💬 ${t.wa}</a>
+    <button class="btn btn-outline" onclick="this.closest('.wc-modal').remove()">${t.close}</button>
+   </div>
+  </div>`;
+ document.body.appendChild(modal);
+}
+
+function goBack(e) {
+ if (e) e.preventDefault();
+ window.location.hash = '';
+ document.getElementById('pageDetail').classList.remove('active');
+ document.getElementById('pageList').classList.add('active');
+}
+
+function handleRoute() {
+ const h = window.location.hash;
+ const m = h.match(/^#product\/(.+)$/);
+ if (m) { try { renderDetail(decodeURIComponent(m[1])); } catch(e) { renderDetail(m[1]); } }
+ else goBack();
+}
+
+document.getElementById('searchInput').addEventListener('input', e => { currentSearch = e.target.value; renderProducts(); });
+window.addEventListener('hashchange', handleRoute);
+document.querySelectorAll('.lang-toggle button').forEach(b => b.onclick = ()=>{
+ document.querySelectorAll('.lang-toggle button').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active'); currentLang = b.dataset.lang;
+ document.querySelectorAll('[data-es]').forEach(el => { el.textContent = el.dataset[currentLang] || el.textContent; });
+ render(); handleRoute(); updateCartWCUI();
+});
+
+document.getElementById('statTotal').textContent = products.length;
+render(); handleRoute();
+
+// ============ SHARED CART ============
+let cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
+
+function saveCartWC() { localStorage.setItem('huanyin_cart', JSON.stringify(cart)); updateCartWCUI(); }
+
+function updateCartWCUI() {
+ const count = cart.reduce((s, c) => s + (c.qty || 0), 0);
+ const countEl = document.getElementById('wcCartCount');
+ if (countEl) {
+  countEl.textContent = count;
+  countEl.style.display = count > 0 ? 'flex' : 'none';
+ }
+ renderCartItemsWC();
+}
+
+function renderCartItemsWC() {
+ const container = document.getElementById('wcCartItems');
+ const footer = document.getElementById('wcCartFooter');
+ if (!container || !footer) return;
+ if (cart.length === 0) {
+  container.innerHTML = '<div class="cart-empty">' + (currentLang === 'es' ? 'Tu cotización está vacía. Agrega productos desde el catálogo.' : 'Your inquiry is empty. Add products from our catalog.') + '</div>';
+  footer.style.display = 'none';
+  return;
+ }
+ let totalMxn = 0, totalUsd = 0;
+ container.innerHTML = cart.map((c, i) => {
+  const qty = c.qty || 1;
+  let name, img, priceMxn, priceUsd, variantLabel;
+  if (c.isWorldCup) {
+   name = currentLang === 'es' ? (c.name || 'Producto') : (c.name_en || 'Product');
+   img = c.img || '';
+   priceMxn = c.priceMxn || 0;
+   priceUsd = c.priceUsd || 0;
+   variantLabel = c.variantLabel || (c.size && c.size !== '—' ? c.size : (c.team || ''));
+  } else {
+   name = c.productId || 'Producto';
+   img = c.img || '';
+   priceMxn = c.priceMxn || 0;
+   priceUsd = c.priceUsd || 0;
+   variantLabel = c.variantId || '';
+  }
+  totalMxn += priceMxn * qty;
+  totalUsd += priceUsd * qty;
+  const displayPrice = currentLang === 'es' ? '$' + (priceMxn * qty) + ' MXN' : '$' + (priceUsd * qty).toFixed(2) + ' USD';
+  const imgHtml = img ? '<img src="' + img + '" alt="" onerror="this.parentNode.innerHTML=\x27⚽\x27">' : '⚽';
+  return '<div class="cart-item">' +
+   '<div class="cart-item-img">' + imgHtml + '</div>' +
+   '<div class="cart-item-info">' +
+    '<div class="cart-item-name">' + name + '</div>' +
+    '<div class="cart-item-variant">' + variantLabel + '</div>' +
+    '<div class="cart-item-price">' + displayPrice + '</div>' +
+    '<div class="cart-item-qty">' +
+     '<button onclick="updateQtyWC(' + i + ', -1)">−</button>' +
+     '<span>' + qty + '</span>' +
+     '<button onclick="updateQtyWC(' + i + ', 1)">+</button>' +
+    '</div>' +
+   '</div>' +
+   '<button class="cart-item-remove" onclick="removeFromCartWC(' + i + ')">✕</button>' +
+  '</div>';
+ }).join('');
+ const totalDisplay = currentLang === 'es' ? '$' + totalMxn + ' MXN' : '$' + totalUsd.toFixed(2) + ' USD';
+ const totalAlt = currentLang === 'es' ? '≈ $' + totalUsd.toFixed(2) + ' USD' : '≈ $' + totalMxn + ' MXN';
+ document.getElementById('wcCartTotal').innerHTML = totalDisplay + '<br><small style="font-size:11px;opacity:0.6;font-weight:600">' + totalAlt + '</small>';
+ footer.style.display = 'block';
+}
+
+function updateQtyWC(index, delta) {
+ cart[index].qty = (cart[index].qty || 1) + delta;
+ if (cart[index].qty < 1) cart[index].qty = 1;
+ saveCartWC();
+}
+
+function removeFromCartWC(index) { cart.splice(index, 1); saveCartWC(); }
+
+// Override wcAddToCart to update UI
+const origWcAddToCart = wcAddToCart;
+wcAddToCart = function(id) {
+ origWcAddToCart(id);
+ setTimeout(function() { cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]'); updateCartWCUI(); }, 100);
+};
+
+// ============ CART PANEL ============
+function toggleCartWC() {
+ const panelOpen = document.getElementById('wcCartPanel').classList.toggle('open');
+ document.getElementById('wcCartOverlay').classList.toggle('open');
+ if (panelOpen && cart.length > 0) {
+  document.getElementById('wcCartAddrPanel').classList.add('open');
+ } else {
+  document.getElementById('wcCartAddrPanel').classList.remove('open');
+ }
+}
+
+// ============ CART ADDRESS ============
+const mexicanStates = [
+ { name: 'Aguascalientes', remote: false }, { name: 'Baja California', remote: false }, { name: 'Baja California Sur', remote: true },
+ { name: 'Campeche', remote: true }, { name: 'Chiapas', remote: true }, { name: 'Chihuahua', remote: false }, { name: 'Ciudad de México', remote: false },
+ { name: 'Coahuila', remote: false }, { name: 'Colima', remote: false }, { name: 'Durango', remote: false }, { name: 'Estado de México', remote: false },
+ { name: 'Guanajuato', remote: false }, { name: 'Guerrero', remote: false }, { name: 'Hidalgo', remote: false }, { name: 'Jalisco', remote: false },
+ { name: 'Michoacán', remote: false }, { name: 'Morelos', remote: false }, { name: 'Nayarit', remote: false }, { name: 'Nuevo León', remote: false },
+ { name: 'Oaxaca', remote: false }, { name: 'Puebla', remote: false }, { name: 'Querétaro', remote: false }, { name: 'Quintana Roo', remote: true },
+ { name: 'San Luis Potosí', remote: false }, { name: 'Sinaloa', remote: false }, { name: 'Sonora', remote: false }, { name: 'Tabasco', remote: true },
+ { name: 'Tamaulipas', remote: false }, { name: 'Tlaxcala', remote: false }, { name: 'Veracruz', remote: false }, { name: 'Yucatán', remote: true },
+ { name: 'Zacatecas', remote: false }
+];
+
+const otherStates = {
+ Colombia: ['Amazonas','Antioquia','Arauca','Atlántico','Bogotá D.C.','Bolívar','Boyacá','Caldas','Caquetá','Casanare','Cauca','Cesar','Chocó','Córdoba','Cundinamarca','Guainía','Guaviare','Huila','La Guajira','Magdalena','Meta','Nariño','Norte de Santander','Putumayo','Quindío','Risaralda','San Andrés','Santander','Sucre','Tolima','Valle del Cauca','Vaupés','Vichada'],
+ Chile: ['Arica y Parinacota','Tarapacá','Antofagasta','Atacama','Coquimbo','Valparaíso','Región Metropolitana','O\x27Higgins','Maule','Ñuble','Biobío','Araucanía','Los Ríos','Los Lagos','Aysén','Magallanes'],
+ Peru: ['Amazonas','Áncash','Apurímac','Arequipa','Ayacucho','Cajamarca','Callao','Cusco','Huancavelica','Huánuco','Ica','Junín','La Libertad','Lambayeque','Lima','Loreto','Madre de Dios','Moquegua','Pasco','Piura','Puno','San Martín','Tacna','Tumbes','Ucayali'],
+ Brazil: ['Acre','Alagoas','Amapá','Amazonas','Bahia','Ceará','Distrito Federal','Espírito Santo','Goiás','Maranhão','Mato Grosso','Mato Grosso do Sul','Minas Gerais','Pará','Paraíba','Paraná','Pernambuco','Piauí','Rio de Janeiro','Rio Grande do Norte','Rio Grande do Sul','Rondônia','Roraima','Santa Catarina','São Paulo','Sergipe','Tocantins']
+};
+
+let cartAddress = { country: '', state: '', city: '', zip: '', fullAddress: '', contactName: '' };
+
+function onCountryChangeWC() {
+ const country = document.getElementById('wcAddrCountry').value;
+ const stateSelect = document.getElementById('wcAddrState');
+ stateSelect.innerHTML = '<option value="">' + (currentLang === 'es' ? '— Estado *' : '— State *') + '</option>';
+ if (!country) return;
+ let states = [];
+ if (country === 'Mexico') { states = mexicanStates; }
+ else if (otherStates[country]) { states = otherStates[country].map(function(n) { return { name: n, remote: false }; }); }
+ states.forEach(function(s) {
+  const opt = document.createElement('option');
+  opt.value = s.name; opt.textContent = s.name;
+  if (s.remote) opt.className = 'remote';
+  stateSelect.appendChild(opt);
+ });
+ syncAddressWC();
+}
+
+function syncAddressWC() {
+ cartAddress.country = document.getElementById('wcAddrCountry')?.value || '';
+ cartAddress.state = document.getElementById('wcAddrState')?.value || '';
+ cartAddress.city = document.getElementById('wcAddrCity')?.value || '';
+ cartAddress.zip = document.getElementById('wcAddrZip')?.value || '';
+ cartAddress.fullAddress = document.getElementById('wcAddrFull')?.value || '';
+ cartAddress.contactName = document.getElementById('wcAddrName')?.value || '';
+ document.getElementById('wcAddrWarn').style.display = 'none';
+}
+
+function isAddressCompleteWC() {
+ return cartAddress.country && cartAddress.state && cartAddress.city && cartAddress.zip;
+}
+
+function sendCartToWhatsAppWC() {
+ syncAddressWC();
+ if (!isAddressCompleteWC()) {
+  document.getElementById('wcAddrWarn').style.display = 'block';
+  return;
+ }
+ let msg = currentLang === 'es'
+  ? '¡Hola! Solicito una cotización:\n\n📦 Productos:\n'
+  : 'Hello, I would like to request a quotation:\n\n📦 Products:\n';
+ let totalMxn = 0, totalUsd = 0;
+ cart.forEach(function(c) {
+  const qty = c.qty || 1;
+  let name, priceMxn, priceUsd;
+  if (c.isWorldCup) {
+   name = currentLang === 'es' ? (c.name || 'Producto') : (c.name_en || 'Product');
+   priceMxn = c.priceMxn || 0;
+   priceUsd = c.priceUsd || 0;
+  } else {
+   name = c.productId || 'Producto';
+   priceMxn = c.priceMxn || 0;
+   priceUsd = c.priceUsd || 0;
+  }
+  totalMxn += priceMxn * qty;
+  totalUsd += priceUsd * qty;
+  const linePrice = currentLang === 'es' ? '$' + (priceMxn * qty) + ' MXN' : '$' + (priceUsd * qty).toFixed(2) + ' USD';
+  msg += '• ' + name + ' × ' + qty + ' — ' + linePrice + '\n';
+ });
+ const totalDisp = currentLang === 'es' ? '$' + totalMxn + ' MXN' : '$' + totalUsd.toFixed(2) + ' USD';
+ msg += '\n💰 Total: ' + totalDisp + '\n';
+ msg += '\n' + (currentLang === 'es' ? '🚚 Datos de envío:' : '🚚 Shipping info:') + '\n';
+ msg += (currentLang === 'es' ? 'País: ' + cartAddress.country + '\nEstado: ' + cartAddress.state + '\nCiudad: ' + cartAddress.city + '\nC.P.: ' + cartAddress.zip + '\n' : 'Country: ' + cartAddress.country + '\nState: ' + cartAddress.state + '\nCity: ' + cartAddress.city + '\nZip: ' + cartAddress.zip + '\n');
+ if (cartAddress.fullAddress) msg += (currentLang === 'es' ? 'Dirección: ' + cartAddress.fullAddress + '\n' : 'Address: ' + cartAddress.fullAddress + '\n');
+ if (cartAddress.contactName) msg += (currentLang === 'es' ? 'Contacto: ' + cartAddress.contactName + '\n' : 'Contact: ' + cartAddress.contactName + '\n');
+ msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
+ window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
+}
+
+updateCartWCUI();
+</script>
+
+<!-- ============ CART HTML ============ -->
+<button class="floating-cart" onclick="toggleCartWC()" title="Cart">
+ <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20a1 1 0 100-2 1 1 0 000 2zM20 20a1 1 0 100-2 1 1 0 000 2z"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.94-1.49L23 6H6"/></svg>
+ <span class="cart-count" id="wcCartCount" style="display:none">0</span>
+</button>
+
+<div class="cart-overlay" id="wcCartOverlay" onclick="toggleCartWC()"></div>
+<div class="cart-panel" id="wcCartPanel">
+ <div class="cart-header">
+  <h3 data-es="Mi Cotización" data-en="My Inquiry">Mi Cotización</h3>
+  <button class="cart-close" onclick="toggleCartWC()">&#x2715;</button>
+ </div>
+ <div class="cart-items" id="wcCartItems"></div>
+ <div class="cart-footer" id="wcCartFooter" style="display:none">
+  <div class="cart-total"><span data-es="Total productos:" data-en="Total items:">Total productos:</span> <strong id="wcCartTotal">0</strong></div>
+  <button class="cart-wa-btn" onclick="sendCartToWhatsAppWC()">
+   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+   <span data-es="Enviar por WhatsApp" data-en="Send via WhatsApp">Enviar por WhatsApp</span>
+  </button>
+  <button class="cart-continue" onclick="toggleCartWC()" data-es="Seguir Explorando" data-en="Keep Browsing">Seguir Explorando</button>
+ </div>
+</div>
+
+<div class="cart-addr-panel" id="wcCartAddrPanel">
+ <h4 data-es="Dirección de Envío" data-en="Shipping Address">Dirección de Envío</h4>
+ <div class="cart-addr-inner">
+  <div class="addr-row">
+   <select class="cart-addr-select" id="wcAddrCountry" onchange="onCountryChangeWC()">
+    <option value="" data-es="— País *" data-en="— Country *">— País *</option>
+    <option value="Mexico">Mexico</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Chile">Chile</option>
+    <option value="Peru">Peru</option>
+    <option value="Brazil">Brazil</option>
+   </select>
+   <select class="cart-addr-select" id="wcAddrState" onchange="syncAddressWC()">
+    <option value="" data-es="— Estado *" data-en="— State *">— Estado *</option>
+   </select>
+  </div>
+  <div class="addr-row">
+   <input class="cart-addr-input" id="wcAddrCity" type="text" oninput="syncAddressWC()" data-es-placeholder="Ciudad *" data-en-placeholder="City *" placeholder="Ciudad *">
+   <input class="cart-addr-input" id="wcAddrZip" type="text" oninput="syncAddressWC()" data-es-placeholder="Código Postal *" data-en-placeholder="Postal Code *" placeholder="Código Postal *">
+  </div>
+  <div class="addr-row single">
+   <input class="cart-addr-input" id="wcAddrFull" type="text" oninput="syncAddressWC()" data-es-placeholder="Dirección Completa" data-en-placeholder="Full Address" placeholder="Dirección Completa">
+  </div>
+  <div class="addr-row single">
+   <input class="cart-addr-input" id="wcAddrName" type="text" oninput="syncAddressWC()" data-es-placeholder="Nombre de Contacto" data-en-placeholder="Contact Name" placeholder="Nombre de Contacto">
+  </div>
+  <div class="cart-addr-warn" id="wcAddrWarn" data-es="Por favor complete País, Estado, Ciudad y Código Postal." data-en="Please fill in Country, State, City and Postal Code.">Por favor complete País, Estado, Ciudad y Código Postal.</div>
+  <button class="addr-send-btn" onclick="sendCartToWhatsAppWC()">
+   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+   <span data-es="Enviar por WhatsApp" data-en="Send via WhatsApp">Enviar por WhatsApp</span>
+  </button>
+ </div>
+</div>
+</body>
+</html>
