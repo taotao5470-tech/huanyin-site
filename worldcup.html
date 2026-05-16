@@ -983,11 +983,11 @@ function renderCartItemsWC(c) {
    if (item.size && item.size !== '—') parts.push(item.size);
    vLabel = parts.join(' · ');
   } else {
-   name = item.productId || 'Producto';
+   name = currentLang === 'es' ? (item.nameEs || item.nameEn || item.productId || 'Producto') : (item.nameEn || item.nameEs || item.productId || 'Product');
    img = item.img || '';
-   priceMxn = item.priceMxn || 0;
-   priceUsd = item.priceUsd || 0;
-   vLabel = item.variantId || '';
+   priceMxn = (qty >= 120 && item.priceMxnLarge) ? item.priceMxnLarge : (item.priceMxnSmall || item.priceMxnLarge || item.priceMxn || 0);
+   priceUsd = (qty >= 120 && item.priceUsdLarge) ? item.priceUsdLarge : (item.priceUsdSmall || item.priceUsdLarge || item.priceUsd || 0);
+   vLabel = item.variantLabel || item.variantId || '';
   }
   totalMxn += priceMxn * qty;
   totalUsd += priceUsd * qty;

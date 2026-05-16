@@ -2712,10 +2712,66 @@ let cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
 
 function saveCart() { localStorage.setItem('huanyin_cart', JSON.stringify(cart)); updateCartUI(); }
 
+function getMainCartItemMeta(productId, variantId, qty) {
+ const product = products.find(item => item.id === productId);
+ const variant = product?.variants.find(item => item.id === variantId);
+ if (!product || !variant) return null;
+
+ const unitPriceUsd = (qty >= 120 && variant.prices.large) ? variant.prices.large : (variant.prices.small || variant.prices.large || 0);
+ const smallUsd = variant.prices.small || variant.prices.large || 0;
+ const largeUsd = variant.prices.large || variant.prices.small || 0;
+
+ return {
+  nameEs: product.name.es,
+  nameEn: product.name.en,
+  img: product.img || '',
+  icon: product.icon || '',
+  category: product.cat || '',
+  variantLabel: variant.name || '',
+  priceUsd: unitPriceUsd,
+  priceMxn: Math.round(unitPriceUsd * MXN_RATE),
+  priceUsdSmall: smallUsd,
+  priceUsdLarge: largeUsd,
+  priceMxnSmall: Math.round(smallUsd * MXN_RATE),
+  priceMxnLarge: Math.round(largeUsd * MXN_RATE)
+ };
+}
+
+function enrichMainCartItem(item) {
+ if (!item || item.isWorldCup) return item;
+ const meta = getMainCartItemMeta(item.productId, item.variantId, item.qty || 1);
+ return meta ? { ...item, ...meta } : item;
+}
+
+function normalizeSharedCart() {
+ let changed = false;
+ cart = cart.map(item => {
+  const enriched = enrichMainCartItem(item);
+  if (JSON.stringify(enriched) !== JSON.stringify(item)) changed = true;
+  return enriched;
+ });
+ if (changed) {
+  localStorage.setItem('huanyin_cart', JSON.stringify(cart));
+ }
+}
+
+normalizeSharedCart();
+
 function addToCart(productId, variantId) {
  const existing = cart.find(c => c.productId === productId && c.variantId === variantId);
- if (existing) { existing.qty++; }
- else { cart.push({ productId, variantId, qty: 1, packaging: 'standard' }); }
+ if (existing) {
+  existing.qty++;
+  Object.assign(existing, getMainCartItemMeta(productId, variantId, existing.qty) || {});
+ }
+ else {
+  cart.push({
+   productId,
+   variantId,
+   qty: 1,
+   packaging: 'standard',
+   ...(getMainCartItemMeta(productId, variantId, 1) || {})
+  });
+ }
  saveCart();
  trackCartAdd(productId, variantId, 1);
 }
@@ -2755,8 +2811,19 @@ function pdQtyValidate() {
 function addToCartWithQty(productId, variantId) {
  const qty = getPdQty();
  const existing = cart.find(c => c.productId === productId && c.variantId === variantId);
- if (existing) { existing.qty += qty; }
- else { cart.push({ productId, variantId, qty, packaging: 'standard' }); }
+ if (existing) {
+  existing.qty += qty;
+  Object.assign(existing, getMainCartItemMeta(productId, variantId, existing.qty) || {});
+ }
+ else {
+  cart.push({
+   productId,
+   variantId,
+   qty,
+   packaging: 'standard',
+   ...(getMainCartItemMeta(productId, variantId, qty) || {})
+  });
+ }
  saveCart();
  trackCartAdd(productId, variantId, qty);
  if (typeof clarity !== 'undefined') { clarity('set', 'cart_count', cart.reduce(function(s,c){return s + c.qty}, 0)); clarity('event', 'add_to_cart'); }
@@ -2777,6 +2844,9 @@ function removeFromCart(index) { cart.splice(index, 1); saveCart(); }
 function updateQty(index, delta) {
  cart[index].qty += delta;
  if (cart[index].qty < 1) cart[index].qty = 1;
+ if (!cart[index].isWorldCup) {
+  Object.assign(cart[index], getMainCartItemMeta(cart[index].productId, cart[index].variantId, cart[index].qty) || {});
+ }
  saveCart();
 }
 
