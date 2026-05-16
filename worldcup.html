@@ -11,31 +11,7 @@
 <meta property="og:title" content="Mundial 2026 Collection · HUANYIN Supply">
 <meta property="og:description" content="Equipaciones oficiales de las 32 selecciones, vintage, peluches y souvenirs. Promo: +200 pcs = 15% OFF.">
 <meta property="og:image" content="https://huanyinvox.top/huanyin-site-card.png?v=2">
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=2.0;
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document, 'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1464034677999267');
-fbq('track', 'PageView');
-
-window.trackMetaEventWC = function(name, params) {
- try {
-  if (typeof fbq !== 'function') return;
-  if (params) {
-   fbq('track', name, params);
-  } else {
-   fbq('track', name);
-  }
- } catch (err) {
-  console.warn('Meta event failed:', name, err);
- }
-};
-</script>
+<script src="meta-shared.js"></script>
 <style>
 :root {
  --bg-primary: #1c1c1c;
@@ -857,10 +833,10 @@ function wcAddToCart(id) {
   });
  }
  localStorage.setItem('huanyin_cart', JSON.stringify(c));
- if (typeof window.trackMetaEventWC === 'function') {
+ if (window.HuanyinMeta) {
   var unitUsd = p.price && p.price.usd_small ? p.price.usd_small : 0;
   var unitMxn = p.price && p.price.mxn_small ? p.price.mxn_small : 0;
-  window.trackMetaEventWC('AddToCart', {
+  window.HuanyinMeta.trackAddToCart({
    currency: currentLang === 'es' ? 'MXN' : 'USD',
    value: currentLang === 'es' ? unitMxn * qty : Number((unitUsd * qty).toFixed(2)),
    content_name: currentLang === 'es' ? p.name_es : p.name_en,
@@ -1162,8 +1138,8 @@ function sendCartToWhatsAppWC() {
   msg += (currentLang === 'es' ? 'Contacto: ' + cartAddress.contactName + '\n' : 'Contact: ' + cartAddress.contactName + '\n');
  }
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
- if (typeof window.trackMetaEventWC === 'function') {
-  window.trackMetaEventWC('Contact');
+ if (window.HuanyinMeta) {
+  window.HuanyinMeta.trackContact();
  }
  window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
 }

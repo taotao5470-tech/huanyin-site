@@ -1491,32 +1491,7 @@ body {
 
 </style>
 <!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=2.0;
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document, 'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1464034677999267');
-fbq('track', 'PageView');
-
-window.HUANYIN_META_PIXEL_ID = '1464034677999267';
-window.trackMetaEvent = function(name, params) {
- try {
-  if (typeof fbq !== 'function') return;
-  if (params) {
-   fbq('track', name, params);
-  } else {
-   fbq('track', name);
-  }
- } catch (err) {
-  console.warn('Meta event failed:', name, err);
- }
-};
-</script>
+<script src="meta-shared.js"></script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
 /></noscript>
@@ -2508,9 +2483,9 @@ function formatMetaValue(usdValue) {
 function trackCartAdd(productId, variantId, qty) {
  const product = products.find(item => item.id === productId);
  const variant = product?.variants.find(item => item.id === variantId);
- if (!product || !variant || typeof window.trackMetaEvent !== 'function') return;
+ if (!product || !variant || !window.HuanyinMeta) return;
  const unitPrice = (qty >= 120 && variant.prices.large) ? variant.prices.large : (variant.prices.small || variant.prices.large || 0);
- window.trackMetaEvent('AddToCart', {
+ window.HuanyinMeta.trackAddToCart({
   currency: currencyLabel(),
   value: formatMetaValue(unitPrice * qty),
   content_name: product.name[currentLang] || product.name.en,
@@ -2935,8 +2910,8 @@ function sendCartToWhatsApp() {
  if (cartAddress.fullAddress) msg += (currentLang === 'es' ? `Dirección: ${cartAddress.fullAddress}\n` : `Address: ${cartAddress.fullAddress}\n`);
  if (cartAddress.contactName) msg += (currentLang === 'es' ? `Contacto: ${cartAddress.contactName}\n` : `Contact: ${cartAddress.contactName}\n`);
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
- if (typeof window.trackMetaEvent === 'function') {
-  window.trackMetaEvent('Contact');
+ if (window.HuanyinMeta) {
+  window.HuanyinMeta.trackContact();
  }
  window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
 }
@@ -3062,8 +3037,8 @@ function handleContactSubmit(e) {
  const msg = currentLang === 'es'
   ? `¡Hola! Soy ${name} de ${company} (${country}). Me gustaría recibir información sobre sus productos. Tel: ${phone}`
   : `Hello! I'm ${name} from ${company} (${country}). I'd like to receive information about your products. Phone: ${phone}`;
- if (typeof window.trackMetaEvent === 'function') {
-  window.trackMetaEvent('Contact');
+ if (window.HuanyinMeta) {
+  window.HuanyinMeta.trackContact();
  }
  window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
 }
