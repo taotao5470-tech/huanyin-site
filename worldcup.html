@@ -71,10 +71,14 @@ img { max-width: 100%; display: block;}
 .lang-toggle { display: flex; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-dark);}
 .lang-toggle button { padding: 5px 12px; font-size: 12px; font-weight: 600; background: transparent; color: var(--text-muted); transition: var(--transition);}
 .lang-toggle button.active { background: var(--accent-moss); color: #fff;}
+.nav-actions { display: flex; align-items: center; gap: 12px;}
 .nav-wa { padding: 8px 16px; border-radius: 20px; background: var(--whatsapp); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px;}
 .nav-wa:hover { background: var(--whatsapp-dark);}
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 4px;}
-.hamburger span { width: 22px; height: 2px; background: var(--text-light);}
+.hamburger span { width: 22px; height: 2px; background: var(--text-light); border-radius: 1px; transition: var(--transition);}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px);}
+.hamburger.open span:nth-child(2) { opacity: 0;}
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px);}
 
 /* ============ Promo Bar ============ */
 .promo-bar { position: relative; width: 100%; z-index: 50; background: linear-gradient(90deg, #8a0d1c 0%, var(--wc-red-bright) 18%, var(--wc-red) 50%, var(--wc-red-bright) 82%, #8a0d1c 100%); border-top: 1px solid rgba(255,215,0,0.45); border-bottom: 1px solid rgba(255,215,0,0.45); overflow: hidden;}
@@ -325,8 +329,32 @@ img { max-width: 100%; display: block;}
 
 @media (max-width: 768px) {
  .nav { padding: 0 14px;}
- .nav-links { gap: 14px;}
- .nav-mundial span:nth-child(2) { display: none;}
+ .nav-logo { min-width: 0;}
+ .nav-logo .word small { display: none;}
+ .nav-links {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 210;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 12px 18px 16px;
+  background: rgba(10,14,18,0.98);
+  border-bottom: 1px solid var(--border-dark);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.38);
+  backdrop-filter: blur(18px);
+ }
+ .nav-links.open { display: flex;}
+ .nav-links a { padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 15px;}
+ .nav-links .lang-toggle { align-self: flex-start; margin-top: 12px;}
+ .nav-mundial { justify-content: center; margin: 10px 0 2px; border-bottom: none !important;}
+ .nav-mundial span:nth-child(2) { display: inline;}
+ .nav-actions { gap: 8px;}
+ .nav-wa { padding: 8px 12px; font-size: 12px;}
+ .hamburger { display: flex;}
  .promo-bar-tag { display: none;}
  .promo-bar-text { font-size: 11.5px;}
  .promo-bar-text .dot-sep { margin: 0 6px;}
@@ -463,7 +491,10 @@ img { max-width: 100%; display: block;}
   <a href="/index.html#about-us">Empresa</a>
   <div class="lang-toggle"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button></div>
  </div>
- <a href="https://wa.me/85270725628" target="_blank" class="nav-wa">WhatsApp</a>
+ <div class="nav-actions">
+  <a href="https://wa.me/85270725628" target="_blank" class="nav-wa">WhatsApp</a>
+  <button class="hamburger" id="navMenuButton" aria-label="Menu" aria-expanded="false" onclick="toggleWorldcupMenu()"><span></span><span></span><span></span></button>
+ </div>
 </nav>
 
 <!-- Promo Bar -->
@@ -958,6 +989,29 @@ document.querySelectorAll('.lang-toggle button').forEach(b => b.onclick = ()=>{
  b.classList.add('active'); currentLang = b.dataset.lang;
  document.querySelectorAll('[data-es]').forEach(el => { el.textContent = el.dataset[currentLang] || el.textContent; });
  render(); handleRoute(); updateCartWCUI();
+ closeWorldcupMenu();
+});
+
+function toggleWorldcupMenu() {
+ var links = document.getElementById('navLinks');
+ var button = document.getElementById('navMenuButton');
+ if (!links || !button) return;
+ var isOpen = links.classList.toggle('open');
+ button.classList.toggle('open', isOpen);
+ button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
+function closeWorldcupMenu() {
+ var links = document.getElementById('navLinks');
+ var button = document.getElementById('navMenuButton');
+ if (!links || !button) return;
+ links.classList.remove('open');
+ button.classList.remove('open');
+ button.setAttribute('aria-expanded', 'false');
+}
+
+document.querySelectorAll('#navLinks a').forEach(function(link) {
+ link.addEventListener('click', closeWorldcupMenu);
 });
 
 document.getElementById('statTotal').textContent = products.length;
