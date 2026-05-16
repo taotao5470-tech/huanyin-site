@@ -2935,6 +2935,9 @@ function sendCartToWhatsApp() {
  if (cartAddress.fullAddress) msg += (currentLang === 'es' ? `Dirección: ${cartAddress.fullAddress}\n` : `Address: ${cartAddress.fullAddress}\n`);
  if (cartAddress.contactName) msg += (currentLang === 'es' ? `Contacto: ${cartAddress.contactName}\n` : `Contact: ${cartAddress.contactName}\n`);
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
+ if (typeof window.trackMetaEvent === 'function') {
+  window.trackMetaEvent('Contact');
+ }
  window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
 }
 
