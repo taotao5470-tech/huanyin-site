@@ -1465,22 +1465,7 @@ body {
 .cat-mundial-trophy { position: absolute; bottom: 60px; right: 18px; font-size: 56px; opacity: 0.16; animation: wcTrophyFloat 5s ease-in-out infinite;}
 .cat-mundial-promo { position: absolute; top: 14px; left: 14px; padding: 5px 11px; border-radius: 4px; background: linear-gradient(135deg, #e62a3d, #CE1126); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 3px 10px rgba(206,17,38,0.55); border: 1px solid rgba(255,215,0,0.5); z-index: 2;}
 .feat-cat-card.cat-mundial .cat-mundial-label { width: 100%; padding: 12px 14px; border-radius: 16px; background: rgba(4, 11, 17, 0.55); border: 1px solid rgba(255,215,0,0.35); box-shadow: 0 14px 30px rgba(0,0,0,0.18); backdrop-filter: blur(10px); text-align: left; font-size: 22px; font-weight: 800; z-index: 3; position: relative; letter-spacing: 0.5px; background-image: linear-gradient(135deg, #FFD700 0%, #fff 60%, #FFD700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-.wc-floater { position: fixed; right: 22px; bottom: 22px; z-index: 999; width: 290px; background: linear-gradient(160deg, rgba(20,40,28,0.97), rgba(8,18,12,0.99)); border-radius: 16px; padding: 16px 18px 14px 58px; box-shadow: 0 18px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,215,0,0.28), 0 0 32px rgba(0,108,53,0.45); backdrop-filter: blur(14px); cursor: pointer; animation: wcFloaterEnter 0.7s 1s cubic-bezier(0.3,1.3,0.5,1) backwards, wcFloaterBob 3.5s ease-in-out 1.8s infinite; transition: 0.25s cubic-bezier(0.4,0,0.2,1);}
-.wc-floater:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 22px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,215,0,0.6), 0 0 44px rgba(0,108,53,0.65);}
-@keyframes wcFloaterEnter { from { transform: translateY(140px) scale(0.85); opacity: 0;} to { transform: translateY(0) scale(1); opacity: 1;}}
-@keyframes wcFloaterBob { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-3px);}}
-.wc-floater .ball-spin { position: absolute; left: 12px; top: 14px; width: 36px; height: 36px; background: #fff; border-radius: 50%; box-shadow: 0 0 0 2px rgba(255,215,0,0.55), 0 4px 12px rgba(0,0,0,0.5); animation: ballRoll 3s linear infinite; display: flex; align-items: center; justify-content: center; font-size: 26px;}
-.wc-floater .close-x { position: absolute; top: 6px; right: 8px; width: 22px; height: 22px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; color: rgba(255,255,255,0.7); font-size: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.25s cubic-bezier(0.4,0,0.2,1);}
-.wc-floater .close-x:hover { background: #CE1126; color: #fff;}
-.wc-floater .ft-promo-tag { position: absolute; top: -10px; left: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #e62a3d 0%, #CE1126 100%); color: #fff; font-size: 9.5px; font-weight: 800; letter-spacing: 0.8px; box-shadow: 0 3px 10px rgba(206,17,38,0.55), inset 0 1px 0 rgba(255,255,255,0.25); border: 1px solid rgba(255,215,0,0.5); white-space: nowrap; animation: ftTagPulseWC 2.2s ease-in-out infinite;}
-.wc-floater .ft-promo-tag::after { content: ''; position: absolute; bottom: -4px; left: 8px; width: 6px; height: 4px; background: #7a0a16; clip-path: polygon(0 0, 100% 0, 50% 100%);}
-.wc-floater .ft-promo-tag strong { color: #FFEB3B; font-weight: 800;}
-@keyframes ftTagPulseWC { 0%,100% { box-shadow: 0 3px 10px rgba(206,17,38,0.55), inset 0 1px 0 rgba(255,255,255,0.25);} 50% { box-shadow: 0 5px 16px rgba(206,17,38,0.8), inset 0 1px 0 rgba(255,255,255,0.4);}}
-.wc-floater .ft-kicker { font-size: 9px; color: #FFD700; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 2px;}
-.wc-floater .ft-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.25;}
-.wc-floater .ft-mini { display: flex; gap: 6px; align-items: baseline; font-size: 10px; color: rgba(255,255,255,0.72);}
-.wc-floater .ft-mini strong { color: #FFD700; font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums;}
-.wc-floater .ft-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 11px; color: #FFD700; font-weight: 700;}
+.wc-floater { display: none !important; }
 @media (max-width: 900px) {
  .wc-banner-content { grid-template-columns: 1fr; padding: 40px 28px;}
  .wc-banner-right { align-items: flex-start;}
@@ -3770,6 +3755,8 @@ initRecGallery();
 
 <script>
 (function wcInit(){
+ var floater = document.getElementById('wcFloater');
+ if (floater) floater.remove();
  function tick() {
   var t = new Date('2026-06-11T17:00:00-06:00').getTime();
   var diff = Math.max(0, t - new Date().getTime());
