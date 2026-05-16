@@ -1513,13 +1513,27 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=2.0;
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,script,
-https://connect.facebook.net/en_US/fbevents.js);
-fbq(init, 1673468267117934);
-fbq(track, PageView);
+s.parentNode.insertBefore(t,s)}(window, document, 'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1464034677999267');
+fbq('track', 'PageView');
+
+window.HUANYIN_META_PIXEL_ID = '1464034677999267';
+window.trackMetaEvent = function(name, params) {
+ try {
+  if (typeof fbq !== 'function') return;
+  if (params) {
+   fbq('track', name, params);
+  } else {
+   fbq('track', name);
+  }
+ } catch (err) {
+  console.warn('Meta event failed:', name, err);
+ }
+};
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1673468267117934&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
 <script type="text/javascript">
@@ -2501,6 +2515,27 @@ function currencyLabel() {
  return currentLang === 'es' ? 'MXN' : 'USD';
 }
 
+function formatMetaValue(usdValue) {
+ if (!Number.isFinite(usdValue)) return 0;
+ return currentLang === 'es' ? Number((usdValue * MXN_RATE).toFixed(0)) : Number(usdValue.toFixed(2));
+}
+
+function trackCartAdd(productId, variantId, qty) {
+ const product = products.find(item => item.id === productId);
+ const variant = product?.variants.find(item => item.id === variantId);
+ if (!product || !variant || typeof window.trackMetaEvent !== 'function') return;
+ const unitPrice = (qty >= 120 && variant.prices.large) ? variant.prices.large : (variant.prices.small || variant.prices.large || 0);
+ window.trackMetaEvent('AddToCart', {
+  currency: currencyLabel(),
+  value: formatMetaValue(unitPrice * qty),
+  content_name: product.name[currentLang] || product.name.en,
+  content_category: product.cat,
+  content_ids: [`${productId}:${variantId}`],
+  contents: [{ id: `${productId}:${variantId}`, quantity: qty, item_price: formatMetaValue(unitPrice) }],
+  num_items: qty
+ });
+}
+
 // ============ PLACEHOLDER IMAGE ============
 const PLACEHOLDER_SVG = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="#f5f5f5" width="400" height="300"/><rect fill="none" stroke="#d0d0d0" stroke-width="1.5" stroke-dasharray="8,4" x="80" y="45" width="240" height="160" rx="10"/><line x1="120" y1="125" x2="280" y2="125" stroke="#d0d0d0" stroke-width="1" stroke-dasharray="4,4"/><polyline points="140,105 180,145 260,85" fill="none" stroke="#d0d0d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text fill="#aaa" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="200" y="240" letter-spacing="2">HUANYIN</text></svg>`);
 
@@ -2682,6 +2717,7 @@ function addToCart(productId, variantId) {
  if (existing) { existing.qty++; }
  else { cart.push({ productId, variantId, qty: 1, packaging: 'standard' }); }
  saveCart();
+ trackCartAdd(productId, variantId, 1);
 }
 
 // Quantity handlers for product detail page
@@ -2722,6 +2758,7 @@ function addToCartWithQty(productId, variantId) {
  if (existing) { existing.qty += qty; }
  else { cart.push({ productId, variantId, qty, packaging: 'standard' }); }
  saveCart();
+ trackCartAdd(productId, variantId, qty);
  if (typeof clarity !== 'undefined') { clarity('set', 'cart_count', cart.reduce(function(s,c){return s + c.qty}, 0)); clarity('event', 'add_to_cart'); }
  // brief feedback then navigate back
  const btn = document.querySelector('.pd-actions .btn-moss');
@@ -2967,6 +3004,9 @@ function handleContactSubmit(e) {
  const msg = currentLang === 'es'
   ? `¡Hola! Soy ${name} de ${company} (${country}). Me gustaría recibir información sobre sus productos. Tel: ${phone}`
   : `Hello! I'm ${name} from ${company} (${country}). I'd like to receive information about your products. Phone: ${phone}`;
+ if (typeof window.trackMetaEvent === 'function') {
+  window.trackMetaEvent('Contact');
+ }
  window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
 }
 
