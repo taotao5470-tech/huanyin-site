@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8">
@@ -394,6 +394,34 @@ img { max-width: 100%; display: block;}
 .cart-addr-warn { color: var(--accent-copper); font-size: 10px; margin-top: 4px; text-align: center; display: none; }
 .addr-send-btn { display: none; width: 100%; padding: 14px; border-radius: 28px; background: var(--whatsapp); color: #fff; font-size: 15px; font-weight: 600; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; transition: var(--transition); margin-top: 12px; }
 .addr-send-btn:hover { background: var(--whatsapp-dark); }
+.floating-cart,
+.cart-panel,
+.cart-panel button,
+.cart-panel input,
+.cart-panel select,
+.cart-addr-panel,
+.cart-addr-panel input,
+.cart-addr-panel select,
+.cart-wa-btn,
+.cart-continue,
+.qty-row,
+.qty-row button,
+.qty-row input {
+ touch-action: manipulation;
+ -webkit-tap-highlight-color: transparent;
+}
+.cart-item-qty button,
+.cart-close,
+.cart-item-remove,
+.qty-row button {
+ user-select: none;
+ -webkit-user-select: none;
+}
+.cart-addr-input,
+.cart-addr-select,
+.qty-row input {
+ font-size: 16px !important;
+}
 
 /* === cart mobile === */
 @media (max-width: 600px) {
@@ -435,7 +463,7 @@ img { max-width: 100%; display: block;}
   <a href="/index.html#about-us">Empresa</a>
   <div class="lang-toggle"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button></div>
  </div>
- <a href="https://wa.me/8613302451417" target="_blank" class="nav-wa">WhatsApp</a>
+ <a href="https://wa.me/85270725628" target="_blank" class="nav-wa">WhatsApp</a>
 </nav>
 
 <!-- Promo Bar -->
@@ -517,7 +545,7 @@ img { max-width: 100%; display: block;}
 
 <footer class="wc-footer">
  <p>© 2026 Shenzhen Huanyin Technology Co., Ltd. · Mundial 2026 Collection<br>
- <a href="/index.html">Volver al sitio principal</a> · <a href="https://wa.me/8613302451417">WhatsApp B2B</a></p>
+ <a href="/index.html">Volver al sitio principal</a> · <a href="https://wa.me/85270725628">WhatsApp B2B</a></p>
 </footer>
 
 <script src="worldcup-products.js"></script>
@@ -887,7 +915,7 @@ function wcCalcShipping(id) {
   total:'Total', note:'⚠ This is only an estimate. Final price depends on actual weight, destination and season.',
   close:'Close', wa:'Request quote via WhatsApp',
  };
- const waUrl = `https://wa.me/8613302451417?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
+ const waUrl = `https://wa.me/85270725628?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
  const modal = document.createElement('div');
  modal.className = 'wc-modal';
  modal.innerHTML = `
@@ -1149,10 +1177,18 @@ function sendCartToWhatsAppWC() {
  if (window.HuanyinMeta) {
   window.HuanyinMeta.trackContact();
  }
- window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
+ window.open('https://wa.me/85270725628?text=' + encodeURIComponent(msg), '_blank');
 }
 
 updateCartWCUI();
+
+// Prevent accidental double-tap zoom inside dense cart, address, and quantity controls.
+(function bindTapZoomGuardsWC(){
+ var selectors = '.floating-cart, .cart-panel, .cart-addr-panel, .qty-row';
+ document.addEventListener('dblclick', function(e) {
+  if (e.target.closest(selectors)) e.preventDefault();
+ }, { passive: false });
+})();
 
 // ── Hero 彩色纸屑 ──
 (function() {
