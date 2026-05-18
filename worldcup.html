@@ -374,7 +374,7 @@ img { max-width: 100%; display: block;}
   <a href="/index.html#about-us">Empresa</a>
   <div class="lang-toggle"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button></div>
  </div>
- <a href="https://wa.me/85270725628" target="_blank" class="nav-wa">WhatsApp</a>
+ <a href="https://wa.me/528261253244" target="_blank" class="nav-wa">WhatsApp</a>
 </nav>
 
 <!-- Promo Bar -->
@@ -446,7 +446,7 @@ img { max-width: 100%; display: block;}
 
 <footer class="wc-footer">
  <p>© 2026 Shenzhen Huanyin Technology Co., Ltd. · Mundial 2026 Collection<br>
- <a href="/index.html">Volver al sitio principal</a> · <a href="https://wa.me/85270725628">WhatsApp B2B</a></p>
+ <a href="/index.html">Volver al sitio principal</a> · <a href="https://wa.me/528261253244">WhatsApp B2B</a></p>
 </footer>
 
 <!-- Floater -->
@@ -708,7 +708,7 @@ function renderDetail(id, variantIdx) {
    <div class="detail-cta-row">
     <button class="btn btn-cart" onclick="wcAddToCart('${p.id}')">🛒 ${t.addcart}</button>
     <button class="btn btn-ship" onclick="wcCalcShipping('${p.id}')">🚚 ${t.calcship}</button>
-    <a href="https://wa.me/85270725628?text=${encodeURIComponent('Hola! Me interesa: '+name+' (SKU: '+p.id+')')}" target="_blank" class="btn btn-wa-detail">💬 WhatsApp</a>
+    <a href="https://wa.me/528261253244?text=${encodeURIComponent('Hola! Me interesa: '+name+' (SKU: '+p.id+')')}" target="_blank" class="btn btn-wa-detail">💬 WhatsApp</a>
    </div>
    <div class="detail-desc"><h3>${t.desc}</h3><p>${t.descBody}</p></div>
   </div>`;
@@ -807,7 +807,7 @@ function wcCalcShipping(id) {
   total:'Total', note:'⚠ This is only an estimate. Final price depends on actual weight, destination and season.',
   close:'Close', wa:'Request quote via WhatsApp',
  };
- const waUrl = `https://wa.me/85270725628?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
+ const waUrl = `https://wa.me/528261253244?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
  const modal = document.createElement('div');
  modal.className = 'wc-modal';
  modal.innerHTML = `
@@ -1027,7 +1027,7 @@ function sendCartToWhatsAppWC() {
  if (cartAddress.fullAddress) msg += (currentLang === 'es' ? 'Dirección: ' + cartAddress.fullAddress + '\n' : 'Address: ' + cartAddress.fullAddress + '\n');
  if (cartAddress.contactName) msg += (currentLang === 'es' ? 'Contacto: ' + cartAddress.contactName + '\n' : 'Contact: ' + cartAddress.contactName + '\n');
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
- window.open('https://wa.me/85270725628?text=' + encodeURIComponent(msg), '_blank');
+ window.open('https://wa.me/528261253244?text=' + encodeURIComponent(msg), '_blank');
 }
 
 updateCartWCUI();
