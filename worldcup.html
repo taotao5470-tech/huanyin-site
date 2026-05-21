@@ -427,7 +427,7 @@ img { max-width: 100%; display: block;}
   <a href="/index.html#about-us">Empresa</a>
   <div class="lang-toggle"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button></div>
  </div>
- <a href="https://wa.me/8613302451417" target="_blank" class="nav-wa">WhatsApp</a>
+ <a href="https://wa.me/85270725628" target="_blank" class="nav-wa">WhatsApp</a>
 </nav>
 
 <!-- Promo Bar -->
@@ -509,7 +509,7 @@ img { max-width: 100%; display: block;}
 
 <footer class="wc-footer">
  <p>© 2026 Shenzhen Huanyin Technology Co., Ltd. · Mundial 2026 Collection<br>
- <a href="/index.html">Volver al sitio principal</a> · <a href="https://wa.me/8613302451417">WhatsApp B2B</a></p>
+ <a href="/index.html">Volver al sitio principal</a> · <a href="https://wa.me/85270725628">WhatsApp B2B</a></p>
 </footer>
 
 <script src="worldcup-products.js"></script>
@@ -879,7 +879,7 @@ function wcCalcShipping(id) {
   total:'Total', note:'⚠ This is only an estimate. Final price depends on actual weight, destination and season.',
   close:'Close', wa:'Request quote via WhatsApp',
  };
- const waUrl = `https://wa.me/8613302451417?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
+ const waUrl = `https://wa.me/85270725628?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
  const modal = document.createElement('div');
  modal.className = 'wc-modal';
  modal.innerHTML = `
@@ -1139,9 +1139,17 @@ function sendCartToWhatsAppWC() {
  }
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
  if (window.HuanyinMeta) {
-  window.HuanyinMeta.trackContact();
+  var totalQty = cart.reduce(function(sum, item) { return sum + (item.qty || 0); }, 0);
+  var totalValueMxn = cart.reduce(function(sum, item) { return sum + ((item.priceMxn || 0) * (item.qty || 0)); }, 0);
+  var contentIds = cart.map(function(item) { return item.productId + ':' + (item.variantId || 'home'); });
+  window.HuanyinMeta.trackPurchase({
+   currency: 'MXN',
+   value: Number(totalValueMxn.toFixed(0)),
+   content_ids: contentIds,
+   num_items: totalQty
+  });
  }
- window.open('https://wa.me/8613302451417?text=' + encodeURIComponent(msg), '_blank');
+ window.open('https://wa.me/85270725628?text=' + encodeURIComponent(msg), '_blank');
 }
 
 updateCartWCUI();
