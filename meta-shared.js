@@ -44,6 +44,10 @@
   track('AddToCart', payload);
  }
 
+ function trackPurchase(payload) {
+  track('Purchase', payload);
+ }
+
  function trackContact() {
   track('Contact');
  }
@@ -53,6 +57,7 @@
   pixelId,
   track,
   trackAddToCart,
+  trackPurchase,
   trackContact
  };
 

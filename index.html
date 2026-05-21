@@ -2939,7 +2939,22 @@ function sendCartToWhatsApp() {
  if (cartAddress.contactName) msg += (currentLang === 'es' ? `Contacto: ${cartAddress.contactName}\n` : `Contact: ${cartAddress.contactName}\n`);
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
  if (window.HuanyinMeta) {
-  window.HuanyinMeta.trackContact();
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  const totalValueUsd = cart.reduce((sum, item) => {
+   if (item.isWorldCup) return sum + ((item.priceUsd || 0) * (item.qty || 0));
+   const product = products.find(p => p.id === item.productId);
+   const variant = product?.variants.find(v => v.id === item.variantId);
+   const unitPrice = (item.qty >= 120 && variant?.prices.large) ? variant.prices.large : (variant?.prices.small || variant?.prices.large || 0);
+   return sum + (unitPrice * (item.qty || 0));
+  }, 0);
+  const totalValueMxn = Number((totalValueUsd * MXN_RATE).toFixed(0));
+  const contentIds = cart.map(item => item.isWorldCup ? `${item.productId}:${item.variantId || 'home'}` : `${item.productId}:${item.variantId}`);
+  window.HuanyinMeta.trackPurchase({
+   currency: 'MXN',
+   value: totalValueMxn,
+   content_ids: contentIds,
+   num_items: totalQty
+  });
  }
  window.open('https://wa.me/528261253244?text=' + encodeURIComponent(msg), '_blank');
 }
