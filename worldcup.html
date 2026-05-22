@@ -1238,9 +1238,10 @@ function sendCartToWhatsAppWC() {
  }
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
  if (window.HuanyinMeta) {
-  var totalQty = cart.reduce(function(sum, item) { return sum + (item.qty || 0); }, 0);
-  var totalValueMxn = cart.reduce(function(sum, item) { return sum + ((item.priceMxn || 0) * (item.qty || 0)); }, 0);
-  var contentIds = cart.map(function(item) { return item.productId + ':' + (item.variantId || 'home'); });
+  var cartItems = getCart();
+  var totalQty = cartItems.reduce(function(sum, item) { return sum + (item.qty || 0); }, 0);
+  var totalValueMxn = cartItems.reduce(function(sum, item) { return sum + ((item.priceMxn || 0) * (item.qty || 0)); }, 0);
+  var contentIds = cartItems.map(function(item) { return item.productId + ':' + (item.variantId || 'home'); });
   window.HuanyinMeta.trackPurchase({
    currency: 'MXN',
    value: Number(totalValueMxn.toFixed(0)),
