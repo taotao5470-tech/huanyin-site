@@ -2928,7 +2928,11 @@ function sendCartToWhatsApp() {
   let name, variant, priceDisplay;
   if (c.isWorldCup) {
    name = currentLang === 'es' ? (c.name || 'Producto') : (c.name_en || 'Product');
-   variant = (c.team || '') + (c.size && c.size !== '—' ? ' ' + c.size : '');
+   const details = [];
+   if (c.team) details.push(c.team);
+   if (c.variantLabel) details.push('Version: ' + c.variantLabel);
+   if (c.size && c.size !== '—') details.push((currentLang === 'es' ? 'Talla: ' : 'Size: ') + c.size);
+   variant = details.join(' | ');
    priceDisplay = currentLang === 'es'
     ? '$' + ((c.priceMxn || 0) * c.qty) + ' MXN (≈ $' + ((c.priceUsd || 0) * c.qty).toFixed(2) + ' USD)'
     : '$' + ((c.priceUsd || 0) * c.qty).toFixed(2) + ' USD (≈ $' + ((c.priceMxn || 0) * c.qty) + ' MXN)';

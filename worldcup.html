@@ -1218,22 +1218,28 @@ function sendCartToWhatsAppWC() {
   ? '¡Hola! Solicito una cotización:\n\n📦 Productos:\n'
   : 'Hello, I would like to request a quotation:\n\n📦 Products:\n';
  let totalMxn = 0, totalUsd = 0;
- getCart().forEach(function(c) {
+ const currentCart = getCart();
+ currentCart.forEach(function(c) {
   const qty = c.qty || 1;
-  let name, priceMxn, priceUsd;
+  let name, priceMxn, priceUsd, detailParts = [];
   if (c.isWorldCup) {
    name = currentLang === 'es' ? (c.name || 'Producto') : (c.name_en || 'Product');
    priceMxn = c.priceMxn || 0;
    priceUsd = c.priceUsd || 0;
+   if (c.team) detailParts.push(c.team);
+   if (c.variantLabel) detailParts.push('Version: ' + c.variantLabel);
+   if (c.size && c.size !== '—') detailParts.push((currentLang === 'es' ? 'Talla: ' : 'Size: ') + c.size);
   } else {
-   name = c.productId || 'Producto';
+   name = currentLang === 'es' ? (c.nameEs || c.nameEn || c.productId || 'Producto') : (c.nameEn || c.nameEs || c.productId || 'Product');
    priceMxn = c.priceMxn || 0;
    priceUsd = c.priceUsd || 0;
+   if (c.variantLabel || c.variantId) detailParts.push('Version: ' + (c.variantLabel || c.variantId));
   }
   totalMxn += priceMxn * qty;
   totalUsd += priceUsd * qty;
   const linePrice = currentLang === 'es' ? '$' + (priceMxn * qty) + ' MXN' : '$' + (priceUsd * qty).toFixed(2) + ' USD';
-  msg += '• ' + name + ' × ' + qty + ' — ' + linePrice + '\n';
+  const detailText = detailParts.length ? ' (' + detailParts.join(' | ') + ')' : '';
+  msg += '• ' + name + detailText + ' × ' + qty + ' — ' + linePrice + '\n';
  });
  const totalDisp = currentLang === 'es' ? '$' + totalMxn + ' MXN' : '$' + totalUsd.toFixed(2) + ' USD';
  msg += '\n💰 Total: ' + totalDisp + '\n';
@@ -1245,10 +1251,9 @@ function sendCartToWhatsAppWC() {
  }
  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
  if (window.HuanyinMeta) {
-  var cartItems = getCart();
-  var totalQty = cartItems.reduce(function(sum, item) { return sum + (item.qty || 0); }, 0);
-  var totalValueMxn = cartItems.reduce(function(sum, item) { return sum + ((item.priceMxn || 0) * (item.qty || 0)); }, 0);
-  var contentIds = cartItems.map(function(item) { return item.productId + ':' + (item.variantId || 'home'); });
+  var totalQty = currentCart.reduce(function(sum, item) { return sum + (item.qty || 0); }, 0);
+  var totalValueMxn = currentCart.reduce(function(sum, item) { return sum + ((item.priceMxn || 0) * (item.qty || 0)); }, 0);
+  var contentIds = currentCart.map(function(item) { return item.productId + ':' + (item.variantId || 'home'); });
   window.HuanyinMeta.trackPurchase({
    currency: 'MXN',
    value: Number(totalValueMxn.toFixed(0)),
