@@ -2064,7 +2064,7 @@ function wcAddToCart(id) {
  var p = products.find(function(x){return x.id===id;});
  if (!p) return;
  var qtyInp = document.getElementById('qtyInput');
- var sizeEl = document.querySelector('#sizeOpts .size-opt.active');
+ var sizeEl = document.querySelector('.kit-detail-modal #sizeOpts .size-opt.active') || document.querySelector('#sizeOpts .size-opt.active');
  var editionEl = document.querySelector('.kit-detail-modal .edition-option.active');
  var playerNumberEl = document.querySelector('.kit-detail-modal #playerNumberInput');
  var activeNumberChip = document.querySelector('.kit-detail-modal .number-chip.active');
