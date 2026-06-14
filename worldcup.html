@@ -26,7 +26,7 @@
 <meta name="description" content="Archivo comercial de camisetas nacionales 2026 para Mundial Mexico-EE.UU.-Canada. Filtra por seleccion, region y version. Pedido +200 pcs: 15% OFF.">
 <meta property="og:title" content="Mayoreo Mundial 2026 | Entrega en Mexico hasta 3 dias | HUANYIN">
 <meta property="og:description" content="Catalogo Mundial 2026 para mayoreo en Mexico. Entrega rapida en Mexico hasta 3 dias. Solicita catalogo por WhatsApp.">
-<meta property="og:image" content="https://huanyinvox.top/worldcup-link-card.png?v=3">
+<meta property="og:image" content="https://huanyinvox.top/worldcup-link-card.png?v=2">
 <meta property="og:url" content="https://huanyinvox.top/worldcup.html">
 <meta property="og:type" content="website">
 <meta property="og:image:width" content="1024">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mayoreo Mundial 2026 | Entrega en Mexico hasta 3 dias | HUANYIN">
 <meta name="twitter:description" content="Catalogo Mundial 2026 para mayoreo en Mexico. Entrega rapida en Mexico hasta 3 dias. Solicita catalogo por WhatsApp.">
-<meta name="twitter:image" content="https://huanyinvox.top/worldcup-link-card.png?v=3">
+<meta name="twitter:image" content="https://huanyinvox.top/worldcup-link-card.png?v=2">
 <script src="meta-shared.js"></script>
 <style>
 :root {
@@ -2411,10 +2411,18 @@ function sendCartToWhatsAppWC() {
  getCart().forEach(function(c) {
   const qty = c.qty || 1;
   let name, priceMxn, priceUsd;
+  let detail = '';
   if (c.isWorldCup) {
    name = currentLang === 'es' ? (c.name || 'Producto') : (c.name_en || 'Product');
    priceMxn = c.priceMxn || 0;
    priceUsd = c.priceUsd || 0;
+   var parts = [];
+   if (c.team) parts.push(c.team);
+   if (c.kitSlotLabel) parts.push(c.kitSlotLabel);
+   if (c.editionLabel) parts.push(c.editionLabel);
+   if (c.playerNumber) parts.push('#' + c.playerNumber);
+   if (c.size && c.size !== '—') parts.push('Talla ' + c.size);
+   if (parts.length) detail = ' (' + parts.join(' · ') + ')';
   } else {
    name = c.productId || 'Producto';
    priceMxn = c.priceMxn || 0;
@@ -2423,7 +2431,7 @@ function sendCartToWhatsAppWC() {
   totalMxn += priceMxn * qty;
   totalUsd += priceUsd * qty;
   const linePrice = currentLang === 'es' ? '$' + (priceMxn * qty) + ' MXN' : '$' + (priceUsd * qty).toFixed(2) + ' USD';
-  msg += '• ' + name + ' × ' + qty + ' — ' + linePrice + '\n';
+  msg += '• ' + name + detail + ' × ' + qty + ' — ' + linePrice + '\n';
  });
  const totalDisp = currentLang === 'es' ? '$' + totalMxn + ' MXN' : '$' + totalUsd.toFixed(2) + ' USD';
  msg += '\n💰 Total: ' + totalDisp + '\n';
