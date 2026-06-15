@@ -425,6 +425,17 @@ img { max-width: 100%; display: block;}
 .kit-rating { color: var(--wc-gold); letter-spacing: 1px; font-size: 16px; }
 .kit-buy-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .kit-buy-row .btn { flex: 1 1 150px; justify-content: center; }
+.kit-price-box { border: 1px solid rgba(255,215,0,0.25); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; background: rgba(255,215,0,0.06); }
+.kit-price-box .kit-price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; }
+.kit-price-box .kit-price-row + .kit-price-row { border-top: 1px solid rgba(255,255,255,0.06); }
+.kit-price-box .kit-price-tier { font-weight: 800; font-size: 12px; letter-spacing: 0.5px; }
+.kit-price-box .tier-small { color: var(--accent-moss); }
+.kit-price-box .tier-large { color: var(--wc-gold); }
+.kit-price-box .kit-price-label { color: var(--text-muted); font-size: 12px; }
+.kit-price-box .kit-price-val { color: var(--wc-gold); font-size: 18px; font-weight: 800; }
+.kit-price-box .kit-price-val small { font-size: 11px; font-weight: 500; opacity: 0.65; }
+.kit-price-box .kit-price-sub .kit-price-val { font-size: 15px; }
+.kit-price-box .kit-price-sub em { font-style: normal; color: #2bd66f; font-size: 11px; font-weight: 800; }
 .kit-edition-box { border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 12px; margin-bottom: 16px; background: rgba(255,255,255,0.035); }
 .kit-edition-title { color: #fff; font-size: 12px; font-weight: 900; margin-bottom: 9px; }
 .edition-options { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
@@ -1849,6 +1860,7 @@ function kitSpecRows(p, variantIdx, slotKey) {
 function openKitModal(id, variantIdx, slotKey) {
  const p = products.find(x => x.id === id);
  if (!p) return;
+ currentKitProductId = id;
  currentVariantIdx = Number.isFinite(variantIdx) ? variantIdx : 0;
  const currentSlot = slotKey || 'home';
  currentKitSlot = currentSlot;
@@ -1900,6 +1912,7 @@ function openKitModal(id, variantIdx, slotKey) {
       </div>
        <div class="edition-hint">${uiText('MOQ','MOQ')} ${p.price.moq || 50} pcs · +200 pcs ${uiText('15% OFF','15% OFF')} · +500 pcs ${uiText('precio por volumen','volume pricing')}</div>
      </div>
+     <div class="kit-price-box" id="kitPriceBlock"></div>
      <div class="kit-spec-table">
       ${kitSpecRows(p, currentVariantIdx, currentSlot).map(row=>`<div class="kit-spec-row"><div class="label">${row[0]}</div><div class="value">${row[1]}</div></div>`).join('')}
      </div>
@@ -1923,7 +1936,33 @@ function openKitModal(id, variantIdx, slotKey) {
   const input = modal.querySelector('#playerNumberInput');
   if (input) input.value = btn.dataset.number || '';
  });
+ updateKitModalPrice();
 }
+
+// === 弹窗价格更新 ===
+function updateKitModalPrice() {
+ const inp = document.getElementById('qtyInput');
+ const block = document.getElementById('kitPriceBlock');
+ if (!inp || !block) return;
+ const qty = parseInt(inp.value) || 50;
+ const p = products.find(function(x) { return x.id === (currentKitProductId || ''); });
+ if (!p) return;
+ const isLarge = qty >= 120;
+ const tier = isLarge ? 'large' : 'small';
+ const unitMxn = p.price['mxn_' + tier];
+ const unitUsd = p.price['usd_' + tier];
+ const promo = qty >= 200;
+ const factor = promo ? 0.85 : 1;
+ const subMxn = Math.round(unitMxn * qty * factor);
+ const subUsd = +(unitUsd * qty * factor).toFixed(2);
+ const tierLabel = isLarge ? uiText('大货价','Wholesale') : uiText('小货价','Small order');
+ const tierTag = '<span class="' + (isLarge ? 'tier-large' : 'tier-small') + '">' + tierLabel + ' (' + (isLarge ? '≥120' : '<120') + ' pcs)</span>';
+ block.innerHTML =
+  '<div class="kit-price-row"><span class="kit-price-tier">' + tierTag + '</span></div>' +
+  '<div class="kit-price-row"><span class="kit-price-label">' + uiText('Precio unitario','Unit price') + '</span><span class="kit-price-val">$' + unitMxn + ' MXN <small>≈ $' + unitUsd.toFixed(2) + ' USD</small></span></div>' +
+  '<div class="kit-price-row kit-price-sub"><span class="kit-price-label">' + uiText('Subtotal','Subtotal') + ' × ' + qty + (promo ? ' <em>-15%</em>' : '') + '</span><span class="kit-price-val">$' + subMxn + ' MXN <small>≈ $' + subUsd.toFixed(2) + ' USD</small></span></div>';
+}
+let currentKitProductId = '';
 
 // === 详情页 (Level 3) ===
 function unitPrice(p, qty) {
@@ -2034,6 +2073,7 @@ function qtyChange(delta) {
  v = Math.max(1, v + delta);
  inp.value = v;
  recalc();
+ updateKitModalPrice();
 }
 
 function recalc() {
