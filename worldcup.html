@@ -204,7 +204,8 @@ img { max-width: 100%; display: block;}
 .variant-card .variant-icon { font-size: 14px;}
 .wc-subfilter:hover { color: var(--text-light); border-color: var(--accent-moss);}
 .wc-subfilter.active { background: var(--accent-moss); color: #fff; border-color: var(--accent-moss);}
-.wc-tabs-bar, .wc-subfilters { display: none; }
+.wc-tabs-bar { display: block; }
+.wc-subfilters { display: flex; }
 
 /* ============ Kit Archive Blocks ============ */
 .archive-shell { max-width: 1200px; margin: 22px auto 0; padding: 0 32px; }
@@ -846,6 +847,7 @@ img { max-width: 100%; display: block;}
 const CATEGORIES = [
  {key:'all', es:'Todo 2026', en:'All 2026', icon:'2026'},
  {key:'jersey', es:'Camisetas', en:'Jerseys', icon:'KIT'},
+ {key:'vintage', es:'Vintage', en:'Vintage', icon:'RETRO'},
 ];
 const JERSEY_SUBTYPE_LABELS = {
  national: {es:'Selecciones', en:'National Teams'},
@@ -863,9 +865,14 @@ const REGION_LABELS = {
 const allProducts = (window.WORLDCUP_PRODUCTS || []).filter(p => p && p.category);
 const products = allProducts.filter(p =>
  p.category === 'jersey' &&
- p.sub_type === 'national' &&
- String(p.season || '').indexOf('2026') !== -1
+ (
+  (p.sub_type === 'national' && String(p.season || '').indexOf('2026') !== -1) ||
+  p.sub_type === 'vintage' ||
+  p.is_vintage
+ )
 );
+const nationalProducts = products.filter(p => p.sub_type === 'national' && String(p.season || '').indexOf('2026') !== -1);
+const vintageProducts = products.filter(p => p.sub_type === 'vintage' || p.is_vintage);
 let currentLang = 'es';
 let currentCat = 'jersey';
 let currentSubfilter = 'national';
@@ -1617,26 +1624,32 @@ function tick() {
 tick(); setInterval(tick, 30000);
 
 function renderTabs() {
- const counts = {all: products.length};
- products.forEach(p => { counts[p.category] = (counts[p.category]||0)+1; });
+ const counts = {all: products.length, jersey: nationalProducts.length, vintage: vintageProducts.length};
  const tabs = document.getElementById('wcTabs');
  tabs.innerHTML = CATEGORIES.filter(c=>c.key==='all'||counts[c.key]).map(c =>
   `<button class="wc-tab ${c.key===currentCat?'active':''}" data-cat="${c.key}">
    <span>${c.icon}</span><span>${c[currentLang]}</span>
-   <span class="count">${counts[c.key]||0}</span>
+  <span class="count">${counts[c.key]||0}</span>
   </button>`
  ).join('');
- tabs.querySelectorAll('.wc-tab').forEach(b => b.onclick = ()=>{ currentCat=b.dataset.cat; currentSubfilter='national'; currentSubfilter2=''; render();});
+ tabs.querySelectorAll('.wc-tab').forEach(b => b.onclick = ()=>{ currentCat=b.dataset.cat; currentSubfilter='national'; currentSubfilter2=''; selectedTeam=''; showAllCountries=false; render();});
 }
 
 function renderSubfilters() {
  const wrap = document.getElementById('wcSubfilters');
  if (currentCat === 'jersey') {
-  const filtered = products.filter(p => p.category==='jersey');
+  const filtered = nationalProducts;
   const regions = [...new Set(filtered.map(p=>p.region))].sort();
   let html = `<button class="wc-subfilter wc-subfilter-sm ${!currentSubfilter2?'active':''}" data-sub2="">${currentLang==='es'?'Todas selecciones':'All teams'} (${filtered.length})</button>`;
   html += regions.map(r =>
    `<button class="wc-subfilter wc-subfilter-sm ${currentSubfilter2===r?'active':''}" data-sub2="${r}">${REGION_LABELS[r]?REGION_LABELS[r][currentLang]:r}</button>`
+  ).join('');
+  wrap.innerHTML = html;
+ } else if (currentCat === 'vintage') {
+  const teams = [...new Set(vintageProducts.map(p=>p.team).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  let html = `<button class="wc-subfilter wc-subfilter-sm ${!currentSubfilter2?'active':''}" data-sub2="">${currentLang==='es'?'Todo Vintage':'All Vintage'} (${vintageProducts.length})</button>`;
+  html += teams.map(team =>
+   `<button class="wc-subfilter wc-subfilter-sm ${currentSubfilter2===team?'active':''}" data-sub2="${team}">${team}</button>`
   ).join('');
   wrap.innerHTML = html;
  } else { wrap.innerHTML = '';}
@@ -1692,16 +1705,17 @@ function renderRankingItem(item, idx) {
 }
 
 function renderArchiveIntro() {
- const allTeams = [...new Set(products.map(p => p.team).filter(Boolean))];
+ const archiveProducts = currentCat === 'vintage' ? vintageProducts : nationalProducts;
+ const allTeams = [...new Set(archiveProducts.map(p => p.team).filter(Boolean))];
  const priority = PRIORITY_TEAMS.filter(team => allTeams.includes(team));
  const rest = allTeams.filter(team => !priority.includes(team)).sort((a,b)=>a.localeCompare(b));
- const teams = showAllCountries ? priority.concat(rest) : priority;
+ const teams = currentCat === 'vintage' ? allTeams.sort((a,b)=>a.localeCompare(b)) : (showAllCountries ? priority.concat(rest) : priority);
  const teamIndex = document.getElementById('teamIndex');
  if (teamIndex) {
   teamIndex.innerHTML = teams.map(team => {
    const badge = TEAM_BADGES[team] ? `<img src="${TEAM_BADGES[team]}" alt="${team} badge" loading="lazy" onerror="this.parentNode.textContent='${teamFlag(team)}'">` : teamFlag(team);
    return `<button class="country-chip ${selectedTeam===team?'active':''}" data-team="${team}"><span class="badge">${badge}</span><span>${team}</span></button>`;
-  }).join('') + `<button class="country-chip country-more" data-toggle-countries="1">${showAllCountries ? uiText('Ver menos','Show less') : uiText('Más selecciones','More teams')}</button>`;
+  }).join('') + (currentCat === 'vintage' ? '' : `<button class="country-chip country-more" data-toggle-countries="1">${showAllCountries ? uiText('Ver menos','Show less') : uiText('Más selecciones','More teams')}</button>`);
   teamIndex.querySelectorAll('.country-chip').forEach(chip => chip.onclick = e => {
    e.preventDefault();
    if (chip.dataset.toggleCountries) {
@@ -1719,7 +1733,6 @@ function renderArchiveIntro() {
    if (board && board.scrollIntoView) board.scrollIntoView({behavior:'smooth', block:'start'});
   });
  }
- const ranked = products.slice().sort((a,b)=>archiveScore(b)-archiveScore(a));
  const top = document.getElementById('topKits');
  const sales = document.getElementById('salesKits');
  const topItems = TOP_RANKING_TEAMS.map(team => productByTeam(team)).filter(Boolean);
@@ -1742,6 +1755,9 @@ function kitCardHtml(p, img, title, subtitle, isMore, variantIdx, slotKey) {
 
 function primaryKitCard(p, isMore) {
  if (!p) return '';
+ if (p.is_vintage || p.sub_type === 'vintage') {
+  return kitCardHtml(p, firstProductImage(p), p[currentLang==='es'?'name_es':'name_en'], `${p.season} · ${p.variant || uiText('Vintage','Vintage')}`, isMore, 0, '');
+ }
  const resolved = resolveKitSlot(p, 'home');
  return kitCardHtml(p, resolved.img || firstProductImage(p), p[currentLang==='es'?'name_es':'name_en'], `${p.season} ${kitSlotLabel('home')}`, isMore, 0, 'home');
 }
@@ -1790,36 +1806,45 @@ function renderProducts() {
  const grid = document.getElementById('productsGrid');
  const head = document.getElementById('kitSectionHead');
  grid.className = 'products-grid kit-archive-board';
- let list = products.slice();
- if (selectedTeam && selectedTeam !== '__all') list = list.filter(p => p.team === selectedTeam);
- else if (selectedTeam === '__all') list = list;
- else list = HOT_TEAMS.map(team => products.find(p => p.team === team)).filter(Boolean);
+ const baseProducts = currentCat === 'vintage' ? vintageProducts : (currentCat === 'all' ? products : nationalProducts);
+ let list = baseProducts.slice();
+ if (currentSubfilter2) {
+  list = currentCat === 'vintage' ? list.filter(p => p.team === currentSubfilter2) : list.filter(p => p.region === currentSubfilter2);
+ }
+ if (currentCat !== 'vintage') {
+  if (selectedTeam && selectedTeam !== '__all') list = list.filter(p => p.team === selectedTeam);
+  else if (selectedTeam === '__all') list = list;
+  else list = HOT_TEAMS.map(team => baseProducts.find(p => p.team === team)).filter(Boolean);
+ } else if (selectedTeam && selectedTeam !== '__all') {
+  list = list.filter(p => p.team === selectedTeam);
+ }
  if (currentSearch) {
   const q = currentSearch.toLowerCase();
-  list = products.filter(p => (p.name_es+' '+p.name_zh+' '+p.team+' '+p.season).toLowerCase().includes(q));
+  list = baseProducts.filter(p => (p.name_es+' '+p.name_zh+' '+p.team+' '+p.season).toLowerCase().includes(q));
   selectedTeam = '';
  }
- document.getElementById('resultCount').textContent = selectedTeam && selectedTeam !== '__all' ? KIT_SLOTS.length : list.length;
+ document.getElementById('resultCount').textContent = selectedTeam && selectedTeam !== '__all' && currentCat !== 'vintage' ? KIT_SLOTS.length : list.length;
  if (list.length === 0) {
   grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="icon">⚽</div><h3>Sin resultados</h3><p>Prueba con otro filtro</p></div>';
   return;
  }
  const selectedProduct = selectedTeam && selectedTeam !== '__all' ? list[0] : null;
-  const headerTitle = selectedProduct ? `${selectedTeam} 2026 ${uiText('camisetas','kits')}` : (selectedTeam === '__all' ? uiText('Camisetas Mundial 2026','World Cup 2026 kits') : uiText('Camisetas nacionales populares','Popular national jerseys'));
-  const headerMeta = selectedProduct ? `${KIT_SLOTS.length} ${uiText('estilos','styles')} · ${selectedProduct.season}` : `${products.length} ${uiText('selecciones','teams')} · ${products.length * KIT_SLOTS.length} ${uiText('estilos planeados','planned kit styles')}`;
+ const isVintageView = currentCat === 'vintage';
+  const headerTitle = isVintageView ? uiText('Camisetas Vintage / Histórico','Vintage / Historical Jerseys') : (selectedProduct ? `${selectedTeam} 2026 ${uiText('camisetas','kits')}` : (selectedTeam === '__all' ? uiText('Camisetas Mundial 2026','World Cup 2026 kits') : uiText('Camisetas nacionales populares','Popular national jerseys')));
+  const headerMeta = isVintageView ? `${vintageProducts.length} ${uiText('modelos vintage','vintage models')} · Brasil / México` : (selectedProduct ? `${KIT_SLOTS.length} ${uiText('estilos','styles')} · ${selectedProduct.season}` : `${nationalProducts.length} ${uiText('selecciones','teams')} · ${nationalProducts.length * KIT_SLOTS.length} ${uiText('estilos planeados','planned kit styles')}`);
  if (head) {
-  head.innerHTML = `<div><h2>${headerTitle}</h2><p>${selectedProduct ? uiText('Versiones disponibles para esta selección nacional.','Available jersey versions for this national team.') : uiText('Elige una selección arriba para ver sus camisetas y la introducción del equipo.','Choose a country above to view all jersey versions and the team introduction.')}</p><div class="team-mini-meta">${headerMeta}</div></div>`;
+  head.innerHTML = `<div><h2>${headerTitle}</h2><p>${isVintageView ? uiText('Serie temporal con camisetas históricas disponibles para revisar y cotizar.','Temporary vintage series for review and quotation.') : (selectedProduct ? uiText('Versiones disponibles para esta selección nacional.','Available jersey versions for this national team.') : uiText('Elige una selección arriba para ver sus camisetas y la introducción del equipo.','Choose a country above to view all jersey versions and the team introduction.'))}</p><div class="team-mini-meta">${headerMeta}</div></div>`;
  }
  const yearRail = `<aside class="archive-year-rail"><h3>2026</h3><p>${uiText('Pedido mínimo 50 PCS','MOQ 50 PCS')}<br>${uiText('Múltiples tallas y números','Multiple sizes & numbers')}</p></aside>`;
- const cards = (selectedProduct ? flattenTeamKits(selectedProduct) : list.map(p => primaryKitCard(p))).join('');
- const moreCard = !selectedProduct && selectedTeam !== '__all' ? primaryKitCard(products.find(p=>p.team==='Estados Unidos') || list[0], true) : '';
- const sidebar = selectedProduct ? `<aside class="team-sidebar"><strong>${selectedTeam}</strong><a href="#product/${selectedProduct.id}">adidas</a><a href="#product/${selectedProduct.id}">International</a></aside>` : '<aside class="archive-side-ad">Ad / campaign banner placeholder</aside>';
+ const cards = (!isVintageView && selectedProduct ? flattenTeamKits(selectedProduct) : list.map(p => primaryKitCard(p))).join('');
+ const moreCard = !isVintageView && !selectedProduct && selectedTeam !== '__all' ? primaryKitCard(nationalProducts.find(p=>p.team==='Estados Unidos') || list[0], true) : '';
+ const sidebar = !isVintageView && selectedProduct ? `<aside class="team-sidebar"><strong>${selectedTeam}</strong><a href="#product/${selectedProduct.id}">adidas</a><a href="#product/${selectedProduct.id}">International</a></aside>` : '<aside class="archive-side-ad">Ad / campaign banner placeholder</aside>';
  grid.innerHTML = `${yearRail}<div class="kit-gallery ${selectedProduct?'selected-team':''}">${cards}${moreCard}</div>${sidebar}`;
  const showAll = grid.querySelector('.js-show-all');
  if (showAll) showAll.onclick = e => { e.preventDefault(); selectedTeam='__all'; renderArchiveIntro(); renderProducts(); };
  grid.querySelectorAll('.js-kit-card').forEach(card => card.onclick = e => {
   e.preventDefault();
-  openKitModal(card.dataset.id, parseInt(card.dataset.variant || '0', 10), card.dataset.slot || 'home');
+  openKitModal(card.dataset.id, parseInt(card.dataset.variant || '0', 10), card.dataset.slot || '');
  });
 }
 
@@ -1862,10 +1887,10 @@ function openKitModal(id, variantIdx, slotKey) {
  if (!p) return;
  currentKitProductId = id;
  currentVariantIdx = Number.isFinite(variantIdx) ? variantIdx : 0;
- const currentSlot = slotKey || 'home';
+ const currentSlot = slotKey || ((p.is_vintage || p.sub_type === 'vintage') ? '' : 'home');
  currentKitSlot = currentSlot;
  const imgs = kitImagesFor(p, currentVariantIdx, currentSlot);
- const name = `${p.team} 2026 ${kitVariantLabel(p, currentVariantIdx, currentSlot)}`;
+ const name = (p.is_vintage || p.sub_type === 'vintage') ? p[currentLang==='es'?'name_es':'name_en'] : `${p.team} 2026 ${kitVariantLabel(p, currentVariantIdx, currentSlot)}`;
  const mainImg = imgs[0] || '';
  const modal = document.createElement('div');
  modal.className = 'wc-modal kit-detail-modal';
