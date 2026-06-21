@@ -1959,8 +1959,8 @@ function updateKitModalPrice() {
  const tierTag = '<span class="' + (isLarge ? 'tier-large' : 'tier-small') + '">' + tierLabel + ' (' + (isLarge ? '≥120' : '<120') + ' pcs)</span>';
  block.innerHTML =
   '<div class="kit-price-row"><span class="kit-price-tier">' + tierTag + '</span></div>' +
-  '<div class="kit-price-row"><span class="kit-price-label">' + uiText('Precio unitario','Unit price') + '</span><span class="kit-price-val">$' + unitMxn + ' MXN <small>≈ $' + unitUsd.toFixed(2) + ' USD</small></span></div>' +
-  '<div class="kit-price-row kit-price-sub"><span class="kit-price-label">' + uiText('Subtotal','Subtotal') + ' × ' + qty + (promo ? ' <em>-15%</em>' : '') + '</span><span class="kit-price-val">$' + subMxn + ' MXN <small>≈ $' + subUsd.toFixed(2) + ' USD</small></span></div>';
+  '<div class="kit-price-row"><span class="kit-price-label">' + uiText('Precio unitario','Unit price') + '</span><span class="kit-price-val">$' + unitMxn + ' MXN</span></div>' +
+  '<div class="kit-price-row kit-price-sub"><span class="kit-price-label">' + uiText('Subtotal','Subtotal') + ' × ' + qty + (promo ? ' <em>-15%</em>' : '') + '</span><span class="kit-price-val">$' + subMxn + ' MXN</span></div>';
 }
 let currentKitProductId = '';
 
