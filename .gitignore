@@ -10,3 +10,6 @@ gen_maps.py
 fullwidth_*.py
 html2img.js
 node_modules/
+.env
+.env.local
+ops/reports/

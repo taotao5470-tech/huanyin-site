@@ -255,9 +255,12 @@ img { max-width: 100%; display: block;}
 .country-archive-panel { background: linear-gradient(145deg, rgba(35,35,35,0.98), rgba(18,26,22,0.98)); color: var(--text-light); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 16px 0 18px; box-shadow: 0 18px 48px rgba(0,0,0,0.32); overflow: hidden; }
 .country-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px 10px; padding: 0 40px 18px; }
 .country-chip { height: 34px; display: flex; align-items: center; gap: 8px; padding: 0 10px; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.11); color: var(--text-light); font-size: 12px; font-weight: 800; text-align: left; transition: var(--transition); }
+.country-chip:nth-child(-n+5) { height: 46px; padding: 0 14px; gap: 10px; font-size: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06)); border-color: rgba(255,215,0,0.32); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 10px 22px rgba(0,0,0,0.16); }
 .country-chip:hover, .country-chip.active { background: rgba(0,108,53,0.34); border-color: rgba(255,215,0,0.58); box-shadow: inset 0 0 0 1px rgba(255,215,0,0.35), 0 8px 24px rgba(0,0,0,0.22); }
 .country-chip .badge { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; background: #fff; border: 1px solid #ddd; font-size: 14px; }
+.country-chip:nth-child(-n+5) .badge { width: 26px; height: 26px; font-size: 17px; }
 .country-chip .badge img { width: 16px; height: 16px; object-fit: contain; }
+.country-chip:nth-child(-n+5) .badge img { width: 21px; height: 21px; }
 .country-chip.country-more { justify-content: center; color: var(--wc-gold); border-color: rgba(255,215,0,0.42); }
 .country-rankings { padding: 0 40px; margin-top: 2px; }
 .decade-strip { display: flex; gap: 8px; padding: 10px 40px; border-top: 1px solid #ececec; background: #fff; overflow-x: auto; }
@@ -1486,9 +1489,7 @@ const KIT_SLOT_IMAGE_MAP = {
    "images/mundial/organized-teams/portugal/away/06.jpeg"
   ],
   "third": [
-   "images/mundial/jersey-portugal-特别版/01.jpeg",
-   "images/mundial/jersey-portugal-特别版/02.jpeg",
-   "images/mundial/jersey-portugal-特别版/03.jpeg"
+   "images/mundial/organized-teams/portugal/third/01.jpg"
   ]
  },
  "Senegal": {
