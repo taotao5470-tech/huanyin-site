@@ -1897,7 +1897,7 @@ function openKitModal(id, variantIdx, slotKey) {
       <div class="kit-edition-box">
        <div class="kit-edition-title">${uiText('Talla','Size')}</div>
        <div class="size-options" id="sizeOpts">
-        ${(p.sizes && p.sizes.length ? p.sizes : ['S','M','L','XL','XXL']).map((s,i)=>`<span class="size-opt ${i===2?'active':''}" onclick="document.querySelectorAll('#sizeOpts .size-opt').forEach(x=>x.classList.remove('active'));this.classList.add('active')">${s}</span>`).join('')}
+        ${(p.sizes && p.sizes.length ? p.sizes : ['S','M','L','XL','XXL','3XL','4XL']).map((s,i)=>`<span class="size-opt ${i===2?'active':''}" onclick="document.querySelectorAll('#sizeOpts .size-opt').forEach(x=>x.classList.remove('active'));this.classList.add('active')">${s}</span>`).join('')}
        </div>
       </div>
       <div class="kit-edition-box">

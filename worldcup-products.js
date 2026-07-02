@@ -17,7 +17,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -79,7 +81,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -140,7 +144,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -202,7 +208,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -267,7 +275,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -316,7 +326,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -380,7 +392,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -442,7 +456,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -493,7 +509,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -553,7 +571,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -614,7 +634,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -665,7 +687,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -714,7 +738,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -763,7 +789,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -824,7 +852,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -883,7 +913,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -934,7 +966,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -995,7 +1029,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1057,7 +1093,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1106,7 +1144,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1168,7 +1208,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1232,7 +1274,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1294,7 +1338,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1356,7 +1402,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1418,7 +1466,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1467,7 +1517,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1527,7 +1579,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1576,7 +1630,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1641,7 +1697,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1700,7 +1758,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1751,7 +1811,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1813,7 +1875,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1875,7 +1939,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -1937,7 +2003,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2000,7 +2068,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2059,7 +2129,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2124,7 +2196,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2184,7 +2258,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2248,7 +2324,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2297,7 +2375,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2359,7 +2439,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2410,7 +2492,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2480,7 +2564,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2542,7 +2628,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2601,7 +2689,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2662,7 +2752,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2724,7 +2816,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2783,7 +2877,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2832,7 +2928,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2894,7 +2992,9 @@
                 "M",
                 "L",
                 "XL",
-                "XXL"
+                "XXL",
+                "3XL",
+                "4XL"
         ],
         "price": {
                 "usd_small": 4.29,
@@ -2967,7 +3067,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-ac-milan-主场/01.jpeg"
@@ -3004,7 +3106,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-ac-milan-客场/01.jpeg"
@@ -3043,7 +3147,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-arsenal-主场/01.jpeg",
@@ -3081,7 +3187,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-arsenal-客场/01.jpeg"
@@ -3120,7 +3228,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-barcelona-主场/01.jpeg",
@@ -3159,7 +3269,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-barcelona-客场/01.jpeg",
@@ -3197,7 +3309,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-barcelona-特别版/01.jpeg"
@@ -3234,7 +3348,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-borussia-dortmund-主场/01.jpeg"
@@ -3275,7 +3391,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1970-主场/01.jpeg"
@@ -3316,7 +3434,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1991-主场/01.jpeg",
@@ -3358,7 +3478,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1993-主场/01.jpeg",
@@ -3400,7 +3522,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1997-主场/01.jpeg",
@@ -3442,7 +3566,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1998-主场/01.jpeg",
@@ -3484,7 +3610,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2000-主场/01.jpeg",
@@ -3526,7 +3654,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2002-主场/01.jpeg",
@@ -3568,7 +3698,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2004-主场/01.jpeg",
@@ -3610,7 +3742,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2006-主场/01.jpeg",
@@ -3652,7 +3786,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2010-主场/01.jpeg",
@@ -3694,7 +3830,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2012-主场/01.jpeg",
@@ -3736,7 +3874,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2013-主场/01.jpeg",
@@ -3778,7 +3918,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2014-主场/01.jpeg",
@@ -3820,7 +3962,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2018-主场/01.jpeg",
@@ -3862,7 +4006,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1998-主场-白色版/01.jpeg",
@@ -3904,7 +4050,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1998-主场-长袖/01.jpeg",
@@ -3946,7 +4094,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2002-主场-长袖/01.jpeg",
@@ -3988,7 +4138,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1998-守门员/01.jpeg",
@@ -4030,7 +4182,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1992-客场/01.jpeg",
@@ -4072,7 +4226,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1993-客场/01.jpeg",
@@ -4114,7 +4270,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1996-客场/01.jpeg",
@@ -4156,7 +4314,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1997-客场/01.jpeg",
@@ -4198,7 +4358,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1998-客场/01.jpeg",
@@ -4240,7 +4402,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2002-客场/01.jpeg",
@@ -4282,7 +4446,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2004-客场/01.jpeg",
@@ -4324,7 +4490,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-2014-客场/01.jpeg",
@@ -4366,7 +4534,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-brasil-1998-客场-长袖/01.jpeg",
@@ -4404,7 +4574,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-espanyol-主场/01.jpeg"
@@ -4441,7 +4613,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-espanyol-客场/01.jpeg"
@@ -4478,7 +4652,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-inter-miami-主场/01.jpeg"
@@ -4515,7 +4691,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-inter-miami-客场/01.jpeg"
@@ -4553,7 +4731,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-inter-milan-主场/01.jpeg",
@@ -4591,7 +4771,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-inter-milan-客场/01.jpeg"
@@ -4628,7 +4810,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-liverpool-主场/01.jpeg"
@@ -4665,7 +4849,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-liverpool-客场/01.jpeg"
@@ -4702,7 +4888,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-manchester-city-客场/01.jpeg"
@@ -4739,7 +4927,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-1970-主场/01.jpeg"
@@ -4776,7 +4966,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-1986-主场/01.jpeg"
@@ -4813,7 +5005,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-1995-主场/01.jpeg"
@@ -4850,7 +5044,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-1998-主场/01.jpeg"
@@ -4887,7 +5083,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-10-主场/01.jpeg"
@@ -4924,7 +5122,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-14-主场/01.jpeg"
@@ -4961,7 +5161,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-1995-客场/01.jpeg"
@@ -4998,7 +5200,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-1998-客场/01.jpeg"
@@ -5035,7 +5239,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-10-客场/01.jpeg"
@@ -5072,7 +5278,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-vintage-méxico-14-客场/01.jpeg"
@@ -5109,7 +5317,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-paris-saint-germain-主场/01.jpeg"
@@ -5146,7 +5356,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-paris-saint-germain-特别版/01.jpeg"
@@ -5185,7 +5397,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-real-madrid-主场/01.jpeg",
@@ -5223,7 +5437,9 @@
    "M",
    "L",
    "XL",
-   "XXL"
+   "XXL",
+   "3XL",
+   "4XL"
   ],
   "images": [
    "images/mundial/jersey-real-madrid-客场/01.jpeg"
