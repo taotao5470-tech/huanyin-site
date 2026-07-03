@@ -26,15 +26,15 @@
 <meta name="description" content="Archivo comercial de camisetas nacionales 2026 para Mundial Mexico-EE.UU.-Canada. Filtra por seleccion, region y version. Pedido +200 pcs: 15% OFF.">
 <meta property="og:title" content="Mayoreo Mundial 2026 | Entrega en Mexico hasta 3 dias | Miravue">
 <meta property="og:description" content="Catalogo Mundial 2026 para mayoreo en Mexico. Entrega rapida en Mexico hasta 3 dias. Solicita catalogo por WhatsApp.">
-<meta property="og:image" content="https://huanyinvox.top/worldcup-link-card.png?v=2">
-<meta property="og:url" content="https://huanyinvox.top/worldcup.html">
+<meta property="og:image" content="https://miravuevox.shop/worldcup-link-card.png?v=2">
+<meta property="og:url" content="https://miravuevox.shop/worldcup.html">
 <meta property="og:type" content="website">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="1024">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mayoreo Mundial 2026 | Entrega en Mexico hasta 3 dias | Miravue">
 <meta name="twitter:description" content="Catalogo Mundial 2026 para mayoreo en Mexico. Entrega rapida en Mexico hasta 3 dias. Solicita catalogo por WhatsApp.">
-<meta name="twitter:image" content="https://huanyinvox.top/worldcup-link-card.png?v=2">
+<meta name="twitter:image" content="https://miravuevox.shop/worldcup-link-card.png?v=2">
 <script src="meta-shared.js"></script>
 <style>
 :root {
@@ -842,6 +842,36 @@ img { max-width: 100%; display: block;}
 
 <script src="worldcup-products.js"></script>
 <script>
+const WORLDCUP_WHATSAPP_VARIANTS = {
+ default: { number: '85246250134', display: '+852 4625 0134' },
+ original: { number: '85246250134', display: '+852 4625 0134' },
+ '1': { number: '85246281624', display: '+852 4628 1624' },
+ v1: { number: '85246281624', display: '+852 4628 1624' },
+ '2': { number: '85297285170', display: '+852 9728 5170' },
+ v2: { number: '85297285170', display: '+852 9728 5170' }
+};
+function getWorldcupWhatsAppContact() {
+ const params = new URLSearchParams(window.location.search);
+ const key = (params.get('wa') || params.get('version') || 'default').toLowerCase();
+ return WORLDCUP_WHATSAPP_VARIANTS[key] || WORLDCUP_WHATSAPP_VARIANTS.default;
+}
+function getWorldcupWhatsAppUrl(message) {
+ const contact = getWorldcupWhatsAppContact();
+ const suffix = message ? '?text=' + encodeURIComponent(message) : '';
+ return 'https://wa.me/' + contact.number + suffix;
+}
+function applyWorldcupWhatsAppContact() {
+ const contact = getWorldcupWhatsAppContact();
+ document.querySelectorAll('a[href*="wa.me/"]').forEach(function(link) {
+  let message = '';
+  try {
+   const url = new URL(link.href);
+   message = url.searchParams.get('text') || '';
+  } catch (e) {}
+  link.href = getWorldcupWhatsAppUrl(message);
+  if (/^\+\d/.test(link.textContent.trim())) link.textContent = contact.display;
+ });
+}
 const CATEGORIES = [
  {key:'all', es:'Todo 2026', en:'All 2026', icon:'2026'},
  {key:'jersey', es:'Camisetas', en:'Jerseys', icon:'KIT'},
@@ -2184,7 +2214,7 @@ function wcCalcShipping(id) {
   total:'Total', note:'⚠ This is only an estimate. Final price depends on actual weight, destination and season.',
   close:'Close', wa:'Request quote via WhatsApp',
  };
- const waUrl = `https://wa.me/85246250134?text=${encodeURIComponent('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')')}`;
+ const waUrl = getWorldcupWhatsAppUrl('Hola! Cotización de envío para: '+p.name_es+' ('+qty+' pcs) (SKU: '+p.id+')');
  const modal = document.createElement('div');
  modal.className = 'wc-modal';
  modal.innerHTML = `
@@ -2263,6 +2293,7 @@ const statTotalEl = document.getElementById('statTotal');
 if (statTotalEl) statTotalEl.textContent = products.length;
 const statTeamsEl = document.getElementById('statTeams');
 if (statTeamsEl) statTeamsEl.textContent = new Set(products.map(p=>p.team)).size;
+applyWorldcupWhatsAppContact();
 // 初始化：先渲染商品列表，再根据 hash 决定是否显示详情
 render();
 (function() {
@@ -2499,7 +2530,7 @@ function sendCartToWhatsAppWC() {
    num_items: totalQty
   });
  }
- window.open('https://wa.me/85246250134?text=' + encodeURIComponent(msg), '_blank');
+ window.open(getWorldcupWhatsAppUrl(msg), '_blank');
 }
 
 updateCartWCUI();
