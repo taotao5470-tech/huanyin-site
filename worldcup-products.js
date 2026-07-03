@@ -24,8 +24,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -88,8 +88,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -151,8 +151,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -215,8 +215,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -282,8 +282,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -333,8 +333,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -399,8 +399,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -463,8 +463,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -516,8 +516,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -578,8 +578,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -641,8 +641,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -694,8 +694,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -745,8 +745,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -796,8 +796,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -859,8 +859,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -920,8 +920,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -973,8 +973,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1036,8 +1036,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1100,8 +1100,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1151,8 +1151,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1215,8 +1215,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1281,8 +1281,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1345,8 +1345,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1409,8 +1409,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1473,8 +1473,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1524,8 +1524,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1586,8 +1586,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1637,8 +1637,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1704,8 +1704,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1765,8 +1765,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1818,8 +1818,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1882,8 +1882,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -1946,8 +1946,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2010,8 +2010,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2075,8 +2075,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2136,8 +2136,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2203,8 +2203,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2265,8 +2265,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2331,8 +2331,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2382,8 +2382,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2446,8 +2446,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2499,8 +2499,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2571,8 +2571,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2635,8 +2635,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2696,8 +2696,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2759,8 +2759,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2823,8 +2823,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2884,8 +2884,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2935,8 +2935,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -2999,8 +2999,8 @@
         "price": {
                 "usd_small": 4.29,
                 "usd_large": 3.71,
-                "mxn_small": 225,
-                "mxn_large": 194,
+                "mxn_small": 185,
+                "mxn_large": 185,
                 "moq": 50
         },
         "images": [
@@ -3058,8 +3058,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3097,8 +3097,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3138,8 +3138,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3178,8 +3178,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3219,8 +3219,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3260,8 +3260,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3300,8 +3300,8 @@
   "price": {
    "usd_small": 5.43,
    "usd_large": 4.86,
-   "mxn_small": 95,
-   "mxn_large": 85,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3339,8 +3339,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3382,8 +3382,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3425,8 +3425,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3469,8 +3469,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3513,8 +3513,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3557,8 +3557,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3601,8 +3601,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3645,8 +3645,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3689,8 +3689,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3733,8 +3733,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3777,8 +3777,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3821,8 +3821,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3865,8 +3865,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3909,8 +3909,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3953,8 +3953,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -3997,8 +3997,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4041,8 +4041,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4085,8 +4085,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4129,8 +4129,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4173,8 +4173,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4217,8 +4217,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4261,8 +4261,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4305,8 +4305,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4349,8 +4349,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4393,8 +4393,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4437,8 +4437,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4481,8 +4481,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4525,8 +4525,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4565,8 +4565,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4604,8 +4604,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4643,8 +4643,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4682,8 +4682,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4722,8 +4722,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4762,8 +4762,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4801,8 +4801,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4840,8 +4840,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4879,8 +4879,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4918,8 +4918,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4957,8 +4957,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -4996,8 +4996,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5035,8 +5035,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5074,8 +5074,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5113,8 +5113,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5152,8 +5152,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5191,8 +5191,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5230,8 +5230,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5269,8 +5269,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5308,8 +5308,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5347,8 +5347,8 @@
   "price": {
    "usd_small": 5.43,
    "usd_large": 4.86,
-   "mxn_small": 95,
-   "mxn_large": 85,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5388,8 +5388,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
@@ -5428,8 +5428,8 @@
   "price": {
    "usd_small": 4.29,
    "usd_large": 3.71,
-   "mxn_small": 225,
-   "mxn_large": 194,
+   "mxn_small": 185,
+   "mxn_large": 185,
    "moq": 50
   },
   "sizes": [
