@@ -1997,6 +1997,15 @@ body {
  }
 }
 
+/* ============ Maintenance Modal ============ */
+.maintenance-overlay { position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; padding: 24px; }
+.maintenance-overlay.open { display: flex; }
+.maintenance-modal { background: var(--bg-secondary); border: 1px solid var(--border-dark); border-radius: 20px; padding: 48px 40px; max-width: 480px; width: 100%; text-align: center; animation: fadeSlideIn 0.35s ease; }
+.maintenance-icon { font-size: 56px; margin-bottom: 16px; }
+.maintenance-modal h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; color: var(--text-light); }
+.maintenance-modal p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
+.maintenance-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
 </style>
 <!-- Facebook Pixel Code -->
 <script src="meta-shared.js"></script>
@@ -2211,7 +2220,7 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
     <strong>Electronics</strong>
     <span data-es="AirPods, relojes, Dyson, power banks y kits de carga" data-en="AirPods, watches, Dyson, power banks and charging kits">AirPods, relojes, Dyson, power banks y kits de carga</span>
    </button>
-   <a class="catalog-group-card catalog-group-link catalog-putian" href="/putian.html" data-group="putian" aria-label="Open Putian Fashion catalog">
+   <a class="catalog-group-card catalog-group-link catalog-putian" href="#" data-group="putian" aria-label="Open Putian Fashion catalog" onclick="showPutianMaintenance(event)">
     <img class="catalog-group-bg" src="putian-aj1-bg.jpg" alt="" aria-hidden="true" loading="lazy">
     <span class="catalog-group-overlay" aria-hidden="true"></span>
     <span class="catalog-group-tag">Brand Sourcing</span>
@@ -2814,6 +2823,22 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
   </button>
  </div>
 </div>
+<!-- ============ MAINTENANCE MODAL ============ -->
+<div class="maintenance-overlay" id="maintenanceOverlay" onclick="closeMaintenance(event)">
+ <div class="maintenance-modal" onclick="event.stopPropagation()">
+  <div class="maintenance-icon">🔧</div>
+  <h2 data-es="En Mantenimiento" data-en="Under Maintenance">En Mantenimiento</h2>
+  <p data-es="La sección Putian Fashion está temporalmente en mantenimiento. Vuelve pronto o contáctanos por WhatsApp para más información." data-en="The Putian Fashion section is temporarily under maintenance. Check back soon or contact us on WhatsApp for more info.">La sección Putian Fashion está temporalmente en mantenimiento. Vuelve pronto o contáctanos por WhatsApp para más información.</p>
+  <div class="maintenance-btns">
+   <button class="btn btn-moss" onclick="closeMaintenance()" data-es="Volver" data-en="Go Back">Volver</button>
+   <a href="https://wa.me/85246281624" target="_blank" class="btn btn-wa">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+   <span data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+   </a>
+  </div>
+ </div>
+</div>
+
 <!-- ============ SCRIPTS ============ -->
 <script src="particles.js"></script>
 <script src="watch-products.js"></script>
@@ -3700,11 +3725,26 @@ function toggleCatCard(card) {
   scrollToProductsGrid();
 }
 
+// ============ MAINTENANCE MODAL ============
+function showPutianMaintenance(e) {
+ if (e) { e.preventDefault(); e.stopPropagation(); }
+ document.getElementById('navLinks').classList.remove('open');
+ const overlay = document.getElementById('maintenanceOverlay');
+ overlay.classList.add('open');
+ translateAll();
+}
+
+function closeMaintenance(e) {
+ if (e && e.target !== document.getElementById('maintenanceOverlay')) return;
+ document.getElementById('maintenanceOverlay').classList.remove('open');
+}
+
 // ============ PRODUCT RENDERING ============
 let currentFilter = 'airpods-pro';
 let currentCatalogGroup = 'electronics';
 
 function setCatalogGroup(group) {
+ if (group === 'putian') { showPutianMaintenance(); return; }
  currentCatalogGroup = group;
  document.querySelectorAll('.catalog-group-card').forEach(card => {
   card.classList.toggle('active', card.dataset.group === group);
