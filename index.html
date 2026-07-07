@@ -222,13 +222,31 @@ body.page-product .footer, body.page-about .footer { display: none; }
 .sub-cat-btn.active { background: var(--accent-moss); color: #fff; border-color: var(--accent-moss); }
 
 /* ============ Products Grid ============ */
-.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.product-card { background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; transition: var(--transition); cursor: pointer; border: 1px solid var(--border-dark); display: flex; flex-direction: column; }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; grid-auto-rows: 1fr; }
+.product-card { background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; transition: var(--transition); cursor: pointer; border: 1px solid var(--border-dark); display: flex; flex-direction: column; min-height: 430px; }
 .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(125,148,116,0.4); }
 .product-card.disabled { opacity: 0.45; pointer-events: none; cursor: not-allowed; }
-.product-img { aspect-ratio: 4 / 3; height: auto; min-height: 220px; background: radial-gradient(circle at 50% 34%, #2a2a2a 0%, #1a1a1a 48%, #111 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 0; }
+.product-img { aspect-ratio: auto; height: 240px; min-height: 240px; flex: 0 0 240px; background: radial-gradient(circle at 50% 34%, #2a2a2a 0%, #1a1a1a 48%, #111 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 0; }
 .product-img::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.34)), var(--product-img-src); background-size: cover; background-position: center; filter: blur(18px) saturate(0.9); transform: scale(1.08); opacity: 0.42; }
 .product-img .pi-placeholder { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; position: relative; z-index: 1; filter: none; }
+.product-new-badge {
+ position: absolute;
+ z-index: 3;
+ pointer-events: none;
+ filter: drop-shadow(0 8px 18px rgba(0,0,0,0.22));
+}
+.product-img .product-new-badge {
+ top: 10px;
+ left: 10px;
+ width: 72px;
+ height: auto;
+}
+.pd-gallery .product-new-badge {
+ top: 16px;
+ left: 16px;
+ width: clamp(86px, 18vw, 132px);
+ height: auto;
+}
 .product-card[data-pid="airpods-pro-2"] .product-img .pi-placeholder { object-position: center 48%; transform: scale(1.46); transform-origin: center; }
 .product-card[data-pid="airpods-pro-3"] .product-img .pi-placeholder { object-position: center 48%; }
 .product-card[data-pid="airpods-pro"] .product-img .pi-placeholder { object-position: center; }
@@ -250,14 +268,14 @@ body.page-product .footer, body.page-about .footer { display: none; }
 .stock-dot.low-stock::before { background: var(--warning); }
 .stock-dot.pre-order::before { background: var(--danger); }
 .stock-dot.oos::before { background: #666; }
-.product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
-.product-name { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 4px; }
-.product-spec { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+.product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; min-height: 190px; }
+.product-name { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.product-spec { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; min-height: 36px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .product-bottom { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; }
 .product-price { font-size: 15px; font-weight: 700; }
 .product-price span { font-size: 11px; color: var(--text-muted); font-weight: 400; }
 .product-moq { font-size: 10px; color: var(--text-muted); }
-.variant-dots { display: flex; gap: 5px; margin-bottom: 10px; }
+.variant-dots { display: flex; gap: 5px; margin-bottom: 10px; min-height: 10px; }
 .variant-dot { width: 8px; height: 8px; border-radius: 50%; }
 .v-dot-std { background: #777; }
 .v-dot-global { background: var(--accent-moss); }
@@ -293,6 +311,28 @@ body.page-product .footer, body.page-about .footer { display: none; }
 .specs-table tr { border-bottom: 1px solid var(--border-dark); }
 .specs-table td { padding: 4px 0; font-size: 12px; }
 .specs-table td:first-child { color: var(--text-muted); width: 40%; font-size: 11px; }
+.specs-table td:last-child { white-space: pre-line; }
+.pd-function-desc {
+ margin-top: 16px;
+ padding: 16px;
+ border: 1px solid var(--border-dark);
+ border-radius: 12px;
+ background: rgba(255,255,255,0.035);
+}
+.pd-function-title {
+ margin-bottom: 10px;
+ color: var(--text-muted);
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+}
+.pd-function-body {
+ color: var(--text-light);
+ font-size: 13px;
+ line-height: 1.65;
+ white-space: pre-line;
+}
 
 /* Packaging options (shared) */
 .pack-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 6px; }
@@ -543,19 +583,20 @@ body.page-product .footer, body.page-about .footer { display: none; }
  .nav-wa span { display: none; }
  .hamburger { display: flex; }
  .products-grid { grid-template-columns: 1fr; gap: 12px; }
- .product-card { display: grid; grid-template-columns: 132px minmax(0, 1fr); min-height: 154px; border-radius: 10px; }
+ .product-card { display: grid; grid-template-columns: 132px minmax(0, 1fr); min-height: 166px; height: 166px; border-radius: 10px; }
  .product-card:hover { transform: none; }
- .product-img { aspect-ratio: auto; width: 132px; height: 100%; min-height: 154px; padding: 0; align-self: stretch; }
+ .product-img { aspect-ratio: auto; width: 132px; height: 166px; min-height: 166px; padding: 0; align-self: stretch; flex: none; }
  .product-img::before { opacity: 0.34; filter: blur(14px) saturate(0.92); }
  .product-img .pi-placeholder { height: 100%; object-fit: cover; }
+ .product-img .product-new-badge { width: 48px; top: 7px; left: 7px; }
  .product-badge { top: 8px; left: 8px; gap: 4px; }
  .badge { padding: 3px 7px; border-radius: 8px; font-size: 9px; letter-spacing: 0.3px; }
  .stock-dot { top: 8px; right: 8px; padding: 4px 7px; border-radius: 8px; font-size: 9px; gap: 4px; }
  .stock-dot::before { width: 6px; height: 6px; }
- .product-info { min-width: 0; padding: 14px 14px 12px; }
- .product-name { font-size: 15px; line-height: 1.25; margin-bottom: 4px; }
- .product-spec { font-size: 11px; line-height: 1.35; margin-bottom: 8px; }
- .variant-dots { gap: 4px; margin-bottom: 8px; }
+ .product-info { min-width: 0; height: 166px; min-height: 0; overflow: hidden; padding: 14px 14px 12px; }
+ .product-name { font-size: 15px; line-height: 1.25; margin-bottom: 4px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .product-spec { font-size: 11px; line-height: 1.35; margin-bottom: 8px; min-height: 30px; }
+ .variant-dots { gap: 4px; margin-bottom: 8px; min-height: 7px; }
  .variant-dot { width: 7px; height: 7px; }
  .product-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
  .product-price { font-size: 15px; line-height: 1.1; }
@@ -846,8 +887,15 @@ body {
  .hero h1 { font-size: clamp(38px, 13vw, 58px); letter-spacing: -2px; }
  .hero p { font-size: 15px; }
  .hero-shell { gap: 8px; }
- .hero-proof { grid-template-columns: 1fr; }
- .hero-proof div { padding: 12px 14px; }
+ .hero-proof {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-width: 360px;
+ }
+ .hero-proof div { padding: 10px 6px; border-radius: 14px; }
+ .hero-proof strong { font-size: 20px; }
+ .hero-proof span { font-size: 10px; line-height: 1.25; }
  .hero-visual { min-height: 330px; transform: scale(0.92); transform-origin: center top; }
  .hero-float-card { min-width: 100px; padding: 8px 10px; }
  .hero-float-card strong { font-size: 18px; }
@@ -990,6 +1038,16 @@ body {
 }
 .feat-cat-card.cat-airpods-max {
  background-image: radial-gradient(circle at 50% 24%, rgba(255,255,255,0.12), transparent 36%), linear-gradient(145deg, rgba(22,32,40,0.96), rgba(10,16,23,0.98));
+}
+.feat-cat-card.cat-watches {
+ min-height: 230px;
+ justify-content: flex-start;
+ align-items: flex-end;
+ padding: 24px;
+ background-size: auto 50%, auto 50%;
+ background-repeat: no-repeat;
+ background-position: center 42%, center;
+ background-image: linear-gradient(180deg, rgba(8,13,18,0.08), rgba(8,13,18,0.86)), url('images/watch/watch-cat-bg.png') !important;
 }
 .feat-cat-card.cat-airpods .feat-cat-title,
 .feat-cat-card.cat-airpods-pro .feat-cat-title,
@@ -1530,6 +1588,415 @@ body {
  .cat-mundial-trophy { font-size: 38px; bottom: 50px;}
 }
 
+/* Unified catalog category windows */
+.catalog-groups {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 14px;
+ margin-bottom: 22px;
+}
+.catalog-group-card {
+ position: relative;
+ overflow: hidden;
+ min-height: 210px;
+ border: 1px solid rgba(195,229,221,0.13);
+ border-radius: 12px;
+ background: linear-gradient(145deg, rgba(20,32,44,0.96), rgba(12,20,30,0.98));
+ color: var(--text-light);
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+ align-items: flex-start;
+ gap: 8px;
+ padding: 18px;
+ cursor: pointer;
+ transition: transform 0.28s cubic-bezier(0.2,0.8,0.2,1), border-color 0.28s ease, box-shadow 0.28s ease;
+ text-align: left;
+ isolation: isolate;
+ animation: catalogCardIn 0.7s ease both;
+ animation-delay: calc(var(--card-i, 0) * 90ms);
+}
+.catalog-group-card:nth-child(1) { --card-i: 0; }
+.catalog-group-card:nth-child(2) { --card-i: 1; }
+.catalog-group-card:nth-child(3) { --card-i: 2; }
+.catalog-group-card::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ z-index: -1;
+ background: linear-gradient(180deg, rgba(5,12,20,0.08), rgba(5,12,20,0.88));
+ opacity: 1;
+ transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.catalog-group-card::after {
+ content: '';
+ position: absolute;
+ top: -35%;
+ bottom: -35%;
+ left: -55%;
+ width: 38%;
+ background: linear-gradient(100deg, transparent, rgba(255,255,255,0.18), transparent);
+ transform: skewX(-16deg);
+ opacity: 0;
+ pointer-events: none;
+}
+.catalog-group-card:hover,
+.catalog-group-card.active {
+ border-color: rgba(47,208,139,0.48);
+ box-shadow: 0 18px 42px rgba(0,0,0,0.22), 0 0 30px rgba(47,208,139,0.1);
+ transform: translateY(-4px);
+}
+.catalog-group-card:hover::after,
+.catalog-group-card.active::after {
+ animation: catalogShine 0.9s ease;
+}
+.catalog-group-card strong {
+ position: relative;
+ z-index: 3;
+ font-size: 25px;
+ line-height: 1.05;
+ letter-spacing: -0.4px;
+ text-shadow: 0 3px 14px rgba(0,0,0,0.46);
+}
+.catalog-group-card span {
+ position: relative;
+ z-index: 3;
+ color: var(--text-muted);
+ font-size: 13px;
+ line-height: 1.35;
+ text-shadow: 0 2px 10px rgba(0,0,0,0.42);
+}
+.catalog-group-bg {
+ position: absolute;
+ inset: 0;
+ z-index: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ opacity: 0.82;
+ transform: scale(1.02);
+ transition: transform 0.45s cubic-bezier(0.2,0.8,0.2,1), filter 0.45s ease;
+}
+.catalog-group-card:hover .catalog-group-bg,
+.catalog-group-card.active .catalog-group-bg {
+ transform: scale(1.08);
+ filter: saturate(1.08) contrast(1.04);
+}
+.catalog-group-overlay {
+ position: absolute;
+ inset: 0;
+ z-index: 1;
+ background: linear-gradient(180deg, rgba(5,12,20,0.1), rgba(5,12,20,0.86) 72%, rgba(5,12,20,0.95));
+}
+.catalog-group-tag {
+ position: absolute !important;
+ top: 14px;
+ left: 14px;
+ z-index: 3 !important;
+ display: inline-flex;
+ align-items: center;
+ width: auto;
+ padding: 5px 10px;
+ border-radius: 6px;
+ background: rgba(5,12,20,0.66);
+ border: 1px solid rgba(255,255,255,0.15);
+ color: #fff !important;
+ font-size: 10px !important;
+ font-weight: 900;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ backdrop-filter: blur(8px);
+}
+.catalog-group-ribbon {
+ position: absolute !important;
+ top: 15px;
+ right: -46px;
+ z-index: 4 !important;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ width: 168px;
+ height: 30px;
+ background: linear-gradient(135deg, #e62a3d, #b80f22);
+ color: #fff !important;
+ border: 1px solid rgba(255,255,255,0.28);
+ box-shadow: 0 8px 20px rgba(184,15,34,0.35);
+ font-size: 10px !important;
+ font-weight: 900;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ transform: rotate(38deg);
+}
+.catalog-group-card.catalog-electronics .catalog-group-bg {
+ object-fit: contain;
+ padding: 4px 8px 28px;
+ transform: scale(1.18);
+ filter: drop-shadow(0 28px 38px rgba(0,0,0,0.45));
+ opacity: 0.9;
+}
+.catalog-group-card.catalog-electronics:hover .catalog-group-bg,
+.catalog-group-card.catalog-electronics.active .catalog-group-bg {
+ transform: scale(1.24);
+ filter: saturate(1.08) contrast(1.04) drop-shadow(0 28px 38px rgba(0,0,0,0.45));
+}
+.catalog-group-card.catalog-electronics .catalog-group-overlay {
+ background: radial-gradient(circle at 70% 26%, rgba(47,208,139,0.28), transparent 36%), linear-gradient(180deg, rgba(5,12,20,0.05), rgba(5,12,20,0.88) 74%);
+}
+.catalog-group-card.catalog-electronics::before {
+ background: radial-gradient(circle at 78% 18%, rgba(47,208,139,0.22), transparent 40%), radial-gradient(circle at 18% 82%, rgba(45,125,210,0.18), transparent 42%);
+ animation: catalogPulse 5.8s ease-in-out infinite;
+}
+.catalog-group-card.catalog-putian .catalog-group-overlay {
+ background: radial-gradient(circle at 74% 18%, rgba(255,184,77,0.16), transparent 36%), linear-gradient(180deg, rgba(5,12,20,0.02), rgba(5,12,20,0.36) 42%, rgba(5,12,20,0.92) 82%);
+}
+.catalog-group-card.catalog-putian::before {
+ background: radial-gradient(circle at 74% 20%, rgba(255,184,77,0.24), transparent 40%), radial-gradient(circle at 20% 82%, rgba(220,75,120,0.18), transparent 44%);
+ animation: catalogPulse 6.4s ease-in-out infinite;
+}
+.catalog-group-card.catalog-worldcup {
+ background: radial-gradient(circle at 78% 22%, rgba(255,215,0,0.24), transparent 42%), radial-gradient(circle at 20% 78%, rgba(206,17,38,0.2), transparent 48%), linear-gradient(135deg, #003d1f 0%, #006C35 52%, #035530 100%);
+ border-color: rgba(255,215,0,0.34);
+}
+.catalog-group-card.catalog-worldcup .catalog-group-bg {
+ display: block;
+ opacity: 0.78;
+ object-fit: cover;
+ padding: 0;
+}
+.catalog-group-card.catalog-worldcup .catalog-group-overlay {
+ background: radial-gradient(circle at 72% 18%, rgba(255,215,0,0.18), transparent 34%), linear-gradient(180deg, rgba(0,61,31,0.05), rgba(0,32,18,0.78) 74%, rgba(0,25,14,0.93));
+}
+.catalog-group-card.catalog-worldcup .catalog-group-tag {
+ top: 15px;
+ right: -46px;
+ left: auto;
+ width: 168px;
+ height: 30px;
+ justify-content: center;
+ padding: 0;
+ border-radius: 0;
+ background: linear-gradient(135deg, #e62a3d, #b80f22);
+ border: 1px solid rgba(255,215,0,0.45);
+ color: #fff !important;
+ box-shadow: 0 8px 20px rgba(184,15,34,0.4);
+ transform: rotate(38deg);
+}
+.catalog-group-card.catalog-worldcup .catalog-group-icon {
+ right: 26px;
+ top: 54px;
+ font-size: 68px;
+ opacity: 0.22;
+ text-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+.catalog-group-card.catalog-worldcup::before {
+ background: radial-gradient(circle at 76% 22%, rgba(255,215,0,0.3), transparent 38%), radial-gradient(circle at 18% 78%, rgba(206,17,38,0.22), transparent 44%);
+ animation: catalogFieldGlow 4.8s ease-in-out infinite;
+}
+.catalog-group-card.catalog-worldcup strong {
+ color: #fff8c9;
+}
+.catalog-group-card.catalog-worldcup:hover {
+ border-color: rgba(255,215,0,0.62);
+ box-shadow: 0 18px 42px rgba(0,108,53,0.35), 0 0 30px rgba(255,215,0,0.14);
+}
+.catalog-group-icon {
+ position: absolute;
+ right: 18px;
+ top: 16px;
+ z-index: 2;
+ font-size: 42px;
+ line-height: 1;
+ opacity: 0.72;
+ transform: rotate(-8deg);
+ filter: drop-shadow(0 10px 22px rgba(0,0,0,0.24));
+ animation: catalogIconFloat 4.6s ease-in-out infinite;
+}
+.catalog-group-card.catalog-putian .catalog-group-icon { animation-delay: 0.6s; }
+.catalog-group-card.catalog-worldcup .catalog-group-icon { animation: catalogBallSpin 5.2s linear infinite; opacity: 0.34; }
+@keyframes catalogCardIn {
+ from { opacity: 0; transform: translateY(14px) scale(0.985); }
+ to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes catalogShine {
+ 0% { left: -55%; opacity: 0; }
+ 22% { opacity: 1; }
+ 100% { left: 118%; opacity: 0; }
+}
+@keyframes catalogPulse {
+ 0%, 100% { opacity: 0.64; transform: scale(1); }
+ 50% { opacity: 0.96; transform: scale(1.06); }
+}
+@keyframes catalogFieldGlow {
+ 0%, 100% { opacity: 0.7; filter: saturate(1); }
+ 50% { opacity: 1; filter: saturate(1.25); }
+}
+@keyframes catalogIconFloat {
+ 0%, 100% { transform: translateY(0) rotate(-8deg); }
+ 50% { transform: translateY(5px) rotate(-3deg); }
+}
+@keyframes catalogBallSpin {
+ from { transform: rotate(0deg); }
+ to { transform: rotate(360deg); }
+}
+.catalog-subtitle {
+ margin: 0 0 12px;
+ color: var(--text-muted);
+ font-size: 13px;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+}
+.feat-cats {
+ grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+ align-items: stretch;
+ gap: 10px;
+}
+.feat-cat-card.catalog-hidden {
+ display: none !important;
+}
+.feat-cats > .cat-mundial {
+ display: none !important;
+}
+.feat-cat-card {
+ min-height: 118px !important;
+ height: 100%;
+ padding: 0 !important;
+ border-radius: 10px !important;
+}
+.feat-cat-card[data-filter] {
+ background-color: var(--bg-secondary) !important;
+ background-image: none !important;
+ overflow: hidden;
+}
+.feat-cat-card[data-filter].cat-watches {
+ background-size: auto 50%, auto 50% !important;
+ background-position: center 42%, center !important;
+ background-image: linear-gradient(180deg, rgba(8,13,18,0.08), rgba(8,13,18,0.86)), url('images/watch/watch-cat-bg.png') !important;
+}
+.feat-cat-card[data-filter].cat-powerbank {
+ background-size: auto 50%, auto 50% !important;
+ background-position: center 42%, center !important;
+ background-image: linear-gradient(180deg, rgba(8,13,18,0.10), rgba(8,13,18,0.88)), url('images/powerbank/powerbank-cat-bg.jpg') !important;
+}
+.feat-cat-card[data-filter]::before,
+.feat-cat-card[data-filter]::after {
+ display: none !important;
+}
+.feat-cat-card.cat-powerbank {
+ min-height: 230px;
+ justify-content: flex-start;
+ align-items: flex-end;
+ padding: 24px;
+ background-size: auto 50%, auto 50%;
+ background-repeat: no-repeat;
+ background-position: center 42%, center;
+ background-image: linear-gradient(180deg, rgba(8,13,18,0.10), rgba(8,13,18,0.88)), url('images/powerbank/powerbank-cat-bg.jpg') !important;
+}
+.feat-cat-card[data-filter].revealed {
+ border-color: rgba(47,208,139,0.45) !important;
+ box-shadow: 0 0 34px rgba(47,208,139,0.12);
+}
+.feat-cat-card[data-filter].revealed .feat-cat-label {
+ opacity: 1;
+ transform: translateX(-50%);
+}
+.feat-cat-card[data-filter] .feat-cat-img {
+ object-fit: contain;
+ padding: 14px 16px 34px;
+ transform: scale(0.92);
+}
+.feat-cat-card[data-filter] .feat-cat-label,
+.feat-cat-card.cat-mundial .cat-mundial-label {
+ left: 50%;
+ bottom: 14px;
+ width: auto;
+ max-width: calc(100% - 20px);
+ min-width: 82px;
+ text-align: center;
+ font-size: 13px;
+ line-height: 1.15;
+ white-space: nowrap;
+ padding: 7px 12px;
+ border-radius: 14px;
+}
+.product-card {
+ height: 100%;
+}
+.product-info {
+ min-height: 190px;
+}
+.sub-cats {
+ display: none !important;
+}
+.catalog-empty {
+ grid-column: 1 / -1;
+ padding: 30px;
+ border: 1px solid var(--border-dark);
+ border-radius: 12px;
+ background: rgba(16,25,35,0.72);
+ color: var(--text-muted);
+ text-align: center;
+}
+@media (max-width: 768px) {
+ .catalog-groups {
+  grid-template-columns: 1fr;
+ }
+ .catalog-group-card {
+  min-height: 168px;
+  height: 168px;
+  padding: 16px;
+ }
+ .catalog-group-card strong {
+  font-size: 20px;
+ }
+ .catalog-group-card span:not(.catalog-group-icon):not(.catalog-group-tag):not(.catalog-group-ribbon):not(.catalog-group-overlay) {
+  font-size: 12px;
+  max-width: 78%;
+ }
+ .catalog-group-card.catalog-electronics .catalog-group-bg {
+  padding: 8px 18px 44px;
+  transform: scale(1.28);
+  transform-origin: 58% 38%;
+ }
+ .catalog-group-card.catalog-electronics:hover .catalog-group-bg,
+ .catalog-group-card.catalog-electronics.active .catalog-group-bg {
+  transform: scale(1.36);
+ }
+ .catalog-group-tag {
+  top: 12px;
+  left: 12px;
+ }
+ .catalog-group-ribbon,
+ .catalog-group-card.catalog-worldcup .catalog-group-tag {
+  top: 12px;
+  right: -48px;
+ }
+ .catalog-group-card.catalog-worldcup .catalog-group-icon {
+  top: 46px;
+  right: 22px;
+  font-size: 58px;
+ }
+ .feat-cats {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+ }
+ .feat-cat-card {
+  min-height: 96px !important;
+ }
+ .feat-cat-card[data-filter] .feat-cat-label,
+ .feat-cat-card.cat-mundial .cat-mundial-label {
+  min-width: 0;
+  font-size: 12px;
+  padding: 6px 9px;
+ }
+ .feat-cat-card[data-filter] .feat-cat-img {
+  padding: 10px 12px 30px;
+  transform: scale(0.86);
+ }
+ .product-info {
+  min-height: 0;
+ }
+}
+
 </style>
 <!-- Facebook Pixel Code -->
 <script src="meta-shared.js"></script>
@@ -1640,26 +2107,26 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
  <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
  <div class="hero-shell">
   <div class="hero-content hero-copy">
-   <div class="hero-badge reveal" data-delay="0"><span class="dot"></span> <span data-es="Proveedor B2B de Electrónica — Directo de Fábrica" data-en="B2B Electronics Supplier — Direct from Factory">Proveedor B2B de Electrónica — Directo de Fábrica</span></div>
+   <div class="hero-badge reveal" data-delay="0"><span class="dot"></span> <span data-es="Cadena de Suministro G5 — Precio Directo + Almacén Local" data-en="G5 Supply Chain — Direct Pricing + Local Warehouse">Cadena de Suministro G5 — Precio Directo + Almacén Local</span></div>
    <div class="hero-company-card reveal " data-delay="120">
     <div class="hero-company-copy">
      <span class="hero-company-kicker">MIRAVUE / 千幻贸易</span>
-     <strong data-es="Empresa comercial B2B con red de proveedores seleccionados" data-en="B2B trading company with a curated supplier network">Empresa comercial B2B con red de proveedores seleccionados</strong>
-     <small data-es="Agregamos fabricas y canales de stock para conseguir mejores precios, preparar pedidos desde almacen local, responder en 3 dias y cubrir posventa con control de calidad." data-en="We aggregate factories and stock channels to secure better prices, prepare local-warehouse orders, respond within 3 days, and support after-sales with quality control.">Agregamos fabricas y canales de stock para conseguir mejores precios, preparar pedidos desde almacen local, responder en 3 dias y cubrir posventa con control de calidad.</small>
+     <strong data-es="Cadena de suministro G5: precio directo de fábrica, almacén local y soporte posventa" data-en="G5 supply chain: direct factory pricing, local warehouse and after-sales support">Cadena de suministro G5: precio directo de fábrica, almacén local y soporte posventa</strong>
+     <small data-es="Integramos proveedores G5 para ofrecer precios directos sin intermediarios, despacho desde almacén local con respuesta en 3 días y control de calidad en cada lote." data-en="We integrate G5 suppliers to offer direct pricing with no middlemen, local warehouse dispatch with 3-day response, and quality control on every batch.">Integramos proveedores G5 para ofrecer precios directos sin intermediarios, despacho desde almacén local con respuesta en 3 días y control de calidad en cada lote.</small>
     </div>
     <div class="hero-company-metrics">
-     <span><b>Best</b><em data-es="Precio optimo" data-en="Best price">Precio optimo</em></span>
+     <span><b>G5</b><em data-es="Precio directo" data-en="Direct pricing">Precio directo</em></span>
      <span><b>3 dias</b><em data-es="Soporte rapido" data-en="Fast support">Soporte rapido</em></span>
      <span><b>Local</b><em data-es="Almacen + posventa" data-en="Warehouse + after-sales">Almacen + posventa</em></span>
     </div>
    </div>
-   <h1 class="reveal" data-delay="240" data-es="Tu socio de suministro profesional para <em>vender online y offline</em>" data-en="Your professional supply partner for <em>online and offline sales</em>">Tu socio de suministro profesional para <em>vender online y offline</em></h1>
-   <p class="reveal" data-delay="360" data-es="Caminamos contigo para construir una cooperación estable, eficiente y rentable: productos listos para vender, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días." data-en="We work side by side with you to build stable, efficient, win-win cooperation: ready-to-sell products, OEM packaging, 3-stage QC, and DDP delivery in 5–7 days.">Caminamos contigo para construir una cooperación estable, eficiente y rentable: productos listos para vender, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días.</p>
+   <h1 class="reveal" data-delay="240" data-es="Tu proveedor G5 de confianza para <em>vender online y offline</em>" data-en="Your trusted G5 supply partner for <em>online and offline sales</em>">Tu proveedor G5 de confianza para <em>vender online y offline</em></h1>
+   <p class="reveal" data-delay="360" data-es="Precio directo de fábrica G5 · Almacén local con despacho ágil · Empaque OEM · Control de calidad en 3 etapas · Envío DDP en 5–7 días." data-en="G5 factory-direct pricing · Local warehouse with fast dispatch · OEM packaging · 3-stage QC · DDP delivery in 5–7 days.">Precio directo de fábrica G5 · Almacén local con despacho ágil · Empaque OEM · Control de calidad en 3 etapas · Envío DDP en 5–7 días.</p>
    <div class="hero-b2b-tags reveal" data-delay="430">
-    <span class="hero-b2b-tag">Factory Direct</span>
+    <span class="hero-b2b-tag gold">G5 Directo</span>
     <span class="hero-b2b-tag">MOQ: 40</span>
     <span class="hero-b2b-tag gold">OEM / ODM</span>
-    <span class="hero-b2b-tag">DDP Shipping</span>
+    <span class="hero-b2b-tag">Almacén Local</span>
     <span class="hero-b2b-tag gold">CE · FCC · RoHS</span>
    </div>
    <div class="hero-btns reveal" data-delay="500">
@@ -1735,21 +2202,65 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
   <h2 class="section-title" data-es="Productos Destacados" data-en="Featured Products">Productos Destacados</h2>
   <p class="section-subtitle" data-es="Electrónica premium seleccionada para distribuidores. Cada producto pasa por 3 etapas de control de calidad." data-en="Premium electronics curated for distributors. Every product passes 3-stage quality inspection." style="margin-bottom:48px">Electrónica premium seleccionada para distribuidores. Cada producto pasa por 3 etapas de control de calidad.</p>
 
-  <!-- 3 Featured Categories (large) -->
+  <div class="catalog-groups" id="catalogGroups">
+   <button class="catalog-group-card catalog-electronics active" type="button" data-group="electronics" onclick="setCatalogGroup('electronics')">
+    <img class="catalog-group-bg" src="airpods.png" alt="" aria-hidden="true" loading="eager">
+    <span class="catalog-group-overlay" aria-hidden="true"></span>
+    <span class="catalog-group-tag">Factory Direct</span>
+    <span class="catalog-group-icon" aria-hidden="true">⌁</span>
+    <strong>Electronics</strong>
+    <span data-es="AirPods, relojes, Dyson, power banks y kits de carga" data-en="AirPods, watches, Dyson, power banks and charging kits">AirPods, relojes, Dyson, power banks y kits de carga</span>
+   </button>
+   <a class="catalog-group-card catalog-group-link catalog-putian" href="/putian.html" data-group="putian" aria-label="Open Putian Fashion catalog">
+    <img class="catalog-group-bg" src="putian-aj1-bg.jpg" alt="" aria-hidden="true" loading="lazy">
+    <span class="catalog-group-overlay" aria-hidden="true"></span>
+    <span class="catalog-group-tag">Brand Sourcing</span>
+    <span class="catalog-group-ribbon">Hot Supply</span>
+    <span class="catalog-group-icon" aria-hidden="true">◆</span>
+    <strong>Putian Fashion</strong>
+    <span data-es="Sneakers, ropa, jerseys y colecciones por marca" data-en="Sneakers, apparel, jerseys and brand collections">Sneakers, ropa, jerseys y colecciones por marca</span>
+   </a>
+   <a class="catalog-group-card catalog-group-link catalog-worldcup" href="/worldcup.html" data-group="worldcup" aria-label="Open Mundial 2026 catalog">
+    <img class="catalog-group-bg" src="worldcup-link-card.png" alt="" aria-hidden="true" loading="lazy">
+    <span class="catalog-group-overlay" aria-hidden="true"></span>
+    <span class="catalog-group-tag">-15% +200pcs</span>
+    <span class="catalog-group-icon" aria-hidden="true">⚽</span>
+    <strong>Mundial 2026</strong>
+    <span data-es="Camisetas, selecciones y promoción de actividad" data-en="Jerseys, national teams and campaign promotion">Camisetas, selecciones y promoción de actividad</span>
+   </a>
+  </div>
+
+  <div class="catalog-subtitle" id="catalogSubtitle" data-es="Electronics categories" data-en="Electronics categories">Electronics categories</div>
+
+  <!-- Catalog Categories -->
   <div class="feat-cats" id="featCats">
-   <div class="feat-cat-card cat-airpods" data-filter="airpods" onclick="toggleCatCard(this)">
+   <div class="feat-cat-card cat-airpods" data-group="electronics" data-filter="airpods" onclick="toggleCatCard(this)">
     <img class="feat-cat-img" src="airpods.png" alt="AirPods" loading="eager">
     <div class="feat-cat-label">AirPods</div>
    </div>
-   <div class="feat-cat-card cat-airpods-pro" data-filter="airpods-pro" onclick="toggleCatCard(this)">
+   <div class="feat-cat-card cat-airpods-pro" data-group="electronics" data-filter="airpods-pro" onclick="toggleCatCard(this)">
     <img class="feat-cat-img" src="pro.png" alt="AirPods Pro" loading="eager">
     <div class="feat-cat-label">AirPods Pro</div>
    </div>
-   <div class="feat-cat-card cat-airpods-max" data-filter="airpods-max" onclick="toggleCatCard(this)">
+   <div class="feat-cat-card cat-airpods-max" data-group="electronics" data-filter="airpods-max" onclick="toggleCatCard(this)">
     <img class="feat-cat-img" src="maxn.png" alt="AirPods Max" loading="eager">
     <div class="feat-cat-label">AirPods Max</div>
    </div>
-   <a href="/worldcup.html" class="feat-cat-card cat-mundial" aria-label="Mundial 2026 Collection">
+   <div class="feat-cat-card cat-watches" data-group="electronics" data-filter="watches" onclick="toggleCatCard(this)">
+    <div class="feat-cat-label" data-es="Relojes" data-en="Watches">Relojes</div>
+   </div>
+   <div class="feat-cat-card cat-dyson" data-group="electronics" data-filter="lifestyle" onclick="toggleCatCard(this)">
+    <img class="feat-cat-img" src="images/dyson/supersonic-1.jpg" alt="Dyson" loading="lazy">
+    <div class="feat-cat-label">Dyson</div>
+   </div>
+   <div class="feat-cat-card cat-powerbank" data-group="electronics" data-filter="power-banks" onclick="toggleCatCard(this)">
+    <div class="feat-cat-label" data-es="Power Banks" data-en="Power Banks">Power Banks</div>
+   </div>
+   <div class="feat-cat-card cat-charging" data-group="electronics" data-filter="charging" onclick="toggleCatCard(this)">
+    <img class="feat-cat-img" src="images/charging/magnetic-charging-1.jpg" alt="Charging Kit" loading="lazy">
+    <div class="feat-cat-label" data-es="Kit de Carga" data-en="Charging Kit">Kit de Carga</div>
+   </div>
+   <a href="/worldcup.html" class="feat-cat-card cat-mundial" data-group="electronics" aria-label="Mundial 2026 Collection">
     <div class="cat-mundial-decor">
      <span class="cat-mundial-ball">⚽</span>
      <span class="cat-mundial-trophy">🏆</span>
@@ -2305,10 +2816,11 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
 </div>
 <!-- ============ SCRIPTS ============ -->
 <script src="particles.js"></script>
+<script src="watch-products.js"></script>
 
 <script>
 // ============ LANGUAGE SYSTEM ============
-let currentLang = localStorage.getItem('huanyin_lang') || 'es';
+let currentLang = ['es', 'en'].includes(localStorage.getItem('huanyin_lang')) ? localStorage.getItem('huanyin_lang') : 'es';
 
 function t(el) {
  if (typeof el === 'string') el = document.querySelector(el);
@@ -2344,9 +2856,11 @@ function translateAll() {
 }
 
 function setLang(lang) {
+ if (!['es', 'en'].includes(lang)) lang = 'es';
  currentLang = lang;
  localStorage.setItem('huanyin_lang', lang);
  translateAll();
+ if (document.getElementById('catalogGroups')) setCatalogGroup(currentCatalogGroup);
  if (currentPage === 'home') renderProducts(currentFilter);
  else if (currentPage === 'product' && currentProductId) renderProductPage(currentProductId, currentVariantId);
  if (cart.length > 0) renderCartItems();
@@ -2376,11 +2890,23 @@ function showPage(page) {
  if (page === 'about' || page === 'secondary' || page === 'verify' || page === 'aftersales') translateAll();
 }
 
+function getDefaultVariant(p) {
+ const inStock = p.variants.filter(v => v.stock > 0);
+ if (!inStock.length) return p.variants[0];
+ // Pro 3: use ANC variant (107 MXN) instead of higher-priced ANC+
+ if (p.id === 'airpods-pro-3') {
+  const anc = inStock.find(v => v.id === 'anc');
+  if (anc) return anc;
+ }
+ // Default: highest price variant
+ return inStock.reduce((a, b) => ((a.prices.small || a.prices.large || 0) > (b.prices.small || b.prices.large || 0) ? a : b));
+}
+
 function navigateToProduct(productId) {
  const p = products.find(p => p.id === productId);
  if (!p) return;
  lastScrollY = window.scrollY;
- const v = p.variants.find(v => v.stock > 0) || p.variants[0];
+ const v = getDefaultVariant(p);
  currentProductId = productId;
  currentVariantId = v.id;
  renderProductPage(productId, v.id);
@@ -2505,6 +3031,7 @@ function navigateHome(e) {
 const MXN_RATE = 17.5;
 
 function formatPrice(usd) {
+ if (!usd) return currentLang === 'es' ? 'Consultar' : 'Ask';
  if (currentLang === 'es') {
   const mxn = usd * MXN_RATE;
   return 'MXN $' + mxn.toFixed(0);
@@ -2679,21 +3206,27 @@ const products = [
    { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 7003', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 16.87, large: 16.87 }, stock: 999 }
   ]
  },
- { id: 'watch-s10', name: { es: 'Watch S10', en: 'Watch S10' }, tagline: { es: '2.01" · NFC · 23 Idiomas', en: '2.01" · NFC · 23 Languages' }, cat: 'watches', icon: '⌚', featured: false, img: 's10-main.png', gallery: [ { type: 'image', src: 's10-main.png' }, { type: 'image', src: 's10-gallery.png' } ],
-  variants: [{ id: 'global', name: 'Global', specs: { app:'QXFIT', screen:'2.01"', features:'NFC Payment + Heart Rate + Compass + 23 Languages + IP65' }, prices: { small: 5, large: 5 }, stock: 999 }] },
- { id: 'watch-t2pro', name: { es: 'Watch T2 PRO', en: 'Watch T2 PRO' }, tagline: { es: '1.52" HD · Presión Arterial', en: '1.52" HD · Blood Pressure' }, cat: 'watches', icon: '⌚', featured: false, img: 't2pro-main.png', gallery: [ { type: 'image', src: 't2pro-main.png' }, { type: 'image', src: 't2pro-gallery.png' } ],
-  variants: [{ id: 'global', name: 'Global', specs: { app:'Fitpro', screen:'1.52" HD', features:'Blood Pressure + Heart Rate + BT Calls + Music Control' }, prices: { small: 8, large: 8 }, stock: 999 }] },
- { id: 'watch-t900', name: { es: 'Watch T900 PRO MAX', en: 'Watch T900 PRO MAX' }, tagline: { es: '2.01" · SpO2 · IP65', en: '2.01" · SpO2 · IP65' }, cat: 'watches', icon: '⌚', featured: false, img: 't900-main.png', gallery: [ { type: 'image', src: 't900-main.png' }, { type: 'image', src: 't900-gallery.png' } ],
-  variants: [{ id: 'global', name: 'Global', specs: { app:'Fitpro', screen:'2.01"', features:'Heart Rate + BP + SpO2 + IP65 + 23 Languages + BT Calls' }, prices: { small: 4, large: 4 }, stock: 999 }] },
- { id: 'watch-s9ultra', name: { es: 'Watch S9 ULTRA', en: 'Watch S9 ULTRA' }, tagline: { es: '1.52" HD · 3 Correas', en: '1.52" HD · 3 Straps' }, cat: 'watches', icon: '⌚', featured: false, img: 's9u-main.png', gallery: [ { type: 'image', src: 's9u-main.png' }, { type: 'image', src: 's9u-gallery.png' } ],
-  variants: [{ id: 'global', name: 'Global', specs: { app:'hryfine', screen:'1.52" HD', features:'Blood Pressure + Heart Rate + BT Calls + Music + Multi-language' }, prices: { small: 5, large: 5 }, stock: 999 }] },
+ ...(window.WATCH_PRODUCTS || []),
  
  
  
  
  
- { id: 'dyson', name: { es: 'Dyson Supersonic', en: 'Dyson Supersonic' }, tagline: { es: '100k RPM · Iones Negativos', en: '100k RPM · Negative Ions' }, cat: 'lifestyle', icon: '💨', featured: false, img: '吹风机主图.png',
-  variants: [{ id: 'global', name: 'Standard', specs: { features:'Cold/Hot Air + Negative Ion + 100,000 RPM + 1600W + HD08/15 EU Standard' }, prices: { small: 40, large: 40 }, stock: 999 }] },
+ { id: 'dyson-supersonic', name: { es: 'Dyson Supersonic', en: 'Dyson Supersonic' }, tagline: { es: '100k RPM · Aire frio/caliente', en: '100k RPM · Cold/Hot Air' }, cat: 'lifestyle', icon: 'Dyson', featured: false, img: 'images/dyson/supersonic-1.jpg', gallery: [ { type: 'image', src: 'images/dyson/supersonic-1.jpg' }, { type: 'image', src: 'images/dyson/supersonic-2.jpg' }, { type: 'image', src: 'images/dyson/supersonic-3.jpg' }, { type: 'image', src: 'images/dyson/supersonic-4.jpg' }, { type: 'image', src: 'images/dyson/supersonic-5.jpg' }, { type: 'image', src: 'images/dyson/supersonic-6.jpg' }, { type: 'image', src: 'images/dyson/supersonic-7.jpg' } ],
+  variants: [
+   { id: 'gold', name: '金色', specs: { motor:'100,000 RPM', power:'1600W', modes:'3 gears', cable:'1.5M-3M', model:'HD08/15', features:'Cold air / Hot air / Negative ion hair care / Curling hair', color:'Gold' }, prices: { small: 40, large: 40 }, stock: 999 },
+   { id: 'purple', name: '紫色', specs: { motor:'100,000 RPM', power:'1600W', modes:'3 gears', cable:'1.5M-3M', model:'HD08/15', features:'Cold air / Hot air / Negative ion hair care / Curling hair', color:'Purple' }, prices: { small: 40, large: 40 }, stock: 999 },
+   { id: 'blue', name: '蓝色', specs: { motor:'100,000 RPM', power:'1600W', modes:'3 gears', cable:'1.5M-3M', model:'HD08/15', features:'Cold air / Hot air / Negative ion hair care / Curling hair', color:'Blue' }, prices: { small: 40, large: 40 }, stock: 999 },
+   { id: 'black', name: '黑色', specs: { motor:'100,000 RPM', power:'1600W', modes:'3 gears', cable:'1.5M-3M', model:'HD08/15', features:'Cold air / Hot air / Negative ion hair care / Curling hair', color:'Black' }, prices: { small: 40, large: 40 }, stock: 999 }
+  ] },
+ { id: 'dyson-styling-set', name: { es: 'Dyson Styling Set', en: 'Dyson Styling Set' }, tagline: { es: 'Set de peinado · Stock listo', en: 'Styling Set · Ready Stock' }, cat: 'lifestyle', icon: 'Dyson', featured: false, img: 'images/dyson/styling-set-1.jpg', gallery: [ { type: 'image', src: 'images/dyson/styling-set-1.jpg' }, { type: 'image', src: 'images/dyson/styling-set-2.jpg' }, { type: 'image', src: 'images/dyson/styling-set-3.jpg' }, { type: 'image', src: 'images/dyson/styling-set-4.jpg' }, { type: 'image', src: 'images/dyson/styling-set-5.jpg' } ],
+  variants: [{ id: 'standard', name: 'Standard', specs: { features:'Set de accesorios — cepillos, difusor, boquillas. Compatible con Dyson Supersonic HD08/15.' }, prices: { small: 8, large: 8 }, stock: 999 }] },
+ { id: 'dyson-corrale', name: { es: 'Dyson Corrale Straightening Iron', en: 'Dyson Corrale Straightening Iron' }, tagline: { es: 'OLED · Cable magnetico 360', en: 'OLED · 360 Magnetic Cable' }, cat: 'lifestyle', icon: 'Dyson', featured: false, img: 'images/dyson/corrale-2.jpg', gallery: [ { type: 'image', src: 'images/dyson/corrale-2.jpg' }, { type: 'image', src: 'images/dyson/corrale-1.jpg' }, { type: 'image', src: 'images/dyson/corrale-3.jpg' }, { type: 'image', src: 'images/dyson/corrale-4.jpg' }, { type: 'image', src: 'images/dyson/corrale-5.jpg' } ],
+  variants: [{ id: 'standard', name: 'Standard', specs: { motor:'100,000 RPM', power:'1600W', cable:'3.3M magnetic 360°', screen:'OLED', design:'Wireless handheld + upright dual unit + detachable long pole', features:'Cordless styling with flex plates + 3 heat settings' }, prices: { small: 40, large: 40 }, stock: 999 }] },
+ { id: 'dyson-v7-piston-animal', name: { es: 'Dyson V7 Piston Animal', en: 'Dyson V7 Piston Animal' }, tagline: { es: '315AW · 70 min · 350W', en: '315AW · 70 min · 350W' }, cat: 'lifestyle', icon: 'Dyson', featured: false, img: 'images/dyson/v7-piston-1.jpg', gallery: [ { type: 'image', src: 'images/dyson/v7-piston-1.jpg' }, { type: 'image', src: 'images/dyson/v7-piston-2.jpg' }, { type: 'image', src: 'images/dyson/v7-piston-3.jpg' }, { type: 'image', src: 'images/dyson/v7-piston-4.jpg' }, { type: 'image', src: 'images/dyson/v7-piston-5.jpg' } ],
+  variants: [{ id: 'standard', name: 'Standard', specs: { motor:'350W', suction:'315AW', life:'70 min', modes:'Two suction modes', filter:'Optional HEPA', cable:'Detachable long pole', features:'Carpet + wooden floor support / Handheld conversion / Wireless handheld + upright dual unit' }, prices: { small: 80, large: 80 }, stock: 999 }] },
+ { id: 'dyson-v16-piston-animal', name: { es: 'Dyson V16 Piston Animal', en: 'Dyson V16 Piston Animal' }, tagline: { es: '900W Hyperdymium · 40 min', en: '900W Hyperdymium · 40 min' }, cat: 'lifestyle', icon: 'Dyson', featured: false, img: 'images/dyson/v16-piston-2.jpg', gallery: [ { type: 'image', src: 'images/dyson/v16-piston-2.jpg' }, { type: 'image', src: 'images/dyson/v16-piston-1.jpg' }, { type: 'image', src: 'images/dyson/v16-piston-3.jpg' }, { type: 'image', src: 'images/dyson/v16-piston-4.jpg' }, { type: 'image', src: 'images/dyson/v16-piston-5.jpg' } ],
+  variants: [{ id: 'standard', name: 'Standard', specs: { motor:'900W Hyperdymium', suction:'Intelligent auto-adjust', life:'40 min', filter:'Optional HEPA', modes:'Dust detection + compressed dust cup', features:'Quieter operation / Improved pet hair handling / Wireless handheld + upright dual unit' }, prices: { small: 120, large: 120 }, stock: 999 }] },
  { id: 'cam-premium', name: { es: 'Cámara Solar Premium', en: 'Solar Camera Premium' }, tagline: { es: '1080P · Solar · ONVIF', en: '1080P · Solar · ONVIF' }, cat: 'cameras', icon: '📹', featured: false, img: 'cam-premium.png',
   variants: [{ id: 'global', name: 'Standard', specs: { features:'1080P + Solar + Motion Detection + 2-Way Audio + Color Night Vision + Cloud/TF + ONVIF' }, prices: { small: 88, large: 88 }, stock: 999 }] },
  { id: 'cam-mid', name: { es: 'Cámara Solar Gama Media', en: 'Solar Camera Mid-Range' }, tagline: { es: '1080P · Solar', en: '1080P · Solar' }, cat: 'cameras', icon: '📹', featured: false, img: 'cam-premium.png',
@@ -2701,12 +3234,55 @@ const products = [
  { id: 'cam-basic', name: { es: 'Cámara Camuflaje Solar', en: 'Solar Camouflage Camera' }, tagline: { es: '720P/1080P · Solar', en: '720P/1080P · Solar' }, cat: 'cameras', icon: '📹', featured: false, img: 'cam-basic.png',
   variants: [{ id: 'global', name: 'Standard', specs: { features:'720P/1080P + Solar + Motion Detection + Night Vision + Cloud/TF' }, prices: { small: 25, large: 25 }, stock: 999 }] },
  { id: 'cam-feeder', name: { es: 'Monitor de Alimentación', en: 'Feeding/Bird Monitor' }, tagline: { es: '1080P · Audio 2 Vías', en: '1080P · 2-Way Audio' }, cat: 'cameras', icon: '📹', featured: false, img: 'cam-feeder.png',
-  variants: [{ id: 'global', name: 'Standard', specs: { features:'1080P + Motion/Sound Alerts + 2-Way Audio + Color Night Vision + Cloud/TF (128G)' }, prices: { small: 45, large: 45 }, stock: 999 }] },
+ variants: [{ id: 'global', name: 'Standard', specs: { features:'1080P + Motion/Sound Alerts + 2-Way Audio + Color Night Vision + Cloud/TF (128G)' }, prices: { small: 45, large: 45 }, stock: 999 }] },
+ { id: 'portable-magsafe-powerbank', name: { es: 'Portable MagSafe Power Bank', en: 'Portable MagSafe Power Bank' }, tagline: { es: '10000-20000mAh · Carga magnetica', en: '10000-20000mAh · Magnetic Charging' }, cat: 'power-banks', icon: 'Power', featured: false, img: 'images/powerbank/portable-powerbank-1.jpg', gallery: [ { type: 'image', src: 'images/powerbank/portable-powerbank-1.jpg' }, { type: 'image', src: 'images/powerbank/portable-powerbank-2.jpg' }, { type: 'image', src: 'images/powerbank/portable-powerbank-3.jpg' }, { type: 'image', src: 'images/powerbank/portable-powerbank-4.jpg' }, { type: 'image', src: 'images/powerbank/portable-powerbank-5.jpg' } ],
+  variants: [
+   { id: '10000mah', name: '10000mAh', specs: { functionDescription:'• MagSafe magnetic portable battery pack\n• 10000mAh capacity\n• Wireless charging\n• Compact retail packaging\n• Type-C input/output\n• B2B stock available' }, prices: { small: 5.20, large: 4.72 }, stock: 999 },
+   { id: '20000mah', name: '20000mAh', specs: { functionDescription:'• MagSafe magnetic portable battery pack\n• 20000mAh higher capacity\n• Wireless charging\n• Compact retail packaging\n• Type-C input/output\n• B2B stock available' }, prices: { small: 6.80, large: 6.32 }, stock: 999 }
+  ] },
+ { id: 'charging-kit', name: { es: 'MagSafe Magnetic Charger', en: 'MagSafe Magnetic Charger' }, tagline: { es: 'Carga magnetica · Empaque retail', en: 'Magnetic Charging · Retail Pack' }, cat: 'charging', icon: 'Charge', featured: false, img: 'images/charging/magnetic-charging-1.jpg', gallery: [ { type: 'image', src: 'images/charging/magnetic-charging-1.jpg' }, { type: 'image', src: 'images/charging/magnetic-charging-2.jpg' }, { type: 'image', src: 'images/charging/magnetic-charging-3.jpg' }, { type: 'image', src: 'images/charging/magnetic-charging-4.jpg' }, { type: 'image', src: 'images/charging/magnetic-charging-5.jpg' }, { type: 'image', src: 'images/charging/magnetic-charging-6.jpg' }, { type: 'image', src: 'images/charging/magnetic-charging-7.jpg' }, { type: 'image', src: 'images/charging/magnetic-charging-8.jpg' } ],
+ variants: [
+   { id: 'standard', name: 'Standard Pack', specs: { features:'MagSafe magnetic wireless charger + retail box + USB-C cable + ready stock for B2B orders' }, prices: { small: 3.83, large: 3.43 }, stock: 999 }
+  ] },
+{ id: 'apple-usbc-charger', name: { es: 'Apple USB-C 30W Charger Set', en: 'Apple USB-C 30W Charger Set' }, tagline: { es: '30W Adapter + USB-C Cable', en: '30W Adapter + USB-C Cable' }, cat: 'charging', icon: 'Charge', featured: false, img: 'images/charging/apple-charger-1.jpg', gallery: [ { type: 'image', src: 'images/charging/apple-charger-1.jpg' }, { type: 'image', src: 'images/charging/apple-charger-2.jpg' }, { type: 'image', src: 'images/charging/apple-charger-3.jpg' }, { type: 'image', src: 'images/charging/apple-charger-4.jpg' }, { type: 'image', src: 'images/charging/apple-charger-5.jpg' }, { type: 'image', src: 'images/charging/apple-charger-6.jpg' }, { type: 'image', src: 'images/charging/apple-charger-7.jpg' } ],
+ variants: [
+  { id: 'bulk-set', name: 'Bulk Set', specs: { features:'30W USB-C power adapter + USB-C cable + bulk supply option + stable wholesale stock' }, prices: { small: 3.80, large: 3.50 }, stock: 999 }
+ ] },
+
+ { id: 'apple-40w-charger', name: { es: 'Apple USB-C 40W Charger Set', en: 'Apple USB-C 40W Charger Set' }, tagline: { es: '40W Adapter + USB-C Cable', en: '40W Adapter + USB-C Cable' }, cat: 'charging', icon: 'Charge', featured: false, img: 'images/charging/apple-40w-charger-1.jpg', gallery: [ { type: 'image', src: 'images/charging/apple-40w-charger-1.jpg' }, { type: 'image', src: 'images/charging/apple-40w-charger-2.jpg' }, { type: 'image', src: 'images/charging/apple-40w-charger-3.jpg' }, { type: 'image', src: 'images/charging/apple-40w-charger-4.jpg' } ],
+  variants: [
+   { id: 'bulk-set', name: 'Bulk Set', specs: { features:'40W USB-C power adapter + USB-C cable + bulk supply option + stable wholesale stock' }, prices: { small: 4.80, large: 4.40 }, stock: 999 }
+  ] },
  { id: 'sport-basic', name: { es: 'Cámara Deportiva 4K Básica', en: '4K Sports Camera Basic' }, tagline: { es: '4K · 30m Sumergible', en: '4K · 30m Waterproof' }, cat: 'sports', icon: '📸', featured: false, img: 'sport-basic.png',
   variants: [{ id: 'global', name: 'Standard', specs: { features:'4K HD + 30m Waterproof + Long Battery + Diving/Cycling/FPV' }, prices: { small: 20, large: 20 }, stock: 999 }] },
  { id: 'sport-adv', name: { es: 'Cámara Deportiva 4K Avanzada', en: '4K Sports Camera Advanced' }, tagline: { es: '4K · Grado Profesional', en: '4K · Professional Grade' }, cat: 'sports', icon: '📸', featured: false, img: 'sport-adv.png',
   variants: [{ id: 'global', name: 'Standard', specs: { features:'4K HD + 30m Waterproof + Long Battery + Professional Grade Action Camera' }, prices: { small: 50, large: 50 }, stock: 999 }] }
 ];
+
+// Patch watch product prices: deterministic random MXN based on model tier
+products.forEach(p => {
+ if (p.cat !== 'watches') return;
+ const idHash = p.id.split('').reduce((h, c) => { const v = ((h << 5) - h) + c.charCodeAt(0); return v | 0; }, 0);
+ const isUltra = /ultra/i.test(p.name.es) || /ultra/i.test(p.name.en) || /ultra/i.test(p.id);
+ const priceMxn = isUltra
+  ? 170 + (Math.abs(idHash) % 81)  // Ultra: 170-250 MXN (higher)
+  : 140 + (Math.abs(idHash) % 51); // Standard: 140-190 MXN
+ const priceUsd = Number((priceMxn / MXN_RATE).toFixed(2));
+ p.variants.forEach(v => {
+  if (v.prices.small === 0 && v.prices.large === 0) {
+   v.prices = { small: priceUsd, large: priceUsd };
+  }
+ });
+});
+
+// Patch AirPods / AirPods Pro / AirPods Max prices: +10%
+products.forEach(p => {
+ if (!['airpods','airpods-pro','airpods-max'].includes(p.cat)) return;
+ p.variants.forEach(v => {
+  if (v.prices.small) v.prices.small = Number((v.prices.small * 1.10).toFixed(2));
+  if (v.prices.large) v.prices.large = Number((v.prices.large * 1.10).toFixed(2));
+ });
+});
 
 // ============ CART ============
 let cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
@@ -3117,15 +3693,48 @@ function toggleCatCard(card) {
   // Reveal this card
   card.classList.add('revealed');
 
-  // Filter products
+   // Filter products
   document.querySelectorAll('.sub-cat-btn').forEach(b => b.classList.remove('active'));
   currentFilter = filter;
   renderProducts(filter);
-  document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+  scrollToProductsGrid();
 }
 
 // ============ PRODUCT RENDERING ============
 let currentFilter = 'airpods-pro';
+let currentCatalogGroup = 'electronics';
+
+function setCatalogGroup(group) {
+ currentCatalogGroup = group;
+ document.querySelectorAll('.catalog-group-card').forEach(card => {
+  card.classList.toggle('active', card.dataset.group === group);
+ });
+ document.querySelectorAll('#featCats .feat-cat-card').forEach(card => {
+  card.classList.toggle('catalog-hidden', card.dataset.group !== group);
+  card.classList.remove('revealed');
+ });
+ const subtitle = document.getElementById('catalogSubtitle');
+ if (subtitle) {
+  subtitle.textContent = group === 'putian'
+   ? (currentLang === 'es' ? 'Putian Fashion categories' : 'Putian Fashion categories')
+   : (currentLang === 'es' ? 'Electronics categories' : 'Electronics categories');
+ }
+ const firstCard = document.querySelector(`#featCats .feat-cat-card[data-group="${group}"][data-filter]`);
+ if (firstCard) {
+  firstCard.classList.add('revealed');
+  currentFilter = firstCard.dataset.filter;
+  renderProducts(currentFilter);
+ }
+}
+
+function scrollToProductsGrid() {
+ requestAnimationFrame(() => {
+  const grid = document.getElementById('productsGrid');
+  if (!grid) return;
+  const top = grid.getBoundingClientRect().top + window.pageYOffset - 86;
+  window.scrollTo({ top, behavior: 'smooth' });
+ });
+}
 
 function filterByFeatured(cat) {
  // Sync card state
@@ -3135,7 +3744,7 @@ function filterByFeatured(cat) {
  document.querySelectorAll('.sub-cat-btn').forEach(b => b.classList.remove('active'));
  currentFilter = cat;
  renderProducts(cat);
- document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+ scrollToProductsGrid();
 }
 
 function filterBySub(cat) {
@@ -3166,8 +3775,22 @@ function renderProducts(filter) {
   filtered = products.filter(p => p.cat === filter);
  }
 
+ if (!filtered.length) {
+  const emptyText = currentCatalogGroup === 'putian'
+   ? {
+    es: 'Este catálogo se organiza por sneakers, ropa y marcas. Envíanos la marca/modelo objetivo por WhatsApp para cotización y fotos reales.',
+    en: 'This catalog is organized by sneakers, apparel and brands. Send the target brand/model on WhatsApp for quotation and real photos.'
+   }
+   : {
+    es: 'Esta categoría está lista para recibir productos. Envíanos el modelo objetivo por WhatsApp para cotización.',
+    en: 'This category is ready for products. Send the target model on WhatsApp for quotation.'
+   };
+  grid.innerHTML = `<div class="catalog-empty">${emptyText[currentLang]}</div>`;
+  return;
+ }
+
  grid.innerHTML = filtered.map(p => {
-  const bestVariant = p.variants.find(v => v.stock > 0) || p.variants[0];
+  const bestVariant = getDefaultVariant(p);
   const price = bestVariant.prices.small || bestVariant.prices.large || 0;
   const allOOS = p.variants.every(v => v.stock === 0);
   const stockClass = allOOS ? 'oos' : bestVariant.stock < 500 ? 'low-stock' : 'in-stock';
@@ -3176,13 +3799,14 @@ function renderProducts(filter) {
    : { es: 'En Stock', en: 'In Stock' };
   const variantDots = p.variants.map(v => {
    const cls = v.stock === 0 ? 'v-dot-std' : v.id.includes('anc') ? 'v-dot-anc' : 'v-dot-global';
-   return `<span class="variant-dot ${cls}" title="${v.name}"></span>`;
+   return `<span class="variant-dot ${cls}" title="${translateSpecVal(v.name, currentLang)}"></span>`;
   }).join('');
 
   const imgSrc = p.img || PLACEHOLDER_SVG;
   return `<div class="product-card${allOOS ? ' disabled' : ''}" data-pid="${p.id}" data-cat="${p.cat}" onclick="${allOOS ? '' : `navigateToProduct('${p.id}')`}">
    <div class="product-img" style="--product-img-src: url(&quot;${cssImageUrl(imgSrc)}&quot;)">
     <img class="pi-placeholder" src="${imgSrc}" alt="${p.name[currentLang]}" loading="lazy" decoding="async" onerror="this.src='${PLACEHOLDER_SVG}'">
+    ${p.newBadge ? `<img class="product-new-badge" src="${p.newBadge}" alt="New" loading="lazy" decoding="async">` : ''}
     <div class="product-badge">
      ${p.id === 'airpods-pro-2' ? '<span class="badge badge-best">BESTSELLER</span>' : ''}
      ${p.id === 'airpods-pro-3' ? '<span class="badge badge-new">PREMIUM</span>' : ''}
@@ -3218,8 +3842,103 @@ const specLabels = {
  shell: { es: 'Carcasa', en: 'Shell' }, battery: { es: 'Batería', en: 'Battery' },
  life: { es: 'Duración', en: 'Battery Life' }, charge: { es: 'Carga', en: 'Charging' },
  features: { es: 'Funciones', en: 'Features' }, app: { es: 'App', en: 'App' },
- screen: { es: 'Pantalla', en: 'Screen' }
+ screen: { es: 'Pantalla', en: 'Screen' },
+ productDescription: { es: 'Descripción del producto', en: 'Product Description' },
+ functionDescription: { es: 'Funciones', en: 'Function Description' },
+ appBackend: { es: 'APP backend', en: 'APP backend' },
+ material: { es: 'Material', en: 'Material' },
+ batteryCapacity: { es: 'Capacidad de batería', en: 'Battery Capacity' },
+ screenResolution: { es: 'Resolución de pantalla', en: 'Screen Resolution' },
+ packageSize: { es: 'Tamaño empaque individual', en: 'Single Package Size' },
+ unitWeight: { es: 'Peso individual', en: 'Single Weight' },
+ motor: { es: 'Motor', en: 'Motor' },
+ power: { es: 'Potencia', en: 'Power' },
+ modes: { es: 'Modos', en: 'Modes' },
+ model: { es: 'Modelo', en: 'Model' },
+ suction: { es: 'Succión', en: 'Suction' },
+ filter: { es: 'Filtro', en: 'Filter' },
+ runtime: { es: 'Autonomía', en: 'Runtime' },
+ color: { es: 'Color', en: 'Color' },
+ design: { es: 'Diseño', en: 'Design' }
 };
+
+// Chinese → ES/EN translation map for watch spec values
+const CHINESE_SPEC_MAP = {
+ '像素': {es:'px', en:'px'},
+ '英寸': {es:'pulg.', en:'in'},
+ '腕带': {es:'correa', en:'strap'},
+ '表带': {es:'correa', en:'strap'},
+ '表盘': {es:'esfera', en:'dial'},
+ '中框五金': {es:'Marco metálico', en:'Metal frame'},
+ 'PC底壳': {es:'Base PC', en:'PC base'},
+ 'PC面盖': {es:'Cubierta PC', en:'PC cover'},
+ 'TPU腕带': {es:'Correa TPU', en:'TPU strap'},
+ '硅胶表带': {es:'Correa silicona', en:'Silicone strap'},
+ '不锈钢表带': {es:'Correa acero inox.', en:'Stainless steel strap'},
+ '米兰尼斯表带': {es:'Correa milanese', en:'Milanese strap'},
+ '钢带': {es:'Correa acero', en:'Steel strap'},
+ '皮带': {es:'Correa cuero', en:'Leather strap'},
+ '黑': {es:'Negro', en:'Black'},
+ '白': {es:'Blanco', en:'White'},
+ '银': {es:'Plata', en:'Silver'},
+ '金': {es:'Dorado', en:'Gold'},
+ '粉': {es:'Rosa', en:'Pink'},
+ '蓝': {es:'Azul', en:'Blue'},
+ '橙': {es:'Naranja', en:'Orange'},
+ '红': {es:'Rojo', en:'Red'},
+ '灰': {es:'Gris', en:'Gray'},
+ '绿': {es:'Verde', en:'Green'},
+ '紫': {es:'Púrpura', en:'Purple'},
+ '棕': {es:'Marrón', en:'Brown'},
+ '单色': {es:'Un color', en:'Single color'},
+ '双色': {es:'Dos colores', en:'Two-tone'},
+ '五金牛': {es:'Metal + piel', en:'Metal + leather'},
+ '全功能': {es:'Funciones completas', en:'Full features'},
+ '防水': {es:'Impermeable', en:'Waterproof'},
+ '充电': {es:'Carga', en:'Charging'},
+ '无线充': {es:'Carga inalámbrica', en:'Wireless charging'},
+ '心率': {es:'Ritmo cardíaco', en:'Heart rate'},
+ '血压': {es:'Presión arterial', en:'Blood pressure'},
+ '血氧': {es:'Oxígeno en sangre', en:'Blood oxygen'},
+ '计步': {es:'Podómetro', en:'Pedometer'},
+ '睡眠': {es:'Sueño', en:'Sleep'},
+ '蓝牙通话': {es:'Llamadas Bluetooth', en:'Bluetooth calls'},
+ '音乐播放': {es:'Reproductor música', en:'Music player'},
+ '多运动模式': {es:'Modos multideporte', en:'Multi-sport modes'},
+ '抬手亮屏': {es:'Levantar para encender', en:'Raise to wake'},
+ '翻腕亮屏': {es:'Girar para encender', en:'Flip to wake'},
+ '久坐提醒': {es:'Aviso sedentarismo', en:'Sedentary reminder'},
+ '闹钟提醒': {es:'Alarma', en:'Alarm'},
+ '遥控拍照': {es:'Foto remota', en:'Remote camera'},
+ '信息提醒': {es:'Notificaciones', en:'Notifications'},
+ '天气推送': {es:'Clima', en:'Weather'},
+ '自定义背景图': {es:'Fondo personalizado', en:'Custom wallpaper'},
+ '多国语言': {es:'Multi-idioma', en:'Multi-language'},
+ '语音助手': {es:'Asistente voz', en:'Voice assistant'},
+ 'NFC': {es:'NFC', en:'NFC'},
+ '门禁卡': {es:'Tarjeta acceso', en:'Access card'},
+ '离线支付': {es:'Pago offline', en:'Offline payment'},
+ '本地音乐': {es:'Música local', en:'Local music'},
+ '本地相册': {es:'Galería local', en:'Local gallery'},
+ '电子书': {es:'Libro electrónico', en:'E-book'},
+ '指南针': {es:'Brújula', en:'Compass'},
+ '导航': {es:'Navegación', en:'Navigation'},
+ '小游戏': {es:'Minijuegos', en:'Mini games'},
+};
+
+function translateSpecVal(val, lang) {
+ if (!val || typeof val !== 'string') return val || '';
+ let result = val;
+ // Replace pixel unit
+ result = result.replace(/像素/g, lang === 'es' ? 'px' : 'px');
+ // Replace known Chinese terms (longer matches first)
+ const sorted = Object.keys(CHINESE_SPEC_MAP).sort((a,b) => b.length - a.length);
+ sorted.forEach(zh => {
+  const t = CHINESE_SPEC_MAP[zh][lang] || CHINESE_SPEC_MAP[zh]['en'];
+  result = result.split(zh).join(t);
+ });
+ return result;
+}
 
 function renderProductPage(productId, variantId) {
  const p = products.find(p => p.id === productId);
@@ -3229,6 +3948,8 @@ function renderProductPage(productId, variantId) {
  const priceSmall = v.prices.small;
  const priceLarge = v.prices.large;
  const specs = v.specs;
+ const functionDescription = specs.functionDescription || '';
+ const visibleSpecs = Object.entries(specs).filter(([k]) => k !== 'functionDescription');
 
  currentProductId = productId;
  currentVariantId = variantId;
@@ -3244,6 +3965,7 @@ function renderProductPage(productId, variantId) {
    <button class="pd-gallery-arrow pd-gallery-prev" onclick="galleryPrev()" style="position:absolute;left:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
    <button class="pd-gallery-arrow pd-gallery-next" onclick="galleryNext()" style="position:absolute;right:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
    <div id="pdGallerySlide" class="pd-gallery-slide"></div>
+   ${p.newBadge ? `<img class="product-new-badge" src="${p.newBadge}" alt="New" loading="lazy" decoding="async">` : ''}
    <div id="pdVideoHint" style="position:absolute;left:48px;top:50%;transform:translateY(-50%);z-index:2;display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;background:rgba(0,0,0,0.6);color:#8ff0c1;font-size:12px;font-weight:600;pointer-events:none;transition:opacity 0.3s ease;opacity:0;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg> <span data-es="Video" data-en="Video">Video</span></div>
    <div id="pdGalleryDots" style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2"></div>
    ` : `<img class="pd-placeholder" src="${p.img || PLACEHOLDER_SVG}" alt="${p.name[currentLang]}" loading="lazy" decoding="async" style="width:100%;max-height:420px;object-fit:contain">`}
@@ -3256,11 +3978,11 @@ function renderProductPage(productId, variantId) {
    <div class="variant-selector">
     ${p.variants.map(vr => {
      const oos = vr.stock === 0;
-     return `<button class="variant-btn${vr.id === variantId ? ' active' : ''}${oos ? ' oos' : ''}" onclick="switchVariant('${p.id}', '${vr.id}')" ${oos ? 'disabled' : ''}>${vr.name}${oos ? ' (0 Stock)' : ''}</button>`;
+     return `<button class="variant-btn${vr.id === variantId ? ' active' : ''}${oos ? ' oos' : ''}" onclick="switchVariant('${p.id}', '${vr.id}')" ${oos ? 'disabled' : ''}>${translateSpecVal(vr.name, currentLang)}${oos ? ' (0 Stock)' : ''}</button>`;
     }).join('')}
    </div>
 
-   <table class="specs-table">${Object.entries(specs).map(([k, val]) => `<tr><td>${(specLabels[k] || {es:k,en:k})[currentLang]}</td><td>${val}</td></tr>`).join('')}</table>
+   <table class="specs-table">${visibleSpecs.map(([k, val]) => `<tr><td>${(specLabels[k] || {es:k,en:k})[currentLang]}</td><td>${translateSpecVal(val, currentLang)}</td></tr>`).join('')}</table>
 
    ${(p.cat === 'airpods' || p.id === 'airpods-pro-2' || p.id === 'airpods-pro-3') ? `
    <div class="pack-label" data-es="Empaque" data-en="Packaging">Empaque</div>
@@ -3307,9 +4029,15 @@ function renderProductPage(productId, variantId) {
    </div>
 
    <div class="pd-actions">
-    <button class="btn btn-gray-green" onclick="toggleCart()" data-es="Calcular Envío" data-en="Calculate Shipping">Calcular Envío</button>
-    <button class="btn btn-moss" onclick="addToCartWithQty('${p.id}', '${v.id}');" ${isOOS ? 'disabled style="opacity:0.4;pointer-events:none"' : ''} data-es="Agregar a Cotización" data-en="Add to Inquiry">Agregar a Cotización</button>
+   <button class="btn btn-gray-green" onclick="toggleCart()" data-es="Calcular Envío" data-en="Calculate Shipping">Calcular Envío</button>
+   <button class="btn btn-moss" onclick="addToCartWithQty('${p.id}', '${v.id}');" ${isOOS ? 'disabled style="opacity:0.4;pointer-events:none"' : ''} data-es="Agregar a Cotización" data-en="Add to Inquiry">Agregar a Cotización</button>
    </div>
+   ${functionDescription ? `
+   <div class="pd-function-desc">
+    <div class="pd-function-title">${specLabels.functionDescription[currentLang]}</div>
+    <div class="pd-function-body" data-spec-type="functionDescription" data-raw-zh="${functionDescription.replace(/"/g, '&quot;')}">${translateSpecVal(functionDescription, currentLang)}</div>
+   </div>
+   ` : ''}
   </div>
  `;
 
@@ -3660,10 +4388,7 @@ navigateBack = function() {
 // ============ INIT ============
 function init() {
  setLang(currentLang);
- // Set initial revealed card
- const defaultCard = document.querySelector('.feat-cat-card[data-filter="airpods-pro"]');
- if (defaultCard) defaultCard.classList.add('revealed');
- renderProducts('airpods-pro');
+ setCatalogGroup('electronics');
  updateCartUI();
  // handle initial hash
  const hash = window.location.hash;
