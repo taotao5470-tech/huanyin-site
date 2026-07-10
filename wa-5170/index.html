@@ -2133,7 +2133,7 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
    <p class="reveal" data-delay="360" data-es="Precio directo de fábrica G5 · Almacén local con despacho ágil · Empaque OEM · Control de calidad en 3 etapas · Envío DDP en 5–7 días." data-en="G5 factory-direct pricing · Local warehouse with fast dispatch · OEM packaging · 3-stage QC · DDP delivery in 5–7 days.">Precio directo de fábrica G5 · Almacén local con despacho ágil · Empaque OEM · Control de calidad en 3 etapas · Envío DDP en 5–7 días.</p>
    <div class="hero-b2b-tags reveal" data-delay="430">
     <span class="hero-b2b-tag gold">G5 Directo</span>
-    <span class="hero-b2b-tag">MOQ: 40</span>
+    <span class="hero-b2b-tag">MOQ: 50</span>
     <span class="hero-b2b-tag gold">OEM / ODM</span>
     <span class="hero-b2b-tag">Almacén Local</span>
     <span class="hero-b2b-tag gold">CE · FCC · RoHS</span>
@@ -2194,7 +2194,7 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
     <div class="trust-item"><div class="trust-num">20+</div><div class="trust-label" data-es="Países de Exportación" data-en="Export Countries">Países de Exportación</div></div>
     <div class="trust-item"><div class="trust-num">50k+</div><div class="trust-label" data-es="Unidades / Mes" data-en="Units per Month">Unidades / Mes</div></div>
     <div class="trust-item"><div class="trust-num" style="font-size:18px;">CE·FCC·RoHS</div><div class="trust-label" data-es="Certificaciones Globales" data-en="Global Certifications">Certificaciones Globales</div></div>
-    <div class="trust-item"><div class="trust-num">MOQ 40</div><div class="trust-label" data-es="Pedido Mínimo (uds)" data-en="Min. Order (units)">Pedido Mínimo (uds)</div></div>
+    <div class="trust-item"><div class="trust-num">MOQ 50</div><div class="trust-label" data-es="Pedido Mínimo (uds)" data-en="Min. Order (units)">Pedido Mínimo (uds)</div></div>
    </div>
   </div>
  </div>
@@ -3865,7 +3865,7 @@ function renderProducts(filter) {
     <div class="product-bottom">
      <div>
       <div class="product-price">${formatPrice(price)} <span>/ unit</span></div>
-      <div class="product-moq" data-es="MOQ: 40 PCS" data-en="MOQ: 40 PCS">MOQ: 40 PCS</div>
+      <div class="product-moq" data-es="MOQ: 50 PCS" data-en="MOQ: 50 PCS">MOQ: 50 PCS</div>
      </div>
      <button class="btn btn-sm btn-dark" onclick="event.stopPropagation(); ${allOOS ? '' : `navigateToProduct('${p.id}')`}" ${allOOS ? 'disabled style="opacity:0.3"' : ''} data-es="Ver Detalle" data-en="View Detail">Ver Detalle</button>
     </div>
@@ -4041,7 +4041,7 @@ function renderProductPage(productId, variantId) {
    ` : ''}
 
    <div class="price-tiers">
-    ${priceSmall ? `<div class="price-tier" id="tierSmall"><span class="tier-label">Small Box <span data-es="(40 PCS)" data-en="(40 PCS)">(40 PCS)</span></span><span class="tier-price">${formatPrice(priceSmall)} <span class="tier-check">✓</span></span></div>` : ''}
+    ${priceSmall ? `<div class="price-tier" id="tierSmall"><span class="tier-label">Small Box <span data-es="(50 PCS)" data-en="(50 PCS)">(50 PCS)</span></span><span class="tier-price">${formatPrice(priceSmall)} <span class="tier-check">✓</span></span></div>` : ''}
     ${priceLarge ? `<div class="price-tier" id="tierLarge"><span class="tier-label">Large Box <span data-es="(120 PCS+)" data-en="(120 PCS+)">(120 PCS+)</span></span><span class="tier-price">${formatPrice(priceLarge)} <span class="tier-check">✓</span></span></div>` : ''}
     ${v.priceNote ? `<div class="price-tier"><span class="tier-label"></span><span class="tier-price">${v.priceNote[currentLang]}</span></div>` : ''}
    </div>
