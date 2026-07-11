@@ -3382,11 +3382,13 @@ function addToCart(productId, variantId) {
  trackCartAdd(productId, variantId, 1);
 }
 
+const MAIN_DEFAULT_ORDER_QTY = 50;
+
 // Quantity handlers for product detail page
 function getPdQty() {
  const input = document.getElementById('pdQtyInput');
  if (!input) return 1;
- let v = parseInt(input.value) || 40;
+ let v = parseInt(input.value) || MAIN_DEFAULT_ORDER_QTY;
  if (v < 1) v = 1;
  input.value = v;
  return v;
@@ -4066,10 +4068,10 @@ function renderProductPage(productId, variantId) {
     <span style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px" data-es="Cantidad" data-en="Quantity">Cantidad</span>
     <div style="display:flex;align-items:center;gap:0;border:1px solid var(--border-dark);border-radius:6px;overflow:hidden">
      <button onclick="pdQtyDown()" style="width:30px;height:30px;background:var(--bg-primary);color:var(--text-light);font-size:16px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer">−</button>
-     <input id="pdQtyInput" type="number" value="40" min="1" step="1" style="width:60px;height:30px;text-align:center;background:var(--bg-primary);color:var(--text-light);border:none;border-left:1px solid var(--border-dark);border-right:1px solid var(--border-dark);font-size:14px;font-weight:600;font-family:inherit;-moz-appearance:textfield" onchange="pdQtyValidate()" oninput="pdQtyValidate()">
+     <input id="pdQtyInput" type="number" value="${MAIN_DEFAULT_ORDER_QTY}" min="1" step="1" style="width:60px;height:30px;text-align:center;background:var(--bg-primary);color:var(--text-light);border:none;border-left:1px solid var(--border-dark);border-right:1px solid var(--border-dark);font-size:14px;font-weight:600;font-family:inherit;-moz-appearance:textfield" onchange="pdQtyValidate()" oninput="pdQtyValidate()">
      <button onclick="pdQtyUp()" style="width:30px;height:30px;background:var(--bg-primary);color:var(--text-light);font-size:16px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer">+</button>
     </div>
-    <span style="font-size:10px;color:var(--text-muted)" data-es="Recomendado: 40+ unidades" data-en="Recommended: 40+ units">Recomendado: 40+ unidades</span>
+    <span style="font-size:10px;color:var(--text-muted)" data-es="Recomendado: 50+ unidades" data-en="Recommended: 50+ units">Recomendado: 50+ unidades</span>
    </div>
 
    <div class="pd-actions">
