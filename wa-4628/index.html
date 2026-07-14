@@ -364,6 +364,7 @@ body.page-product .footer, body.page-about .footer { display: none; }
 .pd-total-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
 .pd-total-price { font-size: 20px; font-weight: 700; color: var(--accent-moss); letter-spacing: -0.5px; }
 .pd-total-unit { font-size: 11px; color: var(--text-muted); font-weight: 400; }
+.pd-carton-count { margin-top: 3px; font-size: 12px; color: var(--accent-mint); font-weight: 700; }
 
 /* Stock indicator (shared) */
 .pd-stock { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-bottom: 12px; }
@@ -4053,6 +4054,7 @@ function renderProductPage(productId, variantId) {
     <div style="text-align:right">
      <div class="pd-total-price" id="pdTotalPrice">${formatPrice(priceSmall || priceLarge || 0)}</div>
      <div class="pd-total-unit" data-es="MXN · Precio de Cotización" data-en="USD · Quote Price">MXN · Precio de Cotización</div>
+     ${(p.cat === 'airpods' || p.cat === 'airpods-pro') ? '<div class="pd-carton-count" id="pdCartonCount"></div>' : ''}
     </div>
    </div>
 
@@ -4219,6 +4221,16 @@ function updatePriceDisplay() {
  const p = products.find(p => p.id === currentProductId);
  const v = p?.variants.find(v => v.id === currentVariantId);
  if (!v) return;
+ const cartonEl = document.getElementById('pdCartonCount');
+ if (cartonEl) {
+  const cartons = Math.floor(qty / 50);
+  const loose = qty % 50;
+  const cartonText = currentLang === 'es'
+   ? `${cartons} ${cartons === 1 ? 'caja' : 'cajas'}`
+   : `${cartons} ${cartons === 1 ? 'carton' : 'cartons'}`;
+  const looseText = currentLang === 'es' ? `${loose} PCS sueltos` : `${loose} loose PCS`;
+  cartonEl.textContent = cartons && loose ? `${cartonText} + ${looseText}` : cartons ? cartonText : looseText;
+ }
  const priceSmall = v.prices.small;
  const priceLarge = v.prices.large;
 
