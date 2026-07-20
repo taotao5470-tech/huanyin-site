@@ -1,0 +1,38 @@
+﻿[
+    {
+        "team":  "Ghana",
+        "status":  "error",
+        "file":  "",
+        "src":  "远程服务器返回错误: (429) Too many requests. Please contact bot-traffic@wikimedia.org (fceb99d)。"
+    },
+    {
+        "team":  "Irlanda",
+        "status":  "ok",
+        "file":  "images\\mundial\\badges\\irlanda.png",
+        "src":  "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Republic_of_Ireland_national_football_team_crest.svg/250px-Republic_of_Ireland_national_football_team_crest.svg.png"
+    },
+    {
+        "team":  "Irlanda del Norte",
+        "status":  "ok",
+        "file":  "images\\mundial\\badges\\irlanda-del-norte.png",
+        "src":  "https://upload.wikimedia.org/wikipedia/commons/8/81/Kit_left_arm_nir26h.png"
+    },
+    {
+        "team":  "Italia",
+        "status":  "ok",
+        "file":  "images\\mundial\\badges\\italia.png",
+        "src":  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/250px-Logo_Italy_National_Football_Team_-_2023.svg.png"
+    },
+    {
+        "team":  "Portugal",
+        "status":  "ok",
+        "file":  "images\\mundial\\badges\\portugal.png",
+        "src":  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Flag_of_Portugal_%28official%29.svg/250px-Flag_of_Portugal_%28official%29.svg.png"
+    },
+    {
+        "team":  "Senegal",
+        "status":  "ok",
+        "file":  "images\\mundial\\badges\\senegal.png",
+        "src":  "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Senegalese_Football_Federation_logo.svg/250px-Senegalese_Football_Federation_logo.svg.png"
+    }
+]

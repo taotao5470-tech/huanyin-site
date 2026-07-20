@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52M06C1RJR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52M06C1RJR');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Preview — HUANYIN</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+  .phone-frame {
+    width: 393px; height: 852px;
+    border: 5px solid #2a2a2a; border-radius: 48px;
+    overflow: hidden;
+    box-shadow: 0 0 0 3px #1a1a1a, 0 0 0 6px #111, 0 20px 60px rgba(0,0,0,0.6);
+    position: sticky; top: 20px;
+    background: #000;
+  }
+  .phone-screen {
+    width: 100%; height: 100%;
+    border: none;
+    border-radius: 44px;
+    position: relative;
+    background: #000;
+  }
+  /* Dynamic Island */
+  .dynamic-island {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    width: 126px; height: 34px;
+    background: #000; border-radius: 20px;
+    z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .dynamic-island::after {
+    content: ''; width: 12px; height: 12px; border-radius: 50%;
+    background: #1a1a2e; position: absolute; right: 14px;
+  }
+  .label {
+    text-align: center; color: #666; margin-bottom: 16px; font-size: 13px; letter-spacing: 1px;
+  }
+  .label span { color: var(--accent-moss, #7d9474); }
+</style>
+</head>
+<body>
+  <div>
+    <div class="label">iPhone 15 Pro · 393 × 852 · Dynamic Island</div>
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="dynamic-island"></div>
+        <iframe src="index.html" style="width:100%;height:calc(100% - 54px);border:none;border-radius:0 0 44px 44px"></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

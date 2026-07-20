@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>HUANYIN — Premium Consumer Electronics</title>
+<style>
+/* ============ CSS Variables ============ */
+:root {
+  --bg-primary: #1c1c1c;
+  --bg-secondary: #232323;
+  --bg-surface: #faf7f2;
+  --bg-card: #ffffff;
+  --bg-dark-card: #2a2a2a;
+  --accent-moss: #2d7dd2;
+  --accent-moss-dark: #1a5fa8;
+  --accent-moss-light: #e8f2fc;
+  --accent-copper: #e8a835;
+  --accent-copper-light: #fdf6e3;
+  --text-dark: #1c1c1c;
+  --text-light: #e8e4dd;
+  --text-muted: #8a8a8a;
+  --text-muted-dark: #6a6a6a;
+  --whatsapp: #25D366;
+  --whatsapp-dark: #1da851;
+  --danger: #d94a4a;
+  --warning: #d4a853;
+  --success: #5a9e6f;
+  --border: #e8e4dd;
+  --border-dark: #3a3a3a;
+  --shadow: 0 2px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============ Reset & Base ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--bg-primary); color: var(--text-light); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; font-family: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* ============ Navbar ============ */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(28,28,28,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-dark); padding: env(safe-area-inset-top, 0px) 32px 0; height: calc(64px + env(safe-area-inset-top, 0px)); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-light); display: flex; align-items: center; gap: 10px; }
+.nav-logo .logo-mark { width: 36px; height: 36px; border-radius: var(--radius-xs); object-fit: contain; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-size: 14px; color: var(--text-muted); transition: var(--transition); font-weight: 500; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-light); }
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.lang-toggle { display: flex; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-dark); }
+.lang-toggle button { padding: 5px 12px; font-size: 12px; font-weight: 600; background: transparent; color: var(--text-muted); transition: var(--transition); }
+.lang-toggle button.active { background: var(--accent-moss); color: #fff; }
+.nav-wa { padding: 8px 16px; border-radius: 20px; background: var(--whatsapp); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; transition: var(--transition); }
+.nav-wa:hover { background: var(--whatsapp-dark); transform: translateY(-1px); }
+.nav-wa-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: pulse-dot 1.5s infinite; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--text-light); border-radius: 1px; transition: var(--transition); }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ============ About Tabs ============ */
+.about-tab { padding: 10px 24px; font-size: 14px; font-weight: 600; background: transparent; color: var(--text-muted); border: 1px solid var(--border-dark); cursor: pointer; transition: var(--transition); }
+.about-tab:first-child { border-radius: 20px 0 0 20px; }
+.about-tab:last-child { border-radius: 0 20px 20px 0; }
+.about-tab.active { background: var(--accent-moss); color: #fff; border-color: var(--accent-moss); }
+.about-panel { animation: fadeSlideIn 0.4s ease; }
+@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.certs-grid img { transition: transform 0.3s ease; }
+.certs-grid img:hover { transform: scale(1.03); }
+
+/* ============ Page Sections ============ */
+.page-section { display: none; }
+.page-section.active { display: block; }
+
+/* ============ Hero ============ */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 32px 80px; position: relative; overflow: hidden; background: var(--bg-primary); }
+.hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.hero-content { position: relative; z-index: 1; max-width: 780px; }
+.hero-b2b-tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+.hero-b2b-tag { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; background: rgba(45,125,210,0.15); border: 1px solid rgba(45,125,210,0.35); color: #90bef0; }
+.hero-b2b-tag.gold { background: rgba(232,168,53,0.15); border-color: rgba(232,168,53,0.35); color: #f0c96a; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 20px; background: rgba(45,125,210,0.15); border: 1px solid rgba(45,125,210,0.3); font-size: 13px; color: var(--accent-moss-light); margin-bottom: 28px; }
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-moss); animation: pulse-dot 2s infinite; }
+.hero h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 700; line-height: 1.12; letter-spacing: -1.5px; margin-bottom: 20px; color: var(--text-light); }
+.hero h1 em { font-style: normal; color: var(--accent-moss); }
+.hero p { font-size: 17px; color: var(--text-muted); max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+.hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn { padding: 14px 28px; border-radius: 30px; font-size: 15px; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+.btn-light { background: var(--bg-surface); color: var(--text-dark); }
+.btn-light:hover { background: #fff; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-wa { background: var(--whatsapp); color: #fff; }
+.btn-wa:hover { background: var(--whatsapp-dark); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(37,211,102,0.3); }
+.btn-dark { background: var(--bg-primary); color: var(--text-light); border: 1px solid var(--border-dark); }
+.btn-dark:hover { background: var(--bg-secondary); transform: translateY(-2px); }
+.btn-moss { background: var(--accent-moss); color: #fff; }
+.btn-moss:hover { background: var(--accent-moss-dark); transform: translateY(-2px); }
+.btn-copper { background: var(--accent-copper); color: #fff; }
+.btn-copper:hover { background: #b87e5a; transform: translateY(-2px); }
+.btn-sm { padding: 8px 18px; font-size: 13px; border-radius: 20px; }
+.btn-gray-green { background: #4a5a4a; color: #c0c8bb; border: 1px solid #5a6a5a; }
+.btn-gray-green:hover { background: #5a6e5a; color: #e0e4db; transform: translateY(-2px); }
+.btn-back { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 24px; background: var(--bg-secondary); color: var(--text-muted); font-size: 14px; font-weight: 500; cursor: pointer; transition: var(--transition); border: 1px solid var(--border-dark); margin-bottom: 32px; }
+.btn-back:hover { color: var(--accent-moss); border-color: var(--accent-moss); }
+.hero-scroll { margin-top: 60px; animation: bounce 2s infinite; color: var(--text-muted); font-size: 12px; }
+
+/* ============ Content Sections ============ */
+.section { padding: 100px 32px; }
+.section-light { background: var(--bg-surface); color: var(--text-dark); }
+.section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-moss); margin-bottom: 12px; }
+.section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.15; }
+.section-subtitle { font-size: 16px; color: var(--text-muted); max-width: 580px; }
+.section-light .section-subtitle { color: var(--text-muted-dark); }
+.container { max-width: 1260px; margin: 0 auto; }
+
+/* ============ Trust Bar ============ */
+.trust-bar { border-bottom: 1px solid var(--border-dark); }
+.trust-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.trust-item { text-align: center; padding: 24px 12px; }
+.trust-num { font-size: 28px; font-weight: 700; color: var(--accent-moss); letter-spacing: -1px; }
+.trust-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ============ Featured Categories (3 large) ============ */
+.feat-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+.feat-cat-card { position: relative; border-radius: var(--radius); overflow: hidden; cursor: pointer; transition: var(--transition); min-height: 180px; display: flex; align-items: center; justify-content: center; padding: 28px; background: var(--bg-secondary); border: 1px solid var(--border-dark); }
+.feat-cat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.feat-cat-card:nth-child(1) { background: linear-gradient(135deg, #2a3028 0%, #1c1c1c 100%); border-color: rgba(125,148,116,0.3); }
+.feat-cat-card:nth-child(1):hover { border-color: var(--accent-moss); }
+.feat-cat-card:nth-child(2) { background: linear-gradient(135deg, #2a2826 0%, #1c1c1c 100%); border-color: rgba(200,149,108,0.3); }
+.feat-cat-card:nth-child(2):hover { border-color: var(--accent-copper); }
+.feat-cat-card:nth-child(3) { background: linear-gradient(135deg, #262a2c 0%, #1c1c1c 100%); border-color: rgba(140,160,170,0.3); }
+.feat-cat-card:nth-child(3):hover { border-color: #9bb5c0; }
+.feat-cat-card .feat-icon { position: absolute; top: 24px; right: 24px; font-size: 56px; opacity: 0.12; }
+.feat-cat-content { position: relative; z-index: 1; }
+.feat-cat-tag { display: inline-block; padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+.feat-cat-card:nth-child(1) .feat-cat-tag { background: rgba(125,148,116,0.2); color: var(--accent-moss); }
+.feat-cat-card:nth-child(2) .feat-cat-tag { background: rgba(200,149,108,0.2); color: var(--accent-copper); }
+.feat-cat-card:nth-child(3) .feat-cat-tag { background: rgba(140,160,170,0.2); color: #9bb5c0; }
+.feat-cat-title { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-light); }
+.feat-cat-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+/* ============ Sub Categories (smaller) ============ */
+.sub-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; margin-top: 16px; }
+.sub-cat-btn { padding: 5px 14px; border-radius: 16px; font-size: 11px; font-weight: 500; background: var(--bg-secondary); color: var(--text-muted); border: 1px solid transparent; transition: var(--transition); white-space: nowrap; }
+.sub-cat-btn:hover { color: var(--text-light); border-color: var(--border-dark); }
+.sub-cat-btn.active { background: var(--accent-moss); color: #fff; border-color: var(--accent-moss); }
+
+/* ============ Products Grid ============ */
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.product-card { background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; transition: var(--transition); cursor: pointer; border: 1px solid var(--border-dark); display: flex; flex-direction: column; }
+.product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(125,148,116,0.4); }
+.product-card.disabled { opacity: 0.45; pointer-events: none; cursor: not-allowed; }
+.product-img { height: 200px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.product-img .pi-placeholder { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product-img .pi-icon { font-size: 64px; opacity: 0.25; transition: var(--transition); }
+.product-card:hover .product-img .pi-icon { transform: scale(1.08); opacity: 0.35; }
+.product-badge { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; flex-direction: column; }
+.badge { padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+.badge-best { background: var(--accent-copper); color: #fff; }
+.badge-new { background: var(--accent-moss); color: #fff; }
+.badge-oos { background: #666; color: #aaa; }
+.stock-dot { position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 10px; background: rgba(0,0,0,0.6); color: #fff; }
+.stock-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; }
+.stock-dot.in-stock::before { background: var(--success); }
+.stock-dot.low-stock::before { background: var(--warning); }
+.stock-dot.pre-order::before { background: var(--danger); }
+.stock-dot.oos::before { background: #666; }
+.product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+.product-name { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 4px; }
+.product-spec { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+.product-bottom { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; }
+.product-price { font-size: 15px; font-weight: 700; }
+.product-price span { font-size: 11px; color: var(--text-muted); font-weight: 400; }
+.product-moq { font-size: 10px; color: var(--text-muted); }
+.variant-dots { display: flex; gap: 5px; margin-bottom: 10px; }
+.variant-dot { width: 8px; height: 8px; border-radius: 50%; }
+.v-dot-std { background: #777; }
+.v-dot-global { background: var(--accent-moss); }
+.v-dot-anc { background: var(--accent-copper); }
+
+/* ============ Product Detail Page ============ */
+.product-page-header { padding: 80px 32px 0; background: var(--bg-primary); }
+.product-page-header .container { max-width: 960px; }
+.product-detail { display: grid; grid-template-columns: 1fr 1fr; max-width: 960px; margin: 0 auto 40px; background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border-dark); }
+.pd-img-area { background: #f5f5f5; padding: 16px; display: flex; align-items: center; justify-content: center; position: relative; min-height: 160px; }
+.pd-img-area img { max-width: 100%; max-height: 300px; object-fit: contain; display: block; }
+.pd-img-area .pd-placeholder { width: 100%; height: auto; max-height: none; object-fit: cover; }
+.pd-img-icon { font-size: 80px; opacity: 0.85; }
+.pd-img-hint { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #888; background: rgba(0,0,0,0.55); padding: 5px 14px; border-radius: 10px; white-space: nowrap; z-index: 2; pointer-events: none; }
+.pd-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.pd-info { padding: 24px 28px; display: flex; flex-direction: column; }
+.pd-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-moss); margin-bottom: 4px; }
+.pd-info h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.6px; margin-bottom: 2px; color: var(--text-light); }
+.pd-tagline { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+
+/* Variant buttons (shared) */
+.variant-selector { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.variant-btn { padding: 7px 14px; border-radius: 18px; font-size: 12px; font-weight: 600; background: var(--bg-primary); color: var(--text-muted); border: 1px solid var(--border-dark); transition: var(--transition); }
+.variant-btn:hover { color: var(--text-light); border-color: var(--text-muted); }
+.variant-btn.active { background: var(--accent-moss); color: #fff; border-color: var(--accent-moss); }
+.variant-btn.oos { opacity: 0.4; pointer-events: none; }
+
+/* Specs table (shared) */
+.specs-table { width: 100%; margin-bottom: 12px; border-collapse: collapse; }
+.specs-table tr { border-bottom: 1px solid var(--border-dark); }
+.specs-table td { padding: 4px 0; font-size: 12px; }
+.specs-table td:first-child { color: var(--text-muted); width: 40%; font-size: 11px; }
+
+/* Packaging options (shared) */
+.pack-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 6px; }
+.packaging-options { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.pack-option { padding: 8px 12px; border-radius: var(--radius-xs); border: 1px solid var(--border-dark); cursor: pointer; transition: var(--transition); flex: 1; text-align: center; font-size: 12px; min-width: 70px; background: var(--bg-primary); }
+.pack-option:hover, .pack-option.selected { border-color: var(--accent-moss); background: rgba(125,148,116,0.1); }
+.pack-option .pack-icon { font-size: 18px; margin-bottom: 2px; display: block; }
+
+/* Price tiers (shared) */
+.price-tiers { margin-bottom: 12px; }
+.price-tier { display: flex; justify-content: space-between; padding: 8px 12px; border-radius: var(--radius-xs); margin-bottom: 4px; background: var(--bg-primary); font-size: 13px; border: 1.5px solid transparent; transition: all 0.3s ease; cursor: default; }
+.price-tier .tier-label { color: var(--text-muted); font-size: 12px; }
+.price-tier .tier-price { font-weight: 700; color: var(--text-light); }
+.price-tier.selected { border-color: var(--accent-moss); background: rgba(125,148,116,0.12); }
+.price-tier.selected .tier-label { color: var(--accent-moss); }
+.price-tier.selected .tier-price { color: var(--accent-moss); }
+.price-tier .tier-check { display: none; color: var(--accent-moss); font-size: 14px; margin-left: 6px; }
+.price-tier.selected .tier-check { display: inline; }
+
+/* Packaging preview */
+.pack-preview { width: 100%; height: 80px; border-radius: var(--radius-xs); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; background: var(--bg-primary); border: 1px solid var(--border-dark); overflow: hidden; transition: var(--transition); }
+.pack-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.pack-preview .pack-preview-icon { font-size: 36px; opacity: 0.4; }
+.pack-preview .pack-preview-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; text-align: center; }
+
+/* Total price display */
+.pd-total { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: var(--radius-xs); background: rgba(125,148,116,0.08); border: 1px solid rgba(125,148,116,0.2); margin-bottom: 12px; }
+.pd-total-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.pd-total-price { font-size: 20px; font-weight: 700; color: var(--accent-moss); letter-spacing: -0.5px; }
+.pd-total-unit { font-size: 11px; color: var(--text-muted); font-weight: 400; }
+
+/* Stock indicator (shared) */
+.pd-stock { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-bottom: 12px; }
+.pd-stock .sdot { width: 8px; height: 8px; border-radius: 50%; }
+.sdot.in { background: var(--success); }
+.sdot.low { background: var(--warning); }
+.sdot.out { background: var(--danger); }
+.pd-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+
+/* ============ Why Us ============ */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.why-card { background: var(--bg-card); padding: 32px 24px; border-radius: var(--radius); border: 1px solid #e8e2d8; transition: var(--transition); }
+.why-card:hover { border-color: var(--accent-moss); box-shadow: var(--shadow); }
+.why-icon { width: 48px; height: 48px; border-radius: var(--radius-xs); background: var(--accent-moss-light); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
+.why-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.3px; }
+.why-card p { font-size: 13px; color: var(--text-muted-dark); line-height: 1.6; }
+
+/* ============ Global Reach ============ */
+#global-reach { position: relative; background: url('images/global-reach-bg-dark.webp') center/cover no-repeat; background-color: var(--bg-primary); }
+#global-reach::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,28,28,0.85) 0%, rgba(28,28,28,0.65) 50%, rgba(28,28,28,0.88) 100%); z-index: 0; }
+#global-reach .container { position: relative; z-index: 1; }
+.reach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.reach-card { background: var(--bg-dark-card); border-radius: var(--radius); padding: 32px 24px; border: 1px solid var(--border-dark); transition: var(--transition); text-align: center; }
+.reach-card:hover { border-color: var(--accent-moss); }
+.reach-flag { font-size: 40px; margin-bottom: 14px; }
+.reach-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+.reach-card .address { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+.reach-map { width: 100%; height: auto; border-radius: 6px; margin-bottom: 14px; display: block; border: 1px solid var(--border-dark); }
+.reach-card .eta { font-size: 13px; color: var(--accent-moss); font-weight: 600; }
+
+/* ============ Reviews ============ */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-card { background: var(--bg-card); padding: 28px; border-radius: var(--radius); border: 1px solid #e8e2d8; }
+.review-stars { color: var(--accent-copper); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+.review-text { font-size: 14px; line-height: 1.7; color: var(--text-dark); margin-bottom: 16px; font-style: italic; }
+.review-author { display: flex; align-items: center; gap: 10px; }
+.review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-moss-light); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent-moss-dark); font-size: 16px; }
+.review-author strong { font-size: 14px; display: block; }
+.review-author span { font-size: 12px; color: var(--text-muted-dark); }
+
+/* ============ Process ============ */
+.process-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.process-step { text-align: center; position: relative; }
+.process-step::after { content: ''; position: absolute; top: 24px; left: 60%; width: 80%; height: 1px; background: var(--border); }
+.process-step:last-child::after { display: none; }
+.section-light .process-step::after { background: #d8d4cb; }
+.process-num { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-primary); color: var(--text-light); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 12px; }
+.process-step h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.section-light .process-step p { font-size: 11px; color: var(--text-muted-dark); }
+
+/* ============ Contact ============ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+.contact-info h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--text-dark); }
+.section-light .contact-info p { color: var(--text-muted-dark); margin-bottom: 24px; }
+.contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 14px; color: var(--text-dark); }
+.contact-item .ci-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; background: #e8e2d8; flex-shrink: 0; }
+.contact-form { background: var(--bg-dark-card); padding: 32px; border-radius: var(--radius); border: 1px solid var(--border-dark); }
+.contact-form .form-title { color: var(--text-light); font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.form-row.single { grid-template-columns: 1fr; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border-radius: var(--radius-xs); border: 1px solid var(--border-dark); background: var(--bg-primary); color: var(--text-light); font-size: 14px; font-family: inherit; transition: var(--transition); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-moss); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+/* ============ Footer ============ */
+.footer { background: #151515; padding: 60px 32px 28px; border-top: 1px solid var(--border-dark); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+.footer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 16px; }
+.footer a { font-size: 13px; color: #777; display: block; margin-bottom: 8px; transition: var(--transition); }
+.footer a:hover { color: var(--accent-moss); }
+.footer-brand p { font-size: 13px; color: #777; margin-top: 10px; line-height: 1.6; }
+.footer-bottom { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border-dark); text-align: center; font-size: 12px; color: #555; }
+
+/* ============ Floating Elements ============ */
+.floating-wa, .floating-cart { position: fixed; z-index: 999; border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: var(--transition); }
+.floating-wa { bottom: 28px; right: 28px; background: var(--whatsapp); color: #fff; animation: wa-pulse 2.5s infinite; }
+.floating-cart { bottom: 92px; right: 28px; background: var(--bg-secondary); color: var(--text-light); border: 1px solid var(--border-dark); }
+.floating-cart .cart-count { position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent-copper); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.floating-wa:hover, .floating-cart:hover { transform: scale(1.08); }
+
+/* ============ Cart Panel ============ */
+.cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+.cart-panel { position: fixed; top: 0; right: 0; width: 400px; max-width: 100vw; height: 100vh; background: var(--bg-primary); z-index: 2001; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); border-left: 1px solid var(--border-dark); }
+.cart-panel.open { transform: translateX(0); }
+.cart-header { padding: 16px 20px; border-bottom: 1px solid var(--border-dark); display: flex; justify-content: space-between; align-items: center; }
+.cart-header h3 { font-size: 16px; font-weight: 600; }
+.cart-close { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-secondary); color: var(--text-muted); font-size: 16px; display: flex; align-items: center; justify-content: center; }
+.cart-items { flex: 1; overflow-y: auto; padding: 12px 16px; scrollbar-width: none; -ms-overflow-style: none; }
+.cart-items::-webkit-scrollbar { display: none; }
+.cart-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border-dark); align-items: center; }
+.cart-item-img { width: 56px; height: 56px; border-radius: var(--radius-xs); background: #f5f5f5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; overflow: hidden; }
+.cart-item-img img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-size: 14px; font-weight: 600; }
+.cart-item-variant { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.cart-item-price { font-size: 13px; font-weight: 600; }
+.cart-item-qty { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.cart-item-qty button { width: 26px; height: 26px; border-radius: 50%; background: var(--bg-secondary); color: var(--text-light); font-size: 14px; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+.cart-item-qty button:hover { background: var(--accent-moss); }
+.cart-item-qty span { font-size: 14px; font-weight: 600; min-width: 24px; text-align: center; }
+.cart-item-remove { color: var(--danger); font-size: 18px; cursor: pointer; background: none; padding: 0 4px; flex-shrink: 0; }
+.cart-empty { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 14px; }
+.cart-footer { padding: 20px 24px; border-top: 1px solid var(--border-dark); }
+.cart-total { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 14px; }
+.cart-total strong { font-size: 18px; }
+.cart-wa-btn { width: 100%; padding: 14px; border-radius: 28px; background: var(--whatsapp); color: #fff; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition); }
+.cart-wa-btn:hover { background: var(--whatsapp-dark); }
+.cart-continue { width: 100%; padding: 10px; margin-top: 8px; background: transparent; color: var(--text-muted); font-size: 13px; }
+
+/* Address Panel — floats to the left of the cart */
+.cart-addr-panel { position: fixed; top: 80px; right: 400px; width: 280px; background: #1e221e; border: 1px solid rgba(125,148,116,0.35); border-right: none; border-radius: 14px 0 0 14px; z-index: 2001; transform: translateX(16px); opacity: 0; pointer-events: none; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -4px 8px 40px rgba(0,0,0,0.5); }
+.cart-addr-panel.open { transform: translateX(0); opacity: 1; pointer-events: auto; }
+/* Connector tab — gone, panel sticks directly */
+.cart-addr-panel h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-moss); margin: 0; padding: 14px 16px 10px; border-bottom: 1px solid rgba(125,148,116,0.15); }
+.cart-addr-inner { padding: 12px 16px 14px; }
+.cart-addr-inner .addr-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.cart-addr-inner .addr-row.single { grid-template-columns: 1fr; }
+.cart-addr-input { width: 100%; padding: 8px 10px; border-radius: var(--radius-xs); border: 1px solid var(--border-dark); background: var(--bg-secondary); color: var(--text-light); font-size: 12px; font-family: inherit; transition: var(--transition); }
+.cart-addr-input:focus { outline: none; border-color: var(--accent-moss); }
+.cart-addr-input::placeholder { color: #555; }
+.cart-addr-select { width: 100%; padding: 8px 10px; border-radius: var(--radius-xs); border: 1px solid var(--border-dark); background: var(--bg-secondary); color: var(--text-light); font-size: 12px; font-family: inherit; cursor: pointer; transition: var(--transition); -webkit-appearance: none; appearance: none; }
+.cart-addr-select:focus { outline: none; border-color: var(--accent-moss); }
+.cart-addr-select option { background: var(--bg-secondary); color: var(--text-light); }
+.cart-addr-select option.remote { color: #777; }
+.cart-addr-warn { color: var(--warning); font-size: 10px; margin-top: 4px; text-align: center; display: none; }
+.addr-send-btn { display: none; width: 100%; padding: 14px; border-radius: 28px; background: var(--whatsapp); color: #fff; font-size: 15px; font-weight: 600; align-items: center; justify-content: center; gap: 8px; transition: var(--transition); margin-top: 12px; cursor: pointer; border: none; }
+.addr-send-btn:hover { background: var(--whatsapp-dark); }
+
+/* ============ Animations ============ */
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes wa-pulse { 0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.3); } 50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.animate-in { animation: fadeIn 0.45s ease-out forwards; }
+
+/* ============ Responsive ============ */
+@media (max-width: 1024px) {
+  .products-grid, .feat-cats { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+  .process-step::after { display: none; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-detail { grid-template-columns: 1fr; }
+  .pd-img-area { min-height: 200px; border-radius: var(--radius) var(--radius) 0 0; }
+}
+@media (max-width: 768px) {
+  .nav { padding-left: 16px; padding-right: calc(16px + env(safe-area-inset-right, 0px)); }
+  .nav-actions { gap: 10px; }
+  .nav-wa { padding: 8px 12px; }
+  .nav-links { display: none; position: fixed; top: calc(64px + env(safe-area-inset-top, 0px)); left: 0; right: 0; background: rgba(28,28,28,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 16px 32px; gap: 0; border-bottom: 1px solid var(--border-dark); }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--border-dark); font-size: 16px; }
+  .nav-links .lang-toggle { margin-top: 16px; justify-content: center; border: 1px solid var(--border-dark); border-radius: 20px; overflow: hidden; display: flex; }
+  .nav-links .lang-toggle button { padding: 10px 24px; font-size: 14px; }
+  .nav-wa span { display: none; }
+  .hamburger { display: flex; }
+  .products-grid { grid-template-columns: 1fr; }
+  .feat-cats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .feat-cat-card { padding: 12px 8px; min-height: 60px; border-radius: var(--radius-sm); }
+  .feat-cat-title { font-size: 13px; }
+  .sub-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .sub-cats button { text-align: center; width: 100%; padding: 6px 10px; font-size: 11px; border-radius: 16px; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .reach-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 30px; }
+  .section { padding: 60px 16px; }
+  .cart-panel { width: 100vw; }
+  .cart-addr-panel { position: fixed; top: auto; bottom: 0; right: 0; left: 0; width: 100vw; max-height: 70vh; overflow-y: auto; border-radius: 14px 14px 0 0; transform: translateY(100%); }
+  .cart-addr-panel.open { transform: translateY(0); }
+  .cart-addr-panel::after { display: none; }
+  .addr-send-btn { display: flex; }
+  .cart-panel.open ~ .cart-addr-panel { /* sibling selector for mobile */ }
+  .form-row { grid-template-columns: 1fr; }
+  .product-page-header { padding: 72px 12px 0; }
+  .product-detail { margin-bottom: 24px; }
+  .pd-img-area { min-height: 180px; padding: 16px 12px; }
+  .pd-info { padding: 20px; }
+  .about-stats { grid-template-columns: repeat(2, 1fr) !important; }
+  .about-philo { grid-template-columns: 1fr !important; }
+  .about-tabs { gap: 4px !important; }
+  .about-tab { padding: 8px 14px !important; font-size: 12px !important; }
+  .about-tab:first-child { border-radius: 18px 0 0 18px !important; }
+  .about-tab:last-child { border-radius: 0 18px 18px 0 !important; }
+  .certs-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+}
+
+/* ============ Verify Grid ============ */
+.verify-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 1024px) {
+  .verify-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .verify-grid { grid-template-columns: 1fr; }
+}
+
+
+
+/* ============ Visual Theme Refresh 2026 ============ */
+:root {
+  --bg-primary: #0b1118;
+  --bg-secondary: #101923;
+  --bg-surface: #f6f0e6;
+  --bg-card: #fffdf8;
+  --bg-dark-card: #13202c;
+  --accent-moss: #2fd08b;
+  --accent-moss-dark: #159b69;
+  --accent-moss-light: #dff8ec;
+  --accent-copper: #ffb84d;
+  --accent-copper-light: #fff2d6;
+  --text-dark: #18202a;
+  --text-light: #f5f8f6;
+  --text-muted: #91a2ad;
+  --text-muted-dark: #66727c;
+  --border: rgba(34, 49, 62, 0.12);
+  --border-dark: rgba(195, 229, 221, 0.13);
+  --shadow: 0 14px 42px rgba(8, 15, 24, 0.12);
+  --shadow-lg: 0 24px 70px rgba(5, 12, 20, 0.24);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(47,208,139,0.24), transparent 28rem),
+    radial-gradient(circle at 88% 18%, rgba(255,184,77,0.18), transparent 25rem),
+    linear-gradient(135deg, #071018 0%, #101923 45%, #142235 100%);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+.nav {
+  background: rgba(8, 14, 21, 0.78);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.18);
+}
+
+.hero {
+  min-height: 100vh;
+  justify-content: center;
+  text-align: left;
+  padding: 124px 32px 72px;
+  isolation: isolate;
+  background:
+    linear-gradient(125deg, rgba(7, 13, 20, 0.96), rgba(12, 28, 38, 0.86) 45%, rgba(17, 32, 47, 0.94)),
+    radial-gradient(circle at 70% 45%, rgba(47,208,139,0.3), transparent 34rem);
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::before {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.72), transparent 82%);
+  opacity: 0.46;
+}
+
+.hero::after {
+  width: 52vw;
+  height: 52vw;
+  min-width: 520px;
+  min-height: 520px;
+  right: -18vw;
+  top: 8vh;
+  border-radius: 50%;
+  background: conic-gradient(from 90deg, rgba(47,208,139,0.38), rgba(255,184,77,0.34), rgba(45,125,210,0.22), rgba(47,208,139,0.38));
+  filter: blur(54px);
+  opacity: 0.55;
+  animation: heroGradient 12s linear infinite;
+}
+
+.hero-canvas { opacity: 0.52; mix-blend-mode: screen; }
+.hero-shell { position: relative; z-index: 2; width: min(1260px, 100%); display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, 0.88fr); gap: 56px; align-items: center; }
+.hero-content { max-width: 680px; }
+.hero-copy { animation: heroFadeUp 0.8s ease-out both; }
+.hero-badge { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); color: #ddfff2; box-shadow: inset 0 1px 0 rgba(255,255,255,0.12); }
+.hero-badge .dot { background: var(--accent-moss); box-shadow: 0 0 18px rgba(47,208,139,0.8); }
+.hero h1 { font-size: clamp(48px, 7vw, 86px); line-height: 0.95; letter-spacing: -3.2px; margin-bottom: 24px; max-width: 760px; }
+.hero h1 em { color: transparent; background: linear-gradient(90deg, var(--accent-moss), #b8ffdb 45%, var(--accent-copper)); -webkit-background-clip: text; background-clip: text; text-shadow: none; }
+.hero p { margin: 0 0 28px; max-width: 610px; color: #bfd0d5; font-size: clamp(16px, 1.7vw, 19px); }
+.hero-b2b-tags { justify-content: flex-start; margin: 0 0 32px; }
+.hero-b2b-tag { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); color: #cfe9ec; backdrop-filter: blur(12px); }
+.hero-b2b-tag.gold { background: rgba(255,184,77,0.13); border-color: rgba(255,184,77,0.34); color: #ffd78d; }
+.hero-btns { justify-content: flex-start; }
+.btn { box-shadow: 0 10px 28px rgba(0,0,0,0.15); }
+.btn-light { background: linear-gradient(135deg, #ffffff, #e9f6ef); color: #0f1d25; }
+.btn-moss { background: linear-gradient(135deg, var(--accent-moss), #1aa6a8); }
+.btn-wa { background: linear-gradient(135deg, #25D366, #12b886); }
+.hero-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 34px; max-width: 560px; }
+.hero-proof div { padding: 14px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; background: rgba(255,255,255,0.06); backdrop-filter: blur(14px); }
+.hero-proof strong { display: block; font-size: 24px; line-height: 1; color: #fff; }
+.hero-proof span { display: block; margin-top: 6px; font-size: 12px; color: #9fb4bd; }
+.hero-visual { position: relative; min-height: 560px; display: flex; align-items: center; justify-content: center; animation: heroFadeUp 0.9s 0.08s ease-out both; }
+.hero-device-card { position: relative; width: min(520px, 92vw); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: radial-gradient(circle at 50% 48%, rgba(255,255,255,0.14), rgba(255,255,255,0.04) 42%, transparent 70%); }
+.hero-product { position: relative; z-index: 3; width: min(440px, 78vw); filter: drop-shadow(0 34px 46px rgba(0,0,0,0.38)); animation: heroFloat 5.5s ease-in-out infinite; }
+.hero-glow { position: absolute; z-index: 1; width: 70%; height: 28%; bottom: 12%; border-radius: 50%; background: radial-gradient(ellipse, rgba(47,208,139,0.45), transparent 68%); filter: blur(22px); animation: glowPulse 4.5s ease-in-out infinite; }
+.hero-ring { position: absolute; inset: 7%; border-radius: 50%; border: 1px solid rgba(255,255,255,0.16); }
+.hero-ring-one { border-left-color: rgba(47,208,139,0.7); border-top-color: rgba(255,184,77,0.5); animation: ringSpin 18s linear infinite; }
+.hero-ring-two { inset: 18%; border-right-color: rgba(47,208,139,0.55); border-bottom-color: rgba(255,184,77,0.45); animation: ringSpin 13s linear reverse infinite; }
+.hero-float-card { position: absolute; z-index: 4; min-width: 132px; padding: 14px 16px; border-radius: 20px; background: rgba(10, 20, 30, 0.7); border: 1px solid rgba(255,255,255,0.13); box-shadow: 0 22px 55px rgba(0,0,0,0.24); backdrop-filter: blur(18px); animation: heroFloat 6s ease-in-out infinite; }
+.hero-float-card span { display: block; font-size: 11px; letter-spacing: 1.8px; color: var(--accent-moss); font-weight: 800; }
+.hero-float-card strong { display: block; font-size: 28px; line-height: 1.05; color: #fff; margin-top: 4px; }
+.hero-float-card small { display: block; color: #9fb4bd; font-size: 11px; }
+.float-qc { left: 2%; top: 15%; }
+.float-oem { right: 0; top: 26%; animation-delay: -1.8s; }
+.float-ddp { left: 10%; bottom: 13%; animation-delay: -3.2s; }
+.hero-orb { position: absolute; z-index: 1; border-radius: 999px; filter: blur(2px); opacity: 0.55; pointer-events: none; }
+.hero-orb-one { width: 120px; height: 120px; left: 6%; bottom: 18%; background: radial-gradient(circle, rgba(47,208,139,0.45), transparent 70%); animation: heroDrift 11s ease-in-out infinite; }
+.hero-orb-two { width: 72px; height: 72px; right: 18%; top: 18%; background: radial-gradient(circle, rgba(255,184,77,0.48), transparent 68%); animation: heroDrift 9s -2s ease-in-out infinite; }
+.hero-scroll { position: absolute; left: 50%; bottom: 28px; z-index: 3; margin: 0; transform: translateX(-50%); color: rgba(255,255,255,0.5); }
+
+.section { position: relative; background: linear-gradient(180deg, rgba(9,16,24,0.72), rgba(15,25,35,0.9)); }
+.section::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 18% 0%, rgba(47,208,139,0.09), transparent 28rem), radial-gradient(circle at 92% 20%, rgba(255,184,77,0.08), transparent 24rem); }
+.section > .container { position: relative; z-index: 1; }
+.section-light { background: linear-gradient(135deg, #fffaf1 0%, #edf7f0 48%, #f9efe1 100%); color: var(--text-dark); }
+.section-light::before { background: radial-gradient(circle at 8% 10%, rgba(47,208,139,0.12), transparent 24rem), radial-gradient(circle at 100% 0%, rgba(255,184,77,0.13), transparent 22rem); }
+.trust-bar { background: rgba(8,14,21,0.82); border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(18px); }
+.trust-item { border-radius: 18px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+.trust-num { color: #79f2ba; }
+.product-card, .feat-cat-card, .reach-card, .why-card, .review-card, .product-detail, .contact-form, .cart-panel, .cart-addr-panel { box-shadow: var(--shadow); }
+.product-card, .feat-cat-card, .reach-card { background: linear-gradient(145deg, rgba(20,32,44,0.96), rgba(12,20,30,0.98)); border-color: rgba(255,255,255,0.1); }
+.product-card:hover, .feat-cat-card:hover, .reach-card:hover { border-color: rgba(47,208,139,0.42); box-shadow: var(--shadow-lg); }
+.feat-cat-card::after, .product-card::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent); transform: translateX(-120%); transition: transform 0.65s ease; }
+.feat-cat-card:hover::after, .product-card:hover::after { transform: translateX(120%); }
+.footer { background: linear-gradient(180deg, #0a1018, #070b10); }
+
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes heroFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+@keyframes heroDrift { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(28px,-24px,0) scale(1.12); } }
+@keyframes ringSpin { to { transform: rotate(360deg); } }
+@keyframes glowPulse { 0%, 100% { opacity: 0.68; transform: scale(1); } 50% { opacity: 0.95; transform: scale(1.12); } }
+@keyframes heroGradient { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-product, .hero-float-card, .hero-ring, .hero-orb, .hero::after, .hero-copy, .hero-visual { animation: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .hero-shell { grid-template-columns: 1fr; gap: 22px; text-align: center; }
+  .hero-content { margin: 0 auto; }
+  .hero-b2b-tags, .hero-btns { justify-content: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .hero-proof { margin-left: auto; margin-right: auto; }
+  .hero-visual { min-height: 430px; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 104px 18px 64px; min-height: auto; }
+  .hero h1 { font-size: clamp(38px, 13vw, 58px); letter-spacing: -2px; }
+  .hero p { font-size: 15px; }
+  .hero-shell { gap: 8px; }
+  .hero-proof { grid-template-columns: 1fr; }
+  .hero-proof div { padding: 12px 14px; }
+  .hero-visual { min-height: 330px; transform: scale(0.92); transform-origin: center top; }
+  .hero-float-card { min-width: 112px; padding: 11px 12px; }
+  .hero-float-card strong { font-size: 22px; }
+  .float-qc { left: -2%; top: 12%; }
+  .float-oem { right: -3%; top: 25%; }
+  .float-ddp { left: 4%; bottom: 8%; }
+  .trust-grid { gap: 10px; }
+  .trust-item { padding: 18px 10px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="nav">
+  <a href="#" class="nav-logo" onclick="navigateHome(event)">
+    <img src="logo.png" alt="HUANYIN" class="logo-mark">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#products" data-es="Productos" data-en="Products" onclick="document.getElementById('navLinks').classList.remove('open')">Productos</a>
+    <a href="#" onclick="navigateToSecondary(event, 'why-us')" data-es="Why Us / 推荐信" data-en="Why Us / Reviews">Why Us / 推荐信</a>
+	    <a href="#" onclick="navigateToAbout(event)" data-es="Empresa / Certificaciones" data-en="Company / Certifications">Empresa / Certificaciones</a>
+		    <a href="#" onclick="navigateToVerification(event)" data-es="3级验证 / 售后" data-en="3-Level QC / After-Sales">3级验证 / 售后</a>
+		    <a href="#" onclick="navigateToAfterSales(event)" data-es="售后查询" data-en="After-Sales Lookup">售后查询</a>
+                <div class="lang-toggle">
+      <button class="active" data-lang="es">ES</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+  <div class="nav-actions">
+    <a href="https://wa.me/528261253244" target="_blank" class="nav-wa">
+      <span class="nav-wa-dot"></span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.08c-1.92 0-3.72-.5-5.28-1.38l-.36-.24-3.54.78.78-3.48-.24-.36A10.08 10.08 0 011.92 12C1.92 6.42 6.42 1.92 12 1.92S22.08 6.42 22.08 12 17.58 22.08 12 22.08z"/></svg>
+      <span data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+    </a>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ MAIN PAGE (列表页) ============ -->
+<div class="page-section active" id="pageHome">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+  <div class="hero-shell">
+    <div class="hero-content hero-copy">
+      <div class="hero-badge"><span class="dot"></span> <span data-es="Proveedor B2B de Electrónica — Directo de Fábrica" data-en="B2B Electronics Supplier — Direct from Factory">Proveedor B2B de Electrónica — Directo de Fábrica</span></div>
+      <h1 data-es="Construye una línea de electrónica <em>premium</em> lista para vender" data-en="Build a <em>premium</em> electronics line ready to sell">Construye una línea de electrónica <em>premium</em> lista para vender</h1>
+      <p data-es="Mayorista directo de fábrica para distribuidores globales: MOQ desde 50 unidades, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días." data-en="Factory-direct wholesale for global distributors: MOQ from 50 units, OEM packaging, 3-stage QC, and DDP delivery in 5–7 days.">Mayorista directo de fábrica para distribuidores globales: MOQ desde 50 unidades, empaque OEM, control de calidad en 3 etapas y envío DDP en 5–7 días.</p>
+      <div class="hero-b2b-tags">
+        <span class="hero-b2b-tag">Factory Direct</span>
+        <span class="hero-b2b-tag">MOQ 50+</span>
+        <span class="hero-b2b-tag gold">OEM / ODM</span>
+        <span class="hero-b2b-tag">DDP Shipping</span>
+        <span class="hero-b2b-tag gold">CE · FCC · RoHS</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-light" data-es="Ver Catálogo B2B" data-en="View B2B Catalog">Ver Catálogo B2B</a>
+        <a href="https://wa.me/528261253244" target="_blank" class="btn btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          <span data-es="Solicitar Cotización" data-en="Request a Quote">Solicitar Cotización</span>
+        </a>
+        <a href="#" onclick="navigateToSecondary(event,'contact')" class="btn btn-moss" data-es="Contactar Ahora" data-en="Contact Now">Contactar Ahora</a>
+      </div>
+      <div class="hero-proof">
+        <div><strong>500+</strong><span data-es="Clientes B2B" data-en="B2B Clients">Clientes B2B</span></div>
+        <div><strong>20+</strong><span data-es="Países" data-en="Countries">Países</span></div>
+        <div><strong>50k+</strong><span data-es="Unidades / mes" data-en="Units / month">Unidades / mes</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Premium electronics hero visual">
+      <div class="hero-device-card">
+        <div class="hero-ring hero-ring-one"></div>
+        <div class="hero-ring hero-ring-two"></div>
+        <img class="hero-product" src="airpods-pro-2-hero-select-202409" alt="Premium wireless earbuds">
+        <div class="hero-glow"></div>
+      </div>
+      <div class="hero-float-card float-qc"><span>QC</span><strong>0.3%</strong><small data-es="daño promedio" data-en="avg. damage">daño promedio</small></div>
+      <div class="hero-float-card float-oem"><span>OEM</span><strong>72h</strong><small data-es="mockup rápido" data-en="fast mockup">mockup rápido</small></div>
+      <div class="hero-float-card float-ddp"><span>DDP</span><strong>5–7d</strong><small data-es="entrega" data-en="delivery">entrega</small></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="section trust-bar" style="padding: 20px 32px;">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-label" data-es="Años Exportando" data-en="Years Exporting">Años Exportando</div></div>
+      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label" data-es="Clientes B2B Activos" data-en="Active B2B Clients">Clientes B2B Activos</div></div>
+      <div class="trust-item"><div class="trust-num">20+</div><div class="trust-label" data-es="Países de Exportación" data-en="Export Countries">Países de Exportación</div></div>
+      <div class="trust-item"><div class="trust-num">50k+</div><div class="trust-label" data-es="Unidades / Mes" data-en="Units per Month">Unidades / Mes</div></div>
+      <div class="trust-item"><div class="trust-num" style="font-size:18px;">CE·FCC·RoHS</div><div class="trust-label" data-es="Certificaciones Globales" data-en="Global Certifications">Certificaciones Globales</div></div>
+      <div class="trust-item"><div class="trust-num">MOQ 50</div><div class="trust-label" data-es="Pedido Mínimo (uds)" data-en="Min. Order (units)">Pedido Mínimo (uds)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS SECTION ============ -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-label" data-es="CATÁLOGO" data-en="CATALOG">CATÁLOGO</div>
+    <h2 class="section-title" data-es="Productos Destacados" data-en="Featured Products">Productos Destacados</h2>
+    <p class="section-subtitle" data-es="Electrónica premium seleccionada para distribuidores. Cada producto pasa por 3 etapas de control de calidad." data-en="Premium electronics curated for distributors. Every product passes 3-stage quality inspection." style="margin-bottom:48px">Electrónica premium seleccionada para distribuidores. Cada producto pasa por 3 etapas de control de calidad.</p>
+
+    <!-- 3 Featured Categories (large) -->
+    <div class="feat-cats">
+      <div class="feat-cat-card" onclick="filterByFeatured('airpods')">
+        <div class="feat-cat-title">AirPods</div>
+      </div>
+      <div class="feat-cat-card" onclick="filterByFeatured('airpods-pro')">
+        <div class="feat-cat-title">AirPods Pro</div>
+      </div>
+      <div class="feat-cat-card" onclick="filterByFeatured('airpods-max')">
+        <div class="feat-cat-title">AirPods Max</div>
+      </div>
+    </div>
+
+    <!-- Sub Categories (smaller) -->
+    <div class="sub-cats" id="subCats">
+      <button class="sub-cat-btn" data-cat="watches" data-es="Relojes" data-en="Watches">Relojes</button>
+      <button class="sub-cat-btn" data-cat="labubu" data-es="Labubu" data-en="Labubu">Labubu</button>
+      <button class="sub-cat-btn" data-cat="lifestyle" data-es="Estilo de Vida" data-en="Lifestyle">Estilo de Vida</button>
+      <button class="sub-cat-btn" data-cat="cameras" data-es="Cámaras Seg." data-en="Security Cam.">Cámaras Seg.</button>
+      <button class="sub-cat-btn" data-cat="sports" data-es="Cámaras Dep." data-en="Sports Cam.">Cámaras Dep.</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ GLOBAL REACH ============ -->
+<section class="section" id="global-reach">
+  <div class="container">
+    <div class="section-label" data-es="PRESENCIA GLOBAL" data-en="GLOBAL REACH">PRESENCIA GLOBAL</div>
+    <h2 class="section-title" data-es="Conectando China con el Mundo" data-en="Connecting China to the World">Conectando China con el Mundo</h2>
+    <p class="section-subtitle" data-es="Tres almacenes estratégicamente ubicados para servir a cada región con entrega local rápida." data-en="Three strategically located warehouses to serve each region with fast local delivery." style="margin-bottom:40px">Tres almacenes estratégicamente ubicados para servir a cada región con entrega local rápida.</p>
+    <div class="reach-grid">
+      <div class="reach-card">
+        <div class="reach-flag">🇧🇷</div>
+        <h3>São Paulo, Brasil</h3>
+        <div class="address">Av. das Nações Unidas 18001, Santo Amaro, São Paulo - SP</div>
+        <img class="reach-map" src="images/map-saopaulo.webp" alt="São Paulo Map" loading="lazy">
+        <div class="eta" data-es="2-3 días a todo Latinoamérica" data-en="2-3 days to all Latin America">2-3 días a todo Latinoamérica</div>
+      </div>
+      <div class="reach-card">
+        <div class="reach-flag">🇩🇪</div>
+        <h3>Frankfurt, Alemania</h3>
+        <div class="address">Hanauer Landstrasse 211B, 60314 Frankfurt am Main</div>
+        <img class="reach-map" src="images/map-frankfurt.webp" alt="Frankfurt Map" loading="lazy">
+        <div class="eta" data-es="2-3 días a toda Europa" data-en="2-3 days to all Europe">2-3 días a toda Europa</div>
+      </div>
+      <div class="reach-card">
+        <div class="reach-flag">🇹🇭</div>
+        <h3>Bangkok, Tailandia</h3>
+        <div class="address">123/5 Ratchadaphisek Road, Din Daeng, Bangkok 10400</div>
+        <img class="reach-map" src="images/map-bangkok.webp" alt="Bangkok Map" loading="lazy">
+        <div class="eta" data-es="Despacho rápido a todo ASEAN" data-en="Fast dispatch across ASEAN">Despacho rápido a todo ASEAN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-label" data-es="PROCESO" data-en="PROCESS">PROCESO</div>
+    <h2 class="section-title" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</h2>
+    <p class="section-subtitle" data-es="Proceso simple de 6 pasos, desde la selección hasta la entrega." data-en="Simple 6-step process from selection to delivery." style="margin-bottom:48px">Proceso simple de 6 pasos, desde la selección hasta la entrega.</p>
+    <div class="process-steps">
+      <div class="process-step"><div class="process-num">01</div><h4 data-es="Seleccionar" data-en="Select">Seleccionar</h4><p data-es="Explora el catálogo" data-en="Browse catalog">Explora el catálogo</p></div>
+      <div class="process-step"><div class="process-num">02</div><h4 data-es="Cotizar" data-en="Quote">Cotizar</h4><p data-es="Confirma con ventas" data-en="Confirm with sales">Confirma con ventas</p></div>
+      <div class="process-step"><div class="process-num">03</div><h4 data-es="Empaque" data-en="Packaging">Empaque</h4><p data-es="Personalización" data-en="Customization">Personalización</p></div>
+      <div class="process-step"><div class="process-num">04</div><h4 data-es="Pago" data-en="Payment">Pago</h4><p data-es="Transferencia local" data-en="Local transfer">Transferencia local</p></div>
+      <div class="process-step"><div class="process-num">05</div><h4 data-es="Envío" data-en="Shipping">Envío</h4><p data-es="5-7 días DDP" data-en="5-7 days DDP">5-7 días DDP</p></div>
+      <div class="process-step"><div class="process-num">06</div><h4 data-es="Entrega" data-en="Delivery">Entrega</h4><p data-es="Recibe tu mercancía" data-en="Receive goods">Recibe tu mercancía</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:8px;color:var(--text-light)">HUANYIN</h3>
+        <p data-es="Electrónica de consumo premium para distribuidores globales." data-en="Premium consumer electronics for global distributors.">Electrónica de consumo premium para distribuidores globales.</p>
+        <a href="https://wa.me/528261253244" style="color:var(--whatsapp);margin-top:8px;display:inline-flex;align-items:center;gap:6px" data-es="Hablar por WhatsApp" data-en="Chat on WhatsApp">Hablar por WhatsApp</a>
+      </div>
+      <div><h4 data-es="Productos" data-en="Products">Productos</h4><a href="#">AirPods Serie</a><a href="#">Relojes</a><a href="#">Labubu</a><a href="#">Cámaras</a></div>
+      <div><h4 data-es="Empresa" data-en="Company">Empresa</h4><a href="#" onclick="navigateToSecondary(event, 'why-us')">Why Us / 推荐信</a><a href="#" onclick="navigateToAbout(event)">Empresa / Certificaciones</a><a href="#" onclick="navigateToVerification(event)">3级验证 / 售后</a><a href="#" onclick="navigateToAfterSales(event)">售后查询</a></div>
+      <div><h4 data-es="Soporte" data-en="Support">Soporte</h4><a href="#" onclick="navigateToSecondary(event, 'contact')">Contacto</a><a href="https://wa.me/528261253244">WhatsApp</a><a href="mailto:taotao5470@gmail.com">Email</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 Shenzhen Huanyin Technology Co., Ltd.</div>
+  </div>
+</footer>
+
+</div><!-- /#pageHome -->
+
+<!-- ============ PRODUCT DETAIL PAGE (独立详情页) ============ -->
+<div class="page-section" id="pageProduct">
+  <div class="product-page-header">
+    <div class="container">
+      <button class="btn-back" onclick="navigateBack()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-es="Volver a Productos" data-en="Back to Products">Volver a Productos</span>
+      </button>
+    </div>
+  </div>
+  <div class="product-detail" id="productDetail"></div>
+</div><!-- /#pageProduct -->
+
+
+<!-- ============ ABOUT PAGE (Empresa / Certificaciones) ============ -->
+<div class="page-section" id="pageAbout">
+  <div class="product-page-header">
+    <div class="container">
+      <button class="btn-back" onclick="navigateBack()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-es="Volver al Inicio" data-en="Back to Home">Volver al Inicio</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT US ============ -->
+  <section class="section section-light" id="about-us">
+    <div class="container">
+      <div class="section-label" data-es="SOBRE NOSOTROS" data-en="ABOUT US">SOBRE NOSOTROS</div>
+      <div class="about-tabs" style="display:flex;justify-content:center;gap:0;margin-bottom:32px">
+        <button class="about-tab active" onclick="switchAboutTab('about')" data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</button>
+        <button class="about-tab" onclick="switchAboutTab('certs')" data-es="Certificaciones" data-en="Certifications">Certificaciones</button>
+        <button class="about-tab" onclick="switchAboutTab('team')" data-es="Equipo" data-en="Team">Equipo</button>
+      </div>
+
+      <!-- Panel: About Us -->
+      <div class="about-panel active" id="aboutPanelAbout" style="display:block">
+        <h2 class="section-title" data-es="Fabricante Profesional de Dispositivos Inteligentes" data-en="Professional Smart Device Manufacturer">Fabricante Profesional de Dispositivos Inteligentes</h2>
+        <p class="section-subtitle" data-es="Integrando desarrollo, producción y ventas. De Shenzhen al mundo." data-en="Integrating R&D, production, and sales. From Shenzhen to the world." style="margin-bottom:40px">Integrando desarrollo, producción y ventas. De Shenzhen al mundo.</p>
+        <div class="about-stats" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:0 auto 40px">
+          <div style="text-align:center;padding:20px 12px;background:var(--bg-primary);border-radius:var(--radius);border:1px solid var(--border-dark)"><div style="font-size:28px;font-weight:700;color:var(--accent-moss)">20K</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px" data-es="m² Parque Industrial" data-en="m² Industrial Park">m² Parque Industrial</div></div>
+          <div style="text-align:center;padding:20px 12px;background:var(--bg-primary);border-radius:var(--radius);border:1px solid var(--border-dark)"><div style="font-size:28px;font-weight:700;color:var(--accent-moss)">200+</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px" data-es="Empleados" data-en="Employees">Empleados</div></div>
+          <div style="text-align:center;padding:20px 12px;background:var(--bg-primary);border-radius:var(--radius);border:1px solid var(--border-dark)"><div style="font-size:28px;font-weight:700;color:var(--accent-moss)">35</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px" data-es="Ingenieros de Solución" data-en="Solution Engineers">Ingenieros de Solución</div></div>
+          <div style="text-align:center;padding:20px 12px;background:var(--bg-primary);border-radius:var(--radius);border:1px solid var(--border-dark)"><div style="font-size:28px;font-weight:700;color:var(--accent-moss)">20</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px" data-es="Especialistas I+D" data-en="R&D Specialists">Especialistas I+D</div></div>
+        </div>
+        <div style="max-width:1100px;margin:0 auto 40px;text-align:center">
+          <img src="images/huanyin_img-000_bg.jpg" alt="Huanyin Technology Company Profile" style="width:100%;max-width:100%;display:block;border-radius:var(--radius);margin-bottom:28px">
+          <img src="images/huanyin_img-014_bg.jpg" alt="Huanyin Smart Earphone Manufacturer" style="width:100%;max-width:100%;display:block;border-radius:var(--radius)">
+        </div>
+        <div style="max-width:720px;margin:0 auto 40px;text-align:center">
+          <p style="font-size:16px;line-height:1.8;color:var(--text-dark);margin-bottom:24px" data-es="<strong>Shenzhen Huanyin Technology Co., Ltd.</strong> es una empresa de cadena de suministro de dispositivos inteligentes que integra desarrollo de soluciones, adquisición, procesamiento y ventas. Ubicada en la hermosa ciudad de Shenzhen, Guangdong, contamos con un parque industrial de 20,000 m², más de 200 empleados, un departamento de soluciones con 35 ingenieros y un equipo de I+D de 20 especialistas." data-en="<strong>Shenzhen Huanyin Technology Co., Ltd.</strong> is a smart device supply chain company integrating solution development, procurement, processing, and sales. Located in the beautiful city of Shenzhen, Guangdong, we own a 20,000 m² industrial park with over 200 employees, a 35-person Solutions Department, and a 20-person R&D team."><strong>Shenzhen Huanyin Technology Co., Ltd.</strong> es una empresa de cadena de suministro de dispositivos inteligentes que integra desarrollo de soluciones, adquisición, procesamiento y ventas. Ubicada en la hermosa ciudad de Shenzhen, Guangdong, contamos con un parque industrial de 20,000 m², más de 200 empleados, un departamento de soluciones con 35 ingenieros y un equipo de I+D de 20 especialistas.</p>
+          <p style="font-size:16px;line-height:1.8;color:var(--text-dark)" data-es="Contamos con un Departamento de Personalización, Departamento de Ventas y un equipo profesional de servicio posventa, lo que nos permite ofrecer <strong>soluciones personalizadas para diversos clientes</strong> y maximizar la satisfacción del cliente. Nuestros productos se exportan a Asia, Europa, Norteamérica, Sudamérica y África, y son reconocidos por su tecnología avanzada, diseño elegante y excelente calidad de sonido." data-en="We are equipped with a Customization Department, Sales Department, and a professional after-sales team, enabling us to provide <strong>tailored solutions for diverse clients</strong> and maximize customer satisfaction. Our products are exported to Asia, Europe, North America, South America, and Africa — recognized for advanced technology, stylish design, and excellent sound quality.">Contamos con un Departamento de Personalización, Departamento de Ventas y un equipo profesional de servicio posventa, lo que nos permite ofrecer <strong>soluciones personalizadas para diversos clientes</strong> y maximizar la satisfacción del cliente. Nuestros productos se exportan a Asia, Europa, Norteamérica, Sudamérica y África, y son reconocidos por su tecnología avanzada, diseño elegante y excelente calidad de sonido.</p>
+        </div>
+
+      </div>
+
+      <!-- Panel: Certifications -->
+      <div class="about-panel" id="aboutPanelCerts" style="display:none">
+        <h2 class="section-title" data-es="Certificaciones y Calidad" data-en="Certifications &amp; Quality">Certificaciones y Calidad</h2>
+        <p class="section-subtitle" data-es="Cumplimos con los más altos estándares internacionales." data-en="We meet the highest international standards." style="margin-bottom:32px">Cumplimos con los más altos estándares internacionales.</p>
+        <div style="max-width:1100px;margin:0 auto 24px;text-align:center">
+          <img src="images/huanyin_img-012_bg.jpg" alt="Huanyin Certifications" style="width:100%;max-width:100%;display:block;border-radius:var(--radius);margin-bottom:32px">
+        </div>
+        <div class="certs-grid" id="certsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;max-width:960px;margin:0 auto">
+        </div>
+      </div>
+
+      <!-- Panel: Team -->
+      <div class="about-panel" id="aboutPanelTeam" style="display:none">
+        <h2 class="section-title" data-es="Nuestro Equipo" data-en="Our Team">Nuestro Equipo</h2>
+        <p class="section-subtitle" data-es="Mano a mano, creamos brillantez juntos." data-en="Hand in Hand, We Create Brilliance Together." style="margin-bottom:32px">Mano a mano, creamos brillantez juntos.</p>
+        <div style="max-width:1260px;margin:0 auto 32px;text-align:center">
+          <img src="images/huanyin_img-010_bg.jpg" alt="Huanyin Team Spirit" style="width:100%;display:block;border-radius:var(--radius);margin-bottom:24px">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:0 auto">
+          <div style="background:var(--bg-primary);border-radius:var(--radius);padding:28px 24px;text-align:center;border:1px solid var(--border-dark)"><div style="font-size:32px;margin-bottom:12px">🎯</div><h3 style="font-size:15px;font-weight:700;color:var(--text-light);margin-bottom:6px" data-es="Nuestra Filosofía" data-en="Our Philosophy">Nuestra Filosofía</h3><p style="font-size:14px;color:var(--text-muted);line-height:1.6" data-es="&laquo;Luchar por la excelencia y la perfección&raquo; — Controlamos estrictamente cada etapa de producción para garantizar una calidad estable y confiable." data-en="&ldquo;Striving for excellence and perfection&rdquo; — We strictly control every production stage to ensure stable and reliable quality.">&laquo;Luchar por la excelencia y la perfección&raquo; — Controlamos estrictamente cada etapa de producción para garantizar una calidad estable y confiable.</p></div>
+          <div style="background:var(--bg-primary);border-radius:var(--radius);padding:28px 24px;text-align:center;border:1px solid var(--border-dark)"><div style="font-size:32px;margin-bottom:12px">🤝</div><h3 style="font-size:15px;font-weight:700;color:var(--text-light);margin-bottom:6px" data-es="Espíritu de Equipo" data-en="Team Spirit">Espíritu de Equipo</h3><p style="font-size:14px;color:var(--text-muted);line-height:1.6" data-es="&laquo;Mano a mano, creamos brillantez juntos&raquo; — La colaboración y la dedicación nos impulsan a ofrecer lo mejor a nuestros socios globales." data-en="&ldquo;Hand in Hand, We Create Brilliance Together&rdquo; — Collaboration and dedication drive us to deliver the best to our global partners.">&laquo;Mano a mano, creamos brillantez juntos&raquo; — La colaboración y la dedicación nos impulsan a ofrecer lo mejor a nuestros socios globales.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-light" id="contact">
+    <div class="container">
+      <div class="section-label" data-es="CONTACTO" data-en="CONTACT">CONTACTO</div>
+      <h2 class="section-title" data-es="Contáctanos" data-en="Get in Touch">Contáctanos</h2>
+      <p class="section-subtitle" data-es="Inicia tu cotización hoy. Respondemos en menos de 2 horas." data-en="Start your inquiry today. We respond within 2 hours." style="margin-bottom:40px">Inicia tu cotización hoy. Respondemos en menos de 2 horas.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 data-es="Información de Contacto" data-en="Contact Information">Información de Contacto</h3>
+          <p data-es="Nuestro equipo está listo para ayudarte con tu pedido." data-en="Our team is ready to help with your order.">Nuestro equipo está listo para ayudarte con tu pedido.</p>
+          <div class="contact-item"><div class="ci-icon">💬</div><div><strong>WhatsApp</strong><br><span style="font-size:13px;color:var(--text-muted-dark)">+52 826 125 3244</span></div></div>
+          <div class="contact-item"><div class="ci-icon">📧</div><div><strong>Email</strong><br><span style="font-size:13px;color:var(--text-muted-dark)">taotao5470@gmail.com</span></div></div>
+          <div class="contact-item"><div class="ci-icon">📍</div><div><strong data-es="Dirección" data-en="Address">Dirección</strong><br><span style="font-size:13px;color:var(--text-muted-dark)">No. 1006, Longteli Technology Building, Shenzhen, China</span></div></div>
+        
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border-dark)">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;font-weight:600" data-es="Síguenos en redes sociales" data-en="Follow us on social media">Síguenos en redes sociales</p>
+            <div style="display:flex;gap:10px">
+              <a href="https://www.facebook.com/profile.php?id=61552988214027" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:10px 18px;background:#1877F2;color:#fff;border-radius:24px;font-weight:600;font-size:13px;transition:all 0.25s;text-decoration:none" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(24,119,242,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
+              <a href="https://www.tiktok.com/@mfzdunjsl449" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:10px 18px;background:#000;color:#fff;border-radius:24px;font-weight:600;font-size:13px;border:1px solid #333;transition:all 0.25s;text-decoration:none" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</a>
+            </div>
+          </div></div>
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="form-title" data-es="Solicitar Información" data-en="Request Information">Solicitar Información</div>
+          <div class="form-row">
+            <div class="form-group"><label data-es="Nombre Completo *" data-en="Full Name *">Nombre Completo *</label><input type="text" required></div>
+            <div class="form-group"><label data-es="Empresa *" data-en="Company *">Empresa *</label><input type="text" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label data-es="País *" data-en="Country *">País *</label><select required><option value="">—</option><option>Mexico</option><option>Colombia</option><option>Chile</option><option>Peru</option><option>Brazil</option><option>Argentina</option><option>Spain</option><option>Germany</option><option>France</option><option>UK</option><option>Thailand</option><option>Vietnam</option><option>Philippines</option><option>Other</option></select></div>
+            <div class="form-group"><label data-es="Teléfono/WhatsApp *" data-en="Phone/WhatsApp *">Teléfono/WhatsApp *</label><input type="text" required></div>
+          </div>
+          <div class="form-row single" style="margin-bottom:14px"><div class="form-group"><label data-es="Email" data-en="Email">Email</label><input type="email"></div></div>
+          <div class="form-row single" style="margin-bottom:14px"><div class="form-group"><label data-es="Productos de Interés" data-en="Products of Interest">Productos de Interés</label><input type="text" placeholder="AirPods Pro 2, Watch S10..."></div></div>
+          <div class="form-row single" style="margin-bottom:14px"><div class="form-group"><label data-es="Mensaje" data-en="Message">Mensaje</label><textarea></textarea></div></div>
+          <button type="submit" class="btn btn-moss" style="width:100%;justify-content:center" data-es="Enviar Consulta" data-en="Submit Inquiry">Enviar Consulta</button>
+        </form>
+      </div>
+    </div>
+
+</div><!-- /#pageAbout -->
+<!-- ============ SECONDARY PAGE (Why Us + Reviews) ============ -->
+<div class="page-section" id="pageSecondary">
+  <div class="product-page-header">
+    <div class="container">
+      <button class="btn-back" onclick="navigateBack()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-es="Volver al Inicio" data-en="Back to Home">Volver al Inicio</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ WHY US + REVIEWS ============ -->
+  <section class="section section-light" id="why-us">
+    <div class="container">
+      <div class="section-label" data-es="POR QUÉ NOSOTROS" data-en="WHY US">POR QUÉ NOSOTROS</div>
+
+      <div class="about-tabs" style="display:flex;justify-content:center;gap:0;margin-bottom:32px">
+        <button class="about-tab active" onclick="switchSecondaryTab('whyus')" data-es="Por Qué Elegirnos" data-en="Why Choose Us">Por Qué Elegirnos</button>
+        <button class="about-tab" onclick="switchSecondaryTab('reviews')" data-es="Reseñas y Recomendaciones" data-en="Reviews & Testimonials">Reseñas y Recomendaciones</button>
+      </div>
+
+      <!-- Panel: Why Us -->
+      <div class="about-panel active" id="secondaryPanelWhyus" style="display:block">
+        <h2 class="section-title" data-es="Tu Socio de Exportación Confiable" data-en="Your Reliable Export Partner">Tu Socio de Exportación Confiable</h2>
+        <p class="section-subtitle" data-es="6 razones por las que distribuidores en 30+ países nos eligen." data-en="6 reasons why distributors in 30+ countries choose us." style="margin-bottom:40px">6 razones por las que distribuidores en 30+ países nos eligen.</p>
+        <div class="why-grid">
+          <div class="why-card"><div class="why-icon">🛡️</div><h3 data-es="Seguridad Garantizada" data-en="Security Assurance">Seguridad Garantizada</h3><p data-es="Control de calidad en 3 etapas. Cada lote probado antes del envío." data-en="3-stage QC. Every batch tested before shipment.">Control de calidad en 3 etapas. Cada lote probado antes del envío.</p></div>
+          <div class="why-card"><div class="why-icon">🎨</div><h3 data-es="Soporte OEM/ODM" data-en="OEM/ODM Support">Soporte OEM/ODM</h3><p data-es="Personalización de marca, empaque y diseño de producto." data-en="Custom branding, packaging, and product design.">Personalización de marca, empaque y diseño de producto.</p></div>
+          <div class="why-card"><div class="why-icon">💰</div><h3 data-es="Control de Costos" data-en="Cost Control">Control de Costos</h3><p data-es="Precios competitivos directo de fábrica en Shenzhen." data-en="Competitive factory-direct pricing from Shenzhen.">Precios competitivos directo de fábrica en Shenzhen.</p></div>
+          <div class="why-card"><div class="why-icon">⚡</div><h3 data-es="Servicio Dedicado" data-en="Dedicated Service">Servicio Dedicado</h3><p data-es="Respuesta en 2 horas. Gerente de cuenta asignado a cada socio." data-en="2-hour response. Account manager for every partner.">Respuesta en 2 horas. Gerente de cuenta asignado a cada socio.</p></div>
+          <div class="why-card"><div class="why-icon">📦</div><h3 data-es="Almacenes Locales" data-en="Local Warehousing">Almacenes Locales</h3><p data-es="Inventario listo en Brasil, Alemania y Tailandia." data-en="Ready stock in Brazil, Germany, and Thailand.">Inventario listo en Brasil, Alemania y Tailandia.</p></div>
+          <div class="why-card"><div class="why-icon">📋</div><h3 data-es="Certificaciones" data-en="Certifications">Certificaciones</h3><p data-es="CE, FCC, RoHS, ISO 9001. Cumplimiento total para importación." data-en="CE, FCC, RoHS, ISO 9001. Full import compliance.">CE, FCC, RoHS, ISO 9001. Cumplimiento total para importación.</p></div>
+        </div>
+        <div style="max-width:1260px;margin:48px auto 0;text-align:center">
+          <img src="images/huanyin_img-002_bg.jpg" alt="Huanyin Factory" style="width:100%;display:block;border-radius:var(--radius)">
+        </div>
+      </div>
+
+      <!-- Panel: Reviews -->
+      <div class="about-panel" id="secondaryPanelReviews" style="display:none">
+        <h2 class="section-title" data-es="Lo Que Dicen Nuestros Clientes" data-en="What Our Clients Say">Lo Que Dicen Nuestros Clientes</h2>
+        <p class="section-subtitle" data-es="Distribuidores reales, resultados reales. Confianza construida con cada entrega." data-en="Real distributors, real results. Trust built with every delivery." style="margin-bottom:40px">Distribuidores reales, resultados reales. Confianza construida con cada entrega.</p>
+        <div class="reviews-grid">
+          <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-es="Aquí en México, unos audífonos con esta calidad cuestan el doble o triple. Sin duda volveré a pedir para revender porque mis clientes quedaron encantados. El envío llegó antes de lo esperado." data-en="Here in Mexico, earphones with this quality cost double or triple. I'll definitely order again because my clients were delighted. Shipping arrived ahead of schedule.">Aquí en México, unos audífonos con esta calidad cuestan el doble o triple. Sin duda volveré a pedir para revender porque mis clientes quedaron encantados. El envío llegó antes de lo esperado.</p><div class="review-author"><div class="review-avatar">CH</div><div><strong>Carlos Hernandez</strong><span data-es="Importador, México" data-en="Importer, Mexico">Importador, México</span></div></div></div>
+          <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Huanyin's Brazil warehouse cut our lead time from 35 to 5 days. Great quality & communication.</p><div class="review-author"><div class="review-avatar">CM</div><div><strong>Carlos M.</strong><span>Importer, Brazil</span></div></div></div>
+          <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-es="Excelente servicio. El gerente de cuenta respondió todas mis dudas en minutos. Los productos llegaron en perfecto estado." data-en="Excellent service. The account manager answered all my questions within minutes. Products arrived in perfect condition.">Excelente servicio. El gerente de cuenta respondió todas mis dudas en minutos. Los productos llegaron en perfecto estado.</p><div class="review-author"><div class="review-avatar">AR</div><div><strong>Andrés R.</strong><span data-es="Importador, Colombia" data-en="Importer, Colombia">Importador, Colombia</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#pageSecondary -->
+
+
+<!-- ============ VERIFICATION PAGE (3-Level + After-Sales) ============ -->
+<div class="page-section" id="pageVerification">
+  <div class="product-page-header">
+    <div class="container">
+      <button class="btn-back" onclick="navigateBack()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-es="Volver al Inicio" data-en="Back to Home">Volver al Inicio</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ 3-LEVEL VERIFICATION ============ -->
+  <section class="section section-light" id="verification">
+    <div class="container">
+      <div class="section-label" data-es="CONTROL DE CALIDAD" data-en="QUALITY CONTROL">CONTROL DE CALIDAD</div>
+      <h2 class="section-title" data-es="Sistema de Verificación en 3 Niveles" data-en="3-Level Verification System" style="text-align:center">Sistema de Verificación en 3 Niveles</h2>
+      <p class="section-subtitle" data-es="Cada producto pasa por tres capas de inspección antes de llegar a tus manos. Nuestra tasa de daños es inferior al <strong style='color:var(--accent-moss)'>0.3%</strong> — la más baja de la industria." data-en="Every product passes through three inspection layers before reaching you. Our damage rate is below <strong style='color:var(--accent-moss)'>0.3%</strong> — the lowest in the industry." style="margin-bottom:40px">Cada producto pasa por tres capas de inspección antes de llegar a tus manos. Nuestra tasa de daños es inferior al <strong style="color:var(--accent-moss)">0.3%</strong> — la más baja de la industria.</p>
+      <div class="verify-grid">
+        <div class="verify-card" style="background:#fff;border-radius:12px;padding:28px 20px;text-align:center;border:1px solid #e0dbd0;position:relative">
+          <div class="verify-badge" style="display:inline-block;padding:4px 14px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:16px;background:var(--accent-moss-light);color:var(--accent-moss-dark)">NIVEL 1</div>
+          <div style="font-size:40px;margin-bottom:12px">🏭</div>
+          <h4 style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--text-dark)" data-es="Inspección de Fábrica" data-en="Factory Inspection">Inspección de Fábrica</h4>
+          <ul style="text-align:left;font-size:13px;color:var(--text-muted-dark);line-height:1.8;padding-left:16px">
+            <li data-es="Prueba de funcionamiento 100% (sonido, micrófono, botones)" data-en="100% functional test (sound, mic, buttons)">Prueba de funcionamiento 100% (sonido, micrófono, botones)</li>
+            <li data-es="Control de calidad de ensamblaje (ajuste, soldadura, acabado)" data-en="Assembly QC (fit, solder, finish)">Control de calidad de ensamblaje (ajuste, soldadura, acabado)</li>
+            <li data-es="Inspección visual de carcasa y empaque" data-en="Visual inspection of housing & packaging">Inspección visual de carcasa y empaque</li>
+          </ul>
+        </div>
+        <div class="verify-card" style="background:#fff;border-radius:12px;padding:28px 20px;text-align:center;border:1px solid #e0dbd0;position:relative">
+          <div class="verify-badge" style="display:inline-block;padding:4px 14px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:16px;background:#fdf2e0;color:#b87e2a">NIVEL 2</div>
+          <div style="font-size:40px;margin-bottom:12px">🔬</div>
+          <h4 style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--text-dark)" data-es="Prueba de Laboratorio" data-en="Lab Testing">Prueba de Laboratorio</h4>
+          <ul style="text-align:left;font-size:13px;color:var(--text-muted-dark);line-height:1.8;padding-left:16px">
+            <li data-es="Prueba de batería (capacidad real, ciclos de carga)" data-en="Battery test (actual capacity, charge cycles)">Prueba de batería (capacidad real, ciclos de carga)</li>
+            <li data-es="Prueba de estabilidad de conexión Bluetooth" data-en="Bluetooth connection stability test">Prueba de estabilidad de conexión Bluetooth</li>
+            <li data-es="Prueba de durabilidad (caída, botones, conector)" data-en="Durability test (drop, buttons, connector)">Prueba de durabilidad (caída, botones, conector)</li>
+            <li data-es="Muestreo aleatorio por lote (AQL 2.5)" data-en="Random batch sampling (AQL 2.5)">Muestreo aleatorio por lote (AQL 2.5)</li>
+          </ul>
+        </div>
+        <div class="verify-card" style="background:#fff;border-radius:12px;padding:28px 20px;text-align:center;border:1px solid var(--accent-moss);position:relative">
+          <div class="verify-badge" style="display:inline-block;padding:4px 14px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:16px;background:#e6f5ec;color:var(--success)">NIVEL 3</div>
+          <div style="font-size:40px;margin-bottom:12px">✅</div>
+          <h4 style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--text-dark)" data-es="Auditoría de Terceros" data-en="Third-Party Audit">Auditoría de Terceros</h4>
+          <ul style="text-align:left;font-size:13px;color:var(--text-muted-dark);line-height:1.8;padding-left:16px">
+            <li data-es="Inspección pre-embarque por agencia independiente" data-en="Pre-shipment inspection by independent agency">Inspección pre-embarque por agencia independiente</li>
+            <li data-es="Verificación de certificaciones (CE, FCC, RoHS, ISO 9001)" data-en="Certification verification (CE, FCC, RoHS, ISO 9001)">Verificación de certificaciones (CE, FCC, RoHS, ISO 9001)</li>
+            <li data-es="Reporte de inspección disponible bajo solicitud" data-en="Inspection report available upon request">Reporte de inspección disponible bajo solicitud</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AFTER-SALES GUARANTEE ============ -->
+  <section class="section" id="after-sales-verify" style="background:var(--bg-surface)">
+    <div class="container">
+      <div class="section-label" data-es="GARANTÍA POSVENTA" data-en="AFTER-SALES GUARANTEE" style="text-align:center">GARANTÍA POSVENTA</div>
+      <h2 class="section-title" data-es="Política de Garantía y Servicio Posventa" data-en="Warranty & After-Sales Service Policy" style="text-align:center">Política de Garantía y Servicio Posventa</h2>
+      <p class="section-subtitle" data-es="Compromiso total con la calidad. Tasa de daños inferior al <strong style='color:var(--accent-moss)'>0.3%</strong>." data-en="Full commitment to quality. Damage rate below <strong style='color:var(--accent-moss)'>0.3%</strong>." style="margin-bottom:32px;text-align:center">Compromiso total con la calidad. Tasa de daños inferior al <strong style="color:var(--accent-moss)">0.3%</strong>.</p>
+      <div style="max-width:800px;margin:0 auto 40px">
+        <p style="font-size:16px;line-height:1.9;color:var(--text-dark);margin-bottom:24px" data-es="Si el producto no se puede utilizar o carece de funcionalidad, podemos <strong>reembolsar la diferencia de precio en su próximo pedido</strong> o podemos <strong>reemplazarlo de forma gratuita</strong>. Nuestra tasa de daños es inferior al <strong style='color:var(--accent-moss)'>0.3%</strong>, la más baja de la industria. Controlamos rigurosamente cada etapa de producción para garantizar la máxima calidad." data-en="If the product cannot be used or lacks functionality, we can <strong>refund the price difference on your next order</strong> or <strong>replace it free of charge</strong>. Our damage rate is below <strong style='color:var(--accent-moss)'>0.3%</strong>, the lowest in the industry. We rigorously control every production stage to ensure maximum quality.">Si el producto no se puede utilizar o carece de funcionalidad, podemos <strong>reembolsar la diferencia de precio en su próximo pedido</strong> o podemos <strong>reemplazarlo de forma gratuita</strong>. Nuestra tasa de daños es inferior al <strong style="color:var(--accent-moss)">0.3%</strong>, la más baja de la industria. Controlamos rigurosamente cada etapa de producción para garantizar la máxima calidad.</p>
+        <p style="font-size:16px;line-height:1.9;color:var(--text-dark);margin-bottom:24px" data-es="<strong>Cobertura de garantía:</strong> 30 días naturales desde la recepción de la mercancía. Cubrimos defectos de fabricación, fallos funcionales y daños durante el transporte. No cubrimos daños por mal uso o desgaste normal." data-en="<strong>Warranty coverage:</strong> 30 calendar days from receipt of goods. We cover manufacturing defects, functional failures, and shipping damage. Does not cover misuse or normal wear and tear."><strong>Cobertura de garantía:</strong> 30 días naturales desde la recepción de la mercancía. Cubrimos defectos de fabricación, fallos funcionales y daños durante el transporte. No cubrimos daños por mal uso o desgaste normal.</p>
+        <p style="font-size:16px;line-height:1.9;color:var(--text-dark)" data-es="<strong>Proceso de reclamación:</strong> Envíe una foto o video del producto defectuoso a su gerente de cuenta por WhatsApp. Procesamos su reclamación en menos de 24 horas. El reembolso o reemplazo se gestiona en su siguiente pedido sin costo adicional de envío." data-en="<strong>Claim process:</strong> Send a photo or video of the defective product to your account manager via WhatsApp. We process your claim within 24 hours. Refund or replacement is handled on your next order with no additional shipping cost."><strong>Proceso de reclamación:</strong> Envíe una foto o video del producto defectuoso a su gerente de cuenta por WhatsApp. Procesamos su reclamación en menos de 24 horas. El reembolso o reemplazo se gestiona en su siguiente pedido sin costo adicional de envío.</p>
+      </div>
+      <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
+        <div style="background:var(--bg-primary);border-radius:var(--radius);padding:28px 32px;text-align:center;min-width:160px;border:1px solid var(--border-dark)">
+          <div style="font-size:36px;margin-bottom:10px">🔄</div>
+          <div style="font-weight:700;font-size:15px;color:var(--text-light);margin-bottom:4px" data-es="Reembolso o Reemplazo" data-en="Refund or Replace">Reembolso o Reemplazo</div>
+          <div style="font-size:13px;color:var(--text-muted)" data-es="Sin costo adicional" data-en="No extra cost">Sin costo adicional</div>
+        </div>
+        <div style="background:var(--bg-primary);border-radius:var(--radius);padding:28px 32px;text-align:center;min-width:160px;border:1px solid var(--border-dark)">
+          <div style="font-size:36px;margin-bottom:10px">🛡️</div>
+          <div style="font-weight:700;font-size:15px;color:var(--text-light);margin-bottom:4px" data-es="< 0.3% Tasa de Daños" data-en="< 0.3% Damage Rate">< 0.3% Tasa de Daños</div>
+          <div style="font-size:13px;color:var(--text-muted)" data-es="La más baja de la industria" data-en="Lowest in the industry">La más baja de la industria</div>
+        </div>
+        <div style="background:var(--bg-primary);border-radius:var(--radius);padding:28px 32px;text-align:center;min-width:160px;border:1px solid var(--border-dark)">
+          <div style="font-size:36px;margin-bottom:10px">📦</div>
+          <div style="font-weight:700;font-size:15px;color:var(--text-light);margin-bottom:4px" data-es="Envío Asegurado" data-en="Insured Shipping">Envío Asegurado</div>
+          <div style="font-size:13px;color:var(--text-muted)" data-es="100% cobertura DDP" data-en="100% DDP coverage">100% cobertura DDP</div>
+        </div>
+        <div style="background:var(--bg-primary);border-radius:var(--radius);padding:28px 32px;text-align:center;min-width:160px;border:1px solid var(--border-dark)">
+          <div style="font-size:36px;margin-bottom:10px">⏱️</div>
+          <div style="font-weight:700;font-size:15px;color:var(--text-light);margin-bottom:4px" data-es="Respuesta en 24h" data-en="24h Response">Respuesta en 24h</div>
+          <div style="font-size:13px;color:var(--text-muted)" data-es="Procesamiento rápido" data-en="Fast processing">Procesamiento rápido</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#pageVerification -->
+
+
+<!-- ============ AFTER-SALES LOOKUP PAGE ============ -->
+<div class="page-section" id="pageAfterSales">
+  <div class="product-page-header">
+    <div class="container">
+      <button class="btn-back" onclick="navigateBack()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-es="Volver al Inicio" data-en="Back to Home">Volver al Inicio</span>
+      </button>
+    </div>
+  </div>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-label" data-es="CONSULTA POSVENTA" data-en="AFTER-SALES LOOKUP" style="text-align:center">CONSULTA POSVENTA</div>
+      <h2 class="section-title" data-es="Consultar Estado de Garantía" data-en="Warranty Status Lookup" style="text-align:center">Consultar Estado de Garantía</h2>
+      <p class="section-subtitle" data-es="Ingrese los datos de su pedido para consultar el estado de su garantía." data-en="Enter your order details to check your warranty status." style="margin-bottom:40px;text-align:center">Ingrese los datos de su pedido para consultar el estado de su garantía.</p>
+
+      <div style="max-width:560px;margin:0 auto">
+        <form id="afterSalesForm" onsubmit="handleAfterSalesLookup(event)" style="background:var(--bg-primary);border-radius:var(--radius);padding:36px 32px;border:1px solid var(--border-dark)">
+          <div style="margin-bottom:18px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:6px" data-es="Número de Pedido / Factura *" data-en="Order / Invoice Number *">Número de Pedido / Factura *</label>
+            <input type="text" id="asOrderNo" required style="width:100%;padding:12px 14px;border:1px solid var(--border-dark);border-radius:6px;font-size:14px;background:var(--bg-dark-card);color:var(--text-light)" data-es-placeholder="Ej: HY-2026-05001" data-en-placeholder="e.g. HY-2026-05001" placeholder="Ej: HY-2026-05001">
+          </div>
+          <div style="margin-bottom:18px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:6px" data-es="Número de Seguimiento Logístico *" data-en="Logistics Tracking Number *">Número de Seguimiento Logístico *</label>
+            <input type="text" id="asTracking" required style="width:100%;padding:12px 14px;border:1px solid var(--border-dark);border-radius:6px;font-size:14px;background:var(--bg-dark-card);color:var(--text-light)" data-es-placeholder="Número de guía / tracking" data-en-placeholder="Tracking / waybill number" placeholder="Número de guía / tracking">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+            <div>
+              <label style="display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:6px" data-es="Fecha de Envío *" data-en="Ship Date *">Fecha de Envío *</label>
+              <input type="date" id="asShipDate" required style="width:100%;padding:12px 14px;border:1px solid var(--border-dark);border-radius:6px;font-size:14px;background:var(--bg-dark-card);color:var(--text-light)">
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:6px" data-es="Teléfono / WhatsApp *" data-en="Phone / WhatsApp *">Teléfono / WhatsApp *</label>
+              <input type="text" id="asPhone" required style="width:100%;padding:12px 14px;border:1px solid var(--border-dark);border-radius:6px;font-size:14px;background:var(--bg-dark-card);color:var(--text-light)" data-es-placeholder="+52 1 55 XXXX XXXX" data-en-placeholder="+1 555 XXXX" placeholder="+52 1 55 XXXX XXXX">
+            </div>
+          </div>
+          <div style="margin-bottom:18px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:6px" data-es="Número de Serie del Producto Dañado *" data-en="Damaged Product Serial Number *">Número de Serie del Producto Dañado *</label>
+            <input type="text" id="asSerial" required style="width:100%;padding:12px 14px;border:1px solid var(--border-dark);border-radius:6px;font-size:14px;background:var(--bg-dark-card);color:var(--text-light)" data-es-placeholder="SN / IMEI del producto defectuoso" data-en-placeholder="SN / IMEI of defective product" placeholder="SN / IMEI del producto defectuoso">
+          </div>
+          <div style="margin-bottom:18px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:6px" data-es="Nombre del Producto *" data-en="Product Name *">Nombre del Producto *</label>
+            <input type="text" id="asBuyerName" required style="width:100%;padding:12px 14px;border:1px solid var(--border-dark);border-radius:6px;font-size:14px;background:var(--bg-dark-card);color:var(--text-light)" data-es-placeholder="Nombre del producto" data-en-placeholder="Product name" placeholder="Nombre del producto">
+          </div>
+          <div style="margin-bottom:24px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:6px" data-es="Descripción del Problema" data-en="Problem Description">Descripción del Problema</label>
+            <textarea id="asProblem" rows="3" style="width:100%;padding:12px 14px;border:1px solid var(--border-dark);border-radius:6px;font-size:14px;background:var(--bg-dark-card);color:var(--text-light);resize:vertical" data-es-placeholder="Describa brevemente el problema del producto..." data-en-placeholder="Briefly describe the product issue..." placeholder="Describa brevemente el problema del producto..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-moss" style="width:100%;justify-content:center;padding:14px" data-es="Consultar Estado" data-en="Check Status">Consultar Estado</button>
+          <div id="asResult" style="display:none;margin-top:20px;padding:16px 20px;border-radius:8px;background:#fdf2e0;border:1px solid #e8c576;text-align:center">
+            <div style="font-size:28px;margin-bottom:8px">⏳</div>
+            <p style="font-size:14px;color:#b87e2a;font-weight:600" data-es="Consultando base de datos..." data-en="Querying database...">Consultando base de datos...</p>
+          </div>
+          <div id="asNotFound" style="display:none;margin-top:20px;padding:16px 20px;border-radius:8px;background:#fff0f0;border:1px solid #e8b8b8;text-align:center">
+            <div style="font-size:28px;margin-bottom:8px">🔍</div>
+            <p style="font-size:15px;color:#c0392b;font-weight:600;margin-bottom:6px" data-es="No se encontró información del producto" data-en="Product information not found">No se encontró información del producto</p>
+            <p style="font-size:13px;color:#888" data-es="Temporalmente no podemos encontrar los datos de su producto. Por favor, contacte a nuestro equipo de soporte por WhatsApp para asistencia inmediata." data-en="We temporarily cannot find your product data. Please contact our support team via WhatsApp for immediate assistance.">Temporalmente no podemos encontrar los datos de su producto. Por favor, contacte a nuestro equipo de soporte por WhatsApp para asistencia inmediata.</p>
+            <a href="https://wa.me/528261253244" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:10px 24px;background:#25D366;color:#fff;border-radius:24px;font-weight:600;font-size:14px;text-decoration:none" data-es="Contactar Soporte por WhatsApp" data-en="Contact Support via WhatsApp">Contactar Soporte por WhatsApp</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#pageAfterSales -->
+
+<!-- ============ FLOATING ELEMENTS ============ -->
+<a href="https://wa.me/528261253244" target="_blank" class="floating-wa" title="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm-2.52 17.04l-.36-.18c-1.44-.84-2.64-1.5-3.3-2.7-.66-1.2-.72-2.4-.18-3.54.36-.78.96-1.38 1.62-1.86.3-.24.66-.3.96-.06l1.14.84c.24.18.3.48.18.72l-.36.54c-.12.18-.06.42.12.54 1.02.72 1.68 1.38 2.4 2.4.12.18.36.24.54.12l.54-.36c.24-.12.54-.06.72.18l.84 1.14c.24.3.18.66-.06.96-.48.66-1.08 1.26-1.86 1.62-.78.36-1.56.42-2.34.24-.66-.18-1.32-.48-1.92-.96l-.36-.3z"/></svg>
+</a>
+<button class="floating-cart" onclick="toggleCart()" title="Cart">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20a1 1 0 100-2 1 1 0 000 2zM20 20a1 1 0 100-2 1 1 0 000 2z"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.94-1.49L23 6H6"/></svg>
+  <span class="cart-count" id="cartCount" style="display:none">0</span>
+</button>
+
+<!-- ============ CART PANEL ============ -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3 data-es="Mi Cotización" data-en="My Inquiry">Mi Cotización</h3>
+    <button class="cart-close" onclick="toggleCart()">&#x2715;</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total"><span data-es="Total productos:" data-en="Total items:">Total productos:</span> <strong id="cartTotal">0</strong></div>
+    <button class="cart-wa-btn" onclick="sendCartToWhatsApp()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      <span data-es="Enviar por WhatsApp" data-en="Send via WhatsApp">Enviar por WhatsApp</span>
+    </button>
+    <button class="cart-continue" onclick="toggleCart()" data-es="Seguir Explorando" data-en="Keep Browsing">Seguir Explorando</button>
+  </div>
+</div>
+
+<!-- ============ ADDRESS PANEL (floats left of cart) ============ -->
+<div class="cart-addr-panel" id="cartAddrPanel">
+  <h4 data-es="Dirección de Envío" data-en="Shipping Address">Dirección de Envío</h4>
+  <div class="cart-addr-inner">
+    <div class="addr-row">
+      <select class="cart-addr-select" id="addrCountry" onchange="onCountryChange()">
+        <option value="" data-es="— País *" data-en="— Country *">— País *</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Chile">Chile</option>
+        <option value="Peru">Peru</option>
+        <option value="Brazil">Brazil</option>
+      </select>
+      <select class="cart-addr-select" id="addrState" onchange="syncAddress()">
+        <option value="" data-es="— Estado *" data-en="— State *">— Estado *</option>
+      </select>
+    </div>
+    <div class="addr-row">
+      <input class="cart-addr-input" id="addrCity" type="text" oninput="syncAddress()" data-es-placeholder="Ciudad *" data-en-placeholder="City *" placeholder="Ciudad *">
+      <input class="cart-addr-input" id="addrZip" type="text" oninput="syncAddress()" data-es-placeholder="Código Postal *" data-en-placeholder="Postal Code *" placeholder="Código Postal *">
+    </div>
+    <div class="addr-row single">
+      <input class="cart-addr-input" id="addrFull" type="text" oninput="syncAddress()" data-es-placeholder="Dirección Completa" data-en-placeholder="Full Address" placeholder="Dirección Completa">
+    </div>
+    <div class="addr-row single">
+      <input class="cart-addr-input" id="addrName" type="text" oninput="syncAddress()" data-es-placeholder="Nombre de Contacto" data-en-placeholder="Contact Name" placeholder="Nombre de Contacto">
+    </div>
+    <div class="cart-addr-warn" id="addrWarn" data-es="Por favor complete País, Estado, Ciudad y Código Postal." data-en="Please fill in Country, State, City and Postal Code.">Por favor complete País, Estado, Ciudad y Código Postal.</div>
+    <button class="addr-send-btn" onclick="sendCartToWhatsApp()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.162.578 4.189 1.582 5.94L.24 23.76l5.96-1.302A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      <span data-es="Enviar por WhatsApp" data-en="Send via WhatsApp">Enviar por WhatsApp</span>
+    </button>
+  </div>
+</div>
+<!-- ============ SCRIPTS ============ -->
+<script>
+// ============ HERO CANVAS ANIMATION ============
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles, mouse = {x: -9999, y: -9999};
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function Particle() {
+    this.reset();
+  }
+  Particle.prototype.reset = function() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 1.6 + 0.4;
+    this.vx = (Math.random() - 0.5) * 0.4;
+    this.vy = (Math.random() - 0.5) * 0.4;
+    this.alpha = Math.random() * 0.5 + 0.15;
+    // blue or gold
+    this.color = Math.random() > 0.75
+      ? 'rgba(232,168,53,'
+      : 'rgba(45,125,210,';
+  };
+
+  function init() {
+    resize();
+    particles = Array.from({length: 120}, () => new Particle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // subtle radial glow at mouse
+    const grd = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 320);
+    grd.addColorStop(0, 'rgba(45,125,210,0.07)');
+    grd.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, W, H);
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      // connect nearby particles
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x, dy = p.y - q.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 110) {
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(45,125,210,' + (0.08 * (1 - dist/110)) + ')';
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.stroke();
+        }
+      }
+      // mouse repel
+      const mdx = p.x - mouse.x, mdy = p.y - mouse.y;
+      const mdist = Math.sqrt(mdx*mdx + mdy*mdy);
+      if (mdist < 120) {
+        const force = (120 - mdist) / 120 * 0.6;
+        p.vx += (mdx / mdist) * force;
+        p.vy += (mdy / mdist) * force;
+      }
+      // dampen
+      p.vx *= 0.97;
+      p.vy *= 0.97;
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > W || p.y < 0 || p.y > H) p.reset();
+      // draw dot
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + p.alpha + ')';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); });
+  canvas.closest('.hero').addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.closest('.hero').addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+  init();
+  draw();
+})();
+
+// ============ LANGUAGE SYSTEM ============
+let currentLang = localStorage.getItem('huanyin_lang') || 'es';
+
+function t(el) {
+  if (typeof el === 'string') el = document.querySelector(el);
+  if (!el) return;
+  const d = el.getAttribute('data-' + currentLang);
+  if (d !== null && d !== undefined) el.innerHTML = d;
+}
+
+function translateAll() {
+  document.querySelectorAll('[data-es][data-en]').forEach(el => {
+    const d = el.getAttribute('data-' + currentLang);
+    if (d !== null) el.innerHTML = d;
+  });
+  // address form placeholder translations
+  document.querySelectorAll('[data-es-placeholder][data-en-placeholder]').forEach(el => {
+    el.placeholder = el.getAttribute('data-' + currentLang + '-placeholder');
+  });
+  // address form select options
+  const addrCountry = document.getElementById('addrCountry');
+  if (addrCountry) {
+    const opt0 = addrCountry.querySelector('option[value=""]');
+    if (opt0) opt0.textContent = currentLang === 'es' ? '— País *' : '— Country *';
+  }
+  const addrState = document.getElementById('addrState');
+  if (addrState) {
+    const opt0 = addrState.querySelector('option[value=""]');
+    if (opt0) opt0.textContent = currentLang === 'es' ? '— Estado *' : '— State *';
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === currentLang);
+  });
+  document.documentElement.lang = currentLang === 'es' ? 'es' : 'en';
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('huanyin_lang', lang);
+  translateAll();
+  if (currentPage === 'home') renderProducts(currentFilter);
+  else if (currentPage === 'product' && currentProductId) renderProductPage(currentProductId, currentVariantId);
+  if (cart.length > 0) renderCartItems();
+}
+
+document.querySelectorAll('.lang-toggle button').forEach(b => {
+  b.addEventListener('click', () => setLang(b.dataset.lang));
+});
+
+// ============ PAGE ROUTING ============
+let currentPage = 'home';
+let currentProductId = null;
+let currentVariantId = null;
+let lastScrollY = 0;
+
+function showPage(page) {
+  currentPage = page;
+  document.getElementById('pageHome').classList.toggle('active', page === 'home');
+  document.getElementById('pageProduct').classList.toggle('active', page === 'product');
+  document.getElementById('pageAbout').classList.toggle('active', page === 'about');
+  document.getElementById('pageSecondary').classList.toggle('active', page === 'secondary');
+  document.getElementById('pageVerification').classList.toggle('active', page === 'verify');
+  document.getElementById('pageAfterSales').classList.toggle('active', page === 'aftersales');
+  if (page === 'product' || page === 'about' || page === 'secondary' || page === 'verify' || page === 'aftersales') window.scrollTo(0, 0);
+  if (page === 'about' || page === 'secondary' || page === 'verify' || page === 'aftersales') translateAll();
+}
+
+function navigateToProduct(productId) {
+  const p = products.find(p => p.id === productId);
+  if (!p) return;
+  lastScrollY = window.scrollY;
+  const v = p.variants.find(v => v.stock > 0) || p.variants[0];
+  currentProductId = productId;
+  currentVariantId = v.id;
+  renderProductPage(productId, v.id);
+  showPage('product');
+}
+
+function navigateBack() {
+  showPage('home');
+  currentProductId = null;
+  currentVariantId = null;
+  renderProducts(currentFilter);
+  window.scrollTo(0, lastScrollY);
+}
+
+function navigateToAbout(e) {
+  if (e) e.preventDefault();
+  document.getElementById('navLinks').classList.remove('open');
+  if (document.querySelector('.hamburger')) document.querySelector('.hamburger').classList.remove('open');
+  lastScrollY = window.scrollY;
+  showPage('about');
+  history.pushState({ page: 'about' }, '', '#company');
+}
+
+function navigateToSecondary(e, sectionId) {
+  if (e) e.preventDefault();
+  document.getElementById('navLinks').classList.remove('open');
+  if (document.querySelector('.hamburger')) document.querySelector('.hamburger').classList.remove('open');
+  lastScrollY = window.scrollY;
+  showPage('secondary');
+  history.pushState({ page: 'secondary', section: sectionId }, '', '#company');
+  if (sectionId) {
+    setTimeout(() => {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+}
+
+function navigateToVerification(e) {
+  if (e) e.preventDefault();
+  document.getElementById('navLinks').classList.remove('open');
+  if (document.querySelector('.hamburger')) document.querySelector('.hamburger').classList.remove('open');
+  lastScrollY = window.scrollY;
+  showPage('verify');
+  history.pushState({ page: 'verify' }, '', '#verify');
+}
+
+function navigateToAfterSales(e) {
+  if (e) e.preventDefault();
+  document.getElementById('navLinks').classList.remove('open');
+  if (document.querySelector('.hamburger')) document.querySelector('.hamburger').classList.remove('open');
+  lastScrollY = window.scrollY;
+  showPage('aftersales');
+  history.pushState({ page: 'aftersales' }, '', '#aftersales');
+}
+
+function switchSecondaryTab(tab) {
+  document.querySelectorAll('#pageSecondary .about-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#pageSecondary .about-panel').forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
+  const btn = document.querySelector('#pageSecondary .about-tab[onclick*="\'' + tab + '\'"]');
+  if (btn) btn.classList.add('active');
+  const panel = document.getElementById('secondaryPanel' + tab.charAt(0).toUpperCase() + tab.slice(1));
+  if (panel) { panel.style.display = 'block'; panel.classList.add('active'); }
+}
+
+function toggleMobileMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+  document.querySelector('.hamburger').classList.toggle('open');
+}
+
+// ============ ABOUT TABS ============
+function switchAboutTab(tab) {
+  document.querySelectorAll('.about-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.about-panel').forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
+  const btn = document.querySelector(`.about-tab[onclick*="'${tab}'"]`);
+  if (btn) btn.classList.add('active');
+  const panel = document.getElementById('aboutPanel' + tab.charAt(0).toUpperCase() + tab.slice(1));
+  if (panel) { panel.style.display = 'block'; panel.classList.add('active'); }
+  if (tab === 'certs' && !window._certsRendered) renderCerts();
+}
+
+function renderCerts() {
+  window._certsRendered = true;
+  const grid = document.getElementById('certsGrid');
+  if (!grid) return;
+  const certFiles = [
+    'O1CN01VKGMFG1Bs2iUNJNvT_!!0-0-cib.jpg',
+    'O1CN01MXcSJJ1Bs2iIeUBwu_!!0-0-cib.jpg',
+    'O1CN01hFR8IT1Bs2iMwBdHz_!!0-0-cib.jpg',
+    'O1CN01f8sS6a1Bs2iNZSP4V_!!0-0-cib.jpg',
+    'O1CN01umKN1N1Bs2iDwenoh_!!0-0-cib.jpg',
+    'O1CN01SAEzq41Bs2iTMj0vv_!!0-0-cib.jpg',
+    'O1CN01WaI94P1Bs2iOW7TqS_!!0-0-cib.jpg',
+    'O1CN015yP7To1Bs2eEBJIvc_!!0-0-cib.jpg'
+  ];
+  grid.innerHTML = certFiles.map(f => `<div style="background:var(--bg-primary);border-radius:var(--radius);padding:12px;display:flex;align-items:center;justify-content:center"><img src="images/certs/${f}" alt="Certification" style="width:100%;max-height:320px;object-fit:contain;border-radius:4px" loading="lazy"></div>`).join('');
+}
+
+function navigateHome(e) {
+  e.preventDefault();
+  document.getElementById('navLinks').classList.remove('open');
+  document.querySelector('.hamburger').classList.remove('open');
+  showPage('home');
+  currentProductId = null;
+  currentVariantId = null;
+  renderProducts(currentFilter);
+  window.scrollTo(0, 0);
+}
+
+// ============ CURRENCY HELPERS ============
+const MXN_RATE = 17.5;
+
+function formatPrice(usd) {
+  if (currentLang === 'es') {
+    const mxn = usd * MXN_RATE;
+    return 'MXN $' + mxn.toFixed(0);
+  }
+  return '$' + usd.toFixed(2);
+}
+
+function currencyLabel() {
+  return currentLang === 'es' ? 'MXN' : 'USD';
+}
+
+// ============ PLACEHOLDER IMAGE ============
+const PLACEHOLDER_SVG = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="#f5f5f5" width="400" height="300"/><rect fill="none" stroke="#d0d0d0" stroke-width="1.5" stroke-dasharray="8,4" x="80" y="45" width="240" height="160" rx="10"/><line x1="120" y1="125" x2="280" y2="125" stroke="#d0d0d0" stroke-width="1" stroke-dasharray="4,4"/><polyline points="140,105 180,145 260,85" fill="none" stroke="#d0d0d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text fill="#aaa" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="200" y="240" letter-spacing="2">HUANYIN</text></svg>`);
+
+// ============ PRODUCT DATA ============
+const products = [
+  {
+    id: 'airpods-pro-2',
+    name: { es: 'AirPods Pro 2', en: 'AirPods Pro 2' },
+    tagline: { es: '2023 Update · Type-C · Bestseller', en: '2023 Update · Type-C · Bestseller' },
+    cat: 'airpods-pro', icon: '🎧', featured: true, has3d: true,
+    variants: [
+      { id: 'std', name: 'Standard', specs: { chip:'Jieri 6973D4', bt:'5.3', mode:'Single Mode', shell:'Donghai', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Apple Port 1h', features:'Basic single mode' }, prices: { small: 3.43, large: 3.11 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
+      { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 4.49, large: 4.08 }, stock: 896 },
+      { id: 'anc', name: 'Global ANC', specs: { chip:'Tiger Airoha 1562F', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 5.38, large: 4.86 }, stock: 985 }
+    ]
+  },
+  {
+    id: 'airpods-pro-3',
+    name: { es: 'AirPods Pro 3', en: 'AirPods Pro 3' },
+    tagline: { es: 'ANC + Monitor de Salud', en: 'ANC + Health Monitoring' },
+    cat: 'airpods-pro', icon: '🎵', featured: true, has3d: false,
+    variants: [
+      { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 6973D4', bt:'5.4', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 5.86, large: 6.10 }, stock: 500 },
+      { id: 'anc-plus', name: 'Global ANC (HR+Translate)', specs: { chip:'Tiger Airoha 1562F', bt:'5.4', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC + Heart Rate + Real-Time Translation' }, prices: { small: 9.10, large: 8.84 }, stock: 890 }
+    ]
+  },
+  {
+    id: 'airpods-max',
+    name: { es: 'AirPods Max (1ª Gen)', en: 'AirPods Max (Gen 1)' },
+    tagline: { es: 'Over-Ear Premium · Lightning', en: 'Over-Ear Premium · Lightning' },
+    cat: 'airpods-max', icon: '🎙️', featured: true, has3d: false,
+    variants: [
+      { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 20.25, large: 20.25 }, stock: 999 },
+      { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 7003', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 28.12, large: 28.12 }, stock: 999 }
+    ]
+  },
+  {
+    id: 'airpods-pro',
+    name: { es: 'AirPods Pro (1ª Gen)', en: 'AirPods Pro (Gen 1)' },
+    tagline: { es: 'Modelo Clásico · ANC', en: 'Classic Model · ANC' },
+    cat: 'airpods-pro', icon: '🎧', featured: false,
+    img: 'MWP22.png',
+    variants: [
+      { id: 'std1', name: 'Standard 1', specs: { chip:'Jieri 6973', bt:'5.1', mode:'Single Mode', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Apple Port 1h', features:'Basic single mode' }, prices: { small: null, large: 1.75 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
+      { id: 'std2', name: 'Standard 2', specs: { chip:'Jieri 6973D2', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'4h', charge:'Apple Port 1.5h', features:'Basic' }, prices: { small: null, large: 2.82 }, stock: 0, stockNote: { es: '需定制 500 PCS 起', en: 'Custom 500 pcs min' } },
+      { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 4.27, large: 3.80 }, stock: 652 }
+    ]
+  },
+  {
+    id: 'airpods-1',
+    name: { es: 'AirPods (1ª Gen)', en: 'AirPods (Gen 1)' },
+    tagline: { es: 'Modelo Original · 3 Variantes', en: 'Original Model · 3 Variants' },
+    cat: 'airpods', icon: '🎵', featured: false,
+    img: 'MXP93.png',
+    variants: [
+      { id: 'std1', name: 'Standard 1', specs: { chip:'Zhongke Lanjun 5756', bt:'5.1', mode:'Single Mode', battery:'Soft-pack 30×30 200mAh', life:'3h', charge:'Apple Port 1h', features:'Basic single mode' }, prices: { small: 1.79, large: 1.59 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
+      { id: 'std2', name: 'Standard 2', specs: { chip:'Jieri 6973D2', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'4h', charge:'Apple Port 1.5h', features:'Basic' }, prices: { small: 2.88, large: 2.58 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
+      { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 3.28, large: 3.60 }, stock: 506 }
+    ]
+  },
+  {
+    id: 'airpods-4',
+    name: { es: 'AirPods 4', en: 'AirPods 4' },
+    tagline: { es: 'Diseño Abierto', en: 'Open-Ear Design' },
+    cat: 'airpods', icon: '🎧', featured: false,
+    variants: [
+      { id: 'std', name: 'Standard', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Basic' }, prices: { small: 2.34, large: 2.11 }, stock: 0, stockNote: { es: '需定制', en: 'Custom order' } },
+      { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 3.59, large: 3.20 }, stock: 480 },
+      { id: 'anc', name: 'Global ANC', specs: { chip:'Tiger Airoha 1562F', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Apple Port 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 4.73, large: 4.28 }, stock: 850 }
+    ]
+  },
+  {
+    id: 'airpods-max-gen2',
+    name: { es: 'AirPods Max (2ª Gen)', en: 'AirPods Max (Gen 2)' },
+    tagline: { es: 'Over-Ear Premium · Type-C', en: 'Over-Ear Premium · Type-C' },
+    cat: 'airpods-max', icon: '🎙️', featured: true, has3d: false,
+    variants: [
+      { id: 'global', name: 'Global', specs: { chip:'Jieri 6973D4', bt:'5.3', cable:'F13 Copper Ring', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'3-4h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection' }, prices: { small: 20.25, large: 20.25 }, stock: 999 },
+      { id: 'anc', name: 'Global ANC', specs: { chip:'Jieri 7003', bt:'5.3', cable:'Composite Film', shell:'Yunxing', battery:'Soft-pack 30×30 200mAh', life:'5-6h', charge:'Type-C 1.5h', features:'Rename + GPS + Wireless Charging + In-Ear Detection + ANC' }, prices: { small: 28.12, large: 28.12 }, stock: 999 }
+    ]
+  },
+  { id: 'watch-s10', name: { es: 'Watch S10', en: 'Watch S10' }, tagline: { es: '2.01" · NFC · 23 Idiomas', en: '2.01" · NFC · 23 Languages' }, cat: 'watches', icon: '⌚', featured: false,
+    variants: [{ id: 'global', name: 'Global', specs: { app:'QXFIT', screen:'2.01"', features:'NFC Payment + Heart Rate + Compass + 23 Languages + IP65' }, prices: { small: 5, large: 5 }, stock: 999 }] },
+  { id: 'watch-t2pro', name: { es: 'Watch T2 PRO', en: 'Watch T2 PRO' }, tagline: { es: '1.52" HD · Presión Arterial', en: '1.52" HD · Blood Pressure' }, cat: 'watches', icon: '⌚', featured: false,
+    variants: [{ id: 'global', name: 'Global', specs: { app:'Fitpro', screen:'1.52" HD', features:'Blood Pressure + Heart Rate + BT Calls + Music Control' }, prices: { small: 8, large: 8 }, stock: 999 }] },
+  { id: 'watch-t900', name: { es: 'Watch T900 PRO MAX', en: 'Watch T900 PRO MAX' }, tagline: { es: '2.01" · SpO2 · IP65', en: '2.01" · SpO2 · IP65' }, cat: 'watches', icon: '⌚', featured: false,
+    variants: [{ id: 'global', name: 'Global', specs: { app:'Fitpro', screen:'2.01"', features:'Heart Rate + BP + SpO2 + IP65 + 23 Languages + BT Calls' }, prices: { small: 4, large: 4 }, stock: 999 }] },
+  { id: 'watch-s9ultra', name: { es: 'Watch S9 ULTRA', en: 'Watch S9 ULTRA' }, tagline: { es: '1.52" HD · 3 Correas', en: '1.52" HD · 3 Straps' }, cat: 'watches', icon: '⌚', featured: false,
+    variants: [{ id: 'global', name: 'Global', specs: { app:'hryfine', screen:'1.52" HD', features:'Blood Pressure + Heart Rate + BT Calls + Music + Multi-language' }, prices: { small: 5, large: 5 }, stock: 999 }] },
+  { id: 'labubu-v4-noqr', name: { es: 'Labubu V4 — No QR', en: 'Labubu V4 — No QR' }, tagline: { es: 'Pop Mart Coleccionable', en: 'Pop Mart Collectible' }, cat: 'labubu', icon: '🧸', featured: false,
+    variants: [{ id: 'noqr', name: 'No QR', specs: { features:'Third-party QR or no QR code' }, prices: { small: 3, large: 3 }, stock: 999 }] },
+  { id: 'labubu-v4-1to1', name: { es: 'Labubu V4 — 1:1 Style', en: 'Labubu V4 — 1:1 Style' }, tagline: { es: 'Código Oficial · 1:1', en: 'Official Code · 1:1' }, cat: 'labubu', icon: '🧸', featured: false,
+    variants: [{ id: '1to1', name: '1:1 Style', specs: { features:'Official genuine code · 1:1 replica quality' }, prices: { small: 8, large: 8 }, stock: 999 }] },
+  { id: 'labubu-bie-noqr', name: { es: 'Labubu Big into Energy — No QR', en: 'Labubu Big into Energy — No QR' }, tagline: { es: 'V3/V2/V1 · Sin QR', en: 'V3/V2/V1 · No QR' }, cat: 'labubu', icon: '🧸', featured: false,
+    variants: [{ id: 'noqr', name: 'No QR', specs: { features:'Third-party QR or no QR code' }, prices: { small: 3, large: 3 }, stock: 999 }] },
+  { id: 'labubu-bie-1to1', name: { es: 'Labubu Big into Energy — 1:1 Style', en: 'Labubu Big into Energy — 1:1 Style' }, tagline: { es: 'Código Oficial · 1:1', en: 'Official Code · 1:1' }, cat: 'labubu', icon: '🧸', featured: false,
+    variants: [{ id: '1to1', name: '1:1 Style', specs: { features:'Official genuine code · 1:1 replica quality' }, prices: { small: 8, large: 8 }, stock: 999 }] },
+  { id: 'labubu-auth', name: { es: 'Labubu Authentic (Original)', en: 'Labubu Authentic (Genuine)' }, tagline: { es: 'Producto Original', en: 'Genuine Product' }, cat: 'labubu', icon: '🧸', featured: false,
+    variants: [{ id: 'auth', name: 'Authentic', specs: { features:'Consult sales representative' }, prices: { small: null, large: null }, stock: 999, priceNote: { es: 'Consultar ventas', en: 'Consult sales' } }] },
+  { id: 'dyson', name: { es: 'Dyson Supersonic', en: 'Dyson Supersonic' }, tagline: { es: '100k RPM · Iones Negativos', en: '100k RPM · Negative Ions' }, cat: 'lifestyle', icon: '💨', featured: false,
+    variants: [{ id: 'global', name: 'Standard', specs: { features:'Cold/Hot Air + Negative Ion + 100,000 RPM + 1600W + HD08/15 EU Standard' }, prices: { small: 40, large: 40 }, stock: 999 }] },
+  { id: 'cam-premium', name: { es: 'Cámara Solar Premium', en: 'Solar Camera Premium' }, tagline: { es: '1080P · Solar · ONVIF', en: '1080P · Solar · ONVIF' }, cat: 'cameras', icon: '📹', featured: false,
+    variants: [{ id: 'global', name: 'Standard', specs: { features:'1080P + Solar + Motion Detection + 2-Way Audio + Color Night Vision + Cloud/TF + ONVIF' }, prices: { small: 88, large: 88 }, stock: 999 }] },
+  { id: 'cam-mid', name: { es: 'Cámara Solar Gama Media', en: 'Solar Camera Mid-Range' }, tagline: { es: '1080P · Solar', en: '1080P · Solar' }, cat: 'cameras', icon: '📹', featured: false,
+    variants: [{ id: 'global', name: 'Standard', specs: { features:'1080P + Solar + Motion Detection + 2-Way Audio + Color Night Vision + Cloud/TF + ONVIF' }, prices: { small: 58, large: 58 }, stock: 999 }] },
+  { id: 'cam-basic', name: { es: 'Cámara Camuflaje Solar', en: 'Solar Camouflage Camera' }, tagline: { es: '720P/1080P · Solar', en: '720P/1080P · Solar' }, cat: 'cameras', icon: '📹', featured: false,
+    variants: [{ id: 'global', name: 'Standard', specs: { features:'720P/1080P + Solar + Motion Detection + Night Vision + Cloud/TF' }, prices: { small: 25, large: 25 }, stock: 999 }] },
+  { id: 'cam-feeder', name: { es: 'Monitor de Alimentación', en: 'Feeding/Bird Monitor' }, tagline: { es: '1080P · Audio 2 Vías', en: '1080P · 2-Way Audio' }, cat: 'cameras', icon: '📹', featured: false,
+    variants: [{ id: 'global', name: 'Standard', specs: { features:'1080P + Motion/Sound Alerts + 2-Way Audio + Color Night Vision + Cloud/TF (128G)' }, prices: { small: 45, large: 45 }, stock: 999 }] },
+  { id: 'sport-basic', name: { es: 'Cámara Deportiva 4K Básica', en: '4K Sports Camera Basic' }, tagline: { es: '4K · 30m Sumergible', en: '4K · 30m Waterproof' }, cat: 'sports', icon: '📸', featured: false,
+    variants: [{ id: 'global', name: 'Standard', specs: { features:'4K HD + 30m Waterproof + Long Battery + Diving/Cycling/FPV' }, prices: { small: 20, large: 20 }, stock: 999 }] },
+  { id: 'sport-adv', name: { es: 'Cámara Deportiva 4K Avanzada', en: '4K Sports Camera Advanced' }, tagline: { es: '4K · Grado Profesional', en: '4K · Professional Grade' }, cat: 'sports', icon: '📸', featured: false,
+    variants: [{ id: 'global', name: 'Standard', specs: { features:'4K HD + 30m Waterproof + Long Battery + Professional Grade Action Camera' }, prices: { small: 50, large: 50 }, stock: 999 }] }
+];
+
+// ============ CART ============
+let cart = JSON.parse(localStorage.getItem('huanyin_cart') || '[]');
+
+function saveCart() { localStorage.setItem('huanyin_cart', JSON.stringify(cart)); updateCartUI(); }
+
+function addToCart(productId, variantId) {
+  const existing = cart.find(c => c.productId === productId && c.variantId === variantId);
+  if (existing) { existing.qty++; }
+  else { cart.push({ productId, variantId, qty: 1, packaging: 'standard' }); }
+  saveCart();
+}
+
+// Quantity handlers for product detail page
+function getPdQty() {
+  const input = document.getElementById('pdQtyInput');
+  if (!input) return 1;
+  let v = parseInt(input.value) || 40;
+  if (v < 1) v = 1;
+  input.value = v;
+  return v;
+}
+function pdQtyDown() {
+  const input = document.getElementById('pdQtyInput');
+  if (!input) return;
+  let v = (parseInt(input.value) || 1) - 1;
+  if (v < 1) v = 1;
+  input.value = v;
+  updatePriceDisplay();
+}
+function pdQtyUp() {
+  const input = document.getElementById('pdQtyInput');
+  if (!input) return;
+  let v = (parseInt(input.value) || 1) + 1;
+  input.value = v;
+  updatePriceDisplay();
+}
+function pdQtyValidate() {
+  const input = document.getElementById('pdQtyInput');
+  if (!input) return;
+  let v = parseInt(input.value);
+  if (isNaN(v) || v < 1) v = 1;
+  input.value = v;
+  updatePriceDisplay();
+}
+function addToCartWithQty(productId, variantId) {
+  const qty = getPdQty();
+  const existing = cart.find(c => c.productId === productId && c.variantId === variantId);
+  if (existing) { existing.qty += qty; }
+  else { cart.push({ productId, variantId, qty, packaging: 'standard' }); }
+  saveCart();
+  // brief feedback then navigate back
+  const btn = document.querySelector('.pd-actions .btn-moss');
+  if (btn) {
+    const orig = btn.innerHTML;
+    btn.innerHTML = currentLang === 'es' ? '✓ Agregado!' : '✓ Added!';
+    btn.style.background = 'var(--success)';
+    setTimeout(() => { navigateBack(); }, 400);
+  } else {
+    navigateBack();
+  }
+}
+
+function removeFromCart(index) { cart.splice(index, 1); saveCart(); }
+
+function updateQty(index, delta) {
+  cart[index].qty += delta;
+  if (cart[index].qty < 1) cart[index].qty = 1;
+  saveCart();
+}
+
+function updateCartUI() {
+  const count = cart.reduce((s, c) => s + c.qty, 0);
+  const countEl = document.getElementById('cartCount');
+  countEl.textContent = count;
+  countEl.style.display = count > 0 ? 'flex' : 'none';
+  renderCartItems();
+}
+
+function renderCartItems() {
+  const container = document.getElementById('cartItems');
+  const footer = document.getElementById('cartFooter');
+  if (cart.length === 0) {
+    container.innerHTML = `<div class="cart-empty">${currentLang === 'es' ? 'Tu cotización está vacía. Agrega productos desde nuestro catálogo.' : 'Your inquiry is empty. Add products from our catalog.'}</div>`;
+    footer.style.display = 'none';
+  } else {
+    let total = 0;
+    container.innerHTML = cart.map((c, i) => {
+      const p = products.find(p => p.id === c.productId);
+      if (!p) return '';
+      const v = p.variants.find(v => v.id === c.variantId);
+      if (!v) return '';
+      const price = v.prices.small || v.prices.large || 0;
+      total += price * c.qty;
+      return `<div class="cart-item">
+        <div class="cart-item-img">${p.icon}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${p.name[currentLang]}</div>
+          <div class="cart-item-variant">${v.name}</div>
+          <div class="cart-item-price">${formatPrice(price)}</div>
+          <div class="cart-item-qty">
+            <button onclick="updateQty(${i}, -1)">−</button>
+            <span>${c.qty}</span>
+            <button onclick="updateQty(${i}, 1)">+</button>
+          </div>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart(${i})">&#x2715;</button>
+      </div>`;
+    }).join('');
+    document.getElementById('cartTotal').textContent = formatPrice(total);
+    footer.style.display = 'block';
+  }
+}
+
+function sendCartToWhatsApp() {
+  syncAddress();
+  if (!isAddressComplete()) {
+    document.getElementById('addrWarn').style.display = 'block';
+    return;
+  }
+  let msg = currentLang === 'es'
+    ? '¡Hola! Solicito una cotización:\n\n📦 Productos:\n'
+    : 'Hello, I would like to request a quotation:\n\n📦 Products:\n';
+  cart.forEach(c => {
+    const p = products.find(p => p.id === c.productId);
+    const v = p?.variants.find(v => v.id === c.variantId);
+    const price = v?.prices.small || v?.prices.large || 0;
+    msg += `• ${p?.name[currentLang] || ''} — ${v?.name || ''} × ${c.qty} — ${formatPrice(price * c.qty)}\n`;
+  });
+  msg += '\n' + (currentLang === 'es' ? '🚚 Datos de envío:' : '🚚 Shipping info:') + '\n';
+  msg += (currentLang === 'es' ? `País: ${cartAddress.country}\nEstado: ${cartAddress.state}\nCiudad: ${cartAddress.city}\nC.P.: ${cartAddress.zip}\n` : `Country: ${cartAddress.country}\nState: ${cartAddress.state}\nCity: ${cartAddress.city}\nZip: ${cartAddress.zip}\n`);
+  if (cartAddress.fullAddress) msg += (currentLang === 'es' ? `Dirección: ${cartAddress.fullAddress}\n` : `Address: ${cartAddress.fullAddress}\n`);
+  if (cartAddress.contactName) msg += (currentLang === 'es' ? `Contacto: ${cartAddress.contactName}\n` : `Contact: ${cartAddress.contactName}\n`);
+  msg += '\n' + (currentLang === 'es' ? 'Por favor enviar:\n✅ Cotización de precios (MXN)\n✅ Costo de envío (DDP)\n✅ Tiempo de entrega' : 'Please provide:\n✅ Price quotation (USD)\n✅ Shipping cost (DDP)\n✅ Delivery time');
+  window.open('https://wa.me/528261253244?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function toggleCart() {
+  const panelOpen = document.getElementById('cartPanel').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+  if (panelOpen && cart.length > 0) {
+    document.getElementById('cartAddrPanel').classList.add('open');
+  } else {
+    document.getElementById('cartAddrPanel').classList.remove('open');
+  }
+}
+
+// ============ CART ADDRESS ============
+const mexicanStates = [
+  { name: 'Aguascalientes', remote: false },
+  { name: 'Baja California', remote: false },
+  { name: 'Baja California Sur', remote: true },
+  { name: 'Campeche', remote: true },
+  { name: 'Chiapas', remote: true },
+  { name: 'Chihuahua', remote: false },
+  { name: 'Ciudad de México', remote: false },
+  { name: 'Coahuila', remote: false },
+  { name: 'Colima', remote: false },
+  { name: 'Durango', remote: false },
+  { name: 'Estado de México', remote: false },
+  { name: 'Guanajuato', remote: false },
+  { name: 'Guerrero', remote: false },
+  { name: 'Hidalgo', remote: false },
+  { name: 'Jalisco', remote: false },
+  { name: 'Michoacán', remote: false },
+  { name: 'Morelos', remote: false },
+  { name: 'Nayarit', remote: false },
+  { name: 'Nuevo León', remote: false },
+  { name: 'Oaxaca', remote: false },
+  { name: 'Puebla', remote: false },
+  { name: 'Querétaro', remote: false },
+  { name: 'Quintana Roo', remote: true },
+  { name: 'San Luis Potosí', remote: false },
+  { name: 'Sinaloa', remote: false },
+  { name: 'Sonora', remote: false },
+  { name: 'Tabasco', remote: true },
+  { name: 'Tamaulipas', remote: false },
+  { name: 'Tlaxcala', remote: false },
+  { name: 'Veracruz', remote: false },
+  { name: 'Yucatán', remote: true },
+  { name: 'Zacatecas', remote: false }
+];
+
+const otherStates = {
+  Colombia: ['Amazonas','Antioquia','Arauca','Atlántico','Bogotá D.C.','Bolívar','Boyacá','Caldas','Caquetá','Casanare','Cauca','Cesar','Chocó','Córdoba','Cundinamarca','Guainía','Guaviare','Huila','La Guajira','Magdalena','Meta','Nariño','Norte de Santander','Putumayo','Quindío','Risaralda','San Andrés','Santander','Sucre','Tolima','Valle del Cauca','Vaupés','Vichada'],
+  Chile: ['Arica y Parinacota','Tarapacá','Antofagasta','Atacama','Coquimbo','Valparaíso','Región Metropolitana','O\'Higgins','Maule','Ñuble','Biobío','Araucanía','Los Ríos','Los Lagos','Aysén','Magallanes'],
+  Peru: ['Amazonas','Áncash','Apurímac','Arequipa','Ayacucho','Cajamarca','Callao','Cusco','Huancavelica','Huánuco','Ica','Junín','La Libertad','Lambayeque','Lima','Loreto','Madre de Dios','Moquegua','Pasco','Piura','Puno','San Martín','Tacna','Tumbes','Ucayali'],
+  Brazil: ['Acre','Alagoas','Amapá','Amazonas','Bahia','Ceará','Distrito Federal','Espírito Santo','Goiás','Maranhão','Mato Grosso','Mato Grosso do Sul','Minas Gerais','Pará','Paraíba','Paraná','Pernambuco','Piauí','Rio de Janeiro','Rio Grande do Norte','Rio Grande do Sul','Rondônia','Roraima','Santa Catarina','São Paulo','Sergipe','Tocantins']
+};
+
+let cartAddress = { country: '', state: '', city: '', zip: '', fullAddress: '', contactName: '' };
+
+function onCountryChange() {
+  const country = document.getElementById('addrCountry').value;
+  const stateSelect = document.getElementById('addrState');
+  stateSelect.innerHTML = '<option value="" data-es="— Estado *" data-en="— State *">— Estado *</option>';
+
+  if (country === 'Mexico') {
+    mexicanStates.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s.name;
+      opt.textContent = s.name + (s.remote ? (currentLang === 'es' ? ' (Costo Extra)' : ' (Extra Cost)') : '');
+      if (s.remote) opt.className = 'remote';
+      stateSelect.appendChild(opt);
+    });
+  } else if (otherStates[country]) {
+    otherStates[country].forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = s;
+      stateSelect.appendChild(opt);
+    });
+  }
+  syncAddress();
+}
+
+function syncAddress() {
+  cartAddress.country = document.getElementById('addrCountry')?.value || '';
+  cartAddress.state = document.getElementById('addrState')?.value || '';
+  cartAddress.city = document.getElementById('addrCity')?.value || '';
+  cartAddress.zip = document.getElementById('addrZip')?.value || '';
+  cartAddress.fullAddress = document.getElementById('addrFull')?.value || '';
+  cartAddress.contactName = document.getElementById('addrName')?.value || '';
+  document.getElementById('addrWarn').style.display = 'none';
+}
+
+function isAddressComplete() {
+  return cartAddress.country && cartAddress.state && cartAddress.city && cartAddress.zip;
+}
+
+// ============ AFTER-SALES LOOKUP ============
+function handleAfterSalesLookup(e) {
+  e.preventDefault();
+  const resultEl = document.getElementById('asResult');
+  const notFoundEl = document.getElementById('asNotFound');
+  notFoundEl.style.display = 'none';
+  resultEl.style.display = 'block';
+
+  // Simulate 1-3 second database lookup
+  const delay = 1000 + Math.random() * 2000;
+  setTimeout(() => {
+    resultEl.style.display = 'none';
+    notFoundEl.style.display = 'block';
+  }, delay);
+}
+
+// ============ CONTACT FORM ============
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const inputs = form.querySelectorAll('input[type="text"], input[type="email"]');
+  const name = inputs[0]?.value || '';
+  const company = inputs[1]?.value || '';
+  const phone = inputs[3]?.value || '';
+  const country = form.querySelector('select')?.value || '';
+  const msg = currentLang === 'es'
+    ? `¡Hola! Soy ${name} de ${company} (${country}). Me gustaría recibir información sobre sus productos. Tel: ${phone}`
+    : `Hello! I'm ${name} from ${company} (${country}). I'd like to receive information about your products. Phone: ${phone}`;
+  window.open('https://wa.me/528261253244?text=' + encodeURIComponent(msg), '_blank');
+}
+
+// ============ PRODUCT RENDERING ============
+let currentFilter = 'airpods-pro';
+
+function filterByFeatured(cat) {
+  document.querySelectorAll('.sub-cat-btn').forEach(b => b.classList.remove('active'));
+  currentFilter = cat;
+  renderProducts(cat);
+  document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+}
+
+function filterBySub(cat) {
+  document.querySelectorAll('.sub-cat-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.sub-cat-btn[data-cat="${cat}"]`)?.classList.add('active');
+  currentFilter = cat;
+  renderProducts(cat);
+}
+
+function renderProducts(filter) {
+  const grid = document.getElementById('productsGrid');
+  let filtered;
+  if (filter === 'airpods-pro') {
+    filtered = products.filter(p => p.cat === 'airpods-pro');
+  } else if (filter === 'airpods') {
+    filtered = products.filter(p => p.cat === 'airpods');
+  } else if (filter === 'airpods-max') {
+    filtered = products.filter(p => p.cat === 'airpods-max');
+  } else {
+    filtered = products.filter(p => p.cat === filter);
+  }
+
+  grid.innerHTML = filtered.map(p => {
+    const bestVariant = p.variants.find(v => v.stock > 0) || p.variants[0];
+    const price = bestVariant.prices.small || bestVariant.prices.large || 0;
+    const allOOS = p.variants.every(v => v.stock === 0);
+    const stockClass = allOOS ? 'oos' : bestVariant.stock < 500 ? 'low-stock' : 'in-stock';
+    const stockText = allOOS ? { es: 'Agotado', en: 'Out of Stock' }
+      : bestVariant.stock < 500 ? { es: 'Stock Limitado', en: 'Low Stock' }
+      : { es: 'En Stock', en: 'In Stock' };
+    const variantDots = p.variants.map(v => {
+      const cls = v.stock === 0 ? 'v-dot-std' : v.id.includes('anc') ? 'v-dot-anc' : 'v-dot-global';
+      return `<span class="variant-dot ${cls}" title="${v.name}"></span>`;
+    }).join('');
+
+    return `<div class="product-card${allOOS ? ' disabled' : ''}" onclick="${allOOS ? '' : `navigateToProduct('${p.id}')`}">
+      <div class="product-img">
+        <img class="pi-placeholder" src="${PLACEHOLDER_SVG}" alt="${p.name[currentLang]}">
+        <div class="product-badge">
+          ${p.id === 'airpods-pro-2' ? '<span class="badge badge-best">BESTSELLER</span>' : ''}
+          ${p.id === 'airpods-pro-3' ? '<span class="badge badge-new">PREMIUM</span>' : ''}
+          ${allOOS ? '<span class="badge badge-oos">0 STOCK</span>' : ''}
+        </div>
+        <div class="stock-dot ${stockClass}">${stockText[currentLang]}</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">${p.name[currentLang]}</div>
+        <div class="product-spec">${p.tagline[currentLang]}</div>
+        <div class="variant-dots">${variantDots}</div>
+        <div class="product-bottom">
+          <div>
+            <div class="product-price">${formatPrice(price)} <span>/ unit</span></div>
+            <div class="product-moq" data-es="MOQ: 40 PCS" data-en="MOQ: 40 PCS">MOQ: 40 PCS</div>
+          </div>
+          <button class="btn btn-sm btn-dark" onclick="event.stopPropagation(); ${allOOS ? '' : `navigateToProduct('${p.id}')`}" ${allOOS ? 'disabled style="opacity:0.3"' : ''} data-es="Ver Detalle" data-en="View Detail">Ver Detalle</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // re-translate
+  document.querySelectorAll('#productsGrid [data-es][data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang);
+  });
+}
+
+// ============ PRODUCT DETAIL PAGE RENDER ============
+const specLabels = {
+  chip: { es: 'Chip', en: 'Chip' }, bt: { es: 'Bluetooth', en: 'Bluetooth' },
+  mode: { es: 'Modo', en: 'Mode' }, cable: { es: 'Cable', en: 'Cable' },
+  shell: { es: 'Carcasa', en: 'Shell' }, battery: { es: 'Batería', en: 'Battery' },
+  life: { es: 'Duración', en: 'Battery Life' }, charge: { es: 'Carga', en: 'Charging' },
+  features: { es: 'Funciones', en: 'Features' }, app: { es: 'App', en: 'App' },
+  screen: { es: 'Pantalla', en: 'Screen' }
+};
+
+function renderProductPage(productId, variantId) {
+  const p = products.find(p => p.id === productId);
+  if (!p) return;
+  const v = p.variants.find(v => v.id === variantId) || p.variants[0];
+  const isOOS = v.stock === 0;
+  const priceSmall = v.prices.small;
+  const priceLarge = v.prices.large;
+  const specs = v.specs;
+
+  currentProductId = productId;
+  currentVariantId = variantId;
+
+  const catName = p.cat === 'airpods-pro-2' ? { es: 'Audio · Bestseller', en: 'Audio · Bestseller' }
+    : p.cat === 'airpods-pro-3' ? { es: 'Audio · Premium', en: 'Audio · Premium' }
+    : p.cat === 'airpods-max' ? { es: 'Audio · Over-Ear', en: 'Audio · Over-Ear' }
+    : { es: 'Audio', en: 'Audio' };
+
+  document.getElementById('productDetail').innerHTML = `
+    <div class="pd-img-area">
+      <img class="pd-placeholder" src="${PLACEHOLDER_SVG}" alt="${p.name[currentLang]}">
+    </div>
+    <div class="pd-info animate-in">
+      <div class="pd-cat">${catName[currentLang]}</div>
+      <h1>${p.name[currentLang]}</h1>
+      <p class="pd-tagline">${p.tagline[currentLang]}</p>
+
+      <div class="variant-selector">
+        ${p.variants.map(vr => {
+          const oos = vr.stock === 0;
+          return `<button class="variant-btn${vr.id === variantId ? ' active' : ''}${oos ? ' oos' : ''}" onclick="switchVariant('${p.id}', '${vr.id}')" ${oos ? 'disabled' : ''}>${vr.name}${oos ? ' (0 Stock)' : ''}</button>`;
+        }).join('')}
+      </div>
+
+      <table class="specs-table">${Object.entries(specs).map(([k, val]) => `<tr><td>${(specLabels[k] || {es:k,en:k})[currentLang]}</td><td>${val}</td></tr>`).join('')}</table>
+
+      ${(p.cat === 'airpods' || p.id === 'airpods-pro-2' || p.id === 'airpods-pro-3') ? `
+      <div class="pack-label" data-es="Empaque" data-en="Packaging">Empaque</div>
+      <div class="pack-preview" id="packPreview">
+        <div style="text-align:center">
+          <div class="pack-preview-icon">📦</div>
+          <div class="pack-preview-label" data-es="Empaque Normal" data-en="Normal Packaging">Empaque Normal</div>
+        </div>
+      </div>
+      <div class="packaging-options">
+        <div class="pack-option selected" onclick="selectPack(this)" data-pack="normal"><span class="pack-icon">📦</span><span data-es="Normal" data-en="Normal">Normal</span></div>
+        <div class="pack-option" onclick="selectPack(this)" data-pack="standard"><span class="pack-icon">📋</span><span data-es="Estándar" data-en="Standard">Estándar</span></div>
+        <div class="pack-option" onclick="selectPack(this)" data-pack="oem"><span class="pack-icon">🏭</span><span data-es="OEM Personalizado" data-en="OEM Custom">OEM Personalizado</span></div>
+      </div>
+      ` : ''}
+
+      <div class="price-tiers">
+        ${priceSmall ? `<div class="price-tier" id="tierSmall"><span class="tier-label">Small Box <span data-es="(40 PCS)" data-en="(40 PCS)">(40 PCS)</span></span><span class="tier-price">${formatPrice(priceSmall)} <span class="tier-check">✓</span></span></div>` : ''}
+        ${priceLarge ? `<div class="price-tier" id="tierLarge"><span class="tier-label">Large Box <span data-es="(120 PCS+)" data-en="(120 PCS+)">(120 PCS+)</span></span><span class="tier-price">${formatPrice(priceLarge)} <span class="tier-check">✓</span></span></div>` : ''}
+        ${v.priceNote ? `<div class="price-tier"><span class="tier-label"></span><span class="tier-price">${v.priceNote[currentLang]}</span></div>` : ''}
+      </div>
+
+      <div class="pd-total" id="pdTotal">
+        <span class="pd-total-label" data-es="Total Estimado" data-en="Estimated Total">Total Estimado</span>
+        <div style="text-align:right">
+          <div class="pd-total-price" id="pdTotalPrice">${formatPrice(priceSmall || priceLarge || 0)}</div>
+          <div class="pd-total-unit" data-es="MXN · Precio de Cotización" data-en="USD · Quote Price">MXN · Precio de Cotización</div>
+        </div>
+      </div>
+
+      <div class="pd-stock">
+        <span class="sdot ${isOOS ? 'out' : 'in'}"></span>
+        ${isOOS
+          ? `<span style="color:var(--danger)">${v.stockNote ? v.stockNote[currentLang] : (currentLang === 'es' ? 'Agotado' : 'Out of Stock')}</span>`
+          : `<span style="color:var(--success)">${currentLang === 'es' ? 'En Stock' : 'In Stock'} — ${v.stock} PCS</span>`
+        }
+      </div>
+
+      <div class="pd-qty-row" style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px" data-es="Cantidad" data-en="Quantity">Cantidad</span>
+        <div style="display:flex;align-items:center;gap:0;border:1px solid var(--border-dark);border-radius:6px;overflow:hidden">
+          <button onclick="pdQtyDown()" style="width:30px;height:30px;background:var(--bg-primary);color:var(--text-light);font-size:16px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer">−</button>
+          <input id="pdQtyInput" type="number" value="40" min="1" step="1" style="width:60px;height:30px;text-align:center;background:var(--bg-primary);color:var(--text-light);border:none;border-left:1px solid var(--border-dark);border-right:1px solid var(--border-dark);font-size:14px;font-weight:600;font-family:inherit;-moz-appearance:textfield" onchange="pdQtyValidate()" oninput="pdQtyValidate()">
+          <button onclick="pdQtyUp()" style="width:30px;height:30px;background:var(--bg-primary);color:var(--text-light);font-size:16px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer">+</button>
+        </div>
+        <span style="font-size:10px;color:var(--text-muted)" data-es="Recomendado: 40+ unidades" data-en="Recommended: 40+ units">Recomendado: 40+ unidades</span>
+      </div>
+
+      <div class="pd-actions">
+        <button class="btn btn-moss" onclick="addToCartWithQty('${p.id}', '${v.id}');" ${isOOS ? 'disabled style="opacity:0.4;pointer-events:none"' : ''} data-es="Agregar a Cotización" data-en="Add to Inquiry">Agregar a Cotización</button>
+        <button class="btn btn-gray-green" onclick="toggleCart()" data-es="Calcular Envío" data-en="Calculate Shipping">Calcular Envío</button>
+      </div>
+    </div>
+  `;
+
+  // re-translate product detail
+  document.querySelectorAll('#productDetail [data-es][data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang);
+  });
+  // re-translate back button
+  document.querySelectorAll('#pageProduct .btn-back [data-es][data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang);
+  });
+  // init price display
+  setTimeout(updatePriceDisplay, 50);
+}
+
+function switchVariant(productId, variantId) {
+  const p = products.find(p => p.id === productId);
+  const v = p.variants.find(v => v.id === variantId);
+  if (v) { renderProductPage(productId, variantId); }
+}
+
+function selectPack(el) {
+  el.parentElement.querySelectorAll('.pack-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  const pack = el.dataset.pack;
+  const preview = document.getElementById('packPreview');
+  if (!preview) return;
+  const icons = { normal: '📦', standard: '📋', oem: '🏭' };
+  const labels = currentLang === 'es'
+    ? { normal: 'Empaque Normal — Bolsa básica', standard: 'Empaque Estándar — Caja genérica', oem: 'OEM Personalizado — Caja con tu marca' }
+    : { normal: 'Normal Packaging — Basic bag', standard: 'Standard Packaging — Generic box', oem: 'OEM Custom — Branded box' };
+  preview.innerHTML = `<div style="text-align:center">
+    <div class="pack-preview-icon">${icons[pack] || '📦'}</div>
+    <div class="pack-preview-label">${labels[pack] || ''}</div>
+  </div>`;
+}
+
+// ============ Price Display Updater ============
+function updatePriceDisplay() {
+  const qty = getPdQty();
+  const tierSmall = document.getElementById('tierSmall');
+  const tierLarge = document.getElementById('tierLarge');
+  const totalEl = document.getElementById('pdTotalPrice');
+  if (!totalEl) return;
+
+  const p = products.find(p => p.id === currentProductId);
+  const v = p?.variants.find(v => v.id === currentVariantId);
+  if (!v) return;
+  const priceSmall = v.prices.small;
+  const priceLarge = v.prices.large;
+
+  const useLarge = priceLarge && qty >= 120;
+  const unitPrice = useLarge ? priceLarge : priceSmall;
+
+  if (tierSmall) tierSmall.classList.toggle('selected', !useLarge && !!priceSmall);
+  if (tierLarge) tierLarge.classList.toggle('selected', useLarge);
+
+  if (unitPrice) {
+    totalEl.textContent = formatPrice(unitPrice * qty);
+  }
+}
+
+// ============ SUB-CAT CLICK HANDLERS ============
+document.getElementById('subCats').addEventListener('click', (e) => {
+  if (e.target.classList.contains('sub-cat-btn')) {
+    filterBySub(e.target.dataset.cat);
+  }
+});
+
+// ============ KEYBOARD ============
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (document.getElementById('cartPanel').classList.contains('open')) toggleCart();
+    if (currentPage === 'product') navigateBack();
+  }
+});
+
+// ============ BROWSER BACK/FORWARD ============
+window.addEventListener('popstate', (e) => {
+  if (e.state && e.state.page === 'product') {
+    navigateToProduct(e.state.productId);
+  } else if (e.state && e.state.page === 'secondary') {
+    showPage('secondary');
+    window.scrollTo(0, 0);
+  } else {
+    navigateBack();
+  }
+});
+
+// Override navigateToProduct to push state
+const origNavigateToProduct = navigateToProduct;
+navigateToProduct = function(productId) {
+  history.pushState({ page: 'product', productId }, '', '#product/' + productId);
+  origNavigateToProduct(productId);
+};
+
+const origNavigateBack = navigateBack;
+navigateBack = function() {
+  const goingToHome = currentPage === 'secondary' || currentPage === 'product';
+  history.pushState({ page: 'home' }, '', window.location.pathname);
+  origNavigateBack();
+};
+
+// ============ INIT ============
+function init() {
+  setLang(currentLang);
+  renderProducts('airpods-pro');
+  updateCartUI();
+  // handle initial hash
+  const hash = window.location.hash;
+  if (hash.startsWith('#product/')) {
+    const pid = hash.replace('#product/', '');
+    navigateToProduct(pid);
+  } else if (hash === '#company') {
+    showPage('secondary');
+  }
+}
+
+init();
+</script>
+</body>
+</html>
