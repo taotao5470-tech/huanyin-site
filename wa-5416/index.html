@@ -2850,8 +2850,20 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
 <script>
 // ============ LANGUAGE SYSTEM ============
 const SUPPORTED_LANGUAGES = ['pt', 'es', 'en'];
+function detectBrowserLanguage() {
+ const browserLanguage = String(
+  (Array.isArray(navigator.languages) && navigator.languages[0]) ||
+  navigator.language ||
+  navigator.userLanguage ||
+  ''
+ ).replace('_', '-').toLowerCase();
+ if (browserLanguage === 'pt' || browserLanguage === 'pt-br') return 'pt';
+ if (browserLanguage === 'es' || browserLanguage.startsWith('es-')) return 'es';
+ return 'en';
+}
 const savedLanguage = localStorage.getItem('huanyin_lang');
-let currentLang = SUPPORTED_LANGUAGES.includes(savedLanguage) ? savedLanguage : 'pt';
+let currentLang = SUPPORTED_LANGUAGES.includes(savedLanguage) ? savedLanguage : detectBrowserLanguage();
+if (!SUPPORTED_LANGUAGES.includes(savedLanguage)) localStorage.setItem('huanyin_lang', currentLang);
 
 function uiText(es, en, pt) {
  if (currentLang === 'pt') return pt;

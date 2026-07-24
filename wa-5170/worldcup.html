@@ -899,10 +899,22 @@ const products = allProducts.filter(p =>
 );
 const LANGS = ['es', 'en', 'pt'];
 const USD_TO_BRL = 5.17;
+function detectBrowserLanguage() {
+ const browserLanguage = String(
+  (Array.isArray(navigator.languages) && navigator.languages[0]) ||
+  navigator.language ||
+  navigator.userLanguage ||
+  ''
+ ).replace('_', '-').toLowerCase();
+ if (browserLanguage === 'pt' || browserLanguage === 'pt-br') return 'pt';
+ if (browserLanguage === 'es' || browserLanguage.startsWith('es-')) return 'es';
+ return 'en';
+}
 const urlLang = new URLSearchParams(window.location.search).get('lang');
 const savedLang = localStorage.getItem('huanyin_lang');
-let currentLang = LANGS.includes(urlLang) ? urlLang : (LANGS.includes(savedLang) ? savedLang : 'pt');
+let currentLang = LANGS.includes(urlLang) ? urlLang : (LANGS.includes(savedLang) ? savedLang : detectBrowserLanguage());
 if (LANGS.includes(urlLang)) localStorage.setItem('huanyin_lang', currentLang);
+else if (!LANGS.includes(savedLang)) localStorage.setItem('huanyin_lang', currentLang);
 let currentCat = 'jersey';
 let currentSubfilter = 'national';
 let currentSubfilter2 = '';

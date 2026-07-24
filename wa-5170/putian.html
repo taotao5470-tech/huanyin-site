@@ -973,8 +973,21 @@ body.product-mode .detail-page { display: block; }
 <script src="pt-br.js?v=20260725"></script>
 <script>
 const products = window.PUTIAN_PRODUCTS || [];
+function detectBrowserLanguage() {
+ const browserLanguage = String(
+  (Array.isArray(navigator.languages) && navigator.languages[0]) ||
+  navigator.language ||
+  navigator.userLanguage ||
+  ''
+ ).replace('_', '-').toLowerCase();
+ if (browserLanguage === 'pt' || browserLanguage === 'pt-br') return 'pt';
+ if (browserLanguage === 'es' || browserLanguage.startsWith('es-')) return 'es';
+ return 'en';
+}
 const savedLang = localStorage.getItem('huanyin_lang');
-const currentLang = ['pt', 'es', 'en'].includes(savedLang) ? savedLang : 'pt';
+const supportedLanguages = ['pt', 'es', 'en'];
+const currentLang = supportedLanguages.includes(savedLang) ? savedLang : detectBrowserLanguage();
+if (!supportedLanguages.includes(savedLang)) localStorage.setItem('huanyin_lang', currentLang);
 document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang;
 function putianText(es, en, pt) {
  return currentLang === 'pt' ? pt : (currentLang === 'es' ? es : en);
