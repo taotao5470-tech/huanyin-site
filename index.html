@@ -553,6 +553,120 @@ body.page-product .footer, body.page-about .footer { display: none; }
  border-top: 1px solid rgba(255,255,255,0.08);
 }
 .product-review-cta span { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+.product-review-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.review-write-btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 7px;
+ padding: 11px 18px;
+ border: 1px solid rgba(255,184,77,0.45);
+ border-radius: 999px;
+ background: rgba(255,184,77,0.08);
+ color: #ffd17c;
+ font-size: 12px;
+ font-weight: 750;
+ transition: var(--transition);
+}
+.review-write-btn:hover { transform: translateY(-1px); border-color: var(--accent-copper); background: rgba(255,184,77,0.14); }
+.review-submit-banner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 24px;
+ margin: 0 0 28px;
+ padding: 20px 22px;
+ border: 1px solid rgba(125,148,116,0.32);
+ border-radius: 18px;
+ background: linear-gradient(135deg, rgba(125,148,116,0.14), rgba(255,184,77,0.08));
+}
+.review-submit-banner strong { display: block; margin-bottom: 5px; color: var(--text-dark); font-size: 16px; }
+.review-submit-banner p { color: var(--text-muted-dark); font-size: 12px; line-height: 1.55; }
+.review-modal-overlay {
+ position: fixed;
+ inset: 0;
+ z-index: 10050;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+ background: rgba(3,7,11,0.82);
+ backdrop-filter: blur(10px);
+}
+.review-modal-overlay.open { display: flex; }
+.review-modal {
+ position: relative;
+ width: min(100%, 520px);
+ max-height: calc(100vh - 40px);
+ overflow-y: auto;
+ padding: 30px;
+ border: 1px solid rgba(255,255,255,0.12);
+ border-radius: 22px;
+ background: linear-gradient(145deg, #16222e, #0a121b);
+ color: var(--text-light);
+ box-shadow: 0 28px 90px rgba(0,0,0,0.52);
+}
+.review-modal-close {
+ position: absolute;
+ top: 14px;
+ right: 14px;
+ display: grid;
+ width: 36px;
+ height: 36px;
+ place-items: center;
+ border: 1px solid rgba(255,255,255,0.1);
+ border-radius: 50%;
+ background: rgba(255,255,255,0.05);
+ color: var(--text-light);
+ font-size: 20px;
+}
+.review-modal-kicker { margin-bottom: 7px; color: var(--accent-moss); font-size: 10px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; }
+.review-modal h2 { margin: 0 44px 7px 0; font-size: 25px; letter-spacing: -0.5px; }
+.review-modal-intro { margin-bottom: 22px; color: var(--text-muted); font-size: 12px; line-height: 1.6; }
+.review-product-context {
+ margin-bottom: 18px;
+ padding: 11px 13px;
+ border: 1px solid rgba(255,255,255,0.08);
+ border-radius: 11px;
+ background: rgba(255,255,255,0.035);
+ color: var(--text-muted);
+ font-size: 11px;
+}
+.review-product-context strong { color: var(--text-light); }
+.review-form-group { margin-bottom: 16px; }
+.review-form-group label { display: block; margin-bottom: 7px; color: #dce2e7; font-size: 11px; font-weight: 700; }
+.review-form-group input,
+.review-form-group textarea {
+ width: 100%;
+ padding: 12px 13px;
+ border: 1px solid rgba(255,255,255,0.12);
+ border-radius: 10px;
+ outline: none;
+ background: rgba(0,0,0,0.2);
+ color: #fff;
+ font: inherit;
+ font-size: 13px;
+ transition: border-color 0.2s ease;
+}
+.review-form-group textarea { min-height: 112px; resize: vertical; line-height: 1.55; }
+.review-form-group input:focus,
+.review-form-group textarea:focus { border-color: var(--accent-moss); }
+.review-star-picker { display: flex; align-items: center; gap: 4px; }
+.review-star-picker button {
+ padding: 2px;
+ border: 0;
+ background: transparent;
+ color: #59616a;
+ font-size: 29px;
+ line-height: 1;
+ transition: transform 0.18s ease, color 0.18s ease;
+}
+.review-star-picker button.active { color: var(--accent-copper); }
+.review-star-picker button:hover { transform: scale(1.12); }
+.review-form-error { display: none; margin: -2px 0 14px; color: #ff7885; font-size: 11px; }
+.review-form-error.visible { display: block; }
+.review-submit-note { margin: 12px 0 0; color: var(--text-muted); font-size: 10px; line-height: 1.5; text-align: center; }
+.review-submit-button { width: 100%; justify-content: center; border: 0; }
 .product-card-rating {
  display: inline-flex;
  width: fit-content;
@@ -603,6 +717,12 @@ body.page-product .footer, body.page-about .footer { display: none; }
  .product-review-summary { min-width: 0; width: 100%; text-align: left; }
  .product-review-cta { align-items: stretch; flex-direction: column; }
  .product-review-cta .btn { width: 100%; justify-content: center; }
+ .product-review-actions { align-items: stretch; flex-direction: column; }
+ .product-review-actions .btn,
+ .product-review-actions .review-write-btn { width: 100%; }
+ .review-submit-banner { align-items: stretch; flex-direction: column; }
+ .review-submit-banner .review-write-btn { width: 100%; }
+ .review-modal { padding: 26px 20px 22px; border-radius: 18px; }
  .product-card-rating { margin-bottom: 5px; }
  .product-card-rating .rating-label { display: none; }
  .home-review-entry { left: 12px; bottom: 12px; padding: 9px 12px; }
@@ -2777,6 +2897,13 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
    <div class="about-panel" id="secondaryPanelReviews" style="display:none">
     <h2 class="section-title" data-es="Lo Que Dicen Nuestros Clientes" data-en="What Our Clients Say">Lo Que Dicen Nuestros Clientes</h2>
     <p class="section-subtitle" data-es="Distribuidores reales, resultados reales. Ahora la sección combina testimonios, pruebas visuales y cartas de recomendación para generar más confianza." data-en="Real distributors, real results. This section now combines testimonials, visual proof and recommendation letters to build more trust." style="margin-bottom:28px">Distribuidores reales, resultados reales. Ahora la sección combina testimonios, pruebas visuales y cartas de recomendación para generar más confianza.</p>
+    <div class="review-submit-banner">
+     <div>
+      <strong data-es="¿Ya compraste con Miravue?" data-en="Have you purchased from Miravue?" data-pt="Você já comprou com a Miravue?">Você já comprou com a Miravue?</strong>
+      <p data-es="Comparte tu experiencia con la atención, el producto o la entrega." data-en="Share your experience with our service, product or delivery." data-pt="Compartilhe sua experiência com o atendimento, o produto ou a entrega.">Compartilhe sua experiência com o atendimento, o produto ou a entrega.</p>
+     </div>
+     <button class="review-write-btn" type="button" onclick="openReviewModal()"><span aria-hidden="true">✎</span><span data-es="Escribir una reseña" data-en="Write a review" data-pt="Escrever uma avaliação">Escrever uma avaliação</span></button>
+    </div>
     <div class="review-proof-strip">
      <div class="review-proof-item"><strong>500+</strong><span data-es="Clientes B2B" data-en="B2B clients">Clientes B2B</span></div>
      <div class="review-proof-item"><strong>20+</strong><span data-es="Países atendidos" data-en="Countries served">Países atendidos</span></div>
@@ -3082,6 +3209,46 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
    <span data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
    </a>
   </div>
+ </div>
+</div>
+
+<!-- ============ REVIEW SUBMISSION MODAL ============ -->
+<div class="review-modal-overlay" id="reviewModalOverlay" aria-hidden="true" onclick="closeReviewModal(event)">
+ <div class="review-modal" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle" onclick="event.stopPropagation()">
+  <button class="review-modal-close" type="button" onclick="closeReviewModal()" aria-label="Cerrar">×</button>
+  <div class="review-modal-kicker" data-es="TU EXPERIENCIA" data-en="YOUR EXPERIENCE" data-pt="SUA EXPERIÊNCIA">SUA EXPERIÊNCIA</div>
+  <h2 id="reviewModalTitle" data-es="Escribir una reseña" data-en="Write a review" data-pt="Escrever uma avaliação">Escrever uma avaliação</h2>
+  <p class="review-modal-intro" data-es="Tu opinión ayuda a otros compradores B2B a decidir con más confianza." data-en="Your feedback helps other B2B buyers decide with more confidence." data-pt="Sua opinião ajuda outros compradores B2B a decidir com mais confiança.">Sua opinião ajuda outros compradores B2B a decidir com mais confiança.</p>
+  <div class="review-product-context"><span data-es="Sobre:" data-en="About:" data-pt="Sobre:">Sobre:</span> <strong id="reviewProductName">Miravue</strong></div>
+  <form id="reviewSubmitForm" onsubmit="submitReview(event)">
+   <div class="review-form-group">
+    <label data-es="Calificación *" data-en="Rating *" data-pt="Avaliação *">Avaliação *</label>
+    <div class="review-star-picker" id="reviewStarPicker" aria-label="Seleccionar calificación">
+     <button type="button" onclick="setReviewRating(1)" aria-label="1 estrella" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(2)" aria-label="2 estrellas" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(3)" aria-label="3 estrellas" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(4)" aria-label="4 estrellas" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(5)" aria-label="5 estrellas" aria-pressed="false">★</button>
+    </div>
+   </div>
+   <div class="review-form-group">
+    <label for="reviewerName" data-es="Nombre *" data-en="Name *" data-pt="Nome *">Nome *</label>
+    <input id="reviewerName" type="text" required maxlength="60" autocomplete="name" data-es-placeholder="Tu nombre" data-en-placeholder="Your name" data-pt-placeholder="Seu nome" placeholder="Seu nome">
+   </div>
+   <div class="review-form-group">
+    <label for="reviewerCountry" data-es="País / mercado" data-en="Country / market" data-pt="País / mercado">País / mercado</label>
+    <input id="reviewerCountry" type="text" maxlength="60" autocomplete="country-name" data-es-placeholder="Ej. México" data-en-placeholder="E.g. Mexico" data-pt-placeholder="Ex.: Brasil" placeholder="Ex.: Brasil">
+   </div>
+   <div class="review-form-group">
+    <label for="reviewerText" data-es="Tu reseña *" data-en="Your review *" data-pt="Sua avaliação *">Sua avaliação *</label>
+    <textarea id="reviewerText" required minlength="15" maxlength="800" data-es-placeholder="Cuéntanos cómo fue tu experiencia…" data-en-placeholder="Tell us about your experience…" data-pt-placeholder="Conte como foi sua experiência…" placeholder="Conte como foi sua experiência…"></textarea>
+   </div>
+   <div class="review-form-error" id="reviewFormError" role="alert"></div>
+   <button class="btn btn-wa review-submit-button" type="submit">
+    <span data-es="Enviar reseña por WhatsApp" data-en="Send review via WhatsApp" data-pt="Enviar avaliação pelo WhatsApp">Enviar avaliação pelo WhatsApp</span>
+   </button>
+   <p class="review-submit-note" data-es="Al continuar se abrirá WhatsApp para que revises y confirmes el mensaje antes de enviarlo." data-en="WhatsApp will open so you can review and confirm the message before sending it." data-pt="O WhatsApp será aberto para você revisar e confirmar a mensagem antes de enviá-la.">O WhatsApp será aberto para você revisar e confirmar a mensagem antes de enviá-la.</p>
+  </form>
  </div>
 </div>
 
@@ -4463,6 +4630,110 @@ const productReviewItems = [
  }
 ];
 
+let reviewRating = 0;
+let reviewModalPreviousFocus = null;
+
+function setReviewRating(value) {
+ reviewRating = Math.max(0, Math.min(5, Number(value) || 0));
+ document.querySelectorAll('#reviewStarPicker button').forEach((button, index) => {
+  const active = index < reviewRating;
+  button.classList.toggle('active', active);
+  button.setAttribute('aria-pressed', active ? 'true' : 'false');
+ });
+ const error = document.getElementById('reviewFormError');
+ if (error && reviewRating) error.classList.remove('visible');
+}
+
+function openReviewModal() {
+ const overlay = document.getElementById('reviewModalOverlay');
+ const form = document.getElementById('reviewSubmitForm');
+ if (!overlay || !form) return;
+ reviewModalPreviousFocus = document.activeElement;
+ form.reset();
+ setReviewRating(0);
+ const closeButton = overlay.querySelector('.review-modal-close');
+ if (closeButton) closeButton.setAttribute('aria-label', uiText('Cerrar', 'Close', 'Fechar'));
+ const starPicker = document.getElementById('reviewStarPicker');
+ if (starPicker) {
+  starPicker.setAttribute('aria-label', uiText('Seleccionar calificación', 'Choose a rating', 'Selecionar avaliação'));
+  starPicker.querySelectorAll('button').forEach((button, index) => {
+   const value = index + 1;
+   button.setAttribute(
+    'aria-label',
+    uiText(
+     `${value} ${value === 1 ? 'estrella' : 'estrellas'}`,
+     `${value} ${value === 1 ? 'star' : 'stars'}`,
+     `${value} ${value === 1 ? 'estrela' : 'estrelas'}`
+    )
+   );
+  });
+ }
+ const product = currentProductId ? products.find(item => item.id === currentProductId) : null;
+ const context = document.getElementById('reviewProductName');
+ if (context) {
+  context.textContent = product
+   ? localizedText(product.name)
+   : uiText('Experiencia general con Miravue', 'General Miravue experience', 'Experiência geral com a Miravue');
+ }
+ const error = document.getElementById('reviewFormError');
+ if (error) {
+  error.textContent = '';
+  error.classList.remove('visible');
+ }
+ overlay.classList.add('open');
+ overlay.setAttribute('aria-hidden', 'false');
+ document.body.style.overflow = 'hidden';
+ setTimeout(() => document.getElementById('reviewerName')?.focus(), 40);
+}
+
+function closeReviewModal(event) {
+ const overlay = document.getElementById('reviewModalOverlay');
+ if (!overlay) return;
+ if (event && event.target !== overlay) return;
+ overlay.classList.remove('open');
+ overlay.setAttribute('aria-hidden', 'true');
+ document.body.style.overflow = '';
+ if (reviewModalPreviousFocus && typeof reviewModalPreviousFocus.focus === 'function') reviewModalPreviousFocus.focus();
+}
+
+function submitReview(event) {
+ event.preventDefault();
+ const error = document.getElementById('reviewFormError');
+ if (!reviewRating) {
+  if (error) {
+   error.textContent = uiText('Selecciona una calificación de 1 a 5 estrellas.', 'Choose a rating from 1 to 5 stars.', 'Selecione uma avaliação de 1 a 5 estrelas.');
+   error.classList.add('visible');
+  }
+  document.querySelector('#reviewStarPicker button')?.focus();
+  return;
+ }
+ const name = document.getElementById('reviewerName').value.trim();
+ const country = document.getElementById('reviewerCountry').value.trim();
+ const review = document.getElementById('reviewerText').value.trim();
+ const product = currentProductId ? products.find(item => item.id === currentProductId) : null;
+ const productName = product
+  ? localizedText(product.name)
+  : uiText('Experiencia general con Miravue', 'General Miravue experience', 'Experiência geral com a Miravue');
+ const stars = '★'.repeat(reviewRating) + '☆'.repeat(5 - reviewRating);
+ const message = uiText(
+  `Hola, quiero dejar una reseña para Miravue.\n\nProducto / experiencia: ${productName}\nCalificación: ${stars} (${reviewRating}/5)\nNombre: ${name}\nPaís / mercado: ${country || 'No indicado'}\n\nReseña:\n${review}`,
+  `Hello, I would like to leave a review for Miravue.\n\nProduct / experience: ${productName}\nRating: ${stars} (${reviewRating}/5)\nName: ${name}\nCountry / market: ${country || 'Not provided'}\n\nReview:\n${review}`,
+  `Olá, quero deixar uma avaliação para a Miravue.\n\nProduto / experiência: ${productName}\nAvaliação: ${stars} (${reviewRating}/5)\nNome: ${name}\nPaís / mercado: ${country || 'Não informado'}\n\nAvaliação:\n${review}`
+ );
+ if (typeof clarity !== 'undefined') clarity('event', 'review_submission_started');
+ window.open('https://wa.me/85255049145?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+ closeReviewModal();
+}
+
+document.addEventListener('keydown', event => {
+ const overlay = document.getElementById('reviewModalOverlay');
+ if (event.key === 'Escape' && overlay?.classList.contains('open')) {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  closeReviewModal();
+ }
+});
+
 function renderProductReviews(product) {
  const root = document.getElementById('productReviewSection');
  if (!root) return;
@@ -4496,7 +4767,10 @@ function renderProductReviews(product) {
    </div>
    <div class="product-review-cta">
     <span>${uiText('Más pruebas reales: conversaciones, entregas y cartas de clientes.', 'More real proof: conversations, deliveries and client letters.', 'Mais provas reais: conversas, entregas e cartas de clientes.')}</span>
-    <button class="btn btn-moss" type="button" onclick="navigateToReviews(event)">${uiText('Ver todas las opiniones', 'See all reviews', 'Ver todas as avaliações')}</button>
+    <div class="product-review-actions">
+     <button class="review-write-btn" type="button" onclick="openReviewModal()"><span aria-hidden="true">✎</span>${uiText('Escribir una reseña', 'Write a review', 'Escrever uma avaliação')}</button>
+     <button class="btn btn-moss" type="button" onclick="navigateToReviews(event)">${uiText('Ver todas las opiniones', 'See all reviews', 'Ver todas as avaliações')}</button>
+    </div>
    </div>
   </div>
  `;
