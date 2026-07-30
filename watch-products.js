@@ -2,9 +2,12 @@ window.WATCH_PRODUCTS = [
   {
     "id": "watch-006-h900-10-in-1",
     "name": {
-      "es": "H900 10 in 1",
-      "en": "H900 10 in 1"
+      "es": "11 Ultra",
+      "en": "11 Ultra"
     },
+    "catalogPriority": 1,
+    "priceMxnBase": 157,
+    "priceMultiplier": 1.4,
     "tagline": {
       "es": "hryfine ? 240*392px",
       "en": "hryfine ? 240*392px"
@@ -28,7 +31,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-1",
         "name": "Black",
         "specs": {
-          "productDescription": "H900 10 in 1",
+          "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -51,7 +54,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-2",
         "name": "Blue",
         "specs": {
-          "productDescription": "H900 10 in 1",
+          "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -74,7 +77,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-3",
         "name": "Pink",
         "specs": {
-          "productDescription": "H900 10 in 1",
+          "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -828,9 +831,12 @@ window.WATCH_PRODUCTS = [
   {
     "id": "watch-015-s10",
     "name": {
-      "es": "S10Full-Featured",
-      "en": "S10Full-Featured"
+      "es": "S11-Full-Featured",
+      "en": "S11-Full-Featured"
     },
+    "catalogPriority": 2,
+    "priceMxnBase": 182,
+    "priceMultiplier": 1.4,
     "tagline": {
       "es": "QXFIT ? 240*392px",
       "en": "QXFIT ? 240*392px"
@@ -854,7 +860,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-1",
         "name": "Black",
         "specs": {
-          "productDescription": "S10Full-Featured",
+          "productDescription": "S11-Full-Featured",
           "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、TrueHeart Rate，TruePedometerNFC，Offline Payment，Navigation，Local Music，Local Album，E-Book，Compass\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
           "appBackend": "QXFIT",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -877,7 +883,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-2",
         "name": "Silver",
         "specs": {
-          "productDescription": "S10Full-Featured",
+          "productDescription": "S11-Full-Featured",
           "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、TrueHeart Rate，TruePedometerNFC，Offline Payment，Navigation，Local Music，Local Album，E-Book，Compass\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
           "appBackend": "QXFIT",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",

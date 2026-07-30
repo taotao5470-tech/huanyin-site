@@ -3608,10 +3608,12 @@ products.forEach(p => {
  if (p.cat !== 'watches') return;
  const idHash = p.id.split('').reduce((h, c) => { const v = ((h << 5) - h) + c.charCodeAt(0); return v | 0; }, 0);
  const isUltra = /ultra/i.test(p.name.es) || /ultra/i.test(p.name.en) || /ultra/i.test(p.id);
- const priceMxn = isUltra
+ const generatedPriceMxn = isUltra
   ? 170 + (Math.abs(idHash) % 81)  // Ultra: 170-250 MXN (higher)
   : 140 + (Math.abs(idHash) % 51); // Standard: 140-190 MXN
- const priceUsd = Number((priceMxn / MXN_RATE).toFixed(2));
+ const priceMxnBase = Number.isFinite(p.priceMxnBase) ? p.priceMxnBase : generatedPriceMxn;
+ const priceMultiplier = Number.isFinite(p.priceMultiplier) ? p.priceMultiplier : 1;
+ const priceUsd = Number(((priceMxnBase / MXN_RATE) * priceMultiplier).toFixed(2));
  p.variants.forEach(v => {
   if (v.prices.small === 0 && v.prices.large === 0) {
    v.prices = { small: priceUsd, large: priceUsd };
@@ -4155,6 +4157,7 @@ function renderProducts(filter) {
  } else {
   filtered = products.filter(p => p.cat === filter);
  }
+ filtered.sort((a, b) => (a.catalogPriority ?? Number.MAX_SAFE_INTEGER) - (b.catalogPriority ?? Number.MAX_SAFE_INTEGER));
 
  if (!filtered.length) {
   const emptyText = currentCatalogGroup === 'putian'
