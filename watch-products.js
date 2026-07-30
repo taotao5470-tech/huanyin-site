@@ -20,10 +20,6 @@ window.WATCH_PRODUCTS = [
       {
         "type": "image",
         "src": "images/watch/watch-006-h900-10-in-1-2.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-006-h900-10-in-1-3.jpg"
       }
     ],
     "variants": [
@@ -101,9 +97,12 @@ window.WATCH_PRODUCTS = [
   {
     "id": "watch-007-new-7-plus-1",
     "name": {
-      "es": "New 7+1",
-      "en": "New 7+1"
+      "es": "11 Ultra Negro",
+      "en": "11 Ultra Black",
+      "pt": "11 Ultra Preto"
     },
+    "priceMxnBase": 157,
+    "priceMultiplier": 1.4,
     "tagline": {
       "es": "hryfine ? 240*392px",
       "en": "hryfine ? 240*392px"
@@ -116,10 +115,6 @@ window.WATCH_PRODUCTS = [
       {
         "type": "image",
         "src": "images/watch/watch-007-new-7-plus-1-2.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-007-new-7-plus-1-3.jpg"
       }
     ],
     "variants": [
@@ -127,60 +122,14 @@ window.WATCH_PRODUCTS = [
         "id": "color-1",
         "name": "Black",
         "specs": {
-          "productDescription": "New 7+1",
+          "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
           "batteryCapacity": "200mah",
           "screenResolution": "240*392px",
-          "packageSize": "26.8x21.2x2.1cm",
-          "unitWeight": "316g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "White",
-        "specs": {
-          "productDescription": "New 7+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21.2x2.1cm",
-          "unitWeight": "316g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Pink",
-        "specs": {
-          "productDescription": "New 7+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21.2x2.1cm",
-          "unitWeight": "316g"
+          "packageSize": "27x21.2x2.2cm",
+          "unitWeight": "415g"
         },
         "prices": {
           "small": 0,
@@ -197,9 +146,12 @@ window.WATCH_PRODUCTS = [
   {
     "id": "watch-008-i20-10-plus-1",
     "name": {
-      "es": "i20 10+1",
-      "en": "i20 10+1"
+      "es": "11 Ultra Azul",
+      "en": "11 Ultra Blue",
+      "pt": "11 Ultra Azul"
     },
+    "priceMxnBase": 157,
+    "priceMultiplier": 1.4,
     "tagline": {
       "es": "hryfine ? 240*392px",
       "en": "hryfine ? 240*392px"
@@ -207,75 +159,25 @@ window.WATCH_PRODUCTS = [
     "cat": "watches",
     "icon": "Watch",
     "featured": false,
-    "img": "images/watch/watch-008-i20-10-plus-1-2.jpg",
+    "img": "images/watch/watch-008-i20-10-plus-1-blue.jpg",
     "gallery": [
       {
         "type": "image",
-        "src": "images/watch/watch-008-i20-10-plus-1-2.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-008-i20-10-plus-1-3.jpg"
+        "src": "images/watch/watch-008-i20-10-plus-1-blue.jpg"
       }
     ],
     "variants": [
       {
-        "id": "color-1",
-        "name": "Gold",
-        "specs": {
-          "productDescription": "i20 10+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "30.2×21.2×2.2cm",
-          "unitWeight": "415g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
         "id": "color-2",
-        "name": "Silver",
+        "name": "Blue",
         "specs": {
-          "productDescription": "i20 10+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Built-in 23 languages",
+          "productDescription": "11 Ultra",
+          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
           "batteryCapacity": "200mah",
           "screenResolution": "240*392px",
-          "packageSize": "30.2×21.2×2.2cm",
-          "unitWeight": "415g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Black",
-        "specs": {
-          "productDescription": "i20 10+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "30.2×21.2×2.2cm",
+          "packageSize": "27x21.2x2.2cm",
           "unitWeight": "415g"
         },
         "prices": {
