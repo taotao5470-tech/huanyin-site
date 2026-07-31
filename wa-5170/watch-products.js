@@ -2,9 +2,12 @@ window.WATCH_PRODUCTS = [
   {
     "id": "watch-006-h900-10-in-1",
     "name": {
-      "es": "H900 10 in 1",
-      "en": "H900 10 in 1"
+      "es": "11 Ultra",
+      "en": "11 Ultra"
     },
+    "catalogPriority": 1,
+    "priceMxnBase": 157,
+    "priceMultiplier": 1.4,
     "tagline": {
       "es": "hryfine ? 240*392px",
       "en": "hryfine ? 240*392px"
@@ -17,18 +20,20 @@ window.WATCH_PRODUCTS = [
       {
         "type": "image",
         "src": "images/watch/watch-006-h900-10-in-1-2.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-006-h900-10-in-1-3.jpg"
       }
     ],
     "variants": [
       {
         "id": "color-1",
         "name": "Black",
+        "gallery": [
+          {
+            "type": "image",
+            "src": "images/watch/watch-007-new-7-plus-1-2.jpg"
+          }
+        ],
         "specs": {
-          "productDescription": "H900 10 in 1",
+          "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -50,8 +55,14 @@ window.WATCH_PRODUCTS = [
       {
         "id": "color-2",
         "name": "Blue",
+        "gallery": [
+          {
+            "type": "image",
+            "src": "images/watch/watch-008-i20-10-plus-1-blue.jpg"
+          }
+        ],
         "specs": {
-          "productDescription": "H900 10 in 1",
+          "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -74,7 +85,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-3",
         "name": "Pink",
         "specs": {
-          "productDescription": "H900 10 in 1",
+          "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
           "appBackend": "hryfine",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -94,294 +105,6 @@ window.WATCH_PRODUCTS = [
         "stock": 999
       }
     ],
-  },
-  {
-    "id": "watch-007-new-7-plus-1",
-    "name": {
-      "es": "New 7+1",
-      "en": "New 7+1"
-    },
-    "tagline": {
-      "es": "hryfine ? 240*392px",
-      "en": "hryfine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-007-new-7-plus-1-2.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-007-new-7-plus-1-2.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-007-new-7-plus-1-3.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Black",
-        "specs": {
-          "productDescription": "New 7+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21.2x2.1cm",
-          "unitWeight": "316g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "White",
-        "specs": {
-          "productDescription": "New 7+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21.2x2.1cm",
-          "unitWeight": "316g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Pink",
-        "specs": {
-          "productDescription": "New 7+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21.2x2.1cm",
-          "unitWeight": "316g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
-    "id": "watch-008-i20-10-plus-1",
-    "name": {
-      "es": "i20 10+1",
-      "en": "i20 10+1"
-    },
-    "tagline": {
-      "es": "hryfine ? 240*392px",
-      "en": "hryfine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-008-i20-10-plus-1-2.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-008-i20-10-plus-1-2.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-008-i20-10-plus-1-3.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Gold",
-        "specs": {
-          "productDescription": "i20 10+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "30.2×21.2×2.2cm",
-          "unitWeight": "415g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "Silver",
-        "specs": {
-          "productDescription": "i20 10+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "30.2×21.2×2.2cm",
-          "unitWeight": "415g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Black",
-        "specs": {
-          "productDescription": "i20 10+1",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "30.2×21.2×2.2cm",
-          "unitWeight": "415g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
-    "id": "watch-009-7-plus-1-ultra-7",
-    "name": {
-      "es": "7+1 ULTRA （7Strap）",
-      "en": "7+1 ULTRA （7Strap）"
-    },
-    "tagline": {
-      "es": "hryfine ? 240*392px",
-      "en": "hryfine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-009-7-plus-1-ultra-7-1.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-009-7-plus-1-ultra-7-1.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-009-7-plus-1-ultra-7-2.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Black",
-        "specs": {
-          "productDescription": "7+1 ULTRA （7Watch Strap）",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21x2.2cm",
-          "unitWeight": "313g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "Blue",
-        "specs": {
-          "productDescription": "7+1 ULTRA （7Watch Strap）",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21x2.2cm",
-          "unitWeight": "313g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "White",
-        "specs": {
-          "productDescription": "7+1 ULTRA （7Watch Strap）",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design；              \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling              \n9.Multiple UI modes, freely switchable      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "26.8x21x2.2cm",
-          "unitWeight": "313g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
   },
   {
     "id": "watch-010-hk9-ultra-max",
@@ -466,102 +189,6 @@ window.WATCH_PRODUCTS = [
           "screenResolution": "240*392px",
           "packageSize": "21.2x11.5x2cm",
           "unitWeight": "228g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
-    "id": "watch-011-s9-ultra",
-    "name": {
-      "es": "S9 ULTRA （Triple Strap）",
-      "en": "S9 ULTRA （Triple Strap）"
-    },
-    "tagline": {
-      "es": "hryfine ? 240*392px",
-      "en": "hryfine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-011-s9-ultra-1.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-011-s9-ultra-1.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-011-s9-ultra-2.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Black",
-        "specs": {
-          "productDescription": "S9 ULTRA （Triple Strap）",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth callingMultiple UI modes, freely switchable      \n9.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "20.4x14.5x2cm",
-          "unitWeight": "206g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "Silver",
-        "specs": {
-          "productDescription": "S9 ULTRA （Triple Strap）",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth callingMultiple UI modes, freely switchable      \n9.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "20.4x14.5x2cm",
-          "unitWeight": "206g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Orange",
-        "specs": {
-          "productDescription": "S9 ULTRA （Triple Strap）",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5.Stylish colorful design;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth callingMultiple UI modes, freely switchable      \n9.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "20.4x14.5x2cm",
-          "unitWeight": "206g"
         },
         "prices": {
           "small": 0,
@@ -828,9 +455,12 @@ window.WATCH_PRODUCTS = [
   {
     "id": "watch-015-s10",
     "name": {
-      "es": "S10Full-Featured",
-      "en": "S10Full-Featured"
+      "es": "S11-Full-Featured",
+      "en": "S11-Full-Featured"
     },
+    "catalogPriority": 2,
+    "priceMxnBase": 182,
+    "priceMultiplier": 1.4,
     "tagline": {
       "es": "QXFIT ? 240*392px",
       "en": "QXFIT ? 240*392px"
@@ -854,7 +484,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-1",
         "name": "Black",
         "specs": {
-          "productDescription": "S10Full-Featured",
+          "productDescription": "S11-Full-Featured",
           "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、TrueHeart Rate，TruePedometerNFC，Offline Payment，Navigation，Local Music，Local Album，E-Book，Compass\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
           "appBackend": "QXFIT",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -877,7 +507,7 @@ window.WATCH_PRODUCTS = [
         "id": "color-2",
         "name": "Silver",
         "specs": {
-          "productDescription": "S10Full-Featured",
+          "productDescription": "S11-Full-Featured",
           "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、TrueHeart Rate，TruePedometerNFC，Offline Payment，Navigation，Local Music，Local Album，E-Book，Compass\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
           "appBackend": "QXFIT",
           "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
@@ -1334,102 +964,6 @@ window.WATCH_PRODUCTS = [
     ]
   },
   {
-    "id": "watch-021-t500-x6-x7-x8",
-    "name": {
-      "es": "T500 X6/X7/X8/",
-      "en": "T500 X6/X7/X8/"
-    },
-    "tagline": {
-      "es": "App ? 240*392px",
-      "en": "App ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-021-t500-x6-x7-x8-1.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-021-t500-x6-x7-x8-1.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-021-t500-x6-x7-x8-2.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Black",
-        "specs": {
-          "productDescription": "T500 X6/X7/X8/",
-          "functionDescription": "1. App controllable worldwide;\n2、1.44inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "To confirm",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "15.5x9.3x2.8cm",
-          "unitWeight": "103g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "White",
-        "specs": {
-          "productDescription": "T500 X6/X7/X8/",
-          "functionDescription": "1. App controllable worldwide;\n2、1.44inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "To confirm",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "15.5x9.3x2.8cm",
-          "unitWeight": "103g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Pink",
-        "specs": {
-          "productDescription": "T500 X6/X7/X8/",
-          "functionDescription": "1. App controllable worldwide;\n2、1.44inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "To confirm",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "15.5x9.3x2.8cm",
-          "unitWeight": "103g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
     "id": "watch-022-t900-pro-max",
     "name": {
       "es": "T900 PRO MAX",
@@ -1622,102 +1156,6 @@ window.WATCH_PRODUCTS = [
     ]
   },
   {
-    "id": "watch-024-watch-4",
-    "name": {
-      "es": "Watch 4",
-      "en": "Watch 4"
-    },
-    "tagline": {
-      "es": "Hiwatchplus ? 240*392px",
-      "en": "Hiwatchplus ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-024-watch-4-1.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-024-watch-4-1.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-024-watch-4-2.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Gold",
-        "specs": {
-          "productDescription": "Watch 4",
-          "functionDescription": "1.App controllable worldwide\n2.1.52inHDDisplayScreen\n3.Blood pressure & heart rate monitoring;\n4、Abnormal heart rate / BP alarm;\n5.Stylish colorful design;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control，Music playback, Bluetooth callingMultiple UI modes, freely switchable      \n9.Multi-language support",
-          "appBackend": "Hiwatchplus",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "21.2x11.7x2.1cm",
-          "unitWeight": "221g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "Black",
-        "specs": {
-          "productDescription": "Watch 4",
-          "functionDescription": "1.App controllable worldwide\n2.1.52inHDDisplayScreen\n3.Blood pressure & heart rate monitoring;\n4、Abnormal heart rate / BP alarm;\n5.Stylish colorful design;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control，Music playback, Bluetooth callingMultiple UI modes, freely switchable      \n9.Multi-language support",
-          "appBackend": "Hiwatchplus",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "21.2x11.7x2.1cm",
-          "unitWeight": "221g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Silver",
-        "specs": {
-          "productDescription": "Watch 4",
-          "functionDescription": "1.App controllable worldwide\n2.1.52inHDDisplayScreen\n3.Blood pressure & heart rate monitoring;\n4、Abnormal heart rate / BP alarm;\n5.Stylish colorful design;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control，Music playback, Bluetooth callingMultiple UI modes, freely switchable      \n9.Multi-language support",
-          "appBackend": "Hiwatchplus",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "21.2x11.7x2.1cm",
-          "unitWeight": "221g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
     "id": "watch-025-watch-4",
     "name": {
       "es": "Watch 4 with Payment",
@@ -1896,102 +1334,6 @@ window.WATCH_PRODUCTS = [
           "screenResolution": "240*392px",
           "packageSize": "8.8x9.6x4.7cm",
           "unitWeight": "130g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
-    "id": "watch-027-s9-promax",
-    "name": {
-      "es": "S9 ProMax",
-      "en": "S9 ProMax"
-    },
-    "tagline": {
-      "es": "hryfine ? 240*392px",
-      "en": "hryfine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-027-s9-promax-1.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-027-s9-promax-1.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-027-s9-promax-2.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Gold",
-        "specs": {
-          "productDescription": "S9 ProMax",
-          "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "To confirm",
-          "unitWeight": "310"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "Black",
-        "specs": {
-          "productDescription": "S9 ProMax",
-          "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "To confirm",
-          "unitWeight": "310"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-3",
-        "name": "Silver",
-        "specs": {
-          "productDescription": "S9 ProMax",
-          "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "To confirm",
-          "unitWeight": "310"
         },
         "prices": {
           "small": 0,
@@ -2426,156 +1768,6 @@ window.WATCH_PRODUCTS = [
           "screenResolution": "240*392px",
           "packageSize": "21.2✖11✖2.1cm",
           "unitWeight": "171g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
-    "id": "watch-033-s10",
-    "name": {
-      "es": "S10 Alipay",
-      "en": "S10 Alipay"
-    },
-    "tagline": {
-      "es": "HryFine ? 240*392px",
-      "en": "HryFine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-033-s10-1.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-033-s10-1.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-033-s10-2.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-033-s10-3.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Black",
-        "specs": {
-          "productDescription": "S10 Alipay",
-          "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages  9",
-          "appBackend": "HryFine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "21.2✖11✖2.1cm",
-          "unitWeight": "171g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "Silver",
-        "specs": {
-          "productDescription": "S10 Alipay",
-          "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages  9",
-          "appBackend": "HryFine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "21.2✖11✖2.1cm",
-          "unitWeight": "171g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
-    "id": "watch-034-s9",
-    "name": {
-      "es": "S9Business （in）",
-      "en": "S9Business （in）"
-    },
-    "tagline": {
-      "es": "HryFine ? 240*392px",
-      "en": "HryFine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-034-s9-1.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-034-s9-1.jpg"
-      },
-      {
-        "type": "image",
-        "src": "images/watch/watch-034-s9-2.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Black",
-        "specs": {
-          "productDescription": "S9Business （Chinese）",
-          "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "HryFine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "19.7x6.9x2.8cm",
-          "unitWeight": "125g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      },
-      {
-        "id": "color-2",
-        "name": "Silver",
-        "specs": {
-          "productDescription": "S9Business （Chinese）",
-          "functionDescription": "1. App controllable worldwide;\n2、2.01inLargeScreen Font Display；\n3、Heart rate, BP & SpO2 monitoring;\n4、Abnormal heart rate / BP alarm;\n5、IP65 waterproof rating;\n6、Stylish colorful design;               \n7、Bluetooth calling, pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.\n8、Built-in 23 languages",
-          "appBackend": "HryFine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "19.7x6.9x2.8cm",
-          "unitWeight": "125g"
         },
         "prices": {
           "small": 0,

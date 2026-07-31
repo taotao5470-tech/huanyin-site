@@ -374,6 +374,361 @@ body.page-product .footer, body.page-about .footer { display: none; }
 .sdot.out { background: var(--danger); }
 .pd-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
 
+/* Product activity, delivery promise and review entry */
+.pd-live-activity {
+ display: grid;
+ gap: 8px;
+ margin: 0 0 14px;
+ padding: 13px 14px;
+ border-top: 1px solid rgba(255,255,255,0.08);
+ border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.pd-live-row {
+ display: flex;
+ align-items: center;
+ gap: 9px;
+ color: var(--text-light);
+ font-size: 12px;
+ line-height: 1.35;
+}
+.pd-live-row strong { font-size: 13px; color: #fff; }
+.pd-live-dot {
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ flex: 0 0 auto;
+ box-shadow: 0 0 0 4px rgba(47,208,139,0.09);
+}
+.pd-live-dot.viewers { background: var(--success); animation: activityPulse 1.9s ease-in-out infinite; }
+.pd-live-dot.boxes { background: #ff4d5e; box-shadow: 0 0 0 4px rgba(255,77,94,0.09); }
+.pd-activity-note {
+ margin-left: auto;
+ padding: 3px 7px;
+ border: 1px solid rgba(255,255,255,0.1);
+ border-radius: 999px;
+ color: var(--text-muted);
+ font-size: 9px;
+ white-space: nowrap;
+}
+@keyframes activityPulse {
+ 0%, 100% { opacity: 1; transform: scale(1); }
+ 50% { opacity: 0.55; transform: scale(0.82); }
+}
+.pd-delivery-promise {
+ position: relative;
+ display: grid;
+ gap: 10px;
+ margin-top: 16px;
+ padding: 16px 16px 15px 20px;
+ overflow: hidden;
+ border: 1px solid rgba(255,255,255,0.11);
+ border-radius: 14px;
+ background: #080b0f;
+ box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.pd-delivery-promise::before {
+ content: '';
+ position: absolute;
+ inset: 0 auto 0 0;
+ width: 3px;
+ background: linear-gradient(180deg, var(--accent-moss), #ff4d5e);
+}
+.delivery-promise-row {
+ display: grid;
+ grid-template-columns: 20px minmax(0, 1fr);
+ align-items: center;
+ gap: 10px;
+ color: #d4d8dc;
+ font-size: 12px;
+ line-height: 1.45;
+}
+.delivery-promise-row svg {
+ width: 18px;
+ height: 18px;
+ color: #eef2f4;
+ stroke: currentColor;
+}
+.delivery-promise-row strong { color: #fff; font-weight: 750; }
+.delivery-promise-row .promise-accent { color: #ff4d5e; }
+.delivery-promise-divider {
+ height: 1px;
+ margin-left: 30px;
+ background: rgba(255,255,255,0.14);
+}
+.product-review-section {
+ max-width: 960px;
+ margin: 0 auto 72px;
+ padding: 0 32px;
+}
+.product-review-shell {
+ padding: clamp(22px, 4vw, 34px);
+ border: 1px solid rgba(255,255,255,0.1);
+ border-radius: 22px;
+ background: linear-gradient(145deg, rgba(20,32,44,0.97), rgba(10,18,27,0.99));
+ box-shadow: var(--shadow);
+}
+.product-review-head {
+ display: flex;
+ align-items: flex-end;
+ justify-content: space-between;
+ gap: 20px;
+ margin-bottom: 24px;
+}
+.product-review-kicker {
+ margin-bottom: 7px;
+ color: var(--accent-moss);
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 1.4px;
+ text-transform: uppercase;
+}
+.product-review-head h2 {
+ margin-bottom: 6px;
+ color: var(--text-light);
+ font-size: clamp(20px, 3vw, 28px);
+ letter-spacing: -0.5px;
+}
+.product-review-head p {
+ max-width: 620px;
+ color: var(--text-muted);
+ font-size: 13px;
+ line-height: 1.6;
+}
+.product-review-summary {
+ min-width: 162px;
+ padding: 13px 15px;
+ border: 1px solid rgba(255,184,77,0.25);
+ border-radius: 14px;
+ background: rgba(255,184,77,0.07);
+ text-align: center;
+}
+.product-review-summary .stars,
+.product-card-rating .stars,
+.home-review-entry .stars {
+ color: var(--accent-copper);
+ letter-spacing: 2px;
+}
+.product-review-summary .stars { display: block; margin-bottom: 4px; font-size: 16px; }
+.product-review-summary small { color: var(--text-muted); font-size: 10px; }
+.product-review-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+ gap: 14px;
+}
+.product-review-card {
+ display: flex;
+ min-height: 190px;
+ flex-direction: column;
+ padding: 20px;
+ border: 1px solid rgba(255,255,255,0.08);
+ border-radius: 16px;
+ background: rgba(255,255,255,0.035);
+}
+.product-review-card .review-stars { margin-bottom: 11px; }
+.product-review-card blockquote {
+ margin: 0 0 18px;
+ color: #d9dde0;
+ font-size: 13px;
+ line-height: 1.7;
+}
+.product-review-card footer {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ margin-top: auto;
+ color: var(--text-light);
+}
+.product-review-card footer span {
+ display: block;
+ color: var(--text-muted);
+ font-size: 10px;
+}
+.product-review-cta {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 18px;
+ margin-top: 18px;
+ padding-top: 18px;
+ border-top: 1px solid rgba(255,255,255,0.08);
+}
+.product-review-cta span { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+.product-review-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.review-write-btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 7px;
+ padding: 11px 18px;
+ border: 1px solid rgba(255,184,77,0.45);
+ border-radius: 999px;
+ background: rgba(255,184,77,0.08);
+ color: #ffd17c;
+ font-size: 12px;
+ font-weight: 750;
+ transition: var(--transition);
+}
+.review-write-btn:hover { transform: translateY(-1px); border-color: var(--accent-copper); background: rgba(255,184,77,0.14); }
+.review-submit-banner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 24px;
+ margin: 0 0 28px;
+ padding: 20px 22px;
+ border: 1px solid rgba(125,148,116,0.32);
+ border-radius: 18px;
+ background: linear-gradient(135deg, rgba(125,148,116,0.14), rgba(255,184,77,0.08));
+}
+.review-submit-banner strong { display: block; margin-bottom: 5px; color: var(--text-dark); font-size: 16px; }
+.review-submit-banner p { color: var(--text-muted-dark); font-size: 12px; line-height: 1.55; }
+.review-modal-overlay {
+ position: fixed;
+ inset: 0;
+ z-index: 10050;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+ background: rgba(3,7,11,0.82);
+ backdrop-filter: blur(10px);
+}
+.review-modal-overlay.open { display: flex; }
+.review-modal {
+ position: relative;
+ width: min(100%, 520px);
+ max-height: calc(100vh - 40px);
+ overflow-y: auto;
+ padding: 30px;
+ border: 1px solid rgba(255,255,255,0.12);
+ border-radius: 22px;
+ background: linear-gradient(145deg, #16222e, #0a121b);
+ color: var(--text-light);
+ box-shadow: 0 28px 90px rgba(0,0,0,0.52);
+}
+.review-modal-close {
+ position: absolute;
+ top: 14px;
+ right: 14px;
+ display: grid;
+ width: 36px;
+ height: 36px;
+ place-items: center;
+ border: 1px solid rgba(255,255,255,0.1);
+ border-radius: 50%;
+ background: rgba(255,255,255,0.05);
+ color: var(--text-light);
+ font-size: 20px;
+}
+.review-modal-kicker { margin-bottom: 7px; color: var(--accent-moss); font-size: 10px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; }
+.review-modal h2 { margin: 0 44px 7px 0; font-size: 25px; letter-spacing: -0.5px; }
+.review-modal-intro { margin-bottom: 22px; color: var(--text-muted); font-size: 12px; line-height: 1.6; }
+.review-product-context {
+ margin-bottom: 18px;
+ padding: 11px 13px;
+ border: 1px solid rgba(255,255,255,0.08);
+ border-radius: 11px;
+ background: rgba(255,255,255,0.035);
+ color: var(--text-muted);
+ font-size: 11px;
+}
+.review-product-context strong { color: var(--text-light); }
+.review-form-group { margin-bottom: 16px; }
+.review-form-group label { display: block; margin-bottom: 7px; color: #dce2e7; font-size: 11px; font-weight: 700; }
+.review-form-group input,
+.review-form-group textarea {
+ width: 100%;
+ padding: 12px 13px;
+ border: 1px solid rgba(255,255,255,0.12);
+ border-radius: 10px;
+ outline: none;
+ background: rgba(0,0,0,0.2);
+ color: #fff;
+ font: inherit;
+ font-size: 13px;
+ transition: border-color 0.2s ease;
+}
+.review-form-group textarea { min-height: 112px; resize: vertical; line-height: 1.55; }
+.review-form-group input:focus,
+.review-form-group textarea:focus { border-color: var(--accent-moss); }
+.review-star-picker { display: flex; align-items: center; gap: 4px; }
+.review-star-picker button {
+ padding: 2px;
+ border: 0;
+ background: transparent;
+ color: #59616a;
+ font-size: 29px;
+ line-height: 1;
+ transition: transform 0.18s ease, color 0.18s ease;
+}
+.review-star-picker button.active { color: var(--accent-copper); }
+.review-star-picker button:hover { transform: scale(1.12); }
+.review-form-error { display: none; margin: -2px 0 14px; color: #ff7885; font-size: 11px; }
+.review-form-error.visible { display: block; }
+.review-submit-note { margin: 12px 0 0; color: var(--text-muted); font-size: 10px; line-height: 1.5; text-align: center; }
+.review-submit-button { width: 100%; justify-content: center; border: 0; }
+.product-card-rating {
+ display: inline-flex;
+ width: fit-content;
+ align-items: center;
+ gap: 7px;
+ margin: -3px 0 9px;
+ padding: 0;
+ border: 0;
+ background: transparent;
+ color: var(--text-muted);
+ font: inherit;
+ font-size: 10px;
+ cursor: pointer;
+}
+.product-card-rating:hover { color: var(--text-light); }
+.product-card-rating .stars { font-size: 10px; letter-spacing: 1px; }
+.home-review-entry {
+ position: fixed;
+ left: 24px;
+ bottom: 24px;
+ z-index: 998;
+ display: flex;
+ align-items: center;
+ gap: 11px;
+ padding: 11px 16px;
+ border: 1px solid rgba(255,184,77,0.35);
+ border-radius: 999px;
+ background: rgba(8,13,19,0.94);
+ color: #fff;
+ box-shadow: 0 10px 32px rgba(0,0,0,0.35);
+ backdrop-filter: blur(14px);
+ cursor: pointer;
+ transition: var(--transition);
+}
+.home-review-entry:hover { transform: translateY(-2px); border-color: var(--accent-copper); }
+.home-review-entry .stars { font-size: 11px; letter-spacing: 1px; }
+.home-review-entry strong { display: block; font-size: 12px; }
+.home-review-entry small { display: block; margin-top: 1px; color: var(--text-muted); font-size: 9px; }
+
+@media (max-width: 768px) {
+ .pd-info { padding: 20px 18px; }
+ .pd-live-activity { padding-inline: 0; }
+ .pd-activity-note { display: none; }
+ .pd-delivery-promise { padding: 15px 13px 14px 17px; }
+ .delivery-promise-row { font-size: 11px; }
+ .product-review-section { margin-bottom: 48px; padding: 0 16px; }
+ .product-review-head { align-items: flex-start; flex-direction: column; }
+ .product-review-summary { min-width: 0; width: 100%; text-align: left; }
+ .product-review-cta { align-items: stretch; flex-direction: column; }
+ .product-review-cta .btn { width: 100%; justify-content: center; }
+ .product-review-actions { align-items: stretch; flex-direction: column; }
+ .product-review-actions .btn,
+ .product-review-actions .review-write-btn { width: 100%; }
+ .review-submit-banner { align-items: stretch; flex-direction: column; }
+ .review-submit-banner .review-write-btn { width: 100%; }
+ .review-modal { padding: 26px 20px 22px; border-radius: 18px; }
+ .product-card-rating { margin-bottom: 5px; }
+ .product-card-rating .rating-label { display: none; }
+ .home-review-entry { left: 12px; bottom: 12px; padding: 9px 12px; }
+ .home-review-entry small { display: none; }
+}
+
 /* ============ Why Us ============ */
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .why-card { background: var(--bg-card); padding: 32px 24px; border-radius: var(--radius); border: 1px solid #e8e2d8; transition: var(--transition); }
@@ -2367,6 +2722,13 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
  </div>
 </section>
 
+ <button class="home-review-entry" type="button" onclick="navigateToReviews(event)" aria-label="Abrir opiniones de clientes">
+  <span class="stars" aria-hidden="true">★★★★★</span>
+  <span>
+   <strong data-es="Opiniones de clientes" data-en="Client reviews" data-pt="Avaliações de clientes">Avaliações de clientes</strong>
+   <small data-es="Ver testimonios y pruebas reales" data-en="See testimonials and real proof" data-pt="Ver depoimentos e provas reais">Ver depoimentos e provas reais</small>
+  </span>
+ </button>
 </div><!-- /#pageHome -->
 
 <!-- ============ PRODUCT DETAIL PAGE (独立详情页) ============ -->
@@ -2380,6 +2742,7 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
   </div>
  </div>
  <div class="product-detail" id="productDetail"></div>
+ <section class="product-review-section" id="productReviewSection" aria-label="Opiniones de clientes"></section>
 </div><!-- /#pageProduct -->
 
 
@@ -2415,8 +2778,8 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
       <div style="text-align:center;padding:20px 12px;background:var(--bg-primary);border-radius:var(--radius);border:1px solid var(--border-dark)"><div style="font-size:28px;font-weight:700;color:var(--accent-moss)">20</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px" data-es="Especialistas I+D" data-en="R&amp;D Specialists">Especialistas I+D</div></div>
      </div>
      <div style="max-width:1100px;margin:0 auto 40px;text-align:center">
-      <img src="/images/miravue-company-profile.png" alt="Miravue Company Profile" style="width:100%;max-width:100%;display:block;border-radius:var(--radius);margin-bottom:28px">
-      <img src="/images/miravue-earphone-company.png" alt="Miravue Smart Earphone Manufacturer" style="width:100%;max-width:100%;display:block;border-radius:var(--radius)">
+      <img src="images/miravue-company-profile.png" alt="Miravue Company Profile" style="width:100%;max-width:100%;display:block;border-radius:var(--radius);margin-bottom:28px">
+      <img src="images/miravue-earphone-company.png" alt="Miravue Smart Earphone Manufacturer" style="width:100%;max-width:100%;display:block;border-radius:var(--radius)">
      </div>
      <div style="max-width:800px;margin:0 auto 40px;text-align:left;background:rgba(255,255,255,0.82);border:1px solid rgba(11,17,24,0.12);border-radius:var(--radius);box-shadow:0 18px 50px rgba(11,17,24,0.08);padding:clamp(24px,4vw,42px)">
       <p style="font-size:16px;line-height:1.8;color:var(--text-dark);margin-bottom:20px" data-es="<strong>Guangzhou Miravue Trading Co., Ltd. (广州市千幻贸易有限公司)</strong> es una empresa de cadena de suministro de dispositivos inteligentes que integra desarrollo de soluciones, aprovisionamiento, procesamiento y ventas. Contamos con un parque industrial de 20.000 m² y más de 200 empleados, incluidos 35 especialistas en soluciones y 20 profesionales de I+D." data-en="<strong>Guangzhou Miravue Trading Co., Ltd. (广州市千幻贸易有限公司)</strong> is a smart-device supply chain company integrating solution development, procurement, processing, and sales. We operate a 20,000-square-meter industrial park with more than 200 employees, including 35 solution specialists and 20 R&amp;D professionals."><strong>Guangzhou Miravue Trading Co., Ltd. (广州市千幻贸易有限公司)</strong> es una empresa de cadena de suministro de dispositivos inteligentes que integra desarrollo de soluciones, aprovisionamiento, procesamiento y ventas. Contamos con un parque industrial de 20.000 m² y más de 200 empleados, incluidos 35 especialistas en soluciones y 20 profesionales de I+D.</p>
@@ -2431,7 +2794,7 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
     <h2 class="section-title" data-es="Certificaciones y Calidad" data-en="Certifications &amp; Quality">Certificaciones y Calidad</h2>
     <p class="section-subtitle" data-es="Cumplimos con los más altos estándares internacionales." data-en="We meet the highest international standards." style="margin-bottom:32px">Cumplimos con los más altos estándares internacionales.</p>
     <div style="max-width:1100px;margin:0 auto 24px;text-align:center">
-      <img src="/images/miravue-certifications.jpg" alt="Miravue Certifications" style="width:100%;max-width:100%;display:block;border-radius:var(--radius);margin-bottom:32px">
+      <img src="images/miravue-certifications.jpg" alt="Miravue Certifications" style="width:100%;max-width:100%;display:block;border-radius:var(--radius);margin-bottom:32px">
     </div>
     <div class="certs-grid" id="certsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;max-width:960px;margin:0 auto">
     </div>
@@ -2442,7 +2805,7 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
     <h2 class="section-title" data-es="Nuestro Equipo" data-en="Our Team">Nuestro Equipo</h2>
     <p class="section-subtitle" data-es="Mano a mano, creamos brillantez juntos." data-en="Hand in Hand, We Create Brilliance Together." style="margin-bottom:32px">Mano a mano, creamos brillantez juntos.</p>
     <div style="max-width:1260px;margin:0 auto 32px;text-align:center">
-      <img src="/images/miravue-team.jpg" alt="Miravue Team Spirit" style="width:100%;display:block;border-radius:var(--radius);margin-bottom:24px">
+      <img src="images/miravue-team.jpg" alt="Miravue Team Spirit" style="width:100%;display:block;border-radius:var(--radius);margin-bottom:24px">
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:0 auto">
      <div style="background:var(--bg-primary);border-radius:var(--radius);padding:28px 24px;text-align:center;border:1px solid var(--border-dark)"><div style="font-size:32px;margin-bottom:12px">🎯</div><h3 style="font-size:15px;font-weight:700;color:var(--text-light);margin-bottom:6px" data-es="Nuestra Filosofía" data-en="Our Philosophy">Nuestra Filosofía</h3><p style="font-size:14px;color:var(--text-muted);line-height:1.6" data-es="&laquo;Luchar por la excelencia y la perfección&raquo; — Controlamos estrictamente cada etapa de producción para garantizar una calidad estable y confiable." data-en="&ldquo;Striving for excellence and perfection&rdquo; — We strictly control every production stage to ensure stable and reliable quality.">&laquo;Luchar por la excelencia y la perfección&raquo; — Controlamos estrictamente cada etapa de producción para garantizar una calidad estable y confiable.</p></div>
@@ -2526,7 +2889,7 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
      <div class="why-card"><div class="why-icon">📋</div><h3 data-es="Certificaciones" data-en="Certifications">Certificaciones</h3><p data-es="CE, FCC, RoHS, ISO 9001. Cumplimiento total para importación." data-en="CE, FCC, RoHS, ISO 9001. Full import compliance.">CE, FCC, RoHS, ISO 9001. Cumplimiento total para importación.</p></div>
     </div>
     <div style="max-width:1260px;margin:48px auto 0;text-align:center">
-     <img src="/images/miravue-advantages.png" alt="Miravue Factory" style="width:100%;display:block;border-radius:var(--radius)">
+     <img src="images/miravue-advantages.png" alt="Miravue Factory" style="width:100%;display:block;border-radius:var(--radius)">
     </div>
    </div>
 
@@ -2534,6 +2897,13 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
    <div class="about-panel" id="secondaryPanelReviews" style="display:none">
     <h2 class="section-title" data-es="Lo Que Dicen Nuestros Clientes" data-en="What Our Clients Say">Lo Que Dicen Nuestros Clientes</h2>
     <p class="section-subtitle" data-es="Distribuidores reales, resultados reales. Ahora la sección combina testimonios, pruebas visuales y cartas de recomendación para generar más confianza." data-en="Real distributors, real results. This section now combines testimonials, visual proof and recommendation letters to build more trust." style="margin-bottom:28px">Distribuidores reales, resultados reales. Ahora la sección combina testimonios, pruebas visuales y cartas de recomendación para generar más confianza.</p>
+    <div class="review-submit-banner">
+     <div>
+      <strong data-es="¿Ya compraste con Miravue?" data-en="Have you purchased from Miravue?" data-pt="Você já comprou com a Miravue?">Você já comprou com a Miravue?</strong>
+      <p data-es="Comparte tu experiencia con la atención, el producto o la entrega." data-en="Share your experience with our service, product or delivery." data-pt="Compartilhe sua experiência com o atendimento, o produto ou a entrega.">Compartilhe sua experiência com o atendimento, o produto ou a entrega.</p>
+     </div>
+     <button class="review-write-btn" type="button" onclick="openReviewModal()"><span aria-hidden="true">✎</span><span data-es="Escribir una reseña" data-en="Write a review" data-pt="Escrever uma avaliação">Escrever uma avaliação</span></button>
+    </div>
     <div class="review-proof-strip">
      <div class="review-proof-item"><strong>500+</strong><span data-es="Clientes B2B" data-en="B2B clients">Clientes B2B</span></div>
      <div class="review-proof-item"><strong>20+</strong><span data-es="Países atendidos" data-en="Countries served">Países atendidos</span></div>
@@ -2839,6 +3209,46 @@ src="https://www.facebook.com/tr?id=1464034677999267&ev=PageView&noscript=1"
    <span data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
    </a>
   </div>
+ </div>
+</div>
+
+<!-- ============ REVIEW SUBMISSION MODAL ============ -->
+<div class="review-modal-overlay" id="reviewModalOverlay" aria-hidden="true" onclick="closeReviewModal(event)">
+ <div class="review-modal" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle" onclick="event.stopPropagation()">
+  <button class="review-modal-close" type="button" onclick="closeReviewModal()" aria-label="Cerrar">×</button>
+  <div class="review-modal-kicker" data-es="TU EXPERIENCIA" data-en="YOUR EXPERIENCE" data-pt="SUA EXPERIÊNCIA">SUA EXPERIÊNCIA</div>
+  <h2 id="reviewModalTitle" data-es="Escribir una reseña" data-en="Write a review" data-pt="Escrever uma avaliação">Escrever uma avaliação</h2>
+  <p class="review-modal-intro" data-es="Tu opinión ayuda a otros compradores B2B a decidir con más confianza." data-en="Your feedback helps other B2B buyers decide with more confidence." data-pt="Sua opinião ajuda outros compradores B2B a decidir com mais confiança.">Sua opinião ajuda outros compradores B2B a decidir com mais confiança.</p>
+  <div class="review-product-context"><span data-es="Sobre:" data-en="About:" data-pt="Sobre:">Sobre:</span> <strong id="reviewProductName">Miravue</strong></div>
+  <form id="reviewSubmitForm" onsubmit="submitReview(event)">
+   <div class="review-form-group">
+    <label data-es="Calificación *" data-en="Rating *" data-pt="Avaliação *">Avaliação *</label>
+    <div class="review-star-picker" id="reviewStarPicker" aria-label="Seleccionar calificación">
+     <button type="button" onclick="setReviewRating(1)" aria-label="1 estrella" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(2)" aria-label="2 estrellas" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(3)" aria-label="3 estrellas" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(4)" aria-label="4 estrellas" aria-pressed="false">★</button>
+     <button type="button" onclick="setReviewRating(5)" aria-label="5 estrellas" aria-pressed="false">★</button>
+    </div>
+   </div>
+   <div class="review-form-group">
+    <label for="reviewerName" data-es="Nombre *" data-en="Name *" data-pt="Nome *">Nome *</label>
+    <input id="reviewerName" type="text" required maxlength="60" autocomplete="name" data-es-placeholder="Tu nombre" data-en-placeholder="Your name" data-pt-placeholder="Seu nome" placeholder="Seu nome">
+   </div>
+   <div class="review-form-group">
+    <label for="reviewerCountry" data-es="País / mercado" data-en="Country / market" data-pt="País / mercado">País / mercado</label>
+    <input id="reviewerCountry" type="text" maxlength="60" autocomplete="country-name" data-es-placeholder="Ej. México" data-en-placeholder="E.g. Mexico" data-pt-placeholder="Ex.: Brasil" placeholder="Ex.: Brasil">
+   </div>
+   <div class="review-form-group">
+    <label for="reviewerText" data-es="Tu reseña *" data-en="Your review *" data-pt="Sua avaliação *">Sua avaliação *</label>
+    <textarea id="reviewerText" required minlength="15" maxlength="800" data-es-placeholder="Cuéntanos cómo fue tu experiencia…" data-en-placeholder="Tell us about your experience…" data-pt-placeholder="Conte como foi sua experiência…" placeholder="Conte como foi sua experiência…"></textarea>
+   </div>
+   <div class="review-form-error" id="reviewFormError" role="alert"></div>
+   <button class="btn btn-wa review-submit-button" type="submit">
+    <span data-es="Enviar reseña por WhatsApp" data-en="Send review via WhatsApp" data-pt="Enviar avaliação pelo WhatsApp">Enviar avaliação pelo WhatsApp</span>
+   </button>
+   <p class="review-submit-note" data-es="Al continuar se abrirá WhatsApp para que revises y confirmes el mensaje antes de enviarlo." data-en="WhatsApp will open so you can review and confirm the message before sending it." data-pt="O WhatsApp será aberto para você revisar e confirmar a mensagem antes de enviá-la.">O WhatsApp será aberto para você revisar e confirmar a mensagem antes de enviá-la.</p>
+  </form>
  </div>
 </div>
 
@@ -3365,10 +3775,12 @@ products.forEach(p => {
  if (p.cat !== 'watches') return;
  const idHash = p.id.split('').reduce((h, c) => { const v = ((h << 5) - h) + c.charCodeAt(0); return v | 0; }, 0);
  const isUltra = /ultra/i.test(p.name.es) || /ultra/i.test(p.name.en) || /ultra/i.test(p.id);
- const priceMxn = isUltra
+ const generatedPriceMxn = isUltra
   ? 170 + (Math.abs(idHash) % 81)  // Ultra: 170-250 MXN (higher)
   : 140 + (Math.abs(idHash) % 51); // Standard: 140-190 MXN
- const priceUsd = Number((priceMxn / MXN_RATE).toFixed(2));
+ const priceMxnBase = Number.isFinite(p.priceMxnBase) ? p.priceMxnBase : generatedPriceMxn;
+ const priceMultiplier = Number.isFinite(p.priceMultiplier) ? p.priceMultiplier : 1;
+ const priceUsd = Number(((priceMxnBase / MXN_RATE) * priceMultiplier).toFixed(2));
  p.variants.forEach(v => {
   if (v.prices.small === 0 && v.prices.large === 0) {
    v.prices = { small: priceUsd, large: priceUsd };
@@ -3912,6 +4324,7 @@ function renderProducts(filter) {
  } else {
   filtered = products.filter(p => p.cat === filter);
  }
+ filtered.sort((a, b) => (a.catalogPriority ?? Number.MAX_SAFE_INTEGER) - (b.catalogPriority ?? Number.MAX_SAFE_INTEGER));
 
  if (!filtered.length) {
   const emptyText = currentCatalogGroup === 'putian'
@@ -3957,6 +4370,10 @@ function renderProducts(filter) {
    <div class="product-info">
     <div class="product-name">${localizedText(p.name)}</div>
     <div class="product-spec">${localizedText(p.tagline)}</div>
+    <button class="product-card-rating" type="button" onclick="event.stopPropagation(); navigateToReviews(event)" aria-label="${uiText('Abrir opiniones de clientes', 'Open client reviews', 'Abrir avaliações de clientes')}">
+     <span class="stars" aria-hidden="true">★★★★★</span>
+     <span class="rating-label">${uiText('Opiniones de clientes', 'Client reviews', 'Avaliações de clientes')}</span>
+    </button>
     <div class="variant-dots">${variantDots}</div>
     <div class="product-bottom">
      <div>
@@ -4082,16 +4499,295 @@ function translateSpecVal(val, lang) {
  return result;
 }
 
+let deliveryCountdownTimer = null;
+
+function stableActivityNumber(key, min, max) {
+ let hash = 2166136261;
+ String(key).split('').forEach(char => {
+  hash ^= char.charCodeAt(0);
+  hash = Math.imul(hash, 16777619);
+ });
+ return min + (Math.abs(hash) % (max - min + 1));
+}
+
+function getProductActivity(product) {
+ const configured = product.activity24h || {};
+ const bucket = Math.floor(Date.now() / 900000);
+ const hasRealViewers = Number.isFinite(configured.viewers);
+ const hasRealBoxes = Number.isFinite(configured.boxes);
+ return {
+  viewers: hasRealViewers ? configured.viewers : stableActivityNumber(product.id + ':view:' + bucket, 6, 18),
+  boxes: hasRealBoxes ? configured.boxes : stableActivityNumber(product.id + ':box:' + bucket, 2, 9),
+  estimated: !(hasRealViewers && hasRealBoxes)
+ };
+}
+
+function addBusinessDays(date, amount) {
+ const result = new Date(date);
+ let added = 0;
+ result.setHours(12, 0, 0, 0);
+ while (added < amount) {
+  result.setDate(result.getDate() + 1);
+  const day = result.getDay();
+  if (day !== 0 && day !== 6) added++;
+ }
+ return result;
+}
+
+function getNextProcessingCutoff() {
+ const now = new Date();
+ const cutoff = new Date(now);
+ cutoff.setHours(16, 0, 0, 0);
+ if (now.getDay() === 0) cutoff.setDate(cutoff.getDate() + 1);
+ if (now.getDay() === 6) cutoff.setDate(cutoff.getDate() + 2);
+ if (now >= cutoff) {
+  cutoff.setDate(cutoff.getDate() + 1);
+  while (cutoff.getDay() === 0 || cutoff.getDay() === 6) cutoff.setDate(cutoff.getDate() + 1);
+ }
+ return cutoff;
+}
+
+function formatPromiseDate(date) {
+ const locale = currentLang === 'pt' ? 'pt-BR' : currentLang === 'es' ? 'es-MX' : 'en-US';
+ return new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short' }).format(date);
+}
+
+function initDeliveryPromise() {
+ if (deliveryCountdownTimer) clearInterval(deliveryCountdownTimer);
+ const dateRange = document.getElementById('deliveryDateRange');
+ const countdown = document.getElementById('orderCountdown');
+ const windowLabel = document.getElementById('processingWindowLabel');
+ const windowSuffix = document.getElementById('processingWindowSuffix');
+ if (!dateRange || !countdown) return;
+ const now = new Date();
+ dateRange.textContent = formatPromiseDate(addBusinessDays(now, 3)) + ' – ' + formatPromiseDate(addBusinessDays(now, 5));
+ let cutoff = getNextProcessingCutoff();
+ const updateWindowCopy = function() {
+  const current = new Date();
+  const isToday = cutoff.getFullYear() === current.getFullYear()
+   && cutoff.getMonth() === current.getMonth()
+   && cutoff.getDate() === current.getDate();
+  if (windowLabel) {
+   windowLabel.textContent = isToday
+    ? uiText('Confirma hoy dentro de', 'Confirm today within', 'Confirme hoje em')
+    : uiText('Próxima ventana de proceso en', 'Next processing window in', 'Próxima janela de processamento em');
+  }
+  if (windowSuffix) {
+   windowSuffix.textContent = isToday
+    ? uiText('para procesar el mismo día', 'for same-day processing', 'para processar no mesmo dia')
+    : uiText('para programar el despacho', 'to schedule dispatch', 'para programar o envio');
+  }
+ };
+ updateWindowCopy();
+ const tick = function() {
+  let remaining = cutoff.getTime() - Date.now();
+  if (remaining <= 0) {
+   cutoff = getNextProcessingCutoff();
+   remaining = cutoff.getTime() - Date.now();
+   updateWindowCopy();
+  }
+  const totalSeconds = Math.max(0, Math.floor(remaining / 1000));
+  const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+  const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+  const seconds = String(totalSeconds % 60).padStart(2, '0');
+  countdown.textContent = hours + ':' + minutes + ':' + seconds;
+ };
+ tick();
+ deliveryCountdownTimer = setInterval(tick, 1000);
+}
+
+const productReviewItems = [
+ {
+  audioOnly: true,
+  initials: 'CH',
+  name: 'Carlos Hernandez',
+  role: { es: 'Importador, México', en: 'Importer, Mexico', pt: 'Importador, México' },
+  text: {
+   es: 'Aquí en México, unos audífonos con esta calidad cuestan el doble o triple. Volveré a pedir para revender porque mis clientes quedaron encantados.',
+   en: 'Here in Mexico, earphones with this quality cost double or triple. I will order again for resale because my clients loved them.',
+   pt: 'Aqui no México, fones com essa qualidade custam o dobro ou o triplo. Vou comprar novamente para revenda porque meus clientes adoraram.'
+  }
+ },
+ {
+  initials: 'CM',
+  name: 'Carlos M.',
+  role: { es: 'Importador, Brasil', en: 'Importer, Brazil', pt: 'Importador, Brasil' },
+  text: {
+   es: 'El almacén de Brasil redujo nuestro tiempo de entrega de 35 a 5 días. Buena calidad y comunicación constante durante todo el pedido.',
+   en: 'The Brazil warehouse cut our lead time from 35 to 5 days. Great quality and constant communication throughout the order.',
+   pt: 'O estoque no Brasil reduziu nosso prazo de entrega de 35 para 5 dias. Boa qualidade e comunicação constante durante todo o pedido.'
+  }
+ },
+ {
+  initials: 'AR',
+  name: 'Andrés R.',
+  role: { es: 'Importador, Colombia', en: 'Importer, Colombia', pt: 'Importador, Colômbia' },
+  text: {
+   es: 'Excelente servicio. El gerente de cuenta respondió todas mis dudas en minutos y los productos llegaron en perfecto estado.',
+   en: 'Excellent service. The account manager answered all my questions within minutes and the products arrived in perfect condition.',
+   pt: 'Excelente atendimento. O gerente de conta respondeu às minhas dúvidas em poucos minutos e os produtos chegaram em perfeito estado.'
+  }
+ }
+];
+
+let reviewRating = 0;
+let reviewModalPreviousFocus = null;
+
+function setReviewRating(value) {
+ reviewRating = Math.max(0, Math.min(5, Number(value) || 0));
+ document.querySelectorAll('#reviewStarPicker button').forEach((button, index) => {
+  const active = index < reviewRating;
+  button.classList.toggle('active', active);
+  button.setAttribute('aria-pressed', active ? 'true' : 'false');
+ });
+ const error = document.getElementById('reviewFormError');
+ if (error && reviewRating) error.classList.remove('visible');
+}
+
+function openReviewModal() {
+ const overlay = document.getElementById('reviewModalOverlay');
+ const form = document.getElementById('reviewSubmitForm');
+ if (!overlay || !form) return;
+ reviewModalPreviousFocus = document.activeElement;
+ form.reset();
+ setReviewRating(0);
+ const closeButton = overlay.querySelector('.review-modal-close');
+ if (closeButton) closeButton.setAttribute('aria-label', uiText('Cerrar', 'Close', 'Fechar'));
+ const starPicker = document.getElementById('reviewStarPicker');
+ if (starPicker) {
+  starPicker.setAttribute('aria-label', uiText('Seleccionar calificación', 'Choose a rating', 'Selecionar avaliação'));
+  starPicker.querySelectorAll('button').forEach((button, index) => {
+   const value = index + 1;
+   button.setAttribute(
+    'aria-label',
+    uiText(
+     `${value} ${value === 1 ? 'estrella' : 'estrellas'}`,
+     `${value} ${value === 1 ? 'star' : 'stars'}`,
+     `${value} ${value === 1 ? 'estrela' : 'estrelas'}`
+    )
+   );
+  });
+ }
+ const product = currentProductId ? products.find(item => item.id === currentProductId) : null;
+ const context = document.getElementById('reviewProductName');
+ if (context) {
+  context.textContent = product
+   ? localizedText(product.name)
+   : uiText('Experiencia general con Miravue', 'General Miravue experience', 'Experiência geral com a Miravue');
+ }
+ const error = document.getElementById('reviewFormError');
+ if (error) {
+  error.textContent = '';
+  error.classList.remove('visible');
+ }
+ overlay.classList.add('open');
+ overlay.setAttribute('aria-hidden', 'false');
+ document.body.style.overflow = 'hidden';
+ setTimeout(() => document.getElementById('reviewerName')?.focus(), 40);
+}
+
+function closeReviewModal(event) {
+ const overlay = document.getElementById('reviewModalOverlay');
+ if (!overlay) return;
+ if (event && event.target !== overlay) return;
+ overlay.classList.remove('open');
+ overlay.setAttribute('aria-hidden', 'true');
+ document.body.style.overflow = '';
+ if (reviewModalPreviousFocus && typeof reviewModalPreviousFocus.focus === 'function') reviewModalPreviousFocus.focus();
+}
+
+function submitReview(event) {
+ event.preventDefault();
+ const error = document.getElementById('reviewFormError');
+ if (!reviewRating) {
+  if (error) {
+   error.textContent = uiText('Selecciona una calificación de 1 a 5 estrellas.', 'Choose a rating from 1 to 5 stars.', 'Selecione uma avaliação de 1 a 5 estrelas.');
+   error.classList.add('visible');
+  }
+  document.querySelector('#reviewStarPicker button')?.focus();
+  return;
+ }
+ const name = document.getElementById('reviewerName').value.trim();
+ const country = document.getElementById('reviewerCountry').value.trim();
+ const review = document.getElementById('reviewerText').value.trim();
+ const product = currentProductId ? products.find(item => item.id === currentProductId) : null;
+ const productName = product
+  ? localizedText(product.name)
+  : uiText('Experiencia general con Miravue', 'General Miravue experience', 'Experiência geral com a Miravue');
+ const stars = '★'.repeat(reviewRating) + '☆'.repeat(5 - reviewRating);
+ const message = uiText(
+  `Hola, quiero dejar una reseña para Miravue.\n\nProducto / experiencia: ${productName}\nCalificación: ${stars} (${reviewRating}/5)\nNombre: ${name}\nPaís / mercado: ${country || 'No indicado'}\n\nReseña:\n${review}`,
+  `Hello, I would like to leave a review for Miravue.\n\nProduct / experience: ${productName}\nRating: ${stars} (${reviewRating}/5)\nName: ${name}\nCountry / market: ${country || 'Not provided'}\n\nReview:\n${review}`,
+  `Olá, quero deixar uma avaliação para a Miravue.\n\nProduto / experiência: ${productName}\nAvaliação: ${stars} (${reviewRating}/5)\nNome: ${name}\nPaís / mercado: ${country || 'Não informado'}\n\nAvaliação:\n${review}`
+ );
+ if (typeof clarity !== 'undefined') clarity('event', 'review_submission_started');
+ window.open('https://wa.me/85246281624?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+ closeReviewModal();
+}
+
+document.addEventListener('keydown', event => {
+ const overlay = document.getElementById('reviewModalOverlay');
+ if (event.key === 'Escape' && overlay?.classList.contains('open')) {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  closeReviewModal();
+ }
+});
+
+function renderProductReviews(product) {
+ const root = document.getElementById('productReviewSection');
+ if (!root) return;
+ root.setAttribute('aria-label', uiText('Opiniones de clientes', 'Client reviews', 'Avaliações de clientes'));
+ const isAudio = ['airpods', 'airpods-pro', 'airpods-max'].includes(product.cat);
+ const reviews = productReviewItems.filter(item => !item.audioOnly || isAudio);
+ root.innerHTML = `
+  <div class="product-review-shell">
+   <div class="product-review-head">
+    <div>
+     <div class="product-review-kicker">${uiText('EXPERIENCIAS DE COMPRA', 'BUYING EXPERIENCES', 'EXPERIÊNCIAS DE COMPRA')}</div>
+     <h2>${uiText('Lo que dicen compradores de Miravue', 'What Miravue buyers say', 'O que os compradores da Miravue dizem')}</h2>
+     <p>${uiText('Opiniones sobre atención, control de calidad y entrega B2B. Consulta la galería completa para ver capturas y cartas de recomendación.', 'Feedback on service, quality control and B2B delivery. Open the full gallery to see screenshots and recommendation letters.', 'Avaliações sobre atendimento, controle de qualidade e entrega B2B. Abra a galeria completa para ver capturas e cartas de recomendação.')}</p>
+    </div>
+    <div class="product-review-summary">
+     <span class="stars" aria-label="5 de 5">★★★★★</span>
+     <small>${uiText('Testimonios publicados', 'Published testimonials', 'Depoimentos publicados')}</small>
+    </div>
+   </div>
+   <div class="product-review-grid">
+    ${reviews.map(item => `
+     <article class="product-review-card">
+      <div class="review-stars" aria-hidden="true">★★★★★</div>
+      <blockquote>“${localizedText(item.text)}”</blockquote>
+      <footer>
+       <div class="review-avatar">${item.initials}</div>
+       <div><strong>${item.name}</strong><span>${localizedText(item.role)}</span></div>
+      </footer>
+     </article>
+    `).join('')}
+   </div>
+   <div class="product-review-cta">
+    <span>${uiText('Más pruebas reales: conversaciones, entregas y cartas de clientes.', 'More real proof: conversations, deliveries and client letters.', 'Mais provas reais: conversas, entregas e cartas de clientes.')}</span>
+    <div class="product-review-actions">
+     <button class="review-write-btn" type="button" onclick="openReviewModal()"><span aria-hidden="true">✎</span>${uiText('Escribir una reseña', 'Write a review', 'Escrever uma avaliação')}</button>
+     <button class="btn btn-moss" type="button" onclick="navigateToReviews(event)">${uiText('Ver todas las opiniones', 'See all reviews', 'Ver todas as avaliações')}</button>
+    </div>
+   </div>
+  </div>
+ `;
+}
+
 function renderProductPage(productId, variantId) {
  const p = products.find(p => p.id === productId);
  if (!p) return;
  const v = p.variants.find(v => v.id === variantId) || p.variants[0];
+ const gallery = v.gallery?.length ? v.gallery : p.gallery;
  const isOOS = v.stock === 0;
  const priceSmall = v.prices.small;
  const priceLarge = v.prices.large;
  const specs = v.specs;
  const functionDescription = specs.functionDescription || '';
  const visibleSpecs = Object.entries(specs).filter(([k]) => k !== 'functionDescription');
+ const activity = getProductActivity(p);
 
  currentProductId = productId;
  currentVariantId = variantId;
@@ -4103,7 +4799,7 @@ function renderProductPage(productId, variantId) {
 
  document.getElementById('productDetail').innerHTML = `
   <div class="pd-gallery" id="pdGallery">
-   ${p.gallery ? `
+   ${gallery ? `
    <button class="pd-gallery-arrow pd-gallery-prev" onclick="galleryPrev()" style="position:absolute;left:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
    <button class="pd-gallery-arrow pd-gallery-next" onclick="galleryNext()" style="position:absolute;right:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
    <div id="pdGallerySlide" class="pd-gallery-slide"></div>
@@ -4116,6 +4812,19 @@ function renderProductPage(productId, variantId) {
    <div class="pd-cat">${localizedText(catName)}</div>
    <h1>${localizedText(p.name)}</h1>
    <p class="pd-tagline">${localizedText(p.tagline)}</p>
+
+   <div class="pd-live-activity" aria-label="${uiText('Actividad reciente del producto', 'Recent product activity', 'Atividade recente do produto')}">
+    <div class="pd-live-row">
+     <span class="pd-live-dot viewers" aria-hidden="true"></span>
+     <span><strong>${activity.viewers} ${uiText('personas', 'people', 'pessoas')}</strong> ${uiText('viendo ahora', 'viewing now', 'vendo agora')}</span>
+     ${activity.estimated ? `<small class="pd-activity-note">${uiText('actividad estimada', 'estimated activity', 'atividade estimada')}</small>` : ''}
+    </div>
+    <div class="pd-live-row">
+     <span class="pd-live-dot boxes" aria-hidden="true"></span>
+     <span><strong>${activity.boxes} ${activity.boxes === 1 ? uiText('caja', 'box', 'caixa') : uiText('cajas', 'boxes', 'caixas')}</strong> ${uiText('cotizadas en las últimas 24h', 'quoted in the last 24h', 'cotadas nas últimas 24h')}</span>
+     ${activity.estimated ? `<small class="pd-activity-note">${uiText('actividad estimada', 'estimated activity', 'atividade estimada')}</small>` : ''}
+    </div>
+   </div>
 
    <div class="variant-selector">
     ${p.variants.map(vr => {
@@ -4175,6 +4884,25 @@ function renderProductPage(productId, variantId) {
    <button class="btn btn-gray-green" onclick="toggleCart()" data-es="Calcular Envío" data-en="Calculate Shipping">Calcular Envío</button>
    <button class="btn btn-moss" onclick="addToCartWithQty('${p.id}', '${v.id}');" ${isOOS ? 'disabled style="opacity:0.4;pointer-events:none"' : ''} data-es="Agregar a Cotización" data-en="Add to Inquiry">Agregar a Cotización</button>
    </div>
+   <div class="pd-delivery-promise">
+    <div class="delivery-promise-row">
+     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.8 13H11l-1 9 9.2-12H13V2Z"/></svg>
+     <span><strong>${uiText('Envío express DDP', 'Express DDP shipping', 'Envio expresso DDP')}</strong> ${uiText('a tu mercado (3–5 días hábiles)', 'to your market (3–5 business days)', 'para o seu mercado (3–5 dias úteis)')}</span>
+    </div>
+    <div class="delivery-promise-row">
+     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7zM6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+     <span><strong>${uiText('Despacho por', 'Dispatch via', 'Envio por')}</strong> <strong class="promise-accent">FedEx, DHL ${uiText('o agente logístico', 'or logistics partner', 'ou parceiro logístico')}</strong></span>
+    </div>
+    <div class="delivery-promise-row">
+     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2v3M17 2v3M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/></svg>
+     <span><strong>${uiText('Entrega estimada:', 'Estimated delivery:', 'Entrega estimada:')}</strong> <strong id="deliveryDateRange">${uiText('calculando…', 'calculating…', 'calculando…')}</strong></span>
+    </div>
+    <div class="delivery-promise-row">
+     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+     <span><strong id="processingWindowLabel">${uiText('Confirma hoy dentro de', 'Confirm today within', 'Confirme hoje em')}</strong> <strong class="promise-accent" id="orderCountdown" aria-live="off">--:--:--</strong> <span id="processingWindowSuffix">${uiText('para procesar el mismo día', 'for same-day processing', 'para processar no mesmo dia')}</span></span>
+    </div>
+    <div class="delivery-promise-divider" aria-hidden="true"></div>
+   </div>
    ${functionDescription ? `
    <div class="pd-function-desc">
     <div class="pd-function-title">${localizedText(specLabels.functionDescription)}</div>
@@ -4192,9 +4920,11 @@ function renderProductPage(productId, variantId) {
  document.querySelectorAll('#pageProduct .btn-back [data-es][data-en]').forEach(el => {
   translateElement(el);
  });
+ renderProductReviews(p);
+ initDeliveryPromise();
  // init price display
  setTimeout(updatePriceDisplay, 50);
- if (p.gallery) { window._galleryItems = p.gallery; window._galleryIdx = getInitialGalleryIndex(p.gallery); renderGallerySlide(); setTimeout(function(){ var s=document.getElementById('pdGallerySlide'); if(s)s.style.opacity='1'; }, 50); }
+ if (gallery) { window._galleryItems = gallery; window._galleryIdx = getInitialGalleryIndex(gallery); renderGallerySlide(); setTimeout(function(){ var s=document.getElementById('pdGallerySlide'); if(s)s.style.opacity='1'; }, 50); }
 }
 
 // ============ GALLERY NAVIGATION ============
