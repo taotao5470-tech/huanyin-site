@@ -898,6 +898,7 @@ const products = allProducts.filter(p =>
  String(p.season || '').indexOf('2026') !== -1
 );
 const LANGS = ['es', 'en', 'pt'];
+const USD_TO_MXN = 17.5;
 const USD_TO_BRL = 5.17;
 function detectBrowserLanguage() {
  const browserLanguage = String(
@@ -1054,6 +1055,12 @@ function displayWorldCupText(value) {
 function brlFromUsd(usd) {
  return Math.round((Number(usd) || 0) * USD_TO_BRL);
 }
+function usdFromMxn(mxn) {
+ return (Number(mxn) || 0) / USD_TO_MXN;
+}
+function mxnFromUsd(usd) {
+ return Math.round((Number(usd) || 0) * USD_TO_MXN);
+}
 function fmtMainAmount(mxn, usd) {
  if (currentLang === 'pt') return 'R$ ' + brlFromUsd(usd) + ' BRL';
  if (currentLang === 'es') return '$' + Math.round(Number(mxn) || 0) + ' MXN';
@@ -1061,8 +1068,8 @@ function fmtMainAmount(mxn, usd) {
 }
 function fmtAltAmount(mxn, usd) {
  if (currentLang === 'pt') return '≈ $' + (Number(usd) || 0).toFixed(2) + ' USD';
- if (currentLang === 'es') return '≈ $' + (Number(usd) || 0).toFixed(2) + ' USD';
- return '≈ $' + Math.round(Number(mxn) || 0) + ' MXN';
+ if (currentLang === 'es') return '≈ $' + usdFromMxn(mxn).toFixed(2) + ' USD';
+ return '≈ $' + mxnFromUsd(usd) + ' MXN';
 }
 function applyLanguageText() {
  document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang;
@@ -2388,7 +2395,7 @@ function wcCalcShipping(id) {
                    p.category==='blindbox' ? 2.20 :
                    (p.category==='figure'||p.category==='plush') ? 1.80 : 0.80;
  const totalUsd = +(ratePerPc * qty).toFixed(2);
- const totalMxn = Math.round(totalUsd * 17.5);
+ const totalMxn = mxnFromUsd(totalUsd);
  const t = currentLang === 'pt' ? {
   title:'Estimativa de envio (DDP)', qty:'Quantidade', perPc:'Por peça',
   total:'Total', note:'⚠ Esta é apenas uma estimativa. O preço final depende do peso real, destino exato e temporada.',
@@ -2411,7 +2418,7 @@ function wcCalcShipping(id) {
    <h3>${t.title}</h3>
    <div class="ship-rows">
     <div class="ship-row"><span>${t.qty}</span><strong>${qty} pcs</strong></div>
-    <div class="ship-row"><span>${t.perPc}</span><strong>${fmtMainAmount(Math.round(ratePerPc * 17.5), ratePerPc)}</strong></div>
+    <div class="ship-row"><span>${t.perPc}</span><strong>${fmtMainAmount(mxnFromUsd(ratePerPc), ratePerPc)}</strong></div>
     <div class="ship-row ship-total"><span>${t.total}</span><strong>${fmtMainAmount(totalMxn, totalUsd)}<br><small style="font-weight:500;opacity:0.7">${fmtAltAmount(totalMxn, totalUsd)}</small></strong></div>
    </div>
    <p class="ship-note">${t.note}</p>
