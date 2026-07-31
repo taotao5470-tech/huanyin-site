@@ -723,8 +723,7 @@ body.page-product .footer, body.page-about .footer { display: none; }
  .review-submit-banner { align-items: stretch; flex-direction: column; }
  .review-submit-banner .review-write-btn { width: 100%; }
  .review-modal { padding: 26px 20px 22px; border-radius: 18px; }
- .product-card-rating { margin-bottom: 5px; }
- .product-card-rating .rating-label { display: none; }
+ .product-card-rating { display: none; }
  .home-review-entry { left: 12px; bottom: 12px; padding: 9px 12px; }
  .home-review-entry small { display: none; }
 }
@@ -950,7 +949,7 @@ body.page-product .footer, body.page-about .footer { display: none; }
  .stock-dot { top: 8px; right: 8px; padding: 4px 7px; border-radius: 8px; font-size: 9px; gap: 4px; }
  .stock-dot::before { width: 6px; height: 6px; }
  .product-info { min-width: 0; height: 166px; min-height: 0; overflow: hidden; padding: 14px 14px 12px; }
- .product-name { font-size: 15px; line-height: 1.25; margin-bottom: 4px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .product-name { flex: 0 0 auto; min-height: 19px; color: var(--text-light); font-size: 15px; line-height: 1.25; margin-bottom: 4px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
  .product-spec { font-size: 11px; line-height: 1.35; margin-bottom: 8px; min-height: 30px; }
  .variant-dots { gap: 4px; margin-bottom: 8px; min-height: 7px; }
  .variant-dot { width: 7px; height: 7px; }
@@ -5453,4 +5452,3 @@ initRecGallery();
  else document.addEventListener('DOMContentLoaded', spawnConfetti);
 })();
 </script>
-
