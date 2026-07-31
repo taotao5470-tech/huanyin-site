@@ -4780,6 +4780,7 @@ function renderProductPage(productId, variantId) {
  const p = products.find(p => p.id === productId);
  if (!p) return;
  const v = p.variants.find(v => v.id === variantId) || p.variants[0];
+ const gallery = v.gallery?.length ? v.gallery : p.gallery;
  const isOOS = v.stock === 0;
  const priceSmall = v.prices.small;
  const priceLarge = v.prices.large;
@@ -4798,7 +4799,7 @@ function renderProductPage(productId, variantId) {
 
  document.getElementById('productDetail').innerHTML = `
   <div class="pd-gallery" id="pdGallery">
-   ${p.gallery ? `
+   ${gallery ? `
    <button class="pd-gallery-arrow pd-gallery-prev" onclick="galleryPrev()" style="position:absolute;left:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
    <button class="pd-gallery-arrow pd-gallery-next" onclick="galleryNext()" style="position:absolute;right:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
    <div id="pdGallerySlide" class="pd-gallery-slide"></div>
@@ -4923,7 +4924,7 @@ function renderProductPage(productId, variantId) {
  initDeliveryPromise();
  // init price display
  setTimeout(updatePriceDisplay, 50);
- if (p.gallery) { window._galleryItems = p.gallery; window._galleryIdx = getInitialGalleryIndex(p.gallery); renderGallerySlide(); setTimeout(function(){ var s=document.getElementById('pdGallerySlide'); if(s)s.style.opacity='1'; }, 50); }
+ if (gallery) { window._galleryItems = gallery; window._galleryIdx = getInitialGalleryIndex(gallery); renderGallerySlide(); setTimeout(function(){ var s=document.getElementById('pdGallerySlide'); if(s)s.style.opacity='1'; }, 50); }
 }
 
 // ============ GALLERY NAVIGATION ============

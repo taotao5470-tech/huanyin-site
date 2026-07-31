@@ -26,6 +26,12 @@ window.WATCH_PRODUCTS = [
       {
         "id": "color-1",
         "name": "Black",
+        "gallery": [
+          {
+            "type": "image",
+            "src": "images/watch/watch-007-new-7-plus-1-2.jpg"
+          }
+        ],
         "specs": {
           "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
@@ -49,6 +55,12 @@ window.WATCH_PRODUCTS = [
       {
         "id": "color-2",
         "name": "Blue",
+        "gallery": [
+          {
+            "type": "image",
+            "src": "images/watch/watch-008-i20-10-plus-1-blue.jpg"
+          }
+        ],
         "specs": {
           "productDescription": "11 Ultra",
           "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
@@ -93,104 +105,6 @@ window.WATCH_PRODUCTS = [
         "stock": 999
       }
     ],
-  },
-  {
-    "id": "watch-007-new-7-plus-1",
-    "name": {
-      "es": "11 Ultra Negro",
-      "en": "11 Ultra Black",
-      "pt": "11 Ultra Preto"
-    },
-    "priceMxnBase": 157,
-    "priceMultiplier": 1.4,
-    "tagline": {
-      "es": "hryfine ? 240*392px",
-      "en": "hryfine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-007-new-7-plus-1-2.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-007-new-7-plus-1-2.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-1",
-        "name": "Black",
-        "specs": {
-          "productDescription": "11 Ultra",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "27x21.2x2.2cm",
-          "unitWeight": "415g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
-  },
-  {
-    "id": "watch-008-i20-10-plus-1",
-    "name": {
-      "es": "11 Ultra Azul",
-      "en": "11 Ultra Blue",
-      "pt": "11 Ultra Azul"
-    },
-    "priceMxnBase": 157,
-    "priceMultiplier": 1.4,
-    "tagline": {
-      "es": "hryfine ? 240*392px",
-      "en": "hryfine ? 240*392px"
-    },
-    "cat": "watches",
-    "icon": "Watch",
-    "featured": false,
-    "img": "images/watch/watch-008-i20-10-plus-1-blue.jpg",
-    "gallery": [
-      {
-        "type": "image",
-        "src": "images/watch/watch-008-i20-10-plus-1-blue.jpg"
-      }
-    ],
-    "variants": [
-      {
-        "id": "color-2",
-        "name": "Blue",
-        "specs": {
-          "productDescription": "11 Ultra",
-          "functionDescription": "1.App controllable worldwide\n2. 2.01in IPS HD bright display\n3.Blood pressure & heart rate monitoring;\n4.Abnormal heart rate / BP alarm;\n5. 0916 BOX independent speaker chamber;               \n6.Pedometer, sleep tracking, notifications, calories, distance, remote camera, raise-to-wake, sedentary reminder, alarm, etc.              \n7.Custom wallpaper, weather push, music control\n8.Music playback, Bluetooth calling             \n9. Multi-sport modes & watch faces, flip-to-wake      \n10.Multi-language support",
-          "appBackend": "hryfine",
-          "material": "TPU strap\nMetal mid-frame + PC bottom case\nPC top cover",
-          "batteryCapacity": "200mah",
-          "screenResolution": "240*392px",
-          "packageSize": "27x21.2x2.2cm",
-          "unitWeight": "415g"
-        },
-        "prices": {
-          "small": 0,
-          "large": 0
-        },
-        "priceNote": {
-          "es": "Consultar",
-          "en": "Ask"
-        },
-        "stock": 999
-      }
-    ]
   },
   {
     "id": "watch-010-hk9-ultra-max",
