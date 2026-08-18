@@ -3791,12 +3791,12 @@ products.forEach(p => {
  });
 });
 
-// Patch AirPods / AirPods Pro / AirPods Max prices: +10%
+// Patch AirPods / AirPods Pro / AirPods Max prices: 20% below the originally displayed price
 products.forEach(p => {
  if (!['airpods','airpods-pro','airpods-max'].includes(p.cat)) return;
  p.variants.forEach(v => {
-  if (v.prices.small) v.prices.small = Number((v.prices.small * 1.10).toFixed(2));
-  if (v.prices.large) v.prices.large = Number((v.prices.large * 1.10).toFixed(2));
+  if (v.prices.small) v.prices.small = Number((Number((v.prices.small * 1.10).toFixed(2)) * 0.80).toFixed(2));
+  if (v.prices.large) v.prices.large = Number((Number((v.prices.large * 1.10).toFixed(2)) * 0.80).toFixed(2));
  });
 });
 
