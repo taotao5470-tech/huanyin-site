@@ -13,3 +13,5 @@ node_modules/
 .env
 .env.local
 ops/reports/
+.preview/
+ligamx-preview.html

@@ -1,0 +1,123 @@
+{
+  "retrievedDate": "2026-10-25",
+  "description": "Nine original logos used by the catalog. FIFA World Cup 2026 logo: FIFA official website. Liga MX symbol and seven club badges: Liga MX official website. Original files, colors and aspect ratios are preserved.",
+  "logos": [
+    {
+      "id": "america",
+      "name": "Club América",
+      "file": "images/football-logos/america.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/docs/archdgtl/AfldDrct/logos/1/1.png",
+      "dimensions": [
+        400,
+        400
+      ],
+      "bytes": 49169,
+      "sha256": "be687c6fcda04e3256f680929137b0d99a90f61f914fe014cabeaf0097e59ef3"
+    },
+    {
+      "id": "chivas",
+      "name": "Guadalajara / Chivas",
+      "file": "images/football-logos/chivas.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/docs/archdgtl/AfldDrct/logos/7/7.png",
+      "dimensions": [
+        400,
+        400
+      ],
+      "bytes": 72853,
+      "sha256": "33f5e0abcb725e394656487bb256d86ba1352268f0aa85c3ecb39050fd9fde08"
+    },
+    {
+      "id": "cruz-azul",
+      "name": "Cruz Azul",
+      "file": "images/football-logos/cruz-azul.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/docs/archdgtl/AfldDrct/logos/12566/12566.png",
+      "dimensions": [
+        400,
+        400
+      ],
+      "bytes": 41967,
+      "sha256": "240882bce6ce1ccc0582c6ea5bfecdaf8a05aab49f58f25fd6e3ebc8d5862030"
+    },
+    {
+      "id": "pumas",
+      "name": "Pumas UNAM",
+      "file": "images/football-logos/pumas.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/docs/archdgtl/AfldDrct/logos/18/18.png",
+      "dimensions": [
+        400,
+        400
+      ],
+      "bytes": 28245,
+      "sha256": "44b03f7e7dc2f96fe0cbefe745310fe5d9ff0db2749c2da7de80194bfb50c13d"
+    },
+    {
+      "id": "tigres",
+      "name": "Tigres UANL",
+      "file": "images/football-logos/tigres.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/docs/archdgtl/AfldDrct/logos/16/16.png",
+      "dimensions": [
+        400,
+        400
+      ],
+      "bytes": 56538,
+      "sha256": "2d07eb9ffe5fd7475a8caa6cdfb8809d01cdba0dd33178d235e540a1bec64ce3"
+    },
+    {
+      "id": "monterrey",
+      "name": "Monterrey",
+      "file": "images/football-logos/monterrey.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/docs/archdgtl/AfldDrct/logos/14/14.png",
+      "dimensions": [
+        400,
+        400
+      ],
+      "bytes": 28348,
+      "sha256": "499f8d50ebd833711c6f637a9d55ec3d0f5c866e2508a68d6d96c6883bb71b91"
+    },
+    {
+      "id": "toluca",
+      "name": "Toluca",
+      "file": "images/football-logos/toluca.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/docs/archdgtl/AfldDrct/logos/17/17.png",
+      "dimensions": [
+        400,
+        400
+      ],
+      "bytes": 145872,
+      "sha256": "1cebf1fbfec8578d4811c7ee2cdd146f71595896dc5c74aeded8913c53a54c2b"
+    },
+    {
+      "id": "worldcup-2026",
+      "name": "FIFA World Cup 2026",
+      "file": "images/football-logos/worldcup-2026.webp",
+      "sourcePage": "https://ipt.fifa.com/tournament-organisation/brand-protection",
+      "sourceAsset": "https://digitalhub.fifa.com/transform/72a8ea8e-9019-49a4-8e79-8b2488cd9972/WC26_logo_brand_identity_black-bg?io=transform%3Afill%2Caspectratio%3A1x1%2Cwidth%3A170&quality=100&format=webp",
+      "dimensions": [
+        170,
+        170
+      ],
+      "bytes": 4056,
+      "sha256": "c3073d483780ecfe9c03156100cba7522c8f8cafb4ee13522253ef351ef97615"
+    },
+    {
+      "id": "liga-mx-symbol",
+      "name": "Liga MX official website app icon",
+      "file": "images/football-logos/liga-mx-symbol.png",
+      "sourcePage": "https://www.ligamx.net/",
+      "sourceAsset": "https://cldrsrcs.apilmx.com/v1/images/favicons_liga/android-chrome-192x192.png",
+      "dimensions": [
+        192,
+        192
+      ],
+      "bytes": 16857,
+      "sha256": "da5f8abd2291e66b726e55083e860e705b0dcb14531395f9f8c34cd25e8971f3"
+    }
+  ]
+}
